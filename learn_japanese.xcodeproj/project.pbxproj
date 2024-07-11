@@ -1,0 +1,901 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		083A1827BF519582D7423A70 /* Pods_learn_japanese_learn_japaneseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6BA5559553F32031978D51 /* Pods_learn_japanese_learn_japaneseUITests.framework */; };
+		12A7FCEEDC97E35EAB3D73D3 /* Pods_learn_japaneseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118E740E085D86A4A52D16B2 /* Pods_learn_japaneseTests.framework */; };
+		87016C60081BA412C3D2E8CA /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087DE542DC82E43D82E7D729 /* Pods_learn_japanese.framework */; };
+		DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */; };
+		DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */; };
+		DF020F922C45658D00DA5483 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F912C45658D00DA5483 /* BaseNavigationController.swift */; };
+		DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */; };
+		DF0B328C2C45720600C1BC77 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0B328B2C45720600C1BC77 /* SplashViewController.xib */; };
+		DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B328A2C45720600C1BC77 /* SplashViewController.swift */; };
+		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
+		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
+		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
+		DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */; };
+		DF9A23E22C4276CB00A73895 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E12C4276CB00A73895 /* AppColor.swift */; };
+		DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E32C4276D700A73895 /* AppImage.swift */; };
+		DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E52C4276F000A73895 /* AppLottie.swift */; };
+		DF9A23EA2C4287C900A73895 /* lauch.json in Resources */ = {isa = PBXBuildFile; fileRef = DF9A23E92C4287C900A73895 /* lauch.json */; };
+		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
+		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
+		DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBA804B2C402FA100467A58 /* Assets.xcassets */; };
+		DFBA805A2C402FA200467A58 /* learn_japaneseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */; };
+		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
+		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFBA80562C402FA200467A58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFBA80372C402FA000467A58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFBA803E2C402FA000467A58;
+			remoteInfo = learn_japanese;
+		};
+		DFBA80602C402FA200467A58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFBA80372C402FA000467A58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFBA803E2C402FA000467A58;
+			remoteInfo = learn_japanese;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		087DE542DC82E43D82E7D729 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		118E740E085D86A4A52D16B2 /* Pods_learn_japaneseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japaneseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		174965B31C4488D575AFAC77 /* Pods-learn_japaneseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japaneseTests.debug.xcconfig"; path = "Target Support Files/Pods-learn_japaneseTests/Pods-learn_japaneseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A35C13CBFF2C0143B3FF492 /* Pods-learn_japaneseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japaneseTests.release.xcconfig"; path = "Target Support Files/Pods-learn_japaneseTests/Pods-learn_japaneseTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A5E39BC932E2BEC3DE42755 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
+		67D4A6C2320923BCDC4BE671 /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		6ABA5BB7ADB594879326EA1D /* Pods-learn_japanese-learn_japaneseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese-learn_japaneseUITests.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF6BA5559553F32031978D51 /* Pods_learn_japanese_learn_japaneseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese_learn_japaneseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		DF020F912C45658D00DA5483 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF0B328A2C45720600C1BC77 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DF0B328B2C45720600C1BC77 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
+		DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
+		DF9A23E12C4276CB00A73895 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		DF9A23E32C4276D700A73895 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		DF9A23E52C4276F000A73895 /* AppLottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLottie.swift; sourceTree = "<group>"; };
+		DF9A23E92C4287C900A73895 /* lauch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lauch.json; sourceTree = "<group>"; };
+		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFBA80442C402FA000467A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DFBA804B2C402FA100467A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFBA80502C402FA100467A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFBA80552C402FA200467A58 /* learn_japaneseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learn_japaneseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseTests.swift; sourceTree = "<group>"; };
+		DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learn_japaneseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
+		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F46898B62029678D4F62BBEC /* Pods-learn_japanese-learn_japaneseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese-learn_japaneseUITests.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFBA803C2C402FA000467A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87016C60081BA412C3D2E8CA /* Pods_learn_japanese.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBA80522C402FA200467A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12A7FCEEDC97E35EAB3D73D3 /* Pods_learn_japaneseTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBA805C2C402FA200467A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				083A1827BF519582D7423A70 /* Pods_learn_japanese_learn_japaneseUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A8455FBDB751D3B34FEEF53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				087DE542DC82E43D82E7D729 /* Pods_learn_japanese.framework */,
+				BF6BA5559553F32031978D51 /* Pods_learn_japanese_learn_japaneseUITests.framework */,
+				118E740E085D86A4A52D16B2 /* Pods_learn_japaneseTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9629DCF324ACD8085EFB02E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67D4A6C2320923BCDC4BE671 /* Pods-learn_japanese.debug.xcconfig */,
+				5A5E39BC932E2BEC3DE42755 /* Pods-learn_japanese.release.xcconfig */,
+				6ABA5BB7ADB594879326EA1D /* Pods-learn_japanese-learn_japaneseUITests.debug.xcconfig */,
+				F46898B62029678D4F62BBEC /* Pods-learn_japanese-learn_japaneseUITests.release.xcconfig */,
+				174965B31C4488D575AFAC77 /* Pods-learn_japaneseTests.debug.xcconfig */,
+				3A35C13CBFF2C0143B3FF492 /* Pods-learn_japaneseTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DF020F8C2C45637900DA5483 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */,
+				DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DF9A23D62C42708500A73895 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A23DC2C42714A00A73895 /* Extension */,
+				DF9A23D72C4270A400A73895 /* Common */,
+				DFBA80762C40326600467A58 /* Base */,
+				DFBA80732C40304D00467A58 /* Screen */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DF9A23D72C4270A400A73895 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DF9A23DC2C42714A00A73895 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */,
+				DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DFBA80362C402FA000467A58 = {
+			isa = PBXGroup;
+			children = (
+				DFBA80412C402FA000467A58 /* learn_japanese */,
+				DFBA80582C402FA200467A58 /* learn_japaneseTests */,
+				DFBA80622C402FA200467A58 /* learn_japaneseUITests */,
+				DFBA80402C402FA000467A58 /* Products */,
+				C9629DCF324ACD8085EFB02E /* Pods */,
+				5A8455FBDB751D3B34FEEF53 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DFBA80402C402FA000467A58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFBA803F2C402FA000467A58 /* learn_japanese.app */,
+				DFBA80552C402FA200467A58 /* learn_japaneseTests.xctest */,
+				DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFBA80412C402FA000467A58 /* learn_japanese */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A23D62C42708500A73895 /* UI */,
+				DFBA80792C4032D000467A58 /* Utils */,
+				DFBA80782C4032AB00467A58 /* Network */,
+				DFBA80772C4032A200467A58 /* Database */,
+				DFBA80752C40323A00467A58 /* Models */,
+				DFBA80742C4030F800467A58 /* Resources */,
+				DFBA80722C402FDB00467A58 /* App */,
+				DFBA80502C402FA100467A58 /* Info.plist */,
+				DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */,
+			);
+			path = learn_japanese;
+			sourceTree = "<group>";
+		};
+		DFBA80582C402FA200467A58 /* learn_japaneseTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */,
+			);
+			path = learn_japaneseTests;
+			sourceTree = "<group>";
+		};
+		DFBA80622C402FA200467A58 /* learn_japaneseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */,
+				DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */,
+			);
+			path = learn_japaneseUITests;
+			sourceTree = "<group>";
+		};
+		DFBA80722C402FDB00467A58 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DFBA80422C402FA000467A58 /* AppDelegate.swift */,
+				DFBA80442C402FA000467A58 /* SceneDelegate.swift */,
+				DF0B328A2C45720600C1BC77 /* SplashViewController.swift */,
+				DF0B328B2C45720600C1BC77 /* SplashViewController.xib */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DFBA80732C40304D00467A58 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DF020F8C2C45637900DA5483 /* Login */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DFBA80742C4030F800467A58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DFBA804B2C402FA100467A58 /* Assets.xcassets */,
+				DF9A23E92C4287C900A73895 /* lauch.json */,
+				DF9A23E12C4276CB00A73895 /* AppColor.swift */,
+				DF9A23E32C4276D700A73895 /* AppImage.swift */,
+				DF9A23E52C4276F000A73895 /* AppLottie.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DFBA80752C40323A00467A58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFBA80762C40326600467A58 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A23D82C42710A00A73895 /* BaseViewController.swift */,
+				DF020F912C45658D00DA5483 /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DFBA80772C4032A200467A58 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		DFBA80782C4032AB00467A58 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DFBA807A2C4032F600467A58 /* Firebase */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DFBA80792C4032D000467A58 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A23D42C426F2400A73895 /* Constant.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DFBA807A2C4032F600467A58 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFBA803E2C402FA000467A58 /* learn_japanese */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFBA80692C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japanese" */;
+			buildPhases = (
+				BF80601D61598F7688D57D4E /* [CP] Check Pods Manifest.lock */,
+				DFBA803B2C402FA000467A58 /* Sources */,
+				DFBA803C2C402FA000467A58 /* Frameworks */,
+				DFBA803D2C402FA000467A58 /* Resources */,
+				DE8ED237F588B425C50F3652 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = learn_japanese;
+			productName = learn_japanese;
+			productReference = DFBA803F2C402FA000467A58 /* learn_japanese.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFBA80542C402FA200467A58 /* learn_japaneseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFBA806C2C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japaneseTests" */;
+			buildPhases = (
+				5D3B3A9641A89977CA005E61 /* [CP] Check Pods Manifest.lock */,
+				DFBA80512C402FA200467A58 /* Sources */,
+				DFBA80522C402FA200467A58 /* Frameworks */,
+				DFBA80532C402FA200467A58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFBA80572C402FA200467A58 /* PBXTargetDependency */,
+			);
+			name = learn_japaneseTests;
+			productName = learn_japaneseTests;
+			productReference = DFBA80552C402FA200467A58 /* learn_japaneseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFBA805E2C402FA200467A58 /* learn_japaneseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFBA806F2C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japaneseUITests" */;
+			buildPhases = (
+				19C0B2AF7B99A13B308F5D8C /* [CP] Check Pods Manifest.lock */,
+				DFBA805B2C402FA200467A58 /* Sources */,
+				DFBA805C2C402FA200467A58 /* Frameworks */,
+				DFBA805D2C402FA200467A58 /* Resources */,
+				B94BE8499FBDC1DC99CF1FBF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFBA80612C402FA200467A58 /* PBXTargetDependency */,
+			);
+			name = learn_japaneseUITests;
+			productName = learn_japaneseUITests;
+			productReference = DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFBA80372C402FA000467A58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					DFBA803E2C402FA000467A58 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					DFBA80542C402FA200467A58 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DFBA803E2C402FA000467A58;
+					};
+					DFBA805E2C402FA200467A58 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DFBA803E2C402FA000467A58;
+					};
+				};
+			};
+			buildConfigurationList = DFBA803A2C402FA000467A58 /* Build configuration list for PBXProject "learn_japanese" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFBA80362C402FA000467A58;
+			productRefGroup = DFBA80402C402FA000467A58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFBA803E2C402FA000467A58 /* learn_japanese */,
+				DFBA80542C402FA200467A58 /* learn_japaneseTests */,
+				DFBA805E2C402FA200467A58 /* learn_japaneseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFBA803D2C402FA000467A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */,
+				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
+				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
+				DF0B328C2C45720600C1BC77 /* SplashViewController.xib in Resources */,
+				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBA80532C402FA200467A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBA805D2C402FA200467A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19C0B2AF7B99A13B308F5D8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-learn_japanese-learn_japaneseUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D3B3A9641A89977CA005E61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-learn_japaneseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B94BE8499FBDC1DC99CF1FBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF80601D61598F7688D57D4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-learn_japanese-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE8ED237F588B425C50F3652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFBA803B2C402FA000467A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
+				DF9A23E22C4276CB00A73895 /* AppColor.swift in Sources */,
+				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
+				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
+				DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */,
+				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
+				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
+				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
+				DF020F922C45658D00DA5483 /* BaseNavigationController.swift in Sources */,
+				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
+				DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */,
+				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBA80512C402FA200467A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFBA805A2C402FA200467A58 /* learn_japaneseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBA805B2C402FA200467A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */,
+				DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFBA80572C402FA200467A58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFBA803E2C402FA000467A58 /* learn_japanese */;
+			targetProxy = DFBA80562C402FA200467A58 /* PBXContainerItemProxy */;
+		};
+		DFBA80612C402FA200467A58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFBA803E2C402FA000467A58 /* learn_japanese */;
+			targetProxy = DFBA80602C402FA200467A58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DFBA80672C402FA200467A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DFBA80682C402FA200467A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFBA806A2C402FA200467A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D4A6C2320923BCDC4BE671 /* Pods-learn_japanese.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J99UR45ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = learn_japanese/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Learn Japanese";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japanese";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFBA806B2C402FA200467A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A5E39BC932E2BEC3DE42755 /* Pods-learn_japanese.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J99UR45ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = learn_japanese/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Learn Japanese";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japanese";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DFBA806D2C402FA200467A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 174965B31C4488D575AFAC77 /* Pods-learn_japaneseTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J99UR45ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japaneseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/learn_japanese.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/learn_japanese";
+			};
+			name = Debug;
+		};
+		DFBA806E2C402FA200467A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A35C13CBFF2C0143B3FF492 /* Pods-learn_japaneseTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J99UR45ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japaneseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/learn_japanese.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/learn_japanese";
+			};
+			name = Release;
+		};
+		DFBA80702C402FA200467A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ABA5BB7ADB594879326EA1D /* Pods-learn_japanese-learn_japaneseUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J99UR45ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japaneseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = learn_japanese;
+			};
+			name = Debug;
+		};
+		DFBA80712C402FA200467A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F46898B62029678D4F62BBEC /* Pods-learn_japanese-learn_japaneseUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J99UR45ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japaneseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = learn_japanese;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFBA803A2C402FA000467A58 /* Build configuration list for PBXProject "learn_japanese" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFBA80672C402FA200467A58 /* Debug */,
+				DFBA80682C402FA200467A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFBA80692C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japanese" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFBA806A2C402FA200467A58 /* Debug */,
+				DFBA806B2C402FA200467A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFBA806C2C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japaneseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFBA806D2C402FA200467A58 /* Debug */,
+				DFBA806E2C402FA200467A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFBA806F2C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japaneseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFBA80702C402FA200467A58 /* Debug */,
+				DFBA80712C402FA200467A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFBA80372C402FA000467A58 /* Project object */;
+}
