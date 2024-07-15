@@ -1,6 +1,0 @@
-framework module Pods_learn_japaneseTests {
-  umbrella header "Pods-learn_japaneseTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
