@@ -12,10 +12,10 @@
 		87016C60081BA412C3D2E8CA /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087DE542DC82E43D82E7D729 /* Pods_learn_japanese.framework */; };
 		DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */; };
 		DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */; };
-		DF020F922C45658D00DA5483 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F912C45658D00DA5483 /* BaseNavigationController.swift */; };
 		DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */; };
-		DF0B328C2C45720600C1BC77 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0B328B2C45720600C1BC77 /* SplashViewController.xib */; };
 		DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B328A2C45720600C1BC77 /* SplashViewController.swift */; };
+		DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B328E2C457CE100C1BC77 /* Main.storyboard */; };
+		DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32902C45892400C1BC77 /* UINavigationControllerExtension.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -60,10 +60,10 @@
 		BF6BA5559553F32031978D51 /* Pods_learn_japanese_learn_japaneseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese_learn_japaneseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		DF020F912C45658D00DA5483 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF0B328A2C45720600C1BC77 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		DF0B328B2C45720600C1BC77 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		DF0B328E2C457CE100C1BC77 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DF0B32902C45892400C1BC77 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -168,6 +168,7 @@
 			children = (
 				DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */,
 				DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */,
+				DF0B32902C45892400C1BC77 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -205,6 +206,7 @@
 				DFBA80742C4030F800467A58 /* Resources */,
 				DFBA80722C402FDB00467A58 /* App */,
 				DFBA80502C402FA100467A58 /* Info.plist */,
+				DF0B328E2C457CE100C1BC77 /* Main.storyboard */,
 				DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */,
 			);
 			path = learn_japanese;
@@ -233,7 +235,6 @@
 				DFBA80422C402FA000467A58 /* AppDelegate.swift */,
 				DFBA80442C402FA000467A58 /* SceneDelegate.swift */,
 				DF0B328A2C45720600C1BC77 /* SplashViewController.swift */,
-				DF0B328B2C45720600C1BC77 /* SplashViewController.xib */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -269,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				DF9A23D82C42710A00A73895 /* BaseViewController.swift */,
-				DF020F912C45658D00DA5483 /* BaseNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 				DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */,
 				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
 				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
-				DF0B328C2C45720600C1BC77 /* SplashViewController.xib in Resources */,
+				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
 				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,8 +552,8 @@
 				DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
+				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
-				DF020F922C45658D00DA5483 /* BaseNavigationController.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,

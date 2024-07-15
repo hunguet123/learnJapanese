@@ -6,24 +6,18 @@
 //
 
 import UIKit
+import Lottie
 
-class SplashViewController: UIViewController {
-
+class SplashViewController: BaseViewControler {
+    @IBOutlet weak var animationView: LottieAnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        animationView.animation = LottieAnimation.named(AppLottie.lauch)
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 0.5
+        animationView.play { _ in
+            self.navigationController?.popAndPush(viewController: LoginViewController(), animated: true)
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
