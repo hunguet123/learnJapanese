@@ -16,6 +16,10 @@
 		DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B328A2C45720600C1BC77 /* SplashViewController.swift */; };
 		DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B328E2C457CE100C1BC77 /* Main.storyboard */; };
 		DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32902C45892400C1BC77 /* UINavigationControllerExtension.swift */; };
+		DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32922C4809B700C1BC77 /* GradientTextLabel.swift */; };
+		DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32942C480FB500C1BC77 /* DefaultButton.swift */; };
+		DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */; };
+		DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -64,6 +68,10 @@
 		DF0B328A2C45720600C1BC77 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DF0B328E2C457CE100C1BC77 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF0B32902C45892400C1BC77 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		DF0B32922C4809B700C1BC77 /* GradientTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTextLabel.swift; sourceTree = "<group>"; };
+		DF0B32942C480FB500C1BC77 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTabBarView.swift; sourceTree = "<group>"; };
+		DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 			children = (
 				DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */,
 				DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */,
+				DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -159,6 +168,9 @@
 		DF9A23D72C4270A400A73895 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DF0B32922C4809B700C1BC77 /* GradientTextLabel.swift */,
+				DF0B32942C480FB500C1BC77 /* DefaultButton.swift */,
+				DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -551,12 +563,16 @@
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
+				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
+				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
+				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
+				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

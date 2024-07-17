@@ -7,11 +7,35 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: BaseViewControler{
+    // MARK: outlet
+    @IBOutlet weak var titleHeader: GradientTextLabel!
+    @IBOutlet weak var tabBarView: DefaultTabBarView!
+    
+    // MARK: private variable
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+    }
+    
+    private func setupUI() {
+        titleHeader.setGradientColors([
+            AppColor.pastelMagenta?.withAlphaComponent(0.8),
+            AppColor.orchid,
+            AppColor.lavenderIndigo,
+        ])
+        tabBarView.delegate = self
+        tabBarView.items = ["Login", "Sign up"]
+        tabBarView.layer.shadowColor = UIColor.black.cgColor
+        tabBarView.layer.shadowOpacity = 0.5
+        tabBarView.layer.shadowRadius = 5
+        tabBarView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        tabBarView.layer.shadowPath = UIBezierPath(roundedRect: tabBarView.bounds, cornerRadius: tabBarView.layer.cornerRadius).cgPath
+        tabBarView.layer.masksToBounds = false
+        
+        tabBarView.shadowRadius = 5
     }
 }
+
+
