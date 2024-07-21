@@ -11,6 +11,7 @@ class LoginViewController: BaseViewControler{
     // MARK: outlet
     @IBOutlet weak var titleHeader: GradientTextLabel!
     @IBOutlet weak var tabBarView: DefaultTabBarView!
+    @IBOutlet weak var userNameTextField: TitleTextField!
     
     // MARK: private variable
     
@@ -35,6 +36,11 @@ class LoginViewController: BaseViewControler{
         tabBarView.layer.masksToBounds = false
         
         tabBarView.shadowRadius = 5
+        
+        
+        userNameTextField.delegate = self
+        userNameTextField.setTitle("UserName")
+        userNameTextField.setHintText("UserName")
     }
 }
 

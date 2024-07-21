@@ -20,6 +20,7 @@
 		DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32942C480FB500C1BC77 /* DefaultButton.swift */; };
 		DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */; };
 		DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */; };
+		DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -72,6 +73,7 @@
 		DF0B32942C480FB500C1BC77 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTabBarView.swift; sourceTree = "<group>"; };
 		DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerExtension.swift; sourceTree = "<group>"; };
+		DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				DF0B32922C4809B700C1BC77 /* GradientTextLabel.swift */,
 				DF0B32942C480FB500C1BC77 /* DefaultButton.swift */,
 				DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */,
+				DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */,
+				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
