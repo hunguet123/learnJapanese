@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  learn_japanese
+
+  Created by Hưng Hà Quang on 21/7/24.
+  
+*/
+"login" = "Đăng nhập";
+"signUp" = "Đăng ký";

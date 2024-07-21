@@ -21,14 +21,14 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Japanese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knM-7W-rNR" customClass="GradientTextLabel" customModule="learn_japanese" customModuleProvider="target">
-                    <rect key="frame" x="48.333333333333343" y="109.00000000000001" width="296.66666666666663" height="58.666666666666671"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Japan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knM-7W-rNR" customClass="GradientTextLabel" customModule="learn_japanese" customModuleProvider="target">
+                    <rect key="frame" x="84" y="109" width="225" height="59"/>
                     <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="48"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-M9-X4j" customClass="DefaultTabBarView" customModule="learn_japanese" customModuleProvider="target">
-                    <rect key="frame" x="50" y="203.66666666666666" width="293" height="40"/>
+                    <rect key="frame" x="50" y="204" width="293" height="40"/>
                     <color key="backgroundColor" name="colors/lightSliver"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="nBp-b8-tSd"/>
@@ -64,7 +64,7 @@
             <color red="0.98000001907348633" green="0.9649999737739563" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colors/lightSliver">
-            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85100001096725464" green="0.85100001096725464" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

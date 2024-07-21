@@ -21,6 +21,8 @@
 		DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */; };
 		DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */; };
 		DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */; };
+		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
+		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -74,6 +76,9 @@
 		DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTabBarView.swift; sourceTree = "<group>"; };
 		DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
+		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
+		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -154,6 +159,15 @@
 				DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		DF91DA512C4D621D00C78640 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				DF91DA562C4D631300C78640 /* LocalizationText.swift */,
+				DF91DA602C4D64D700C78640 /* Localizable.strings */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 		DF9A23D62C42708500A73895 /* UI */ = {
@@ -265,6 +279,7 @@
 		DFBA80742C4030F800467A58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DF91DA512C4D621D00C78640 /* Localizations */,
 				DFBA804B2C402FA100467A58 /* Assets.xcassets */,
 				DF9A23E92C4287C900A73895 /* lauch.json */,
 				DF9A23E12C4276CB00A73895 /* AppColor.swift */,
@@ -405,11 +420,12 @@
 			};
 			buildConfigurationList = DFBA803A2C402FA000467A58 /* Build configuration list for PBXProject "learn_japanese" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = vi;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = DFBA80362C402FA000467A58;
 			productRefGroup = DFBA80402C402FA000467A58 /* Products */;
@@ -429,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */,
+				DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */,
 				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
 				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
@@ -563,6 +580,7 @@
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColor.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
+				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
@@ -611,6 +629,18 @@
 			targetProxy = DFBA80602C402FA200467A58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF91DA602C4D64D700C78640 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF91DA612C4D64D700C78640 /* vi */,
+				DF91DA632C4D64DE00C78640 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DFBA80672C402FA200467A58 /* Debug */ = {

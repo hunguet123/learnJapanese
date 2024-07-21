@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import L10n_swift
 
 class LoginViewController: BaseViewControler{
     // MARK: outlet
     @IBOutlet weak var titleHeader: GradientTextLabel!
     @IBOutlet weak var tabBarView: DefaultTabBarView!
-    @IBOutlet weak var userNameTextField: TitleTextField!
     
     // MARK: private variable
     
@@ -26,8 +26,9 @@ class LoginViewController: BaseViewControler{
             AppColor.orchid,
             AppColor.lavenderIndigo,
         ])
+
         tabBarView.delegate = self
-        tabBarView.items = ["Login", "Sign up"]
+        tabBarView.items = [LocalizationText.login, LocalizationText.signUp]
         tabBarView.layer.shadowColor = UIColor.black.cgColor
         tabBarView.layer.shadowOpacity = 0.5
         tabBarView.layer.shadowRadius = 5
@@ -36,11 +37,6 @@ class LoginViewController: BaseViewControler{
         tabBarView.layer.masksToBounds = false
         
         tabBarView.shadowRadius = 5
-        
-        
-        userNameTextField.delegate = self
-        userNameTextField.setTitle("UserName")
-        userNameTextField.setHintText("UserName")
     }
 }
 
