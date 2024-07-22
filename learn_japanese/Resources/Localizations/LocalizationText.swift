@@ -15,4 +15,5 @@ class LocalizationText {
     static let emailAddress = "emailAddress".l10n()
     static let password = "password".l10n()
     static let forgotPassword = "forgotPassword".l10n()
+    static let or = "or".l10n()
 }

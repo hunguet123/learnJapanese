@@ -10,4 +10,5 @@
 "userName" = "Username";
 "emailAddress" = "Email address";
 "password" = "Password";
-"forgotPassword" = "Quên mật khẩu?";
+"forgotPassword" = "Forgot password";
+"or" = "or";

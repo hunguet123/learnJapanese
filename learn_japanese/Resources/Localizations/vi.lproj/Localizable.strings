@@ -10,4 +10,5 @@
 "userName" = "Tên đăng nhập";
 "emailAddress" = "Email";
 "password" = "Mật khẩu";
-"forgotPassword" = "Forgot password?";
+"forgotPassword" = "Quên mật khẩu?";
+"or" = "Hoặc";

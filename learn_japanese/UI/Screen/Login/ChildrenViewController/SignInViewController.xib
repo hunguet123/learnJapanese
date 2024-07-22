@@ -77,18 +77,24 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3x-Qs-wHB">
                             <rect key="frame" x="184" y="254.33333333333331" width="45" height="45"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-Zk-3o5">
-                                    <rect key="frame" x="1" y="12" width="42" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-Zk-3o5">
+                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="colors/darkLiver"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="l10nText" value="or"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Pqb-Zk-3o5" firstAttribute="leading" secondItem="L3x-Qs-wHB" secondAttribute="leading" id="4Wb-mL-t9X"/>
                                 <constraint firstAttribute="width" constant="45" id="50N-Io-AuX"/>
                                 <constraint firstAttribute="height" constant="45" id="BXe-3Z-HeH"/>
+                                <constraint firstAttribute="bottom" secondItem="Pqb-Zk-3o5" secondAttribute="bottom" id="HgC-wm-pAd"/>
+                                <constraint firstItem="Pqb-Zk-3o5" firstAttribute="top" secondItem="L3x-Qs-wHB" secondAttribute="top" id="PrB-zB-X1M"/>
+                                <constraint firstAttribute="trailing" secondItem="Pqb-Zk-3o5" secondAttribute="trailing" id="vsZ-uF-Jqe"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -128,6 +134,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="colors/darkLiver">
+            <color red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="colors/philippineSliver">
             <color red="0.71764705882352942" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
