@@ -7,3 +7,7 @@
 */
 "login" = "Login";
 "signUp" = "Sign up";
+"userName" = "Username";
+"emailAddress" = "Email address";
+"password" = "Password";
+"forgotPassword" = "Quên mật khẩu?";

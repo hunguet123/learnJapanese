@@ -22,4 +22,10 @@ class AppColor {
     static let black = UIColor.black;
     /// FEC300
     static let goldenPoppy = UIColor(named: "colors/goldenPoppy")
+    /// 4F4F4F
+    static let darkLiver = UIColor(named: "colors/darkLiver")
+    /// FE00B7
+    static let shockingPink = UIColor(named: "colors/shockingPink")
+    /// B7B3B3
+    static let philippineSliver = UIColor(named: "colors/philippineSliver")
 }

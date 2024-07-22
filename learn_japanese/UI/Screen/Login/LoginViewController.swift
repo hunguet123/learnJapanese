@@ -12,12 +12,17 @@ class LoginViewController: BaseViewControler{
     // MARK: outlet
     @IBOutlet weak var titleHeader: GradientTextLabel!
     @IBOutlet weak var tabBarView: DefaultTabBarView!
+    @IBOutlet weak var tabViewScroll: UIScrollView!
+    @IBOutlet weak var signInView: UIView!
+    @IBOutlet weak var signUpView: UIView!
     
     // MARK: private variable
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setUpChilrenViewController()
+        setUpGesture()
     }
     
     private func setupUI() {
@@ -26,17 +31,29 @@ class LoginViewController: BaseViewControler{
             AppColor.orchid,
             AppColor.lavenderIndigo,
         ])
-
+        
         tabBarView.delegate = self
         tabBarView.items = [LocalizationText.login, LocalizationText.signUp]
-        tabBarView.layer.shadowColor = UIColor.black.cgColor
-        tabBarView.layer.shadowOpacity = 0.5
-        tabBarView.layer.shadowRadius = 5
-        tabBarView.layer.shadowOffset = CGSize(width: 2, height: 2)
-        tabBarView.layer.shadowPath = UIBezierPath(roundedRect: tabBarView.bounds, cornerRadius: tabBarView.layer.cornerRadius).cgPath
-        tabBarView.layer.masksToBounds = false
-        
-        tabBarView.shadowRadius = 5
+    }
+    
+    private func setUpChilrenViewController() {
+        let signInViewController = SignInViewController()
+        let signUpViewController = SignUpViewController()
+        addChild(signInViewController)
+        signInViewController.view.fixInView(signInView)
+        signInViewController.didMove(toParent: self)
+        addChild(signUpViewController)
+        signUpViewController.view.fixInView(signUpView)
+        signUpViewController.didMove(toParent: self)
+    }
+    
+    private func setUpGesture() {
+        let tapHiddenKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapHiddenKeyboard)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

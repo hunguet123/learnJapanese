@@ -23,6 +23,10 @@
 		DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
+		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
+		DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA652C4EA1F500C78640 /* SignInViewController.swift */; };
+		DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */; };
+		DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA692C4EA20400C78640 /* SignUpViewController.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -79,6 +83,10 @@
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DF91DA652C4EA1F500C78640 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DF91DA662C4EA1F500C78640 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		DF91DA692C4EA20400C78640 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 		DF020F8C2C45637900DA5483 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DF91DA642C4EA19000C78640 /* ChildrenViewController */,
 				DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */,
 				DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */,
 				DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */,
@@ -168,6 +177,17 @@
 				DF91DA602C4D64D700C78640 /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		DF91DA642C4EA19000C78640 /* ChildrenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF91DA652C4EA1F500C78640 /* SignInViewController.swift */,
+				DF91DA662C4EA1F500C78640 /* SignInViewController.xib */,
+				DF91DA692C4EA20400C78640 /* SignUpViewController.swift */,
+				DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */,
+			);
+			path = ChildrenViewController;
 			sourceTree = "<group>";
 		};
 		DF9A23D62C42708500A73895 /* UI */ = {
@@ -448,7 +468,9 @@
 				DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */,
 				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
 				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
+				DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
+				DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */,
 				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,10 +608,12 @@
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
+				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
 				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
+				DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,

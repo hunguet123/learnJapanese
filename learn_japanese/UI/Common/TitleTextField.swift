@@ -9,6 +9,7 @@ import UIKit
 
 protocol TitleTextFieldDelegate {
     func titleTextField(_ textField: UITextField, onChanged newText: String)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
 }
 
 class TitleTextField: UIView {
@@ -30,8 +31,10 @@ class TitleTextField: UIView {
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.rightViewMode = .always
         textField.backgroundColor = AppColor.white
+        textField.textColor = AppColor.black
         textField.layer.borderColor = AppColor.goldenPoppy?.cgColor
         textField.layer.borderWidth = 1.0
+        textField.returnKeyType = .continue
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -45,6 +48,59 @@ class TitleTextField: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
+    }
+    
+    func setTitle(_ title: String) {
+        titleLabel.text = title
+    }
+    
+    func setText(_ text: String) {
+        textField.text = text
+    }
+    
+    func setHintText(_ text: String) {
+        textField.attributedPlaceholder = NSAttributedString(string: text, attributes: [
+            .foregroundColor: AppColor.darkLiver ?? .black])
+    }
+    
+    func getText() -> String? {
+        return textField.text
+    }
+    
+    func setPlaceholder(_ placeholder: String) {
+        textField.placeholder = placeholder
+    }
+    
+    func setTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        textField.delegate = delegate
+    }
+    
+    func setKeyboardType(_ keyboardType: UIKeyboardType) {
+        textField.keyboardType = keyboardType
+    }
+    
+    func setReturnKeyType(_ returnKeyType: UIReturnKeyType) {
+        textField.returnKeyType = returnKeyType
+    }
+    
+    func setContentType(_ textContentType: UITextContentType) {
+        textField.textContentType = textContentType
+    }
+    
+    func setSecureText(_ isSecureTextEntry: Bool) {
+        textField.isSecureTextEntry = isSecureTextEntry
+    }
+    
+    func setTag(_ tagTextField: Int) {
+        textField.tag = tagTextField
+    }
+    
+    func textFieldBecomFirstResponder() {
+        textField.becomeFirstResponder()
+    }
+    
+    func textFieldResignFirstResponder() {
+        textField.resignFirstResponder()
     }
     
     private func setupUI() {
@@ -63,30 +119,6 @@ class TitleTextField: UIView {
             textField.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
-    func setTitle(_ title: String) {
-        titleLabel.text = title
-    }
-    
-    func setText(_ text: String) {
-        textField.text = text
-    }
-    
-    func setHintText(_ text: String) {
-        textField.placeholder = text
-    }
-    
-    func getText() -> String? {
-        return textField.text
-    }
-    
-    func setPlaceholder(_ placeholder: String) {
-        textField.placeholder = placeholder
-    }
-    
-    func setTextFieldDelegate(_ delegate: UITextFieldDelegate) {
-        textField.delegate = delegate
-    }
 }
 
 extension TitleTextField: UITextFieldDelegate {
@@ -94,5 +126,9 @@ extension TitleTextField: UITextFieldDelegate {
         let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
         self.delegate?.titleTextField(textField, onChanged: newText)
         return true;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return self.delegate?.textFieldShouldReturn(textField) ?? true
     }
 }
