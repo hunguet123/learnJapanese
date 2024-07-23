@@ -27,9 +27,9 @@ class LoginViewController: BaseViewControler{
     
     private func setupUI() {
         titleHeader.setGradientColors([
-            AppColor.pastelMagenta?.withAlphaComponent(0.8),
-            AppColor.orchid,
-            AppColor.lavenderIndigo,
+            AppColors.pastelMagenta?.withAlphaComponent(0.8),
+            AppColors.orchid,
+            AppColors.lavenderIndigo,
         ])
         
         tabBarView.delegate = self

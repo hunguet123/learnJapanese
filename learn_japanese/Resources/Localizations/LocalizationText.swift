@@ -16,4 +16,10 @@ class LocalizationText {
     static let password = "password".l10n()
     static let forgotPassword = "forgotPassword".l10n()
     static let or = "or".l10n()
+    static let loginWithGoogle = "loginWithGoogle".l10n()
+    static let loginWithFacebook = "loginWithFacebook".l10n()
+    static let loginWithApple = "loginWithApple".l10n()
+    static let passwordRequirement1 = "passwordRequirement1".l10n()
+    static let passwordRequirement2 = "passwordRequirement2".l10n()
+    static let passwordRequirement3 = "passwordRequirement3".l10n()
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-class AppLottie {
+class AppLotties {
     static let lauch: String = "lauch"
 }

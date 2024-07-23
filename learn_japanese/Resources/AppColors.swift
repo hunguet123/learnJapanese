@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppColor {
+class AppColors {
     ///FAF6D1
     static let backgroundColor = UIColor(named: "colors/backgroundColor")
     ///9747FF
@@ -28,4 +28,6 @@ class AppColor {
     static let shockingPink = UIColor(named: "colors/shockingPink")
     /// B7B3B3
     static let philippineSliver = UIColor(named: "colors/philippineSliver")
+    /// 2F2F2F
+    static let darkCharcoal = UIColor(named: "colors/darkCharcoal")
 }

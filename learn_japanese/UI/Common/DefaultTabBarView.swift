@@ -57,7 +57,7 @@ class DefaultTabBarView: UIView {
         for (index, title) in items.enumerated() {
             let button = DefaultButton()
             button.setTitle(title, for: .normal)
-            button.setBackgroundColor(AppColor.lightSliver ?? .red, for: .normal)
+            button.setBackgroundColor(AppColors.lightSliver ?? .red, for: .normal)
             button.tag = index
             button.addTarget(self, action: #selector(tabButtonTapped(_:)), for: .touchUpInside)
             stackView.addArrangedSubview(button)
@@ -75,14 +75,14 @@ class DefaultTabBarView: UIView {
     func selectTab(at index: Int) {
         guard index < buttons.count else { return }
         buttons.forEach { button in
-            button.setBackgroundColor(AppColor.lightSliver ?? .clear, for: .normal)
+            button.setBackgroundColor(AppColors.lightSliver ?? .clear, for: .normal)
             button.setTextAttributes([.font: UIFont.systemFont(ofSize: 14, weight: .bold),
-                                      .foregroundColor: AppColor.lavenderIndigo?.withAlphaComponent(0.6) ?? .clear,
+                                      .foregroundColor: AppColors.lavenderIndigo?.withAlphaComponent(0.6) ?? .clear,
             ], for: .normal)
         }// Unselected color
-        buttons[index].setBackgroundColor(AppColor.lavenderIndigo ?? .clear, for: .selected)
+        buttons[index].setBackgroundColor(AppColors.lavenderIndigo ?? .clear, for: .selected)
         buttons[index].setTextAttributes([.font: UIFont.systemFont(ofSize: 14, weight: .bold),
-                                          .foregroundColor: AppColor.white,
+                                          .foregroundColor: AppColors.white,
         ], for: .normal)
     }
 }

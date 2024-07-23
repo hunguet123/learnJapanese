@@ -13,7 +13,7 @@ class SplashViewController: BaseViewControler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationView.animation = LottieAnimation.named(AppLottie.lauch)
+        animationView.animation = LottieAnimation.named(AppLotties.lauch)
         animationView.loopMode = .playOnce
         animationView.animationSpeed = 0.5
         animationView.play { _ in

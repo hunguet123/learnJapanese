@@ -13,10 +13,10 @@ enum SignInTextFieldTag: Int {
 }
 
 class SignInViewController: BaseViewControler {
-    @IBOutlet weak var emailAddressTextField: TitleTextField!
-    @IBOutlet weak var passwordTextField: TitleTextField!
-    @IBOutlet weak var signInButton: DefaultButton!
-    @IBOutlet weak var forgotPasswordLabel: UILabel!
+    @IBOutlet private weak var emailAddressTextField: TitleTextField!
+    @IBOutlet private weak var passwordTextField: TitleTextField!
+    @IBOutlet private weak var signInButton: DefaultButton!
+    @IBOutlet private weak var forgotPasswordLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class SignInViewController: BaseViewControler {
         
         signInButton.setTitle(LocalizationText.login, for: .normal)
         signInButton.setTextAttributes([.font: UIFont.systemFont(ofSize: 14, weight: .bold),
-                                        .foregroundColor: AppColor.white,
+                                        .foregroundColor: AppColors.white,
         ], for: .normal)
         
         let underlineForgotPasswordAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
@@ -49,8 +49,21 @@ class SignInViewController: BaseViewControler {
                                                                          attributes: underlineForgotPasswordAttribute)
         forgotPasswordLabel.attributedText = underlineForgotPasswordAttributedString
     }
+    
     @IBAction func tapToSignIn(_ sender: Any) {
         
+    }
+    
+    @IBAction func tapToForgotPassword(_ sender: Any) {
+    }
+    
+    @IBAction func tapToLoginWithGoogle(_ sender: Any) {
+    }
+    
+    @IBAction func tapToLoginWithFacebook(_ sender: Any) {
+    }
+    
+    @IBAction func tapToLoginWithApple(_ sender: Any) {
     }
 }
 

@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  learn_japanese
-
-  Created by Hưng Hà Quang on 21/7/24.
-  
-*/
+/*
+ Localizable.strings
+ learn_japanese
+ 
+ Created by Hưng Hà Quang on 21/7/24.
+ 
+ */
 "login" = "Login";
 "signUp" = "Sign up";
 "userName" = "Username";
@@ -12,3 +12,9 @@
 "password" = "Password";
 "forgotPassword" = "Forgot password";
 "or" = "or";
+"loginWithGoogle" = "Log in with Google";
+"loginWithFacebook"= "Log in with Facebook";
+"loginWithApple" = "Log in with Apple";
+"passwordRequirement1" = "Minimum 8 characters";
+"passwordRequirement2" = "An uppercase character";
+"passwordRequirement3" = "A special character";

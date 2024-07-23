@@ -31,9 +31,9 @@
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
 		DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */; };
-		DF9A23E22C4276CB00A73895 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E12C4276CB00A73895 /* AppColor.swift */; };
-		DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E32C4276D700A73895 /* AppImage.swift */; };
-		DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E52C4276F000A73895 /* AppLottie.swift */; };
+		DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E12C4276CB00A73895 /* AppColors.swift */; };
+		DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E32C4276D700A73895 /* AppImages.swift */; };
+		DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E52C4276F000A73895 /* AppLotties.swift */; };
 		DF9A23EA2C4287C900A73895 /* lauch.json in Resources */ = {isa = PBXBuildFile; fileRef = DF9A23E92C4287C900A73895 /* lauch.json */; };
 		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
 		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
@@ -41,6 +41,7 @@
 		DFBA805A2C402FA200467A58 /* learn_japaneseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */; };
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
+		DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,9 +92,9 @@
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
 		DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
-		DF9A23E12C4276CB00A73895 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		DF9A23E32C4276D700A73895 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
-		DF9A23E52C4276F000A73895 /* AppLottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLottie.swift; sourceTree = "<group>"; };
+		DF9A23E12C4276CB00A73895 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		DF9A23E32C4276D700A73895 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		DF9A23E52C4276F000A73895 /* AppLotties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLotties.swift; sourceTree = "<group>"; };
 		DF9A23E92C4287C900A73895 /* lauch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lauch.json; sourceTree = "<group>"; };
 		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learn_japaneseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapableView.swift; sourceTree = "<group>"; };
 		F46898B62029678D4F62BBEC /* Pods-learn_japanese-learn_japaneseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese-learn_japaneseUITests.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 				DF0B32942C480FB500C1BC77 /* DefaultButton.swift */,
 				DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */,
 				DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */,
+				DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -302,9 +305,9 @@
 				DF91DA512C4D621D00C78640 /* Localizations */,
 				DFBA804B2C402FA100467A58 /* Assets.xcassets */,
 				DF9A23E92C4287C900A73895 /* lauch.json */,
-				DF9A23E12C4276CB00A73895 /* AppColor.swift */,
-				DF9A23E32C4276D700A73895 /* AppImage.swift */,
-				DF9A23E52C4276F000A73895 /* AppLottie.swift */,
+				DF9A23E12C4276CB00A73895 /* AppColors.swift */,
+				DF9A23E32C4276D700A73895 /* AppImages.swift */,
+				DF9A23E52C4276F000A73895 /* AppLotties.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -600,11 +603,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
-				DF9A23E22C4276CB00A73895 /* AppColor.swift in Sources */,
+				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
-				DF9A23E62C4276F000A73895 /* AppLottie.swift in Sources */,
+				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
@@ -614,8 +617,9 @@
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
 				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
 				DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */,
+				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
-				DF9A23E42C4276D700A73895 /* AppImage.swift in Sources */,
+				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,

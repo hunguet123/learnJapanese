@@ -20,7 +20,7 @@ class DefaultButton: UIButton {
     }
     
     private func commonInit() {
-        self.backgroundColor = AppColor.lavenderIndigo
+        self.backgroundColor = AppColors.lavenderIndigo
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }

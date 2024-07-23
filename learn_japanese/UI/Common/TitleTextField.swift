@@ -17,7 +17,7 @@ class TitleTextField: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        label.textColor = AppColor.black
+        label.textColor = AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,9 +30,9 @@ class TitleTextField: UIView {
         textField.leftViewMode = .always
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.rightViewMode = .always
-        textField.backgroundColor = AppColor.white
-        textField.textColor = AppColor.black
-        textField.layer.borderColor = AppColor.goldenPoppy?.cgColor
+        textField.backgroundColor = AppColors.white
+        textField.textColor = AppColors.black
+        textField.layer.borderColor = AppColors.goldenPoppy?.cgColor
         textField.layer.borderWidth = 1.0
         textField.returnKeyType = .continue
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,7 @@ class TitleTextField: UIView {
     
     func setHintText(_ text: String) {
         textField.attributedPlaceholder = NSAttributedString(string: text, attributes: [
-            .foregroundColor: AppColor.darkLiver ?? .black])
+            .foregroundColor: AppColors.darkLiver ?? .black])
     }
     
     func getText() -> String? {
@@ -106,7 +106,7 @@ class TitleTextField: UIView {
     private func setupUI() {
         addSubview(titleLabel)
         addSubview(textField)
-        backgroundColor = AppColor.backgroundColor
+        backgroundColor = AppColors.backgroundColor
         textField.delegate = self
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
