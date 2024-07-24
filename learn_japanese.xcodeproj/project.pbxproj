@@ -42,6 +42,7 @@
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
 		DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */; };
+		DFFF30D82C51638100DADE4A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF30D72C51638100DADE4A /* Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapableView.swift; sourceTree = "<group>"; };
+		DFFF30D72C51638100DADE4A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		F46898B62029678D4F62BBEC /* Pods-learn_japanese-learn_japaneseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese-learn_japaneseUITests.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese-learn_japaneseUITests/Pods-learn_japanese-learn_japaneseUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				DF9A23D42C426F2400A73895 /* Constant.swift */,
+				DFFF30D72C51638100DADE4A /* Validation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 			files = (
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,
+				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,

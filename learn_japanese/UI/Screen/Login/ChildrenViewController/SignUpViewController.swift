@@ -17,6 +17,7 @@ class SignUpViewController: BaseViewControler {
     @IBOutlet private weak var userNameTextField: TitleTextField!
     @IBOutlet private weak var emailAddressTextField: TitleTextField!
     @IBOutlet private weak var passwordTextField: TitleTextField!
+    @IBOutlet var passwordRequiredImage: [UIImageView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +43,42 @@ class SignUpViewController: BaseViewControler {
         passwordTextField.setHintText(LocalizationText.password)
         passwordTextField.setContentType(.password)
         passwordTextField.setReturnKeyType(.done)
-        passwordTextField.setSecureText(true)
         passwordTextField.setTag(SignUpTextFieldTag.password.rawValue)
         passwordTextField.delegate = self
+    }
+    
+    private func updateRequirementPassword(password: String) {
+        if Validation.hasMinimumLength(password) {
+            passwordRequiredImage[0].image = AppImages.iconCheckmarkCircle
+        } else {
+            passwordRequiredImage[0].image = AppImages.iconUnCheckMarkCircle
+        }
+        
+        if Validation.hasUppercaseCharacter(password) {
+            passwordRequiredImage[1].image = AppImages.iconCheckmarkCircle
+        } else {
+            passwordRequiredImage[1].image = AppImages.iconUnCheckMarkCircle
+        }
+        
+        if Validation.hasSpecialCharacter(password) {
+            passwordRequiredImage[2].image = AppImages.iconCheckmarkCircle
+        } else {
+            passwordRequiredImage[2].image = AppImages.iconUnCheckMarkCircle
+        }
+    }
+    
+    @IBAction func didTapSignUp(_ sender: Any) {
     }
 }
 
 extension SignUpViewController: TitleTextFieldDelegate {
     func titleTextField(_ textField: UITextField, onChanged newText: String) {
-        print("----- newText\(newText)")
+        if (textField.tag == SignUpTextFieldTag.userName.rawValue) {
+            // TODO: validate user name
+        } else if (textField.tag == SignUpTextFieldTag.emailAddress.rawValue) {
+            // TODO: validate email
+        } else if (textField.tag == SignUpTextFieldTag.password.rawValue) {            updateRequirementPassword(password: newText)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -63,6 +91,4 @@ extension SignUpViewController: TitleTextFieldDelegate {
         }
         return true
     }
-    
-    
 }

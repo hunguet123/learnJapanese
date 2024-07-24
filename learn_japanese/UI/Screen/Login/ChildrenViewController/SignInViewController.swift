@@ -50,20 +50,20 @@ class SignInViewController: BaseViewControler {
         forgotPasswordLabel.attributedText = underlineForgotPasswordAttributedString
     }
     
-    @IBAction func tapToSignIn(_ sender: Any) {
+    @IBAction func didTapSignIn(_ sender: Any) {
         
     }
     
-    @IBAction func tapToForgotPassword(_ sender: Any) {
+    @IBAction func didTapForgotPassword(_ sender: Any) {
     }
     
-    @IBAction func tapToLoginWithGoogle(_ sender: Any) {
+    @IBAction func didTapLoginWithGoogle(_ sender: Any) {
     }
     
-    @IBAction func tapToLoginWithFacebook(_ sender: Any) {
+    @IBAction func didTapLoginWithFacebook(_ sender: Any) {
     }
     
-    @IBAction func tapToLoginWithApple(_ sender: Any) {
+    @IBAction func didTapLoginWithApple(_ sender: Any) {
     }
 }
 
