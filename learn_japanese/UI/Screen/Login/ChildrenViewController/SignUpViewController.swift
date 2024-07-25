@@ -67,7 +67,22 @@ class SignUpViewController: BaseViewControler {
         }
     }
     
+    private func checkValidateSignUp() -> Bool {
+        let password = passwordTextField.getText() ?? ""
+        let email = emailAddressTextField.getText() ?? ""
+        let userName = userNameTextField.getText() ?? ""
+        return Validation.hasMinimumLength(password)
+        && Validation.hasUppercaseCharacter(password)
+        && Validation.hasSpecialCharacter(password)
+        && Validation.isValidEmail(email)
+        && userName.count > Constant.maxLengthUserName
+    }
+    
     @IBAction func didTapSignUp(_ sender: Any) {
+        if checkValidateSignUp() == true {
+            // TODO: sign up
+            navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+        }
     }
 }
 
@@ -77,7 +92,8 @@ extension SignUpViewController: TitleTextFieldDelegate {
             // TODO: validate user name
         } else if (textField.tag == SignUpTextFieldTag.emailAddress.rawValue) {
             // TODO: validate email
-        } else if (textField.tag == SignUpTextFieldTag.password.rawValue) {            updateRequirementPassword(password: newText)
+        } else if (textField.tag == SignUpTextFieldTag.password.rawValue) {
+            updateRequirementPassword(password: newText)
         }
     }
     

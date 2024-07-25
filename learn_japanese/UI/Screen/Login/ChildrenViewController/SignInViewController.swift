@@ -51,7 +51,7 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapSignIn(_ sender: Any) {
-        
+        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
     
     @IBAction func didTapForgotPassword(_ sender: Any) {

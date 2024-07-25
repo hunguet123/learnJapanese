@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class TapableView: UIControl {
+open class TapableView: UIButton {
     @IBInspectable open var dimAlpha: CGFloat = 0.6
     @IBInspectable open var scaleOnHighlight: CGFloat = 0.8
     

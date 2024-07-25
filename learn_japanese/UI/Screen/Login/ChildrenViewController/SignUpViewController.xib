@@ -168,7 +168,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="didTapSignUp:" destination="-1" eventType="touchUpInside" id="qfU-I1-E6D"/>
+                                <action selector="didTapSignUp:" destination="-1" eventType="touchUpInside" id="fMa-Rm-lA1"/>
                             </connections>
                         </view>
                     </subviews>

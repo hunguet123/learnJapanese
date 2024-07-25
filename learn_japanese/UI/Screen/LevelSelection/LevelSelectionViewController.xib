@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LevelSelectionViewController" customModule="learn_japanese" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2Y-6a-PrH">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yourCurrentJapaneseLevel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP5-yS-S7J">
+                            <rect key="frame" x="45" y="83" width="303" height="28.666666666666671"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" name="colors/darkCharcoal"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="l10nText" value="yourCurrentJapaneseLevel"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pp-R3-LMd" customClass="TapableView" customModule="learn_japanese" customModuleProvider="target">
+                            <rect key="frame" x="41" y="149.66666666666666" width="311" height="97"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="97" id="dbU-qT-6q3"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="MP5-yS-S7J" firstAttribute="top" secondItem="K2Y-6a-PrH" secondAttribute="top" constant="83" id="3gt-CB-D13"/>
+                        <constraint firstAttribute="trailing" secondItem="1pp-R3-LMd" secondAttribute="trailing" constant="41" id="5o5-iY-osT"/>
+                        <constraint firstItem="1pp-R3-LMd" firstAttribute="leading" secondItem="K2Y-6a-PrH" secondAttribute="leading" constant="41" id="7ad-2W-BHN"/>
+                        <constraint firstAttribute="trailing" secondItem="MP5-yS-S7J" secondAttribute="trailing" constant="45" id="7tv-gD-MKZ"/>
+                        <constraint firstItem="MP5-yS-S7J" firstAttribute="leading" secondItem="K2Y-6a-PrH" secondAttribute="leading" constant="45" id="pNS-t8-Mbm"/>
+                        <constraint firstItem="1pp-R3-LMd" firstAttribute="top" secondItem="MP5-yS-S7J" secondAttribute="bottom" constant="38" id="vQI-Os-3n1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="colors/backgroundColor"/>
+            <constraints>
+                <constraint firstItem="K2Y-6a-PrH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2dW-p3-BWg"/>
+                <constraint firstItem="K2Y-6a-PrH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bkr-Hy-q45"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K2Y-6a-PrH" secondAttribute="bottom" id="Qmg-vF-TfR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K2Y-6a-PrH" secondAttribute="trailing" id="lLP-67-bql"/>
+            </constraints>
+            <point key="canvasLocation" x="-45" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="colors/backgroundColor">
+            <color red="0.98000001907348633" green="0.9649999737739563" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colors/darkCharcoal">
+            <color red="0.18400000035762787" green="0.18400000035762787" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

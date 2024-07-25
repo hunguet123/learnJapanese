@@ -8,5 +8,5 @@
 import Foundation
 
 class Constant {
-    
+    static let maxLengthUserName = 3
 }

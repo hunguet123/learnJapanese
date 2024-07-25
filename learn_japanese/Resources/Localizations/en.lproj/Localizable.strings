@@ -18,3 +18,4 @@
 "passwordRequirement1" = "Minimum 8 characters";
 "passwordRequirement2" = "An uppercase character";
 "passwordRequirement3" = "A special character";
+"yourCurrentJapaneseLevel" = "Your current Japanese level?";

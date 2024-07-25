@@ -67,7 +67,7 @@
                                 <constraint firstItem="UFY-NN-hPL" firstAttribute="top" secondItem="eDJ-Wz-wSt" secondAttribute="top" id="nLw-9X-a2w"/>
                             </constraints>
                             <connections>
-                                <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="rwX-iB-djd"/>
+                                <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="fmW-Zm-wTi"/>
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkM-qg-9xf" userLabel="ForgotPassword" customClass="TapableView" customModule="learn_japanese" customModuleProvider="target">
