@@ -51,13 +51,15 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapSignIn(_ sender: Any) {
-        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+        
     }
     
     @IBAction func didTapForgotPassword(_ sender: Any) {
     }
     
     @IBAction func didTapLoginWithGoogle(_ sender: Any) {
+        GoogleSignInManager.shared.delegate = self
+        GoogleSignInManager.shared.signIn(withPresenting: self)
     }
     
     @IBAction func didTapLoginWithFacebook(_ sender: Any) {
@@ -79,5 +81,11 @@ extension SignInViewController: TitleTextFieldDelegate {
             passwordTextField.textFieldResignFirstResponder()
         }
         return true
+    }
+}
+
+extension SignInViewController: GoogleSignInManagerDelegate {
+    func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager) {
+        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
 }

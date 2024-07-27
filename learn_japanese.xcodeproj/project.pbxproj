@@ -35,6 +35,9 @@
 		DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E32C4276D700A73895 /* AppImages.swift */; };
 		DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23E52C4276F000A73895 /* AppLotties.swift */; };
 		DF9A23EA2C4287C900A73895 /* lauch.json in Resources */ = {isa = PBXBuildFile; fileRef = DF9A23E92C4287C900A73895 /* lauch.json */; };
+		DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77E42C5544240087E361 /* GoogleSignInManager.swift */; };
+		DF9E77E72C5546050087E361 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77E62C5546050087E361 /* UserManager.swift */; };
+		DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */; };
 		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
 		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
 		DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBA804B2C402FA100467A58 /* Assets.xcassets */; };
@@ -99,6 +102,9 @@
 		DF9A23E32C4276D700A73895 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		DF9A23E52C4276F000A73895 /* AppLotties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLotties.swift; sourceTree = "<group>"; };
 		DF9A23E92C4287C900A73895 /* lauch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lauch.json; sourceTree = "<group>"; };
+		DF9E77E42C5544240087E361 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
+		DF9E77E62C5546050087E361 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFBA80442C402FA000467A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +237,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DF9E77E32C5543F20087E361 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				DF9E77E42C5544240087E361 /* GoogleSignInManager.swift */,
+				DF9E77E62C5546050087E361 /* UserManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		DFBA80362C402FA000467A58 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +271,7 @@
 		DFBA80412C402FA000467A58 /* learn_japanese */ = {
 			isa = PBXGroup;
 			children = (
+				DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */,
 				DF9A23D62C42708500A73895 /* UI */,
 				DFBA80792C4032D000467A58 /* Utils */,
 				DFBA80782C4032AB00467A58 /* Network */,
@@ -352,6 +368,7 @@
 		DFBA80792C4032D000467A58 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DF9E77E32C5543F20087E361 /* Firebase */,
 				DF9A23D42C426F2400A73895 /* Constant.swift */,
 				DFFF30D72C51638100DADE4A /* Validation.swift */,
 			);
@@ -491,6 +508,7 @@
 				DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */,
 				DFFF30DD2C52A93E00DADE4A /* LevelSelectionViewController.xib in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
+				DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */,
 				DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */,
 				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
 			);
@@ -638,8 +656,10 @@
 				DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */,
 				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
+				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
+				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
@@ -834,7 +854,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japanese";
+				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -866,7 +886,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "hunguet21.learn-japanese";
+				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

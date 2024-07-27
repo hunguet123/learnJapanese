@@ -7,13 +7,23 @@
 
 import UIKit
 import L10n_swift
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.config()
         return true
+    }
+    
+    func config() {
+        self.configFirebase()
+    }
+    
+    func configFirebase() {
+        FirebaseApp.configure()
     }
 
     // MARK: UISceneSession Lifecycle

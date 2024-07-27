@@ -8,6 +8,10 @@ target 'learn_japanese' do
   pod 'lottie-ios'
   pod 'FirebaseCore'
   pod 'FirebaseAuth'
+  pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
   pod 'L10n-swift', '~> 5.10'
 
   target 'learn_japaneseTests' do
