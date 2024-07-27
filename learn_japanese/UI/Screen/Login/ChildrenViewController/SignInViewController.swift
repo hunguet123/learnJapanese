@@ -63,6 +63,8 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapLoginWithFacebook(_ sender: Any) {
+        FacebookSignInManager.shared.delegate = self
+        FacebookSignInManager.shared.signIn(withPresenting: self)
     }
     
     @IBAction func didTapLoginWithApple(_ sender: Any) {
@@ -86,6 +88,13 @@ extension SignInViewController: TitleTextFieldDelegate {
 
 extension SignInViewController: GoogleSignInManagerDelegate {
     func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager) {
+        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+    }
+}
+
+extension SignInViewController: FacebookSignInDelegate {
+    func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
+        print("successfully")
         navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
 }
