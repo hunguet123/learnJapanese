@@ -19,3 +19,5 @@
 "passwordRequirement2" = "An uppercase character";
 "passwordRequirement3" = "A special character";
 "yourCurrentJapaneseLevel" = "Your current Japanese level?";
+"loginError" = "Login error";
+"signOut" = "Sign out";

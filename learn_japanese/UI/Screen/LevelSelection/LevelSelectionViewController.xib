@@ -44,14 +44,27 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2u-nw-Jvu">
+                            <rect key="frame" x="154.66666666666666" y="360" width="83.666666666666657" height="39"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="signOut"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="l10nTitle" value="signOut"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapSignOut:" destination="-1" eventType="touchUpInside" id="QI6-RO-EvU"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="f2u-nw-Jvu" firstAttribute="centerX" secondItem="K2Y-6a-PrH" secondAttribute="centerX" id="2dW-ex-SD0"/>
                         <constraint firstItem="MP5-yS-S7J" firstAttribute="top" secondItem="K2Y-6a-PrH" secondAttribute="top" constant="83" id="3gt-CB-D13"/>
                         <constraint firstAttribute="trailing" secondItem="1pp-R3-LMd" secondAttribute="trailing" constant="41" id="5o5-iY-osT"/>
                         <constraint firstItem="1pp-R3-LMd" firstAttribute="leading" secondItem="K2Y-6a-PrH" secondAttribute="leading" constant="41" id="7ad-2W-BHN"/>
                         <constraint firstAttribute="trailing" secondItem="MP5-yS-S7J" secondAttribute="trailing" constant="45" id="7tv-gD-MKZ"/>
                         <constraint firstItem="MP5-yS-S7J" firstAttribute="leading" secondItem="K2Y-6a-PrH" secondAttribute="leading" constant="45" id="pNS-t8-Mbm"/>
+                        <constraint firstItem="f2u-nw-Jvu" firstAttribute="centerY" secondItem="K2Y-6a-PrH" secondAttribute="centerY" id="uhs-xG-WjH"/>
                         <constraint firstItem="1pp-R3-LMd" firstAttribute="top" secondItem="MP5-yS-S7J" secondAttribute="bottom" constant="38" id="vQI-Os-3n1"/>
                     </constraints>
                 </view>

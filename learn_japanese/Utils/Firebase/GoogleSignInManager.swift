@@ -43,14 +43,21 @@ class GoogleSignInManager {
                 .credential(withIDToken: idToken,
                             accessToken: user.accessToken.tokenString)
             
-            Auth.auth().signIn(with: credential) { result, error in
-                if error == nil {
-                    print("Sign in successfully!")
-                    UserManager.shared.saveUserByFirebaseAuth()
-                    self.delegate?.googleSignInManagerDidSignInSuccessfully(self)
-                } else {
-                    print("Sign in failed with error \(error!.localizedDescription)")
+            Auth.auth().signIn(with: credential) { [weak self] result, error in
+                if let error = error {
+                    print("Login error: \(error.localizedDescription)")
+                    let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okayAction)
+                    viewController.present(alertController, animated: true, completion: nil)
+                    return
                 }
+                
+                UserManager.shared.saveUserByFirebaseAuth()
+                if let self = self {
+                    self.delegate?.googleSignInManagerDidSignInSuccessfully(self)
+                }
+
             }
         }
     }

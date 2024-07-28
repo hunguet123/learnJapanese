@@ -23,4 +23,6 @@ class LocalizationText {
     static let passwordRequirement2 = "passwordRequirement2".l10n()
     static let passwordRequirement3 = "passwordRequirement3".l10n()
     static let yourCurrentJapaneseLevel = "yourCurrentJapaneseLevel".l10n()
+    static let loginError = "loginError".l10n();
+    static let signOut = "signOut".l10n()
 }

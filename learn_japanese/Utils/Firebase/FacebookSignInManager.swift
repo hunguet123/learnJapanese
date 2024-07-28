@@ -34,7 +34,7 @@ class FacebookSignInManager {
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
 
             // Perform login by calling Firebase APIs
-            Auth.auth().signIn(with: credential, completion: { (user, error) in
+            Auth.auth().signIn(with: credential, completion: { [weak self] (user, error) in
                 if let error = error {
                     print("Login error: \(error.localizedDescription)")
                     let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -42,11 +42,12 @@ class FacebookSignInManager {
                     alertController.addAction(okayAction)
                     viewController.present(alertController, animated: true, completion: nil)
                     return
-                } else {
-                    UserManager.shared.saveUserByFirebaseAuth()
+                }
+                                
+                UserManager.shared.saveUserByFirebaseAuth()
+                if let self = self {
                     self.delegate?.facebookSignInManagerDidSignInSuccessfully(self)
                 }
-
             })
 
         }

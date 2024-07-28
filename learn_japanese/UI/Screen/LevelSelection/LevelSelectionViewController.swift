@@ -14,4 +14,9 @@ class LevelSelectionViewController: BaseViewControler {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func didTapSignOut(_ sender: UIButton) {
+        if UserManager.shared.signOut() {
+            navigationController?.popAndPush(viewController: LoginViewController(), animated: true)
+        }
+    }
 }

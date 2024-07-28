@@ -19,4 +19,5 @@
 "passwordRequirement2" = "Một ký tự in hoa";
 "passwordRequirement3" = "Một ký tự đặc biệt";
 "yourCurrentJapaneseLevel" = "Trình độ tiếng Nhật hiện tại của bạn?";
-
+"loginError" = "Đăng nhập thất bại";
+"signOut" = "Đăng xuất";

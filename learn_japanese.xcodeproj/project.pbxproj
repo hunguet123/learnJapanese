@@ -37,6 +37,7 @@
 		DF9E77E72C5546050087E361 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77E62C5546050087E361 /* UserManager.swift */; };
 		DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */; };
 		DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77EC2C5553270087E361 /* FacebookSignInManager.swift */; };
+		DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77EF2C55E51A0087E361 /* EmailPasswordSignInManager.swift */; };
 		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
 		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
 		DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBA804B2C402FA100467A58 /* Assets.xcassets */; };
@@ -101,6 +102,7 @@
 		DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF9E77EC2C5553270087E361 /* FacebookSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignInManager.swift; sourceTree = "<group>"; };
 		DF9E77EE2C55553E0087E361 /* learn_japanese.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = learn_japanese.entitlements; sourceTree = "<group>"; };
+		DF9E77EF2C55E51A0087E361 /* EmailPasswordSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordSignInManager.swift; sourceTree = "<group>"; };
 		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFBA80442C402FA000467A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				DF9E77E42C5544240087E361 /* GoogleSignInManager.swift */,
 				DF9E77E62C5546050087E361 /* UserManager.swift */,
 				DF9E77EC2C5553270087E361 /* FacebookSignInManager.swift */,
+				DF9E77EF2C55E51A0087E361 /* EmailPasswordSignInManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
+				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,

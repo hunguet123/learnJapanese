@@ -20,6 +20,10 @@
 	<string>9ae9e1c95b9b8c2410e4dfc53a957045</string>
 	<key>FacebookDisplayName</key>
 	<string>Hello Japanese</string>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<string>TRUE</string>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<string>TRUE</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
