@@ -20,9 +20,14 @@ class FacebookSignInManager {
 
     func signIn(withPresenting viewController: UIViewController) {
         let loginManager = LoginManager()
-        loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (result, error) in
+        loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { [weak self] (result, error) in
             if let error = error {
                 print("Failed to login: \(error.localizedDescription)")
+                return
+            }
+            
+            if result?.isCancelled == true {
+                print("cancelled login facebook")
                 return
             }
 

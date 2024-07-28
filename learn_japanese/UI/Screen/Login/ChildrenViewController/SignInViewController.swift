@@ -51,7 +51,10 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapSignIn(_ sender: Any) {
-        
+        EmailPasswordSignInManager.shared.delegate = self
+        if let email = emailAddressTextField.getText(), let password = passwordTextField.getText() {
+            EmailPasswordSignInManager.shared.signIn(email, password, withPresenting: self)
+        }
     }
     
     @IBAction func didTapForgotPassword(_ sender: Any) {
@@ -94,7 +97,12 @@ extension SignInViewController: GoogleSignInManagerDelegate {
 
 extension SignInViewController: FacebookSignInDelegate {
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
-        print("successfully")
+        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+    }
+}
+
+extension SignInViewController: EmailPasswordSignInDelegate {
+    func emailPasswordSignInManagerDidSignInSuccessfully(_ emailPasswordSignInManager: EmailPasswordSignInManager) {
         navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
 }
