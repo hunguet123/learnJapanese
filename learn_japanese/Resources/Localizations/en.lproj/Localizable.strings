@@ -21,3 +21,5 @@
 "yourCurrentJapaneseLevel" = "Your current Japanese level?";
 "loginError" = "Login error";
 "signOut" = "Sign out";
+"sendMailError" = "Send mail error";
+"signUpError" = "Sign up error";

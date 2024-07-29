@@ -24,8 +24,7 @@ class EmailPasswordSignInManager {
             }
             
             if let error = error {
-                print("Login error: \(error.localizedDescription)")
-                let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                let alertController = UIAlertController(title: LocalizationText.loginError, message: error.localizedDescription, preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okayAction)
                 viewController.present(alertController, animated: true, completion: nil)

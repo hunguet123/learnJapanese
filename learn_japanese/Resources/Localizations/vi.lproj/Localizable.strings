@@ -21,3 +21,5 @@
 "yourCurrentJapaneseLevel" = "Trình độ tiếng Nhật hiện tại của bạn?";
 "loginError" = "Đăng nhập thất bại";
 "signOut" = "Đăng xuất";
+"sendMailError" = "Gửi mail thất bại";
+"signUpError" = "Đăng ký thất bại";
