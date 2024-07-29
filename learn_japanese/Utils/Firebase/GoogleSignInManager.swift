@@ -12,6 +12,7 @@ import GoogleSignIn
 
 protocol GoogleSignInManagerDelegate: AnyObject {
     func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager)
+    func googleSignInManagerDidSignInFail(_ googleSignInManager: GoogleSignInManager)
 }
 
 class GoogleSignInManager {
@@ -20,20 +21,27 @@ class GoogleSignInManager {
     
     func signIn(withPresenting viewController: UIViewController) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
+            delegate?.googleSignInManagerDidSignInFail(self)
             return
         }
         
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
         
-        GIDSignIn.sharedInstance.signIn(withPresenting: viewController) { result, error in
+        GIDSignIn.sharedInstance.signIn(withPresenting: viewController) { [weak self] result, error in
+            guard let self = self else {
+                return
+            }
+            
             guard error == nil else {
                 print("failed to sign in with error \(error?.localizedDescription)")
+                self.delegate?.googleSignInManagerDidSignInFail(self)
                 return
             }
             
             guard let user = result?.user, let idToken = user.idToken?.tokenString else {
                 print("failed to get idToken")
+                self.delegate?.googleSignInManagerDidSignInFail(self)
                 return
             }
             
@@ -50,7 +58,10 @@ class GoogleSignInManager {
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okayAction)
                     viewController.present(alertController, animated: true, completion: nil)
-                    return
+                    if let self = self {
+                        delegate?.googleSignInManagerDidSignInFail(self)
+                        return
+                    }
                 }
                 
                 UserManager.shared.saveUserByFirebaseAuth()

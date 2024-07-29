@@ -12,6 +12,7 @@ target 'learn_japanese' do
   pod 'GoogleSignIn'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
+  pod 'SVProgressHUD'
   pod 'L10n-swift', '~> 5.10'
 
   post_install do |installer|

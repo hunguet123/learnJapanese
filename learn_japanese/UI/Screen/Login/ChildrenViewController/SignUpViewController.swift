@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 enum SignUpTextFieldTag: Int {
     case userName = 1
@@ -80,8 +81,11 @@ class SignUpViewController: BaseViewControler {
     
     @IBAction func didTapSignUp(_ sender: Any) {
         if checkValidateSignUp() == true {
-            // TODO: sign up
-            navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+            SVProgressHUD.show()
+            let password = passwordTextField.getText() ?? ""
+            let email = emailAddressTextField.getText() ?? ""
+            SignUpManager.shared.delegate = self
+            SignUpManager.shared.signUp(email, password, withPresenting: self)
         }
     }
 }
@@ -106,5 +110,16 @@ extension SignUpViewController: TitleTextFieldDelegate {
             passwordTextField.textFieldResignFirstResponder()
         }
         return true
+    }
+}
+
+extension SignUpViewController: SignUpDelegate {
+    func signUpManagerDidSignUpSuccessfully(_ signUpManage: SignUpManager) {
+        SVProgressHUD.dismiss()
+        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+    }
+    
+    func signUpManagerDidSignUpFaild(_ signUpManage: SignUpManager) {
+        SVProgressHUD.dismiss()
     }
 }

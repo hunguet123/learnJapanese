@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 enum SignInTextFieldTag: Int {
     case emailAddress = 1
@@ -51,6 +52,7 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapSignIn(_ sender: Any) {
+        SVProgressHUD.show()
         EmailPasswordSignInManager.shared.delegate = self
         if let email = emailAddressTextField.getText(), let password = passwordTextField.getText() {
             EmailPasswordSignInManager.shared.signIn(email, password, withPresenting: self)
@@ -61,11 +63,13 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapLoginWithGoogle(_ sender: Any) {
+        SVProgressHUD.show()
         GoogleSignInManager.shared.delegate = self
         GoogleSignInManager.shared.signIn(withPresenting: self)
     }
     
     @IBAction func didTapLoginWithFacebook(_ sender: Any) {
+        SVProgressHUD.show()
         FacebookSignInManager.shared.delegate = self
         FacebookSignInManager.shared.signIn(withPresenting: self)
     }
@@ -90,19 +94,34 @@ extension SignInViewController: TitleTextFieldDelegate {
 }
 
 extension SignInViewController: GoogleSignInManagerDelegate {
+    func googleSignInManagerDidSignInFail(_ googleSignInManager: GoogleSignInManager) {
+        SVProgressHUD.dismiss()
+    }
+    
     func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager) {
+        SVProgressHUD.dismiss()
         navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
 }
 
 extension SignInViewController: FacebookSignInDelegate {
+    func facebookSignInManagerDidSignInFail(_ facebookSignInManager: FacebookSignInManager) {
+        SVProgressHUD.dismiss()
+    }
+    
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
+        SVProgressHUD.dismiss()
         navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
 }
 
 extension SignInViewController: EmailPasswordSignInDelegate {
+    func emailPasswordSignInManagerDidSignInFail(_ emailPasswordSignInManager: EmailPasswordSignInManager) {
+        SVProgressHUD.dismiss()
+    }
+    
     func emailPasswordSignInManagerDidSignInSuccessfully(_ emailPasswordSignInManager: EmailPasswordSignInManager) {
+        SVProgressHUD.dismiss()
         navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
     }
 }

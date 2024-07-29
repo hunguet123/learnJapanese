@@ -12,6 +12,7 @@ import FirebaseAuth
 
 protocol FacebookSignInDelegate: AnyObject {
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager)
+    func facebookSignInManagerDidSignInFail(_ facebookSignInManager: FacebookSignInManager)
 }
 
 class FacebookSignInManager {
@@ -21,18 +22,25 @@ class FacebookSignInManager {
     func signIn(withPresenting viewController: UIViewController) {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { [weak self] (result, error) in
+            guard let self = self else {
+                return
+            }
+            
             if let error = error {
                 print("Failed to login: \(error.localizedDescription)")
+                self.delegate?.facebookSignInManagerDidSignInFail(self)
                 return
             }
             
             if result?.isCancelled == true {
                 print("cancelled login facebook")
+                self.delegate?.facebookSignInManagerDidSignInFail(self)
                 return
             }
 
             guard let accessToken = AccessToken.current else {
                 print("Failed to get access token")
+                self.delegate?.facebookSignInManagerDidSignInFail(self)
                 return
             }
 
@@ -46,7 +54,10 @@ class FacebookSignInManager {
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okayAction)
                     viewController.present(alertController, animated: true, completion: nil)
-                    return
+                    if let self = self {
+                        self.delegate?.facebookSignInManagerDidSignInFail(self)
+                        return
+                    }
                 }
                                 
                 UserManager.shared.saveUserByFirebaseAuth()
