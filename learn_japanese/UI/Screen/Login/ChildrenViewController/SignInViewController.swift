@@ -60,11 +60,7 @@ class SignInViewController: BaseViewControler {
     }
     
     @IBAction func didTapForgotPassword(_ sender: Any) {
-        // TODO: fake forgot password
-        ForgotPasswordManager.shared.delegate = self
-        if let email = emailAddressTextField.getText() {
-            ForgotPasswordManager.shared.sendPasswordReset(withEmail: email, self)
-        }
+        navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
     }
     
     @IBAction func didTapLoginWithGoogle(_ sender: Any) {
@@ -128,15 +124,5 @@ extension SignInViewController: EmailPasswordSignInDelegate {
     func emailPasswordSignInManagerDidSignInSuccessfully(_ emailPasswordSignInManager: EmailPasswordSignInManager) {
         SVProgressHUD.dismiss()
         navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
-    }
-}
-
-extension SignInViewController: ForgotPasswordDelegate {
-    func forgotPasswordManagerDidSuccessfully(_ forgotPasswordManager: ForgotPasswordManager) {
-        
-    }
-    
-    func forgotPasswordManagerDidFail(_ forgotPasswordManager: ForgotPasswordManager) {
-        
     }
 }

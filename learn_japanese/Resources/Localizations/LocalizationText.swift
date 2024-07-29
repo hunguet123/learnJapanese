@@ -27,4 +27,7 @@ class LocalizationText {
     static let signOut = "signOut".l10n()
     static let sendMailError = "sendMailError".l10n()
     static let signUpError = "signUpError".l10n()
+    static let sendEmail = "sendEmail".l10n()
+    static let sentEmail = "sentEmail".l10n()
+    static let emailSentSuccessfully = "emailSentSuccessfully".l10n()
 }

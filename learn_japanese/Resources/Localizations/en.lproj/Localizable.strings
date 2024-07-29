@@ -23,3 +23,6 @@
 "signOut" = "Sign out";
 "sendMailError" = "Send mail error";
 "signUpError" = "Sign up error";
+"sendEmail" = "Send email";
+"sentEmail" = "Password reset link sent to";
+"emailSentSuccessfully" = "Email sent successfully";

@@ -23,3 +23,6 @@
 "signOut" = "Đăng xuất";
 "sendMailError" = "Gửi mail thất bại";
 "signUpError" = "Đăng ký thất bại";
+"sendEmail" = "Gửi email";
+"sentEmail" = "Đã gửi link đặt lại mật khẩu đến";
+"emailSentSuccessfully" = "Gửi email thành công";

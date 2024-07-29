@@ -18,7 +18,11 @@ class ForgotPasswordManager {
     
     
     func sendPasswordReset(withEmail email: String, _ viewController: UIViewController){
-        Auth.auth().sendPasswordReset(withEmail: email) { error in
+        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
+            guard let self = self else {
+                return
+            }
+            
             if let error = error {
                 let alertController = UIAlertController(title: LocalizationText.sendMailError, message: error.localizedDescription, preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -27,6 +31,8 @@ class ForgotPasswordManager {
                 self.delegate?.forgotPasswordManagerDidFail(self)
                 return
             }
+            
+            self.delegate?.forgotPasswordManagerDidSuccessfully(self)
         }
     }
 }

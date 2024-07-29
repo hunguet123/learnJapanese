@@ -40,6 +40,8 @@
 		DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77EF2C55E51A0087E361 /* EmailPasswordSignInManager.swift */; };
 		DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77F12C57CDFA0087E361 /* SignUpManager.swift */; };
 		DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77F32C57D7710087E361 /* ForgotPasswordManager.swift */; };
+		DF9E77F82C57DE9A0087E361 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9E77F72C57DE9A0087E361 /* ForgotPasswordViewController.xib */; };
+		DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77F62C57DE9A0087E361 /* ForgotPasswordViewController.swift */; };
 		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
 		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
 		DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBA804B2C402FA100467A58 /* Assets.xcassets */; };
@@ -107,6 +109,8 @@
 		DF9E77EF2C55E51A0087E361 /* EmailPasswordSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordSignInManager.swift; sourceTree = "<group>"; };
 		DF9E77F12C57CDFA0087E361 /* SignUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
 		DF9E77F32C57D7710087E361 /* ForgotPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordManager.swift; sourceTree = "<group>"; };
+		DF9E77F62C57DE9A0087E361 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		DF9E77F72C57DE9A0087E361 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFBA80442C402FA000467A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,15 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		DF9E77F52C57DE700087E361 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				DF9E77F62C57DE9A0087E361 /* ForgotPasswordViewController.swift */,
+				DF9E77F72C57DE9A0087E361 /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		DFBA80362C402FA000467A58 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +319,7 @@
 		DFBA80732C40304D00467A58 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DF9E77F52C57DE700087E361 /* ForgotPassword */,
 				DFFF30D92C52A8A600DADE4A /* LevelSelection */,
 				DF020F8C2C45637900DA5483 /* Login */,
 			);
@@ -504,6 +518,7 @@
 				DFFF30DD2C52A93E00DADE4A /* LevelSelectionViewController.xib in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
 				DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */,
+				DF9E77F82C57DE9A0087E361 /* ForgotPasswordViewController.xib in Resources */,
 				DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */,
 				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
 			);
@@ -598,6 +613,7 @@
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
+				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
