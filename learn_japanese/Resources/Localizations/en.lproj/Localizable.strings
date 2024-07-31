@@ -26,3 +26,10 @@
 "sendEmail" = "Send email";
 "sentEmail" = "Password reset link sent to";
 "emailSentSuccessfully" = "Email sent successfully";
+"next" = "Next";
+"startJapanese" = "Start Japanese";
+"startJapaneseDescription" = "Introduction, hiragana furigana and lessons for beginners";
+"basicJapanese" = "Basic Japanese";
+"basicJapaneseDescription" = "Basic level lessons - pre-intermediate";
+"intermediateJapanese" = "Intermediate Japanese";
+"intermediateJapaneseDescription" = "Intermediate level lessons";

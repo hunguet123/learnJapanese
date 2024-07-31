@@ -26,3 +26,10 @@
 "sendEmail" = "Gửi email";
 "sentEmail" = "Đã gửi link đặt lại mật khẩu đến";
 "emailSentSuccessfully" = "Gửi email thành công";
+"next" = "Tiếp tục";
+"startJapanese" = "Tiếng Nhật mới bắt đầu";
+"startJapaneseDescription" = "Giới thiệu, bảng chữ cái và các bài cho người mới bắt đầu";
+"basicJapanese" = "Tiếng Nhật cơ bản";
+"basicJapaneseDescription" = "Các bài học trình độ cơ bản - tiền trung cấp";
+"intermediateJapanese" = "Tiếng Nhật trung cấp";
+"intermediateJapaneseDescription" = "Các bài học trình độ trung cấp";

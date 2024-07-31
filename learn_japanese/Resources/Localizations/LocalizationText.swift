@@ -30,4 +30,11 @@ class LocalizationText {
     static let sendEmail = "sendEmail".l10n()
     static let sentEmail = "sentEmail".l10n()
     static let emailSentSuccessfully = "emailSentSuccessfully".l10n()
+    static let next = "next".l10n()
+    static let startJapanese = "startJapanese".l10n()
+    static let basicJapanese = "basicJapanese".l10n()
+    static let intermediateJapanese = "intermediateJapanese".l10n()
+    static let startJapaneseDescription = "startJapaneseDescription".l10n()
+    static let basicJapaneseDescription = "basicJapaneseDescription".l10n()
+    static let intermediateJapaneseDescription = "intermediateJapaneseDescription".l10n()
 }
