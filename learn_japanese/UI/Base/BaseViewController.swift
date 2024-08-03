@@ -27,6 +27,10 @@ open class BaseViewControler: UIViewController {
         }
     }
     
+    open override func viewDidLoad() {
+        setUpGesture()
+    }
+    
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         isDisplaying = true
@@ -55,6 +59,15 @@ open class BaseViewControler: UIViewController {
     
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+    
+    private func setUpGesture() {
+        let tapHiddenKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapHiddenKeyboard)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     // MARK: - Alert

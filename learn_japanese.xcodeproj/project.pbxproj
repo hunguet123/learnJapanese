@@ -48,6 +48,12 @@
 		DFBA805A2C402FA200467A58 /* learn_japaneseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */; };
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
+		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
+		DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */; };
+		DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */; };
+		DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF809302C5E4AE500F1EB2C /* HomeViewControllerExtension.swift */; };
+		DFF809352C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF809342C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib */; };
+		DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF809332C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift */; };
 		DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */; };
 		DFFF30D82C51638100DADE4A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF30D72C51638100DADE4A /* Validation.swift */; };
 		DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF30DA2C52A93E00DADE4A /* LevelSelectionViewController.swift */; };
@@ -121,6 +127,12 @@
 		DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learn_japaneseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DFF809302C5E4AE500F1EB2C /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
+		DFF809332C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFF809342C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapableView.swift; sourceTree = "<group>"; };
 		DFFF30D72C51638100DADE4A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		DFFF30DA2C52A93E00DADE4A /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +331,7 @@
 		DFBA80732C40304D00467A58 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DFF809292C5E346600F1EB2C /* Home */,
 				DF9E77F52C57DE700087E361 /* ForgotPassword */,
 				DFFF30D92C52A8A600DADE4A /* LevelSelection */,
 				DF020F8C2C45637900DA5483 /* Login */,
@@ -384,6 +397,27 @@
 			children = (
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		DFF809292C5E346600F1EB2C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DFF809322C5E4B1700F1EB2C /* Cell */,
+				DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */,
+				DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */,
+				DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */,
+				DFF809302C5E4AE500F1EB2C /* HomeViewControllerExtension.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DFF809322C5E4B1700F1EB2C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DFF809332C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift */,
+				DFF809342C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DFFF30D92C52A8A600DADE4A /* LevelSelection */ = {
@@ -521,6 +555,8 @@
 				DF9E77F82C57DE9A0087E361 /* ForgotPasswordViewController.xib in Resources */,
 				DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */,
 				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
+				DFF809352C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib in Resources */,
+				DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +625,8 @@
 			files = (
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,
+				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
+				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
@@ -596,6 +634,7 @@
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
+				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
 				DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
@@ -611,6 +650,7 @@
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
+				DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,

@@ -14,4 +14,6 @@ class AppImages {
     static let iconApple = UIImage(named: "iconApple")
     static let iconCheckmarkCircle = UIImage(named: "iconCheckmarkCircle")
     static let iconUnCheckMarkCircle = UIImage(named: "iconUnCheckMarkCircle")
+    static let iconUser = UIImage(named: "iconUser")
+    static let imageFlagJapan = UIImage(named: "imageFlagJapan")
 }

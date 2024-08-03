@@ -16,6 +16,7 @@ class SplashViewController: BaseViewControler {
         animationView.animation = LottieAnimation.named(AppLotties.lauch)
         animationView.loopMode = .playOnce
         animationView.animationSpeed = 0.5
+        animationView.contentMode = .scaleAspectFill
         animationView.play { [weak self] _ in
             guard let self = self else {
                 return

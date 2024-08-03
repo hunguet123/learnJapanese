@@ -32,4 +32,8 @@ class AppColors {
     static let darkCharcoal = UIColor(named: "colors/darkCharcoal")
     /// FFE17E
     static let jasmine = UIColor(named: "colors/jasmine")
+    /// CBCBCB
+    static let chineseSliver = UIColor(named: "colors/chineseSliver")
+    /// FF56D0
+    static let lightDeepPink = UIColor(named: "colors/lightDeepPink")
 }

@@ -22,7 +22,6 @@ class LoginViewController: BaseViewControler{
         super.viewDidLoad()
         setupUI()
         setUpChilrenViewController()
-        setUpGesture()
     }
     
     private func setupUI() {
@@ -45,15 +44,6 @@ class LoginViewController: BaseViewControler{
         addChild(signUpViewController)
         signUpViewController.view.fixInView(signUpView)
         signUpViewController.didMove(toParent: self)
-    }
-    
-    private func setUpGesture() {
-        let tapHiddenKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapHiddenKeyboard)
-    }
-    
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
     }
 }
 
