@@ -17,6 +17,7 @@ class HomeViewController: BaseViewControler {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpGradientLayer()
+        fetchData()
         setupUI()
     }
 
@@ -24,6 +25,10 @@ class HomeViewController: BaseViewControler {
     private func setupUI() {
         levelLabel.text = homeViewModel?.japaneseLevel.value
         lesssonsCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "HomeCollectionViewCell")
+    }
+    
+    private func fetchData() {
+        self.homeViewModel?.fetchLesssons()
     }
     
     private func setUpGradientLayer() {
