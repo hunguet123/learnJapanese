@@ -23,10 +23,10 @@ class HomeViewModel {
     func fetchLesssons() {
         // TODO: fakedata
         lessons = [
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Hiragana"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Katakana"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Pronuciation"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Katakana"),
+            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 8, isCanLearn: true, name: "Hiragana"),
+            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Katakana"),
+            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Pronuciation"),
+            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Katakana"),
             LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Pronuciation"),
             LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Katakana"),
             LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Pronuciation"),

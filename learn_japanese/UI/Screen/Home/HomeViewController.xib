@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpH-kB-lXq" customClass="TapableView" customModule="learn_japanese" customModuleProvider="target">
-                            <rect key="frame" x="169" y="10" width="55.333333333333343" height="36.333333333333336"/>
+                            <rect key="frame" x="155" y="10" width="83.333333333333314" height="36.333333333333336"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-XQ-rHf">
                                     <rect key="frame" x="8" y="7.9999999999999982" width="39.333333333333336" height="20.333333333333329"/>
@@ -34,12 +34,21 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPolygon" translatesAutoresizingMaskIntoConstraints="NO" id="osA-89-diD">
+                                    <rect key="frame" x="55.333333333333343" y="9.6666666666666714" width="20" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="osA-89-diD" secondAttribute="height" multiplier="20:17" id="HEl-xw-cXN"/>
+                                        <constraint firstAttribute="height" constant="17" id="v4G-rq-K10"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Kxd-XQ-rHf" firstAttribute="leading" secondItem="hpH-kB-lXq" secondAttribute="leading" constant="8" id="39I-Li-dj4"/>
                                 <constraint firstItem="Kxd-XQ-rHf" firstAttribute="top" secondItem="hpH-kB-lXq" secondAttribute="top" constant="8" id="54i-cf-UGc"/>
-                                <constraint firstAttribute="trailing" secondItem="Kxd-XQ-rHf" secondAttribute="trailing" constant="8" id="DOZ-1F-C3g"/>
+                                <constraint firstItem="osA-89-diD" firstAttribute="centerY" secondItem="hpH-kB-lXq" secondAttribute="centerY" id="Dif-qe-ivP"/>
+                                <constraint firstAttribute="trailing" secondItem="osA-89-diD" secondAttribute="trailing" constant="8" id="Rwf-W1-yW4"/>
+                                <constraint firstItem="osA-89-diD" firstAttribute="leading" secondItem="Kxd-XQ-rHf" secondAttribute="trailing" constant="8" id="qnX-XW-g53"/>
                                 <constraint firstAttribute="bottom" secondItem="Kxd-XQ-rHf" secondAttribute="bottom" constant="8" id="r8K-7G-eYF"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
@@ -79,7 +88,7 @@
                             </constraints>
                         </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h5C-Ag-Gkk">
-                            <rect key="frame" x="0.0" y="76.333333333333314" width="393" height="682.66666666666674"/>
+                            <rect key="frame" x="0.0" y="46.333333333333314" width="393" height="712.66666666666674"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="s6r-Eh-3ZL">
                                 <size key="itemSize" width="128" height="128"/>
@@ -103,7 +112,7 @@
                         <constraint firstItem="hpH-kB-lXq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="snA-Kf-XhH" secondAttribute="leading" id="JBN-d3-7c3"/>
                         <constraint firstItem="Qvc-8C-RN9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hpH-kB-lXq" secondAttribute="trailing" constant="10" id="JtR-KX-WSq"/>
                         <constraint firstItem="hpH-kB-lXq" firstAttribute="top" secondItem="WjO-83-2hW" secondAttribute="top" constant="10" id="KbU-4Q-tUm"/>
-                        <constraint firstItem="h5C-Ag-Gkk" firstAttribute="top" secondItem="hpH-kB-lXq" secondAttribute="bottom" constant="30" id="OBF-bW-E72"/>
+                        <constraint firstItem="h5C-Ag-Gkk" firstAttribute="top" secondItem="hpH-kB-lXq" secondAttribute="bottom" id="OBF-bW-E72"/>
                         <constraint firstItem="hpH-kB-lXq" firstAttribute="centerX" secondItem="WjO-83-2hW" secondAttribute="centerX" id="ccv-tF-hWw"/>
                         <constraint firstItem="Qvc-8C-RN9" firstAttribute="top" secondItem="WjO-83-2hW" secondAttribute="top" constant="10" id="gla-HC-W1c"/>
                         <constraint firstAttribute="trailing" secondItem="h5C-Ag-Gkk" secondAttribute="trailing" id="hsC-8V-TpH"/>
@@ -122,6 +131,7 @@
         </view>
     </objects>
     <resources>
+        <image name="iconPolygon" width="17.666666030883789" height="13"/>
         <image name="iconUser" width="34" height="34"/>
         <image name="imageFlagJapan" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">

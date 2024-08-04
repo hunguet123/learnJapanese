@@ -17,7 +17,7 @@ extension HomeViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell {
-            cell.bind(lessonOverviewViewModel: self.homeViewModel?.lessons[indexPath.row])
+            cell.bind(lessonOverviewViewModel: self.homeViewModel?.lessons[indexPath.row], cellForItemAt: indexPath)
             return cell
         }
         
@@ -26,11 +26,11 @@ extension HomeViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width) / 2
-        return CGSize(width: width, height: width * 1.5)
+        return CGSize(width: width, height: width * 1.7)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: -80, left: 10, bottom: 10, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

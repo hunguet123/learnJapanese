@@ -16,4 +16,5 @@ class AppImages {
     static let iconUnCheckMarkCircle = UIImage(named: "iconUnCheckMarkCircle")
     static let iconUser = UIImage(named: "iconUser")
     static let imageFlagJapan = UIImage(named: "imageFlagJapan")
+    static let imageLessonLocked = UIImage(named: "imageLessonLocked")
 }
