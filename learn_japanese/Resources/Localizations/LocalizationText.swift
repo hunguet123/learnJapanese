@@ -37,4 +37,9 @@ class LocalizationText {
     static let startJapaneseDescription = "startJapaneseDescription".l10n()
     static let basicJapaneseDescription = "basicJapaneseDescription".l10n()
     static let intermediateJapaneseDescription = "intermediateJapaneseDescription".l10n()
+    static let learn = "learn".l10n()
+    static let review = "review".l10n()
+    static let dictionary = "dictionary".l10n()
+    static let profile = "profile".l10n()
+    static let lesson = "lesson".l10n()
 }

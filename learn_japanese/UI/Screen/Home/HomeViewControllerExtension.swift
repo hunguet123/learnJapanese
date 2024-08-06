@@ -17,7 +17,8 @@ extension HomeViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell {
-            cell.bind(lessonOverviewViewModel: self.homeViewModel?.lessons[indexPath.row], cellForItemAt: indexPath)
+            cell.delegate = self
+            cell.bind(lessonOverviewModel: self.homeViewModel?.lessons[indexPath.row], cellForItemAt: indexPath)
             return cell
         }
         
@@ -35,5 +36,15 @@ extension HomeViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+}
+
+extension HomeViewController: HomeCollectionViewDelegate {
+    func homeCollectionView(_ homeCollectionViewCell: HomeCollectionViewCell, didSelectAt: Int) {
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
+        tabBarController.lessonId = self.homeViewModel?.lessons[didSelectAt].id
+        tabBarController.lessonName = self.homeViewModel?.lessons[didSelectAt].name
+        self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }

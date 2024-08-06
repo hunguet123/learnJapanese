@@ -33,3 +33,8 @@
 "basicJapaneseDescription" = "Basic level lessons - pre-intermediate";
 "intermediateJapanese" = "Intermediate Japanese";
 "intermediateJapaneseDescription" = "Intermediate level lessons";
+"learn" = "Learn";
+"review" = "Review";
+"dictionary" = "Dictionary";
+"profile" = "Profile";
+"lesson" = "Lesson";

@@ -7,14 +7,22 @@
 
 import UIKit
 
+protocol HomeCollectionViewDelegate: AnyObject {
+    func homeCollectionView(_ homeCollectionViewCell: HomeCollectionViewCell, didSelectAt: Int)
+}
+
 class HomeCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var lessonProgressView: UIView!
+    @IBOutlet weak var lessonProgressView: TapableView!
     @IBOutlet weak var lessonNameLavel: UILabel!
     @IBOutlet weak var lessonLockedImage: UIImageView!
     @IBOutlet weak var progressStackView: UIStackView!
     @IBOutlet var childrenOfProgressStackView: [UIView]!
     
-    func bind(lessonOverviewViewModel: LessonOverviewViewModel?,cellForItemAt indexPath: IndexPath) {
+    var delegate: HomeCollectionViewDelegate?
+    private var selectedItemAt: Int?
+    
+    func bind(lessonOverviewModel: LessonModel?,cellForItemAt indexPath: IndexPath) {
+        self.selectedItemAt = indexPath.row
         if indexPath.row == 0 {
             progressStackView.isHidden = true
         } else {
@@ -24,11 +32,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
         lessonProgressView.backgroundColor = .clear
         lessonProgressView.frame = CGRect(x: 0, y: 0, width: 300, height: 400)
         lessonProgressView.center = self.lessonProgressView.center
-        lessonProgressView.totalDots = lessonOverviewViewModel?.totalNumberOfLessons ?? 0
-        lessonProgressView.completedDots = lessonOverviewViewModel?.numberOfLesssonsLearned ?? 0
+        lessonProgressView.totalDots = lessonOverviewModel?.totalNumberOfLessons ?? 0
+        lessonProgressView.completedDots = lessonOverviewModel?.numberOfLesssonsLearned ?? 0
         lessonProgressView.fixInView(self.lessonProgressView)
-        lessonNameLavel.text = lessonOverviewViewModel?.name
-        if lessonOverviewViewModel?.isCanLearn == true {
+        lessonNameLavel.text = lessonOverviewModel?.name
+        if lessonOverviewModel?.isLearned == true {
             self.lessonLockedImage.isHidden = true
             self.lessonProgressView.isHidden = false
             childrenOfProgressStackView.forEach { view in
@@ -40,6 +48,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
             childrenOfProgressStackView.forEach { view in
                 view.backgroundColor = AppColors.chineseSliver
             }
+        }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapLesson(_:)))
+        self.lessonProgressView.addGestureRecognizer(tapGesture)
+        self.lessonProgressView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func didTapLesson(_ sender: UIButton) {
+        if let selectedItemAt = self.selectedItemAt {
+            delegate?.homeCollectionView(self, didSelectAt: selectedItemAt)
         }
     }
 }

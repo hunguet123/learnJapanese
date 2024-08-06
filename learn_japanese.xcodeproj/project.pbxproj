@@ -19,6 +19,7 @@
 		DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */; };
 		DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */; };
 		DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */; };
+		DF1A5D4F2C627E2800ADD61E /* LessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D4D2C627E2800ADD61E /* LessonCollectionViewCell.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -42,12 +43,19 @@
 		DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77F32C57D7710087E361 /* ForgotPasswordManager.swift */; };
 		DF9E77F82C57DE9A0087E361 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9E77F72C57DE9A0087E361 /* ForgotPasswordViewController.xib */; };
 		DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E77F62C57DE9A0087E361 /* ForgotPasswordViewController.swift */; };
+		DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6E8E62C61182100765A11 /* LearnViewController.swift */; };
+		DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6E8EB2C61184100765A11 /* LearnViewModel.swift */; };
+		DFA6E8EF2C611D4D00765A11 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */; };
 		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
 		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
 		DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBA804B2C402FA100467A58 /* Assets.xcassets */; };
 		DFBA805A2C402FA200467A58 /* learn_japaneseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */; };
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
+		DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */; };
+		DFCD36412C6265E300F60870 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36402C6265E300F60870 /* LessonModel.swift */; };
+		DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36422C62674E00F60870 /* SectionModel.swift */; };
+		DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */; };
 		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
 		DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */; };
 		DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */; };
@@ -55,7 +63,6 @@
 		DFF809352C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF809342C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib */; };
 		DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF809332C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift */; };
 		DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF809372C5FC61400F1EB2C /* LessonProgressView.swift */; };
-		DFF8093B2C5FC81600F1EB2C /* LessonOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8093A2C5FC81600F1EB2C /* LessonOverviewViewModel.swift */; };
 		DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */; };
 		DFFF30D82C51638100DADE4A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF30D72C51638100DADE4A /* Validation.swift */; };
 		DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF30DA2C52A93E00DADE4A /* LevelSelectionViewController.swift */; };
@@ -94,6 +101,7 @@
 		DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTabBarView.swift; sourceTree = "<group>"; };
 		DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
+		DF1A5D4D2C627E2800ADD61E /* LessonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -119,6 +127,9 @@
 		DF9E77F32C57D7710087E361 /* ForgotPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordManager.swift; sourceTree = "<group>"; };
 		DF9E77F62C57DE9A0087E361 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DF9E77F72C57DE9A0087E361 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		DFA6E8E62C61182100765A11 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		DFA6E8EB2C61184100765A11 /* LearnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewModel.swift; sourceTree = "<group>"; };
+		DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFBA80442C402FA000467A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +140,10 @@
 		DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learn_japaneseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		DFCD36402C6265E300F60870 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
+		DFCD36422C62674E00F60870 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -136,7 +151,6 @@
 		DFF809332C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFF809342C5E4B2E00F1EB2C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DFF809372C5FC61400F1EB2C /* LessonProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonProgressView.swift; sourceTree = "<group>"; };
-		DFF8093A2C5FC81600F1EB2C /* LessonOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonOverviewViewModel.swift; sourceTree = "<group>"; };
 		DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapableView.swift; sourceTree = "<group>"; };
 		DFFF30D72C51638100DADE4A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		DFFF30DA2C52A93E00DADE4A /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +278,35 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		DFA6E8E52C6117FB00765A11 /* Lessson */ = {
+			isa = PBXGroup;
+			children = (
+				DFCD36442C62752D00F60870 /* Cell */,
+				DFA6E8EA2C61183100765A11 /* ViewModel */,
+				DFA6E8E62C61182100765A11 /* LearnViewController.swift */,
+				DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */,
+			);
+			path = Lessson;
+			sourceTree = "<group>";
+		};
+		DFA6E8EA2C61183100765A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFA6E8EB2C61184100765A11 /* LearnViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DFA6E8ED2C611D2500765A11 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DFA6E8E52C6117FB00765A11 /* Lessson */,
+				DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */,
+				DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
 		DFBA80362C402FA000467A58 = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +378,7 @@
 		DFBA80732C40304D00467A58 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DFA6E8ED2C611D2500765A11 /* MainTabBar */,
 				DFF809292C5E346600F1EB2C /* Home */,
 				DF9E77F52C57DE700087E361 /* ForgotPassword */,
 				DFFF30D92C52A8A600DADE4A /* LevelSelection */,
@@ -359,6 +403,8 @@
 		DFBA80752C40323A00467A58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DFCD36402C6265E300F60870 /* LessonModel.swift */,
+				DFCD36422C62674E00F60870 /* SectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -403,6 +449,14 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		DFCD36442C62752D00F60870 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A5D4D2C627E2800ADD61E /* LessonCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DFF809292C5E346600F1EB2C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,7 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */,
-				DFF8093A2C5FC81600F1EB2C /* LessonOverviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -563,6 +616,7 @@
 				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
 				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
 				DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */,
+				DFA6E8EF2C611D4D00765A11 /* MainTabBar.storyboard in Resources */,
 				DFFF30DD2C52A93E00DADE4A /* LevelSelectionViewController.xib in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
 				DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */,
@@ -639,6 +693,7 @@
 			files = (
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,
+				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
@@ -650,27 +705,32 @@
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
+				DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */,
 				DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
+				DFCD36412C6265E300F60870 /* LessonModel.swift in Sources */,
 				DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
+				DF1A5D4F2C627E2800ADD61E /* LessonCollectionViewCell.swift in Sources */,
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
 				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
 				DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */,
 				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
-				DFF8093B2C5FC81600F1EB2C /* LessonOverviewViewModel.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
+				DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */,
 				DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
+				DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */,
 				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
+				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
 			);

@@ -14,7 +14,7 @@ protocol HomeViewModelDelegate: AnyObject {
 class HomeViewModel {
     var delegate: HomeViewModelDelegate?
     var japaneseLevel: JapaneseLevel = .basic
-    var lessons: [LessonOverviewViewModel] = []
+    var lessons: [LessonModel] = []
     
     init(japaneseLevel: JapaneseLevel) {
         self.japaneseLevel = japaneseLevel
@@ -23,13 +23,13 @@ class HomeViewModel {
     func fetchLesssons() {
         // TODO: fakedata
         lessons = [
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 8, isCanLearn: true, name: "Hiragana"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Katakana"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Pronuciation"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: true, name: "Katakana"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Pronuciation"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Katakana"),
-            LessonOverviewViewModel(totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, isCanLearn: false, name: "Pronuciation"),
+            LessonModel(id: "1", totalNumberOfLessons: 8, numberOfLesssonsLearned: 8, name: "Hiragana", isLearned: true, sectionIds: ["1","2","3"]),
+            LessonModel(id: "2", totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, name: "Katakana", isLearned: true,  sectionIds: ["1","2","3"]),
+            LessonModel(id: "3", totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, name: "Pronuciation", isLearned: true,  sectionIds: ["1","2","3"]),
+            LessonModel(id: "4", totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, name: "Katakana", isLearned: true,  sectionIds: ["1","2","3"]),
+            LessonModel(id: "5", totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, name: "Pronuciation", isLearned: false,  sectionIds: ["1","2","3"]),
+            LessonModel(id: "6", totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, name: "Katakana", isLearned: false,  sectionIds: ["1","2","3"]),
+            LessonModel(id: "7", totalNumberOfLessons: 8, numberOfLesssonsLearned: 4, name: "Pronuciation", isLearned: false,  sectionIds: ["1","2","3"]),
         ]
     }
 }
