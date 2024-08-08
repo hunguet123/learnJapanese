@@ -109,7 +109,7 @@
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="LessonCollectionViewCell" reuseIdentifier="LessonCollectionViewCell" id="6VB-Db-5Gt" customClass="LessonCollectionViewCell" customModule="learn_japanese" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2p0-1I-BE6">
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2p0-1I-BE6" customClass="TapableView" customModule="learn_japanese" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
@@ -141,6 +141,9 @@
                                                             <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didTapLesson:" destination="6VB-Db-5Gt" eventType="touchUpInside" id="Bid-8Q-7bH"/>
+                                                    </connections>
                                                 </collectionViewCellContentView>
                                                 <connections>
                                                     <outlet property="nameLabel" destination="4SK-Wx-Uh3" id="rj4-HT-Td6"/>

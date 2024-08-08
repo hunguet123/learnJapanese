@@ -42,4 +42,8 @@ class LocalizationText {
     static let dictionary = "dictionary".l10n()
     static let profile = "profile".l10n()
     static let lesson = "lesson".l10n()
+    static let dontQuit = "dont_quit".l10n()
+    static let almostDone = "almost_done".l10n()
+    static let continueLearning = "continue_learning".l10n()
+    static let finish = "finish".l10n()
 }

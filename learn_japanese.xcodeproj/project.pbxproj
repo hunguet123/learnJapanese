@@ -20,6 +20,12 @@
 		DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */; };
 		DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */; };
 		DF1A5D4F2C627E2800ADD61E /* LessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D4D2C627E2800ADD61E /* LessonCollectionViewCell.swift */; };
+		DF1A5D542C6500A800ADD61E /* LearnSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D522C6500A800ADD61E /* LearnSectionViewController.swift */; };
+		DF1A5D552C6500A800ADD61E /* LearnSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1A5D532C6500A800ADD61E /* LearnSectionViewController.xib */; };
+		DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D572C65079300ADD61E /* LearnSectionViewModel.swift */; };
+		DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D592C650CEC00ADD61E /* ConfirmDialog.swift */; };
+		DF1A5D5C2C650D0200ADD61E /* ConfirmDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1A5D5B2C650D0200ADD61E /* ConfirmDialog.xib */; };
+		DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -102,6 +108,12 @@
 		DF0B32982C48148100C1BC77 /* LoginViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		DF1A5D4D2C627E2800ADD61E /* LessonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF1A5D522C6500A800ADD61E /* LearnSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionViewController.swift; sourceTree = "<group>"; };
+		DF1A5D532C6500A800ADD61E /* LearnSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnSectionViewController.xib; sourceTree = "<group>"; };
+		DF1A5D572C65079300ADD61E /* LearnSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionViewModel.swift; sourceTree = "<group>"; };
+		DF1A5D592C650CEC00ADD61E /* ConfirmDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDialog.swift; sourceTree = "<group>"; };
+		DF1A5D5B2C650D0200ADD61E /* ConfirmDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmDialog.xib; sourceTree = "<group>"; };
+		DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -203,6 +215,25 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		DF1A5D512C65007D00ADD61E /* LearnSection */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A5D562C6500B200ADD61E /* ViewModel */,
+				DF1A5D522C6500A800ADD61E /* LearnSectionViewController.swift */,
+				DF1A5D532C6500A800ADD61E /* LearnSectionViewController.xib */,
+				DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */,
+			);
+			path = LearnSection;
+			sourceTree = "<group>";
+		};
+		DF1A5D562C6500B200ADD61E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A5D572C65079300ADD61E /* LearnSectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DF91DA512C4D621D00C78640 /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +273,8 @@
 				DF0B32962C48133000C1BC77 /* DefaultTabBarView.swift */,
 				DF0B329A2C4D47E900C1BC77 /* TitleTextField.swift */,
 				DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */,
+				DF1A5D592C650CEC00ADD61E /* ConfirmDialog.swift */,
+				DF1A5D5B2C650D0200ADD61E /* ConfirmDialog.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -378,6 +411,7 @@
 		DFBA80732C40304D00467A58 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DF1A5D512C65007D00ADD61E /* LearnSection */,
 				DFA6E8ED2C611D2500765A11 /* MainTabBar */,
 				DFF809292C5E346600F1EB2C /* Home */,
 				DF9E77F52C57DE700087E361 /* ForgotPassword */,
@@ -611,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1A5D5C2C650D0200ADD61E /* ConfirmDialog.xib in Resources */,
 				DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */,
 				DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */,
 				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
@@ -620,6 +655,7 @@
 				DFFF30DD2C52A93E00DADE4A /* LevelSelectionViewController.xib in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
 				DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */,
+				DF1A5D552C6500A800ADD61E /* LearnSectionViewController.xib in Resources */,
 				DF9E77F82C57DE9A0087E361 /* ForgotPasswordViewController.xib in Resources */,
 				DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */,
 				DF9A23EA2C4287C900A73895 /* lauch.json in Resources */,
@@ -702,7 +738,9 @@
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
+				DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
+				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
 				DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */,
@@ -715,6 +753,7 @@
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
+				DF1A5D542C6500A800ADD61E /* LearnSectionViewController.swift in Sources */,
 				DF1A5D4F2C627E2800ADD61E /* LessonCollectionViewCell.swift in Sources */,
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
 				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
@@ -731,6 +770,7 @@
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
 				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
+				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
 			);

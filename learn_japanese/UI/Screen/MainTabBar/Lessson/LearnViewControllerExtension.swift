@@ -18,7 +18,8 @@ extension LearnViewController: UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCollectionViewCell", for: indexPath) as? LessonCollectionViewCell {
             if let section = self.learnViewModel?.sections?[indexPath.row] {
-                cell.bind(section: section)
+                cell.delegate = self
+                cell.bind(section: section, indexPath: indexPath)
             }
             return cell
         }
@@ -42,5 +43,12 @@ extension LearnViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+}
+
+extension LearnViewController: LessonCollectionViewDelegate {
+    func lessonCollectionViewCell(_ lessonCollectionViewCell: LessonCollectionViewCell, didSelectAt: Int) {
+//        self.learnViewModel?.sections?[didSelectAt].
+        self.navigationController?.pushViewController(LearnSectionViewController(), animated: true)
     }
 }

@@ -17,4 +17,6 @@ class AppImages {
     static let iconUser = UIImage(named: "iconUser")
     static let imageFlagJapan = UIImage(named: "imageFlagJapan")
     static let imageLessonLocked = UIImage(named: "imageLessonLocked")
+    static let iconLock = UIImage(named: "iconLock")
+    static let iconClose = UIImage(named: "iconClose")
 }

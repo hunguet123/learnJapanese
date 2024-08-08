@@ -13,15 +13,15 @@ class LearnViewModel {
     func fetchData(lessonId: String) {
         // TODO: fake fetch data from lessonId
         self.sections = [
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
-            SectionModel(name: "Hiragana", isLearned: true),
+            SectionModel(id: "1", name: "Hiragana", isLearned: true),
+            SectionModel(id: "1", name: "Hiragana", isLearned: true),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
+            SectionModel(id: "1", name: "Hiragana", isLearned: false),
         ]
     }
 }

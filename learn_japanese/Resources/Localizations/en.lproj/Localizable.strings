@@ -38,3 +38,7 @@
 "dictionary" = "Dictionary";
 "profile" = "Profile";
 "lesson" = "Lesson";
+"dont_quit" = "Please don't quit ...!";
+"almost_done" = "Just a little more to finish the lesson, if you quit now, the progress will not be saved huhu";
+"continue_learning" = "Continue Learning!";
+"finish" = "Finish";

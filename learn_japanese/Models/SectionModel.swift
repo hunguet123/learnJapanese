@@ -8,10 +8,12 @@
 import Foundation
 
 class SectionModel {
+    var id: String?
     var name: String?
     var isLearned: Bool?
     
-    init(name: String? = nil, isLearned: Bool? = nil) {
+    init(id: String, name: String? = nil, isLearned: Bool? = nil) {
+        self.id = id
         self.name = name
         self.isLearned = isLearned
     }

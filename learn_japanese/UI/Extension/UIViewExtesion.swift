@@ -197,4 +197,21 @@ public extension UIView {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    func show(in view: UIView) {
+        self.alpha = 0
+        view.addSubview(self)
+        self.fitSuperviewConstraint()
+        UIView.animate(withDuration: 0.25) {
+            self.alpha = 1
+        }
+    }
+
+    func dismiss() {
+        UIView.animate(withDuration: 0.25) {
+            self.alpha = 0
+        } completion: { _ in
+            self.removeFromSuperview()
+        }
+    }
 }
