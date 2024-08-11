@@ -26,6 +26,8 @@
 		DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D592C650CEC00ADD61E /* ConfirmDialog.swift */; };
 		DF1A5D5C2C650D0200ADD61E /* ConfirmDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1A5D5B2C650D0200ADD61E /* ConfirmDialog.xib */; };
 		DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */; };
+		DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */; };
+		DF35E48A2C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -114,6 +116,8 @@
 		DF1A5D592C650CEC00ADD61E /* ConfirmDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDialog.swift; sourceTree = "<group>"; };
 		DF1A5D5B2C650D0200ADD61E /* ConfirmDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmDialog.xib; sourceTree = "<group>"; };
 		DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionViewControllerExtension.swift; sourceTree = "<group>"; };
+		DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextQuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTextQuestionCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 		DF1A5D512C65007D00ADD61E /* LearnSection */ = {
 			isa = PBXGroup;
 			children = (
+				DF35E4862C68F2E20019D9C9 /* Cell */,
 				DF1A5D562C6500B200ADD61E /* ViewModel */,
 				DF1A5D522C6500A800ADD61E /* LearnSectionViewController.swift */,
 				DF1A5D532C6500A800ADD61E /* LearnSectionViewController.xib */,
@@ -232,6 +237,15 @@
 				DF1A5D572C65079300ADD61E /* LearnSectionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF35E4862C68F2E20019D9C9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */,
+				DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DF91DA512C4D621D00C78640 /* Localizations */ = {
@@ -653,6 +667,7 @@
 				DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */,
 				DFA6E8EF2C611D4D00765A11 /* MainTabBar.storyboard in Resources */,
 				DFFF30DD2C52A93E00DADE4A /* LevelSelectionViewController.xib in Resources */,
+				DF35E48A2C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib in Resources */,
 				DF0B328F2C457CE100C1BC77 /* Main.storyboard in Resources */,
 				DF9E77EB2C554B730087E361 /* GoogleService-Info.plist in Resources */,
 				DF1A5D552C6500A800ADD61E /* LearnSectionViewController.xib in Resources */,
@@ -732,6 +747,7 @@
 				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
+				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
