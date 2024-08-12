@@ -7,14 +7,20 @@
 
 import Foundation
 
+enum SectionState {
+    case learned
+    case canLearn
+    case cantLearn
+}
+
 class SectionModel {
     var id: String?
     var name: String?
-    var isLearned: Bool?
+    var sectionSate: SectionState?
     
-    init(id: String, name: String? = nil, isLearned: Bool? = nil) {
+    init(id: String, name: String? = nil, sectionSate: SectionState? = nil) {
         self.id = id
         self.name = name
-        self.isLearned = isLearned
+        self.sectionSate = sectionSate
     }
 }

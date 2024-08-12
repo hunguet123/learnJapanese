@@ -25,14 +25,28 @@ class LessonCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        if section.isLearned == false {
+        
+        switch section.sectionSate {
+        case .cantLearn:
             contentUIView.backgroundColor = AppColors.lightSliver
             contentUIView.isUserInteractionEnabled = false
             self.stateLearnedImage.image = AppImages.iconLock
-        } else {
+        case .learned:
             contentUIView.backgroundColor = AppColors.white
             contentUIView.isUserInteractionEnabled = true
             self.stateLearnedImage.image = AppImages.iconCheckmarkCircle
+        case .canLearn:
+            contentUIView.backgroundColor = AppColors.white
+            contentUIView.isUserInteractionEnabled = true
+            self.stateLearnedImage.isHidden = true
+        case .none:
+            break
+        }
+        
+        if section.sectionSate == .cantLearn {
+           
+        } else {
+            
         }
     }
     @IBAction func didTapLesson(_ sender: Any) {
