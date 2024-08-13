@@ -28,7 +28,9 @@
 		DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */; };
 		DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */; };
 		DF35E48A2C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */; };
-		DF3E5FFC2C6A4E1300249541 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFB2C6A4E1300249541 /* SelectionView.swift */; };
+		DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */; };
+		DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */; };
+		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -119,7 +121,9 @@
 		DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextQuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTextQuestionCollectionViewCell.xib; sourceTree = "<group>"; };
-		DF3E5FFB2C6A4E1300249541 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSortView.swift; sourceTree = "<group>"; };
+		DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelectionView.swift; sourceTree = "<group>"; };
+		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -291,7 +295,9 @@
 				DFFA31CE2C4FFA5500A2D518 /* TapableView.swift */,
 				DF1A5D592C650CEC00ADD61E /* ConfirmDialog.swift */,
 				DF1A5D5B2C650D0200ADD61E /* ConfirmDialog.xib */,
-				DF3E5FFB2C6A4E1300249541 /* SelectionView.swift */,
+				DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */,
+				DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */,
+				DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 				DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
+				DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
 				DF1A5D542C6500A800ADD61E /* LearnSectionViewController.swift in Sources */,
@@ -785,6 +792,7 @@
 				DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */,
+				DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */,
 				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
@@ -792,7 +800,7 @@
 				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
-				DF3E5FFC2C6A4E1300249541 /* SelectionView.swift in Sources */,
+				DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,8 +57,8 @@
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-ES-tHd">
                             <rect key="frame" x="10" y="90" width="373" height="4"/>
                         </progressView>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AIt-fs-WWd">
-                            <rect key="frame" x="0.0" y="104" width="393" height="655"/>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AIt-fs-WWd">
+                            <rect key="frame" x="0.0" y="104" width="393" height="574"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6lE-6d-7ex">
                                 <size key="itemSize" width="128" height="128"/>
@@ -71,16 +71,47 @@
                                 <outlet property="delegate" destination="-1" id="GPG-lt-hdM"/>
                             </connections>
                         </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqL-WS-gIA" customClass="TapableView" customModule="learn_japanese" customModuleProvider="target">
+                            <rect key="frame" x="20" y="698" width="353" height="61"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHv-oa-ujn">
+                                    <rect key="frame" x="152" y="16.666666666666629" width="49.333333333333343" height="27.666666666666671"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="l10nText" value="next"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="colors/lavenderIndigo"/>
+                            <constraints>
+                                <constraint firstItem="uHv-oa-ujn" firstAttribute="centerX" secondItem="TqL-WS-gIA" secondAttribute="centerX" id="68L-Hf-Q7Z"/>
+                                <constraint firstAttribute="height" constant="61" id="Ewp-CQ-csD"/>
+                                <constraint firstItem="uHv-oa-ujn" firstAttribute="centerY" secondItem="TqL-WS-gIA" secondAttribute="centerY" id="F06-Nl-Yiz"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapNextQuestion:" destination="-1" eventType="touchUpInside" id="DRf-3c-uNL"/>
+                            </connections>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="huW-jL-Jol" firstAttribute="leading" secondItem="Lq2-JP-SrP" secondAttribute="leading" constant="10" id="2Qc-Mv-GK8"/>
                         <constraint firstItem="m4f-Ek-eMq" firstAttribute="top" secondItem="Lq2-JP-SrP" secondAttribute="top" constant="10" id="5lO-UL-Ghx"/>
                         <constraint firstItem="yyw-ES-tHd" firstAttribute="leading" secondItem="Lq2-JP-SrP" secondAttribute="leading" constant="10" id="5o7-NI-q8b"/>
-                        <constraint firstAttribute="bottom" secondItem="AIt-fs-WWd" secondAttribute="bottom" id="CBo-RA-rFz"/>
+                        <constraint firstItem="TqL-WS-gIA" firstAttribute="top" secondItem="AIt-fs-WWd" secondAttribute="bottom" constant="20" id="Ehu-LP-R9O"/>
                         <constraint firstAttribute="trailing" secondItem="AIt-fs-WWd" secondAttribute="trailing" id="IrX-pt-GFi"/>
+                        <constraint firstAttribute="bottom" secondItem="TqL-WS-gIA" secondAttribute="bottom" id="L7d-TS-Pd7"/>
+                        <constraint firstItem="TqL-WS-gIA" firstAttribute="leading" secondItem="Lq2-JP-SrP" secondAttribute="leading" constant="20" id="LPa-hj-FJm"/>
                         <constraint firstItem="huW-jL-Jol" firstAttribute="top" secondItem="Lq2-JP-SrP" secondAttribute="top" constant="10" id="MlX-n1-GXN"/>
                         <constraint firstItem="AIt-fs-WWd" firstAttribute="leading" secondItem="Lq2-JP-SrP" secondAttribute="leading" id="Q68-N4-vmn"/>
+                        <constraint firstAttribute="trailing" secondItem="TqL-WS-gIA" secondAttribute="trailing" constant="20" id="S4Z-cZ-Dxd"/>
                         <constraint firstAttribute="trailing" secondItem="yyw-ES-tHd" secondAttribute="trailing" constant="10" id="S6O-J4-b6m"/>
                         <constraint firstAttribute="trailing" secondItem="m4f-Ek-eMq" secondAttribute="trailing" constant="10" id="XUh-Ra-M6S"/>
                         <constraint firstItem="yyw-ES-tHd" firstAttribute="top" secondItem="huW-jL-Jol" secondAttribute="bottom" constant="40" id="jG5-Kz-iF9"/>
@@ -104,6 +135,9 @@
         <image name="imageFlagJapan" width="36" height="36"/>
         <namedColor name="colors/backgroundColor">
             <color red="0.98000001907348633" green="0.9649999737739563" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colors/lavenderIndigo">
+            <color red="0.59200000762939453" green="0.27799999713897705" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

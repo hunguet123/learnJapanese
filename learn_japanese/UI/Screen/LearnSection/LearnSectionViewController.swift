@@ -27,4 +27,17 @@ class LearnSectionViewController: UIViewController {
         confirmDialog.delegate = self
         confirmDialog.show(in: self.view)
     }
+    @IBAction func didTapNextQuestion(_ sender: Any) {
+        // Tính toán trang hiện tại
+         let pageWidth = quizCollectionView.frame.width
+         let currentPage = Int((quizCollectionView.contentOffset.x + pageWidth / 2) / pageWidth)
+         
+         // Kiểm tra xem có thể cuộn sang trang tiếp theo không
+         let nextPage = currentPage + 1
+         if nextPage < quizCollectionView.numberOfItems(inSection: 0) {
+             // Cuộn đến mục tiếp theo
+             let nextIndexPath = IndexPath(item: nextPage, section: 0)
+             quizCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+         }
+    }
 }

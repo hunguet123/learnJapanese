@@ -24,7 +24,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="His-Bi-e7M">
                                 <rect key="frame" x="0.0" y="0.0" width="582" height="207.33333333333334"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBq-Nk-Ni4" customClass="SelectionView" customModule="learn_japanese" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBq-Nk-Ni4" customClass="ImageSelectionView" customModule="learn_japanese" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="237.33333333333331" width="582" height="798.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>

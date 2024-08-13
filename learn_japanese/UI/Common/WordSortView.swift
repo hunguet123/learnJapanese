@@ -1,6 +1,6 @@
 import UIKit
 
-class SelectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class WordSortView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var selectableItems: [String] = ["Item ", "Item ", "Item ", "Item ", "Item ", "Item ", "Item ", "Item 4",]
     var selectedItems: [String] = []
@@ -151,6 +151,8 @@ class SelectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
                 })
             }
         }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
