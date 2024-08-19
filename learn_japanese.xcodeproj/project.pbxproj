@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2179C4906FEC567B2655A43 /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B01193CEF5904A0342001 /* Pods_learn_japanese.framework */; };
+		3E15592F617E9BEF9E1091E5 /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600B6B032D28C8A87885B039 /* Pods_learn_japanese.framework */; };
 		DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */; };
 		DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */; };
 		DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */; };
@@ -31,6 +31,8 @@
 		DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */; };
 		DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */; };
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
+		DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */; };
+		DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10572C738CDA002969E8 /* VocabularyModel.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -98,9 +100,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02EAD3EB053C68388CC6DD33 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
-		293B01193CEF5904A0342001 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C95CCA9DA165D3CC716751B6 /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		58059791A81EA65C04A26DFF /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		600B6B032D28C8A87885B039 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D04AF309FE49C92B1567BA42 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
 		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,8 @@
 		DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSortView.swift; sourceTree = "<group>"; };
 		DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelectionView.swift; sourceTree = "<group>"; };
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
+		DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseHelper.swift; sourceTree = "<group>"; };
+		DF7B10572C738CDA002969E8 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -184,7 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2179C4906FEC567B2655A43 /* Pods_learn_japanese.framework in Frameworks */,
+				3E15592F617E9BEF9E1091E5 /* Pods_learn_japanese.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,11 +209,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469939AC4411898E915223B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				600B6B032D28C8A87885B039 /* Pods_learn_japanese.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C9629DCF324ACD8085EFB02E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C95CCA9DA165D3CC716751B6 /* Pods-learn_japanese.debug.xcconfig */,
-				02EAD3EB053C68388CC6DD33 /* Pods-learn_japanese.release.xcconfig */,
+				58059791A81EA65C04A26DFF /* Pods-learn_japanese.debug.xcconfig */,
+				D04AF309FE49C92B1567BA42 /* Pods-learn_japanese.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -252,6 +264,14 @@
 				DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF7B10562C738CB4002969E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF7B10572C738CDA002969E8 /* VocabularyModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DF91DA512C4D621D00C78640 /* Localizations */ = {
@@ -371,7 +391,7 @@
 				DFBA80622C402FA200467A58 /* learn_japaneseUITests */,
 				DFBA80402C402FA000467A58 /* Products */,
 				C9629DCF324ACD8085EFB02E /* Pods */,
-				EB06A677AEE32436F1C12F79 /* Frameworks */,
+				469939AC4411898E915223B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -477,6 +497,8 @@
 		DFBA80772C4032A200467A58 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				DF7B10562C738CB4002969E8 /* Models */,
+				DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -553,14 +575,6 @@
 			path = LevelSelection;
 			sourceTree = "<group>";
 		};
-		EB06A677AEE32436F1C12F79 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				293B01193CEF5904A0342001 /* Pods_learn_japanese.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -568,11 +582,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFBA80692C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japanese" */;
 			buildPhases = (
-				DA632DAC8CB606D69A9ECED5 /* [CP] Check Pods Manifest.lock */,
+				A806EA1F69BA7351BE70A664 /* [CP] Check Pods Manifest.lock */,
 				DFBA803B2C402FA000467A58 /* Sources */,
 				DFBA803C2C402FA000467A58 /* Frameworks */,
 				DFBA803D2C402FA000467A58 /* Resources */,
-				EBDBEC29ED4C87393CE2F81D /* [CP] Embed Pods Frameworks */,
+				30B11ECF556B770B1B2B720E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -705,7 +719,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DA632DAC8CB606D69A9ECED5 /* [CP] Check Pods Manifest.lock */ = {
+		30B11ECF556B770B1B2B720E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A806EA1F69BA7351BE70A664 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -725,23 +756,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBDBEC29ED4C87393CE2F81D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -776,6 +790,7 @@
 				DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
+				DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */,
 				DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
@@ -789,6 +804,7 @@
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
 				DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */,
+				DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */,
 				DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */,
@@ -970,7 +986,7 @@
 		};
 		DFBA806A2C402FA200467A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C95CCA9DA165D3CC716751B6 /* Pods-learn_japanese.debug.xcconfig */;
+			baseConfigurationReference = 58059791A81EA65C04A26DFF /* Pods-learn_japanese.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1003,7 +1019,7 @@
 		};
 		DFBA806B2C402FA200467A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02EAD3EB053C68388CC6DD33 /* Pods-learn_japanese.release.xcconfig */;
+			baseConfigurationReference = D04AF309FE49C92B1567BA42 /* Pods-learn_japanese.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

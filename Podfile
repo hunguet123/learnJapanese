@@ -6,13 +6,15 @@ target 'learn_japanese' do
   use_frameworks!
   pod 'SwiftLint'
   pod 'lottie-ios'
-  pod 'FirebaseCore'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   pod 'FirebaseAuth'
   pod 'FacebookLogin'
   pod 'GoogleSignIn'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
   pod 'SVProgressHUD'
+  pod 'RealmSwift'
   pod 'L10n-swift', '~> 5.10'
 
   post_install do |installer|
