@@ -33,6 +33,11 @@
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
 		DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */; };
 		DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10572C738CDA002969E8 /* VocabularyModel.swift */; };
+		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
+		DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105B2C7CBFD6002969E8 /* Gender.swift */; };
+		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
+		DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10602C7CC119002969E8 /* DateExtensions.swift */; };
+		DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -128,6 +133,11 @@
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
 		DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseHelper.swift; sourceTree = "<group>"; };
 		DF7B10572C738CDA002969E8 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
+		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DF7B105B2C7CBFD6002969E8 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		DF7B10602C7CC119002969E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -297,7 +307,6 @@
 		DF9A23D62C42708500A73895 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DF9A23DC2C42714A00A73895 /* Extension */,
 				DF9A23D72C4270A400A73895 /* Common */,
 				DFBA80762C40326600467A58 /* Base */,
 				DFBA80732C40304D00467A58 /* Screen */,
@@ -328,6 +337,9 @@
 				DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */,
 				DF9A23DF2C42729800A73895 /* UIBezierPathExtension.swift */,
 				DF0B32902C45892400C1BC77 /* UINavigationControllerExtension.swift */,
+				DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */,
+				DF7B10602C7CC119002969E8 /* DateExtensions.swift */,
+				DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -410,6 +422,7 @@
 			children = (
 				DF9E77EE2C55553E0087E361 /* learn_japanese.entitlements */,
 				DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */,
+				DF9A23DC2C42714A00A73895 /* Extension */,
 				DF9A23D62C42708500A73895 /* UI */,
 				DFBA80792C4032D000467A58 /* Utils */,
 				DFBA80782C4032AB00467A58 /* Network */,
@@ -482,6 +495,8 @@
 			children = (
 				DFCD36402C6265E300F60870 /* LessonModel.swift */,
 				DFCD36422C62674E00F60870 /* SectionModel.swift */,
+				DF7B10592C7CBF55002969E8 /* UserModel.swift */,
+				DF7B105B2C7CBFD6002969E8 /* Gender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -771,19 +786,23 @@
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
+				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
+				DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */,
 				DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
+				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
 				DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */,
 				DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */,
+				DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
 				DFCD36412C6265E300F60870 /* LessonModel.swift in Sources */,
@@ -817,6 +836,7 @@
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
 				DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */,
+				DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

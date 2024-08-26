@@ -37,6 +37,7 @@ class SignUpManager {
             }
             
             // TODO: save user to data base.
+            UserManager.shared.saveUserByFirebaseAuth()
             self.delegate?.signUpManagerDidSignUpSuccessfully(self)
         }
     }

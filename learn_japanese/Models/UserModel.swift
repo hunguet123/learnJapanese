@@ -1,0 +1,31 @@
+//
+//  UserModel.swift
+//  learn_japanese
+//
+//  Created by Hưng Hà Quang on 26/8/24.
+//
+
+
+import Foundation
+
+class UserModel {
+    var id: String
+    var fullName: String
+    var nickname: String
+    var dateOfBirth: Date
+    var phoneNumber: String
+    var gender: Gender
+    var avtURL: String
+    var favoriteHotels: [String] = []
+
+    init(id: String, fullName: String, nickname: String,
+         dateOfBirth: Date, phoneNumber: String, gender: Gender, avtURL: String) {
+        self.id = id
+        self.fullName = fullName
+        self.nickname = nickname
+        self.dateOfBirth = dateOfBirth
+        self.phoneNumber = phoneNumber
+        self.gender = gender
+        self.avtURL = avtURL
+    }
+}
