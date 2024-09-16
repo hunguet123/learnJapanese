@@ -36,6 +36,21 @@ class LevelSelectionViewController: BaseViewControler {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUi()
+        
+        // TODO: remove fake data
+        let vocabulary = VocabularyModel()
+        vocabulary.word = "猫" // Từ vựng tiếng Nhật
+        vocabulary.hiragana = "ねこ" // Phiên âm Hiragana của từ vựng
+        vocabulary.kanji = "猫" // Kanji của từ vựng
+        vocabulary.exampleSentence = "この猫はとてもかわいいです。" // Câu ví dụ sử dụng từ vựng
+        vocabulary.englishMeaning = "cat" // Nghĩa của từ vựng bằng tiếng Anh
+        vocabulary.vietnameseMeaning = "con mèo" // Nghĩa của từ vựng bằng tiếng Việt
+        vocabulary.audioURL = "path/to/audio/file.mp3"
+        RealmDatabaseHelper.shared.addObject(vocabulary)
+        RealmDatabaseHelper.shared.syncToFirestore(objectType: VocabularyModel.self, toCollection: FirebaseCollectionNameConstant.vocabulary)
+        RealmDatabaseHelper.shared.fetchObjects(VocabularyModel.self).forEach { vocabularyModel in
+            print("----- vocabulary: \(vocabularyModel)")
+        }
     }
     
     private func setupUi() {

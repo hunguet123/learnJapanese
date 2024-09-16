@@ -16,11 +16,14 @@ class HomeViewController: BaseViewControler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpGradientLayer()
         fetchData()
         setupUI()
     }
 
+    
+    override func viewDidLayoutSubviews() {
+        setUpGradientLayer()
+    }
 
     private func setupUI() {
         levelLabel.text = homeViewModel?.japaneseLevel.value

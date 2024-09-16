@@ -31,6 +31,8 @@
 		DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */; };
 		DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */; };
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
+		DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */; };
+		DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25D2C987DE20028BC1C /* GrammarModel.swift */; };
 		DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */; };
 		DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10572C738CDA002969E8 /* VocabularyModel.swift */; };
 		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
@@ -131,6 +133,8 @@
 		DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSortView.swift; sourceTree = "<group>"; };
 		DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelectionView.swift; sourceTree = "<group>"; };
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
+		DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionNameConstant.swift; sourceTree = "<group>"; };
+		DF64E25D2C987DE20028BC1C /* GrammarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarModel.swift; sourceTree = "<group>"; };
 		DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseHelper.swift; sourceTree = "<group>"; };
 		DF7B10572C738CDA002969E8 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				DF7B10572C738CDA002969E8 /* VocabularyModel.swift */,
+				DF64E25D2C987DE20028BC1C /* GrammarModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				DF9E77E32C5543F20087E361 /* Firebase */,
 				DF9A23D42C426F2400A73895 /* Constant.swift */,
 				DFFF30D72C51638100DADE4A /* Validation.swift */,
+				DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
+				DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */,
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
@@ -821,6 +828,7 @@
 				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
+				DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
 				DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */,
 				DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */,

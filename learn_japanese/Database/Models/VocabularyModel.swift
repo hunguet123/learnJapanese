@@ -8,33 +8,42 @@
 import RealmSwift
 
 class VocabularyModel: Object, RealmInitializable {
+    @objc dynamic var id: String = ""
     @objc dynamic var word: String = ""
-    @objc dynamic var meaning: String = ""
-    @objc dynamic var example: String = ""
-    
+    @objc dynamic var hiragana: String = ""
+    @objc dynamic var kanji: String? = nil
+    @objc dynamic var exampleSentence: String? = nil
+    @objc dynamic var englishMeaning: String? = nil
+    @objc dynamic var vietnameseMeaning: String? = nil
+    @objc dynamic var audioURL: String? = nil
+
     override static func primaryKey() -> String? {
-        return "word"
+        return "id"
     }
     
     convenience required init?(value: [String: Any]) {
         self.init()
-        guard
-            let word = value["word"] as? String,
-            let meaning = value["meaning"] as? String,
-            let example = value["example"] as? String
-        else {
-            return nil
-        }
-
-        self.word = word
-        self.meaning = meaning
-        self.example = example
+        self.id = value["id"] as? String ?? ""
+        self.word = value["word"] as? String ?? ""
+        self.hiragana = value["hiragana"] as? String ?? ""
+        self.kanji = value["kanji"] as? String
+        self.exampleSentence = value["exampleSentence"] as? String
+        self.englishMeaning = value["englishMeaning"] as? String
+        self.vietnameseMeaning = value["vietnameseMeaning"] as? String
+        self.audioURL = value["audioURL"] as? String
     }
-    
-    convenience init(work: String, meaning: String, example: String) {
+
+    convenience init(id: String, word: String, hiragana: String, kanji: String?,
+                     exampleSentence: String?, englishMeaning: String?,
+                     vietnameseMeaning: String?, audioURL: String?) {
         self.init()
-        self.word = work
-        self.meaning = meaning
-        self.example = example
+        self.id = id
+        self.word = word
+        self.hiragana = hiragana
+        self.kanji = kanji
+        self.exampleSentence = exampleSentence
+        self.englishMeaning = englishMeaning
+        self.vietnameseMeaning = vietnameseMeaning
+        self.audioURL = audioURL
     }
 }
