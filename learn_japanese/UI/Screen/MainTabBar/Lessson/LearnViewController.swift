@@ -20,6 +20,11 @@ class LearnViewController: BaseViewControler {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
     private func setupUI() {
         if let lessonname = self.lessonname, let lessonCount = self.learnViewModel?.sections?.count {
             titleLabel.text = "\(lessonname) \(lessonCount) \(LocalizationText.lesson)"
