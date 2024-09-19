@@ -33,6 +33,8 @@
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
 		DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */; };
 		DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25D2C987DE20028BC1C /* GrammarModel.swift */; };
+		DF64E2622C9C5D510028BC1C /* UnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2612C9C5D510028BC1C /* UnitModel.swift */; };
+		DF64E2642C9C65280028BC1C /* ObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2632C9C65280028BC1C /* ObjectExtension.swift */; };
 		DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */; };
 		DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10572C738CDA002969E8 /* VocabularyModel.swift */; };
 		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
@@ -73,7 +75,7 @@
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
 		DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */; };
-		DFCD36412C6265E300F60870 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36402C6265E300F60870 /* LessonModel.swift */; };
+		DFCD36412C6265E300F60870 /* UnitOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */; };
 		DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36422C62674E00F60870 /* SectionModel.swift */; };
 		DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */; };
 		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
@@ -135,6 +137,8 @@
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
 		DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionNameConstant.swift; sourceTree = "<group>"; };
 		DF64E25D2C987DE20028BC1C /* GrammarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarModel.swift; sourceTree = "<group>"; };
+		DF64E2612C9C5D510028BC1C /* UnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModel.swift; sourceTree = "<group>"; };
+		DF64E2632C9C65280028BC1C /* ObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectExtension.swift; sourceTree = "<group>"; };
 		DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseHelper.swift; sourceTree = "<group>"; };
 		DF7B10572C738CDA002969E8 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -181,7 +185,7 @@
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		DFCD36402C6265E300F60870 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
+		DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitOverviewModel.swift; sourceTree = "<group>"; };
 		DFCD36422C62674E00F60870 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 			children = (
 				DF7B10572C738CDA002969E8 /* VocabularyModel.swift */,
 				DF64E25D2C987DE20028BC1C /* GrammarModel.swift */,
+				DF64E2612C9C5D510028BC1C /* UnitModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */,
 				DF7B10602C7CC119002969E8 /* DateExtensions.swift */,
 				DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */,
+				DF64E2632C9C65280028BC1C /* ObjectExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -498,7 +504,7 @@
 		DFBA80752C40323A00467A58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DFCD36402C6265E300F60870 /* LessonModel.swift */,
+				DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */,
 				DFCD36422C62674E00F60870 /* SectionModel.swift */,
 				DF7B10592C7CBF55002969E8 /* UserModel.swift */,
 				DF7B105B2C7CBFD6002969E8 /* Gender.swift */,
@@ -803,6 +809,7 @@
 				DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */,
 				DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
+				DF64E2622C9C5D510028BC1C /* UnitModel.swift in Sources */,
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
@@ -812,7 +819,7 @@
 				DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
-				DFCD36412C6265E300F60870 /* LessonModel.swift in Sources */,
+				DFCD36412C6265E300F60870 /* UnitOverviewModel.swift in Sources */,
 				DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
@@ -842,6 +849,7 @@
 				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
 				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
+				DF64E2642C9C65280028BC1C /* ObjectExtension.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
 				DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */,
 				DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */,

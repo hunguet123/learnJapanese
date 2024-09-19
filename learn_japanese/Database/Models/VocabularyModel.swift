@@ -12,6 +12,7 @@ class VocabularyModel: Object, RealmInitializable {
     @objc dynamic var word: String = ""
     @objc dynamic var hiragana: String = ""
     @objc dynamic var kanji: String? = nil
+    @objc dynamic var katakana: String? = ""
     @objc dynamic var exampleSentence: String? = nil
     @objc dynamic var englishMeaning: String? = nil
     @objc dynamic var vietnameseMeaning: String? = nil
@@ -26,6 +27,7 @@ class VocabularyModel: Object, RealmInitializable {
         self.id = value["id"] as? String ?? ""
         self.word = value["word"] as? String ?? ""
         self.hiragana = value["hiragana"] as? String ?? ""
+        self.katakana = value["katakana"] as? String ?? ""
         self.kanji = value["kanji"] as? String
         self.exampleSentence = value["exampleSentence"] as? String
         self.englishMeaning = value["englishMeaning"] as? String
@@ -33,13 +35,14 @@ class VocabularyModel: Object, RealmInitializable {
         self.audioURL = value["audioURL"] as? String
     }
 
-    convenience init(id: String, word: String, hiragana: String, kanji: String?,
+    convenience init(id: String, word: String, hiragana: String, katakana: String?, kanji: String?,
                      exampleSentence: String?, englishMeaning: String?,
                      vietnameseMeaning: String?, audioURL: String?) {
         self.init()
         self.id = id
         self.word = word
         self.hiragana = hiragana
+        self.katakana = katakana
         self.kanji = kanji
         self.exampleSentence = exampleSentence
         self.englishMeaning = englishMeaning

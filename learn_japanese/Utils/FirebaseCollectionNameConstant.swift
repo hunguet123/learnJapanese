@@ -9,4 +9,5 @@ import Foundation
 
 class FirebaseCollectionNameConstant {
     static let vocabulary = "vocabulary"
+    static let unit = "unit"
 }

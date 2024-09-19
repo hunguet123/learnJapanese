@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LessonModel {
+class UnitOverviewModel {
     var id: String?
     var totalNumberOfLessons: Int?
     var numberOfLesssonsLearned: Int?

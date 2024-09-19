@@ -87,7 +87,8 @@ class RealmDatabaseHelper {
         let batch = database.batch()
         
         for object in objects {
-            guard let dict = object.toDictionary(), let id = dict["id"] as? String else {
+            let dict = object.toFirestoreDictionary()
+            guard let id = dict["id"] as? String else {
                 print("Failed to convert object to dictionary or missing ID")
                 continue
             }

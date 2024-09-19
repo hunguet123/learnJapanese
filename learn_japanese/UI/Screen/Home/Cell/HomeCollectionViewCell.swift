@@ -21,7 +21,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     var delegate: HomeCollectionViewDelegate?
     private var selectedItemAt: Int?
     
-    func bind(lessonOverviewModel: LessonModel?,cellForItemAt indexPath: IndexPath) {
+    func bind(lessonOverviewModel: UnitOverviewModel?,cellForItemAt indexPath: IndexPath) {
         self.selectedItemAt = indexPath.row
         if indexPath.row == 0 {
             progressStackView.isHidden = true

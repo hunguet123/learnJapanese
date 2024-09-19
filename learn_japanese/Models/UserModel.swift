@@ -16,7 +16,7 @@ class UserModel {
     var phoneNumber: String
     var gender: Gender
     var avtURL: String
-    var favoriteHotels: [String] = []
+    var completedLessonIds: [String] = []
 
     init(id: String, fullName: String, nickname: String,
          dateOfBirth: Date, phoneNumber: String, gender: Gender, avtURL: String) {

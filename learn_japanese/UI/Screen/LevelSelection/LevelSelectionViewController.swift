@@ -38,17 +38,11 @@ class LevelSelectionViewController: BaseViewControler {
         setupUi()
         
         // TODO: remove fake data
-        let vocabulary = VocabularyModel()
-        vocabulary.word = "猫" // Từ vựng tiếng Nhật
-        vocabulary.hiragana = "ねこ" // Phiên âm Hiragana của từ vựng
-        vocabulary.kanji = "猫" // Kanji của từ vựng
-        vocabulary.exampleSentence = "この猫はとてもかわいいです。" // Câu ví dụ sử dụng từ vựng
-        vocabulary.englishMeaning = "cat" // Nghĩa của từ vựng bằng tiếng Anh
-        vocabulary.vietnameseMeaning = "con mèo" // Nghĩa của từ vựng bằng tiếng Việt
-        vocabulary.audioURL = "path/to/audio/file.mp3"
-        RealmDatabaseHelper.shared.addObject(vocabulary)
-        RealmDatabaseHelper.shared.syncToFirestore(objectType: VocabularyModel.self, toCollection: FirebaseCollectionNameConstant.vocabulary)
-        RealmDatabaseHelper.shared.fetchObjects(VocabularyModel.self).forEach { vocabularyModel in
+        let unitModel = UnitModel(id: "91283749", title: "Hiragana", descriptionLesson: "abc ádf", lessonIds: ["1",
+                                                                                                               "2","4",])
+        RealmDatabaseHelper.shared.addObject(unitModel)
+        RealmDatabaseHelper.shared.syncToFirestore(objectType: UnitModel.self, toCollection: FirebaseCollectionNameConstant.unit)
+        RealmDatabaseHelper.shared.fetchObjects(UnitModel.self).forEach { vocabularyModel in
             print("----- vocabulary: \(vocabularyModel)")
         }
     }
