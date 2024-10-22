@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,27 +11,87 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--dictionary-->
+        <!--Dictionary-->
         <scene sceneID="Jyr-fI-cUc">
             <objects>
-                <viewController id="c5v-DI-nhM" sceneMemberID="viewController">
+                <viewController id="c5v-DI-nhM" customClass="DictionaryViewController" customModule="learn_japanese" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JzZ-IJ-8RE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-au-122" customClass="TapableView" customModule="learn_japanese" customModuleProvider="target">
+                                <rect key="frame" x="343" y="69" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconUser" translatesAutoresizingMaskIntoConstraints="NO" id="8Ax-7f-jew">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9h0-8r-g6h"/>
+                                    <constraint firstItem="8Ax-7f-jew" firstAttribute="leading" secondItem="Wv4-au-122" secondAttribute="leading" id="Eie-xb-1mC"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Ax-7f-jew" secondAttribute="trailing" id="G8x-ao-ucc"/>
+                                    <constraint firstAttribute="width" secondItem="Wv4-au-122" secondAttribute="height" multiplier="1:1" id="LZa-UI-ogv"/>
+                                    <constraint firstAttribute="width" secondItem="Wv4-au-122" secondAttribute="height" multiplier="1:1" id="VEe-jv-yX0"/>
+                                    <constraint firstAttribute="width" secondItem="Wv4-au-122" secondAttribute="height" multiplier="1:1" id="d5y-g0-a0I"/>
+                                    <constraint firstItem="8Ax-7f-jew" firstAttribute="top" secondItem="Wv4-au-122" secondAttribute="top" id="jpl-p3-hIZ"/>
+                                    <constraint firstAttribute="width" secondItem="Wv4-au-122" secondAttribute="height" multiplier="1:1" id="q0b-4Y-knl"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Ax-7f-jew" secondAttribute="bottom" id="xjH-Bf-MNa"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didTapProfile:" destination="eN5-Q1-6Fu" eventType="touchUpInside" id="whK-AC-1Uf"/>
+                                </connections>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageFlagJapan" translatesAutoresizingMaskIntoConstraints="NO" id="HbS-g3-hrJ">
+                                <rect key="frame" x="10" y="69" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HbS-g3-hrJ" secondAttribute="height" id="Bm6-9x-JGh"/>
+                                    <constraint firstAttribute="height" constant="40" id="Gbj-TK-Kde"/>
+                                    <constraint firstAttribute="width" secondItem="HbS-g3-hrJ" secondAttribute="height" id="Ody-Fh-XBm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWG-aB-ZbE">
+                                <rect key="frame" x="166" y="129" width="61.333333333333343" height="28.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2T9-gz-4yU">
+                                <rect key="frame" x="16" y="187.66666666666666" width="361" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="y3c-PL-gfX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RJu-JT-JVt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="colors/backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RJu-JT-JVt" firstAttribute="trailing" secondItem="Wv4-au-122" secondAttribute="trailing" constant="10" id="4hR-4q-0ud"/>
+                            <constraint firstItem="HbS-g3-hrJ" firstAttribute="top" secondItem="RJu-JT-JVt" secondAttribute="top" constant="10" id="9B0-Gg-HHY"/>
+                            <constraint firstItem="HWG-aB-ZbE" firstAttribute="centerX" secondItem="JzZ-IJ-8RE" secondAttribute="centerX" id="cEf-hI-u2K"/>
+                            <constraint firstItem="HbS-g3-hrJ" firstAttribute="leading" secondItem="RJu-JT-JVt" secondAttribute="leading" constant="10" id="dAL-0b-fMH"/>
+                            <constraint firstItem="RJu-JT-JVt" firstAttribute="trailing" secondItem="2T9-gz-4yU" secondAttribute="trailing" constant="16" id="fAh-on-GDY"/>
+                            <constraint firstItem="2T9-gz-4yU" firstAttribute="leading" secondItem="RJu-JT-JVt" secondAttribute="leading" constant="16" id="h5b-iX-M7q"/>
+                            <constraint firstItem="2T9-gz-4yU" firstAttribute="top" secondItem="HWG-aB-ZbE" secondAttribute="bottom" constant="30" id="o8D-IA-J1B"/>
+                            <constraint firstItem="Wv4-au-122" firstAttribute="top" secondItem="RJu-JT-JVt" secondAttribute="top" constant="10" id="svg-rJ-C4I"/>
+                            <constraint firstItem="HWG-aB-ZbE" firstAttribute="top" secondItem="Wv4-au-122" secondAttribute="bottom" constant="20" id="wam-B6-HXC"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="dictionary" image="iconUnSelectedDictionary" selectedImage="iconSelectedDictionary" id="288-6v-ZXM">
+                    <tabBarItem key="tabBarItem" title="Dictionary" image="iconUnSelectedDictionary" selectedImage="iconSelectedDictionary" id="288-6v-ZXM">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="l10nTitle" value="dictionary"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tabBarStackView" destination="2T9-gz-4yU" id="p0K-my-3DH"/>
+                        <outlet property="titleLabel" destination="HWG-aB-ZbE" id="DDv-sf-aOm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8b-2o-srM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1283" y="904"/>
         </scene>
-        <!--review-->
+        <!--Review-->
         <scene sceneID="ObM-rL-aJK">
             <objects>
                 <viewController id="jM2-d5-Lpg" sceneMemberID="viewController">
@@ -41,7 +101,7 @@
                         <viewLayoutGuide key="safeArea" id="AHj-1X-ffZ"/>
                         <color key="backgroundColor" name="colors/backgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="review" image="iconSelectedReview." selectedImage="iconSelectedReview" id="b3x-KC-epS">
+                    <tabBarItem key="tabBarItem" title="Review" image="iconSelectedReview." selectedImage="iconSelectedReview" id="b3x-KC-epS">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="l10nTitle" value="review"/>
                         </userDefinedRuntimeAttributes>
@@ -51,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="-1926" y="904"/>
         </scene>
-        <!--learn-->
+        <!--Learn-->
         <scene sceneID="NPD-yJ-P0N">
             <objects>
                 <viewController id="eN5-Q1-6Fu" customClass="LearnViewController" customModule="learn_japanese" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,7 +237,7 @@
                             <constraint firstItem="bGS-N3-09q" firstAttribute="top" secondItem="UmW-4p-9sr" secondAttribute="top" id="zWd-dC-M05"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="learn" image="iconUnSelectedLearning" selectedImage="iconSelectedLearning" id="nhv-9m-25H">
+                    <tabBarItem key="tabBarItem" title="Learn" image="iconUnSelectedLearning" selectedImage="iconSelectedLearning" id="nhv-9m-25H">
                         <color key="badgeColor" name="colors/shockingPink"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="l10nTitle" value="learn"/>
@@ -192,7 +252,7 @@
             </objects>
             <point key="canvasLocation" x="-2593.1297709923665" y="903.52112676056345"/>
         </scene>
-        <!--profile-->
+        <!--Profile-->
         <scene sceneID="DlF-Gx-8ck">
             <objects>
                 <viewController id="wqM-8H-wda" sceneMemberID="viewController">
@@ -202,7 +262,7 @@
                         <viewLayoutGuide key="safeArea" id="nbI-QO-bEW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="profile" image="iconUnSelectedProfile" selectedImage="iconSelectedProfile" id="BKe-67-dwY">
+                    <tabBarItem key="tabBarItem" title="Profile" image="iconUnSelectedProfile" selectedImage="iconSelectedProfile" id="BKe-67-dwY">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="l10nTitle" value="profile"/>
                         </userDefinedRuntimeAttributes>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E15592F617E9BEF9E1091E5 /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600B6B032D28C8A87885B039 /* Pods_learn_japanese.framework */; };
+		39DE277963B0595E036CB64F /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D26BA8D9739D27B2E4D01F /* Pods_learn_japanese.framework */; };
 		DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */; };
 		DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */; };
 		DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */; };
@@ -35,6 +35,7 @@
 		DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25D2C987DE20028BC1C /* GrammarModel.swift */; };
 		DF64E2622C9C5D510028BC1C /* UnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2612C9C5D510028BC1C /* UnitModel.swift */; };
 		DF64E2642C9C65280028BC1C /* ObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2632C9C65280028BC1C /* ObjectExtension.swift */; };
+		DF64E2662C9C6A580028BC1C /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2652C9C6A580028BC1C /* LessonModel.swift */; };
 		DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */; };
 		DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10572C738CDA002969E8 /* VocabularyModel.swift */; };
 		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
@@ -42,6 +43,7 @@
 		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
 		DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10602C7CC119002969E8 /* DateExtensions.swift */; };
 		DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */; };
+		DF8271942CAC3BE700E27690 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -78,6 +80,11 @@
 		DFCD36412C6265E300F60870 /* UnitOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */; };
 		DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36422C62674E00F60870 /* SectionModel.swift */; };
 		DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */; };
+		DFDA87712CC7EF2700934E39 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA87702CC7EF2700934E39 /* DrawableView.swift */; };
+		DFDA881A2CC7F5FD00934E39 /* ZinniaCocoaTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDA880F2CC7F5B900934E39 /* ZinniaCocoaTouch.framework */; };
+		DFDA881C2CC7F65300934E39 /* ZinniaCocoaTouch.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DFDA880F2CC7F5B900934E39 /* ZinniaCocoaTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = DFDA881F2CC7F69800934E39 /* Bridging-Header.h */; };
+		DFDA88222CC7F87A00934E39 /* HandwritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */; };
 		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
 		DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */; };
 		DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */; };
@@ -106,12 +113,66 @@
 			remoteGlobalIDString = DFBA803E2C402FA000467A58;
 			remoteInfo = learn_japanese;
 		};
+		DFDA880E2CC7F5B900934E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B72741D41AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouch;
+		};
+		DFDA88102CC7F5B900934E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B72741DF1AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouchTests;
+		};
+		DFDA88122CC7F5B900934E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B725FBD01B05BD76002AAB18;
+			remoteInfo = ZinniaCocoa;
+		};
+		DFDA88142CC7F5B900934E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B725FBDA1B05BD76002AAB18;
+			remoteInfo = ZinniaCocoaTests;
+		};
+		DFDA88162CC7F5B900934E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A94D6551F8E17E000234437;
+			remoteInfo = ZinniaCocoaWatch;
+		};
+		DFDA88182CC7F5E300934E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B72741D31AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouch;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DFDA881B2CC7F62E00934E39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DFDA881C2CC7F65300934E39 /* ZinniaCocoaTouch.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		58059791A81EA65C04A26DFF /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
-		600B6B032D28C8A87885B039 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D04AF309FE49C92B1567BA42 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
+		00D26BA8D9739D27B2E4D01F /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91229ECB65180315E01B67BE /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
 		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,6 +200,7 @@
 		DF64E25D2C987DE20028BC1C /* GrammarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarModel.swift; sourceTree = "<group>"; };
 		DF64E2612C9C5D510028BC1C /* UnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModel.swift; sourceTree = "<group>"; };
 		DF64E2632C9C65280028BC1C /* ObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectExtension.swift; sourceTree = "<group>"; };
+		DF64E2652C9C6A580028BC1C /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseHelper.swift; sourceTree = "<group>"; };
 		DF7B10572C738CDA002969E8 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -146,6 +208,7 @@
 		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		DF7B10602C7CC119002969E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA632C4D64DE00C78640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -188,6 +251,10 @@
 		DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitOverviewModel.swift; sourceTree = "<group>"; };
 		DFCD36422C62674E00F60870 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewControllerExtension.swift; sourceTree = "<group>"; };
+		DFDA87702CC7EF2700934E39 /* DrawableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
+		DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = KanjiHandwriting/ZinniaCocoaTouch.xcodeproj; sourceTree = "<group>"; };
+		DFDA881F2CC7F69800934E39 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingViewModel.swift; sourceTree = "<group>"; };
 		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +266,7 @@
 		DFFF30D72C51638100DADE4A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		DFFF30DA2C52A93E00DADE4A /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 		DFFF30DB2C52A93E00DADE4A /* LevelSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelSelectionViewController.xib; sourceTree = "<group>"; };
+		DFFF313B32B982CD7E48D504 /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +274,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E15592F617E9BEF9E1091E5 /* Pods_learn_japanese.framework in Frameworks */,
+				DFDA881A2CC7F5FD00934E39 /* ZinniaCocoaTouch.framework in Frameworks */,
+				39DE277963B0595E036CB64F /* Pods_learn_japanese.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +296,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		469939AC4411898E915223B0 /* Frameworks */ = {
+		BAE560FFC83374977A04240A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				600B6B032D28C8A87885B039 /* Pods_learn_japanese.framework */,
+				00D26BA8D9739D27B2E4D01F /* Pods_learn_japanese.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,8 +307,8 @@
 		C9629DCF324ACD8085EFB02E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				58059791A81EA65C04A26DFF /* Pods-learn_japanese.debug.xcconfig */,
-				D04AF309FE49C92B1567BA42 /* Pods-learn_japanese.release.xcconfig */,
+				DFFF313B32B982CD7E48D504 /* Pods-learn_japanese.debug.xcconfig */,
+				91229ECB65180315E01B67BE /* Pods-learn_japanese.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -290,8 +359,17 @@
 				DF7B10572C738CDA002969E8 /* VocabularyModel.swift */,
 				DF64E25D2C987DE20028BC1C /* GrammarModel.swift */,
 				DF64E2612C9C5D510028BC1C /* UnitModel.swift */,
+				DF64E2652C9C6A580028BC1C /* LessonModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DF8271922CAC3B6D00E27690 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */,
+			);
+			path = Dictionary;
 			sourceTree = "<group>";
 		};
 		DF91DA512C4D621D00C78640 /* Localizations */ = {
@@ -337,6 +415,7 @@
 				DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */,
 				DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */,
 				DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */,
+				DFDA87702CC7EF2700934E39 /* DrawableView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -399,6 +478,7 @@
 		DFA6E8ED2C611D2500765A11 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				DF8271922CAC3B6D00E27690 /* Dictionary */,
 				DFA6E8E52C6117FB00765A11 /* Lessson */,
 				DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */,
 				DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */,
@@ -409,12 +489,14 @@
 		DFBA80362C402FA000467A58 = {
 			isa = PBXGroup;
 			children = (
+				DFDA881D2CC7F66900934E39 /* SuportingFiles */,
+				DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */,
 				DFBA80412C402FA000467A58 /* learn_japanese */,
 				DFBA80582C402FA200467A58 /* learn_japaneseTests */,
 				DFBA80622C402FA200467A58 /* learn_japaneseUITests */,
 				DFBA80402C402FA000467A58 /* Products */,
 				C9629DCF324ACD8085EFB02E /* Pods */,
-				469939AC4411898E915223B0 /* Frameworks */,
+				BAE560FFC83374977A04240A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -544,6 +626,7 @@
 				DF9A23D42C426F2400A73895 /* Constant.swift */,
 				DFFF30D72C51638100DADE4A /* Validation.swift */,
 				DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */,
+				DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -561,6 +644,26 @@
 				DF1A5D4D2C627E2800ADD61E /* LessonCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DFDA88072CC7F5B900934E39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFDA880F2CC7F5B900934E39 /* ZinniaCocoaTouch.framework */,
+				DFDA88112CC7F5B900934E39 /* ZinniaCocoaTouchTests.xctest */,
+				DFDA88132CC7F5B900934E39 /* ZinniaCocoa.framework */,
+				DFDA88152CC7F5B900934E39 /* ZinniaCocoaTests.xctest */,
+				DFDA88172CC7F5B900934E39 /* ZinniaCocoaWatch.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFDA881D2CC7F66900934E39 /* SuportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DFDA881F2CC7F69800934E39 /* Bridging-Header.h */,
+			);
+			path = SuportingFiles;
 			sourceTree = "<group>";
 		};
 		DFF809292C5E346600F1EB2C /* Home */ = {
@@ -609,15 +712,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFBA80692C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japanese" */;
 			buildPhases = (
-				A806EA1F69BA7351BE70A664 /* [CP] Check Pods Manifest.lock */,
+				8792D8A58CB5E73170DE5E9C /* [CP] Check Pods Manifest.lock */,
 				DFBA803B2C402FA000467A58 /* Sources */,
 				DFBA803C2C402FA000467A58 /* Frameworks */,
 				DFBA803D2C402FA000467A58 /* Resources */,
-				30B11ECF556B770B1B2B720E /* [CP] Embed Pods Frameworks */,
+				99857CF5FEFC7C48F62CD480 /* [CP] Embed Pods Frameworks */,
+				DFDA881B2CC7F62E00934E39 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DFDA88192CC7F5E300934E39 /* PBXTargetDependency */,
 			);
 			name = learn_japanese;
 			productName = learn_japanese;
@@ -672,6 +777,7 @@
 				TargetAttributes = {
 					DFBA803E2C402FA000467A58 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1600;
 					};
 					DFBA80542C402FA200467A58 = {
 						CreatedOnToolsVersion = 15.4;
@@ -695,6 +801,12 @@
 			mainGroup = DFBA80362C402FA000467A58;
 			productRefGroup = DFBA80402C402FA000467A58 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DFDA88072CC7F5B900934E39 /* Products */;
+					ProjectRef = DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DFBA803E2C402FA000467A58 /* learn_japanese */,
@@ -703,6 +815,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DFDA880F2CC7F5B900934E39 /* ZinniaCocoaTouch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoaTouch.framework;
+			remoteRef = DFDA880E2CC7F5B900934E39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFDA88112CC7F5B900934E39 /* ZinniaCocoaTouchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZinniaCocoaTouchTests.xctest;
+			remoteRef = DFDA88102CC7F5B900934E39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFDA88132CC7F5B900934E39 /* ZinniaCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoa.framework;
+			remoteRef = DFDA88122CC7F5B900934E39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFDA88152CC7F5B900934E39 /* ZinniaCocoaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZinniaCocoaTests.xctest;
+			remoteRef = DFDA88142CC7F5B900934E39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFDA88172CC7F5B900934E39 /* ZinniaCocoaWatch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoaWatch.framework;
+			remoteRef = DFDA88162CC7F5B900934E39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DFBA803D2C402FA000467A58 /* Resources */ = {
@@ -746,24 +896,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		30B11ECF556B770B1B2B720E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A806EA1F69BA7351BE70A664 /* [CP] Check Pods Manifest.lock */ = {
+		8792D8A58CB5E73170DE5E9C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -785,6 +918,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		99857CF5FEFC7C48F62CD480 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -801,7 +951,9 @@
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
+				DF64E2662C9C6A580028BC1C /* LessonModel.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
+				DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
@@ -833,6 +985,7 @@
 				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
 				DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */,
 				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
+				DFDA87712CC7EF2700934E39 /* DrawableView.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
 				DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */,
@@ -843,8 +996,10 @@
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */,
 				DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */,
+				DFDA88222CC7F87A00934E39 /* HandwritingViewModel.swift in Sources */,
 				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
+				DF8271942CAC3BE700E27690 /* DictionaryViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
 				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
 				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,
@@ -885,6 +1040,11 @@
 			isa = PBXTargetDependency;
 			target = DFBA803E2C402FA000467A58 /* learn_japanese */;
 			targetProxy = DFBA80602C402FA200467A58 /* PBXContainerItemProxy */;
+		};
+		DFDA88192CC7F5E300934E39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZinniaCocoaTouch;
+			targetProxy = DFDA88182CC7F5E300934E39 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1022,11 +1182,12 @@
 		};
 		DFBA806A2C402FA200467A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58059791A81EA65C04A26DFF /* Pods-learn_japanese.debug.xcconfig */;
+			baseConfigurationReference = DFFF313B32B982CD7E48D504 /* Pods-learn_japanese.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = learn_japanese/learn_japanese.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1048,6 +1209,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SuportingFiles/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1055,11 +1218,12 @@
 		};
 		DFBA806B2C402FA200467A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D04AF309FE49C92B1567BA42 /* Pods-learn_japanese.release.xcconfig */;
+			baseConfigurationReference = 91229ECB65180315E01B67BE /* Pods-learn_japanese.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = learn_japanese/learn_japanese.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1081,6 +1245,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SuportingFiles/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

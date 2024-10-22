@@ -15,7 +15,7 @@ target 'learn_japanese' do
   pod 'FirebaseStorage'
   pod 'SVProgressHUD'
   pod 'RealmSwift'
-  pod 'L10n-swift', '~> 5.10'
+  pod 'L10n-swift'
 
   post_install do |installer|
    installer.pods_project.targets.each do |target|
