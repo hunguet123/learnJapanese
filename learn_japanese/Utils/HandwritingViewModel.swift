@@ -60,10 +60,5 @@ class HandwritingViewModel {
         if results != nil {
             characters = results!.map { $0.value }
         }
-        
-        results!.map { value in
-            print("---- value \(value.value)")
-            print("---- score \(value.score)")
-        }
     }
 }
