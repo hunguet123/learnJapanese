@@ -45,7 +45,6 @@ class RealmDatabaseHelper {
     func fetchObjects<T: Object>(_ objectType: T.Type) -> [T] {
         do {
             let realm = try Realm()
-            print("----- realm path \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
             let results = realm.objects(objectType)
             return Array(results)
         } catch let error {
@@ -123,6 +122,7 @@ class RealmDatabaseHelper {
             
             do {
                 let realm = try Realm()
+                print("----- realm path \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
                 try realm.write {
                     for document in documents {
                         let data = document.data()

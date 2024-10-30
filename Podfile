@@ -16,9 +16,15 @@ target 'learn_japanese' do
   pod 'SVProgressHUD'
   pod 'RealmSwift'
   pod 'L10n-swift'
+  pod 'SwiftCSV'
 
   post_install do |installer|
    installer.pods_project.targets.each do |target|
+     if target.name == 'abseil'
+       target.build_configurations.each do |config|
+         config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'gnu++14'
+       end
+     end
     target.build_configurations.each do |config|
      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
     end

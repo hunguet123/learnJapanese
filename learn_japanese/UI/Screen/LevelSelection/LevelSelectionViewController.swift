@@ -36,16 +36,6 @@ class LevelSelectionViewController: BaseViewControler {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUi()
-        
-        // TODO: remove fake data
-        let unitModel = UnitModel(id: "91283749", title: "Hiragana", descriptionLesson: "abc ádf", lessonIds: ["1",
-                                                                                                               "2","4",])
-        let lessonModel = LessonModel(id: "1234871982347", title: "ヒラガナを書き方", vocabularyIds: ["124"], grammarIds: ["1234"]) 
-        RealmDatabaseHelper.shared.addObject(lessonModel)
-        RealmDatabaseHelper.shared.syncToFirestore(objectType: LessonModel.self, toCollection: FirebaseCollectionNameConstant.lesson)
-        RealmDatabaseHelper.shared.fetchObjects(UnitModel.self).forEach { vocabularyModel in
-            print("----- vocabulary: \(vocabularyModel)")
-        }
     }
     
     private func setupUi() {
