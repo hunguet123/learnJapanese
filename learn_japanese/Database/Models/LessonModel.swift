@@ -1,42 +1,48 @@
-//
-//  LessonModel.swift
-//  learn_japanese
-//
-//  Created by Hưng Hà Quang on 19/9/24.
-//
-
 import Foundation
-import RealmSwift
+import SQLite
 
-class LessonModel : Object, RealmInitializable {
-    @objc dynamic var id: String = ""
-    @objc dynamic var title: String = ""
-    let vocabularyIds = List<String>()
-    let grammarIds = List<String>()
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    convenience init(id: String, title: String, vocabularyIds: [String], grammarIds: [String]) {
-        self.init()
-        self.id = id
+struct LessonModel {
+    var lessonId: Int // INTEGER NOT NULL UNIQUE
+    var title: String // TEXT NOT NULL
+    var detail: String? // TEXT (có thể là nil)
+    var level: String // TEXT NOT NULL
+
+    // Khởi tạo
+    init(lessonId: Int, title: String, detail: String?, level: String) {
+        self.lessonId = lessonId
         self.title = title
-        self.vocabularyIds.append(objectsIn: vocabularyIds)
-        self.grammarIds.append(objectsIn: grammarIds)
+        self.detail = detail
+        self.level = level
     }
-    
-    required convenience init?(value: [String: Any]) {
-        self.init()
-        self.id = value["id"] as? String ?? ""
-        self.title = value["title"] as? String ?? ""
-        
-        if let vocabularyIdsArray = value["vocabularyIds"] as? [String] {
-            self.vocabularyIds.append(objectsIn: vocabularyIdsArray)
+}
+
+extension LessonModel {
+    static func fetchAllLessons() -> [LessonModel] {
+        var lessons: [LessonModel] = []
+        guard let db = SQLiteHelper.shared.db else {
+            return lessons;
         }
         
-        if let grammarIdsArray = value["grammarIds"] as? [String] {
-            self.grammarIds.append(objectsIn: grammarIdsArray)
+        do {
+            let lessonTable = Table("Lesson")
+            let lessonID = Expression<Int>("lesson_id")
+            let title = Expression<String>("title")
+            let detail = Expression<String?>("detail")
+            let level = Expression<String>("level")
+            for row in try db.prepare(lessonTable) {
+                let lesson = LessonModel(
+                    lessonId: row[lessonID],
+                    title: row[title],
+                    detail: row[detail],
+                    level: row[level]
+                )
+                lessons.append(lesson)
+            }
+            
+        } catch {
+            print("Error: \(error)")
         }
+        
+        return lessons
     }
 }

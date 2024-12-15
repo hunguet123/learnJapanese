@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '14.0'
 
 target 'learn_japanese' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -14,9 +14,8 @@ target 'learn_japanese' do
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
   pod 'SVProgressHUD'
-  pod 'RealmSwift'
   pod 'L10n-swift'
-  pod 'SwiftCSV'
+  pod 'SQLite.swift', '~> 0.15.3'
 
   post_install do |installer|
    installer.pods_project.targets.each do |target|

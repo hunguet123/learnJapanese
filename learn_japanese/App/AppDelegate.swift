@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func config() {
         self.configFirebase()
-        RealmDatabaseHelper.shared.syncFromFirestoreToRealm(objectType: VocabularyModel.self, fromCollection: FirebaseCollectionNameConstant.vocabulary)
     }
     
     func configFirebase() {

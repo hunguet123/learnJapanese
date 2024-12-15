@@ -8,7 +8,7 @@
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
-    var lessonId: String?
+    var lessonId: Int?
     var lessonName: String?
 
     override func viewDidLoad() {

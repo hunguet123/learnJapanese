@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5357950969F3F2044F07F66E /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5EBFC5AFA38008F2D2CAAA /* Pods_learn_japanese.framework */; };
+		0DBDDC1C20462E571C17CA06 /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F033840B12E9A165EE8F62 /* Pods_learn_japanese.framework */; };
 		DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */; };
 		DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */; };
 		DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */; };
@@ -32,12 +32,6 @@
 		DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */; };
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
 		DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */; };
-		DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E25D2C987DE20028BC1C /* GrammarModel.swift */; };
-		DF64E2622C9C5D510028BC1C /* UnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2612C9C5D510028BC1C /* UnitModel.swift */; };
-		DF64E2642C9C65280028BC1C /* ObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2632C9C65280028BC1C /* ObjectExtension.swift */; };
-		DF64E2662C9C6A580028BC1C /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64E2652C9C6A580028BC1C /* LessonModel.swift */; };
-		DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */; };
-		DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10572C738CDA002969E8 /* VocabularyModel.swift */; };
 		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
 		DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105B2C7CBFD6002969E8 /* Gender.swift */; };
 		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
@@ -70,6 +64,8 @@
 		DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6E8E62C61182100765A11 /* LearnViewController.swift */; };
 		DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6E8EB2C61184100765A11 /* LearnViewModel.swift */; };
 		DFA6E8EF2C611D4D00765A11 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */; };
+		DFAD7A0C2D09F91A0085E331 /* SqliteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD7A0B2D09F91A0085E331 /* SqliteHelper.swift */; };
+		DFAD7A0E2D0B1D190085E331 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD7A0D2D0B1D180085E331 /* LessonModel.swift */; };
 		DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80422C402FA000467A58 /* AppDelegate.swift */; };
 		DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80442C402FA000467A58 /* SceneDelegate.swift */; };
 		DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBA804B2C402FA100467A58 /* Assets.xcassets */; };
@@ -85,7 +81,6 @@
 		DFDA881C2CC7F65300934E39 /* ZinniaCocoaTouch.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DFDA880F2CC7F5B900934E39 /* ZinniaCocoaTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = DFDA881F2CC7F69800934E39 /* Bridging-Header.h */; };
 		DFDA88222CC7F87A00934E39 /* HandwritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */; };
-		DFE59EFD2CD286C300011DFC /* CsvUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE59EFC2CD286C300011DFC /* CsvUtils.swift */; };
 		DFE59F002CD28E5B00011DFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */; };
 		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
 		DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */; };
@@ -173,9 +168,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1196B547483F863C1217203D /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
-		9B5EBFC5AFA38008F2D2CAAA /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6B92FD5843363B700BA41EA /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
+		29F033840B12E9A165EE8F62 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		380AE33919F83400B91B4C0C /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		56E36C8B76BB20E7A05988F0 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
 		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -200,12 +195,6 @@
 		DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelectionView.swift; sourceTree = "<group>"; };
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
 		DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionNameConstant.swift; sourceTree = "<group>"; };
-		DF64E25D2C987DE20028BC1C /* GrammarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarModel.swift; sourceTree = "<group>"; };
-		DF64E2612C9C5D510028BC1C /* UnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModel.swift; sourceTree = "<group>"; };
-		DF64E2632C9C65280028BC1C /* ObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectExtension.swift; sourceTree = "<group>"; };
-		DF64E2652C9C6A580028BC1C /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
-		DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseHelper.swift; sourceTree = "<group>"; };
-		DF7B10572C738CDA002969E8 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DF7B105B2C7CBFD6002969E8 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -240,6 +229,8 @@
 		DFA6E8E62C61182100765A11 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		DFA6E8EB2C61184100765A11 /* LearnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewModel.swift; sourceTree = "<group>"; };
 		DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		DFAD7A0B2D09F91A0085E331 /* SqliteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteHelper.swift; sourceTree = "<group>"; };
+		DFAD7A0D2D0B1D180085E331 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		DFBA803F2C402FA000467A58 /* learn_japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80422C402FA000467A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFBA80442C402FA000467A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,7 +249,6 @@
 		DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = KanjiHandwriting/ZinniaCocoaTouch.xcodeproj; sourceTree = "<group>"; };
 		DFDA881F2CC7F69800934E39 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingViewModel.swift; sourceTree = "<group>"; };
-		DFE59EFC2CD286C300011DFC /* CsvUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvUtils.swift; sourceTree = "<group>"; };
 		DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -274,8 +264,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		DFDA88232CC9427E00934E39 /* Drawing */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Drawing; sourceTree = "<group>"; };
-		DFE59EF52CD2859000011DFC /* data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = data; sourceTree = "<group>"; };
+		DFDA88232CC9427E00934E39 /* Drawing */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		DFE59EF52CD2859000011DFC /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,7 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDA881A2CC7F5FD00934E39 /* ZinniaCocoaTouch.framework in Frameworks */,
-				5357950969F3F2044F07F66E /* Pods_learn_japanese.framework in Frameworks */,
+				0DBDDC1C20462E571C17CA06 /* Pods_learn_japanese.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,10 +303,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B87D359BF9CA3EEBD7F573E /* Frameworks */ = {
+		38D665CBE9C5004F9D1EAF76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B5EBFC5AFA38008F2D2CAAA /* Pods_learn_japanese.framework */,
+				29F033840B12E9A165EE8F62 /* Pods_learn_japanese.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,8 +314,8 @@
 		C9629DCF324ACD8085EFB02E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1196B547483F863C1217203D /* Pods-learn_japanese.debug.xcconfig */,
-				C6B92FD5843363B700BA41EA /* Pods-learn_japanese.release.xcconfig */,
+				380AE33919F83400B91B4C0C /* Pods-learn_japanese.debug.xcconfig */,
+				56E36C8B76BB20E7A05988F0 /* Pods-learn_japanese.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -365,10 +363,7 @@
 		DF7B10562C738CB4002969E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DF7B10572C738CDA002969E8 /* VocabularyModel.swift */,
-				DF64E25D2C987DE20028BC1C /* GrammarModel.swift */,
-				DF64E2612C9C5D510028BC1C /* UnitModel.swift */,
-				DF64E2652C9C6A580028BC1C /* LessonModel.swift */,
+				DFAD7A0D2D0B1D180085E331 /* LessonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,7 +433,6 @@
 				DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */,
 				DF7B10602C7CC119002969E8 /* DateExtensions.swift */,
 				DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */,
-				DF64E2632C9C65280028BC1C /* ObjectExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -506,7 +500,7 @@
 				DFBA80622C402FA200467A58 /* learn_japaneseUITests */,
 				DFBA80402C402FA000467A58 /* Products */,
 				C9629DCF324ACD8085EFB02E /* Pods */,
-				9B87D359BF9CA3EEBD7F573E /* Frameworks */,
+				38D665CBE9C5004F9D1EAF76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -584,7 +578,7 @@
 		DFBA80742C4030F800467A58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DFE59EF52CD2859000011DFC /* data */,
+				DFE59EF52CD2859000011DFC /* Data */,
 				DF91DA512C4D621D00C78640 /* Localizations */,
 				DFBA804B2C402FA100467A58 /* Assets.xcassets */,
 				DF9A23E92C4287C900A73895 /* lauch.json */,
@@ -618,7 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				DF7B10562C738CB4002969E8 /* Models */,
-				DF7B10522C73862F002969E8 /* RealmDatabaseHelper.swift */,
+				DFAD7A0B2D09F91A0085E331 /* SqliteHelper.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -634,7 +628,6 @@
 		DFBA80792C4032D000467A58 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DFE59EFC2CD286C300011DFC /* CsvUtils.swift */,
 				DF9E77E32C5543F20087E361 /* Firebase */,
 				DF9A23D42C426F2400A73895 /* Constant.swift */,
 				DFFF30D72C51638100DADE4A /* Validation.swift */,
@@ -733,12 +726,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFBA80692C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japanese" */;
 			buildPhases = (
-				83ACD092A5331D67BE3ACF35 /* [CP] Check Pods Manifest.lock */,
+				F4510702D849C3501484A298 /* [CP] Check Pods Manifest.lock */,
 				DFBA803B2C402FA000467A58 /* Sources */,
 				DFBA803C2C402FA000467A58 /* Frameworks */,
 				DFBA803D2C402FA000467A58 /* Resources */,
 				DFDA881B2CC7F62E00934E39 /* CopyFiles */,
-				ED5F442417A6F3E1751750DB /* [CP] Embed Pods Frameworks */,
+				1634DF44228EB8107E43E721 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -747,7 +740,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				DFDA88232CC9427E00934E39 /* Drawing */,
-				DFE59EF52CD2859000011DFC /* data */,
+				DFE59EF52CD2859000011DFC /* Data */,
 			);
 			name = learn_japanese;
 			productName = learn_japanese;
@@ -815,7 +808,6 @@
 				};
 			};
 			buildConfigurationList = DFBA803A2C402FA000467A58 /* Build configuration list for PBXProject "learn_japanese" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = vi;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -824,6 +816,7 @@
 				vi,
 			);
 			mainGroup = DFBA80362C402FA000467A58;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = DFBA80402C402FA000467A58 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -921,7 +914,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83ACD092A5331D67BE3ACF35 /* [CP] Check Pods Manifest.lock */ = {
+		1634DF44228EB8107E43E721 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4510702D849C3501484A298 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -943,23 +953,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ED5F442417A6F3E1751750DB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -976,7 +969,6 @@
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
-				DF64E2662C9C6A580028BC1C /* LessonModel.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
@@ -986,7 +978,6 @@
 				DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */,
 				DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
-				DF64E2622C9C5D510028BC1C /* UnitModel.swift in Sources */,
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
@@ -996,13 +987,11 @@
 				DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
-				DFE59EFD2CD286C300011DFC /* CsvUtils.swift in Sources */,
 				DFCD36412C6265E300F60870 /* UnitOverviewModel.swift in Sources */,
 				DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */,
 				DFE59F002CD28E5B00011DFC /* ProfileViewController.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
 				DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */,
-				DF7B10582C738CDA002969E8 /* VocabularyModel.swift in Sources */,
 				DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
@@ -1011,14 +1000,13 @@
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
 				DF0B32992C48148100C1BC77 /* LoginViewControllerExtension.swift in Sources */,
 				DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */,
+				DFAD7A0E2D0B1D190085E331 /* LessonModel.swift in Sources */,
 				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
 				DFDA87712CC7EF2700934E39 /* DrawableView.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
-				DF64E25E2C987DE20028BC1C /* GrammarModel.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
 				DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */,
-				DF7B10532C73862F002969E8 /* RealmDatabaseHelper.swift in Sources */,
 				DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */,
 				DF9A23E42C4276D700A73895 /* AppImages.swift in Sources */,
 				DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */,
@@ -1031,8 +1019,8 @@
 				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
 				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
-				DF64E2642C9C65280028BC1C /* ObjectExtension.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
+				DFAD7A0C2D09F91A0085E331 /* SqliteHelper.swift in Sources */,
 				DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */,
 				DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */,
 			);
@@ -1209,7 +1197,7 @@
 		};
 		DFBA806A2C402FA200467A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1196B547483F863C1217203D /* Pods-learn_japanese.debug.xcconfig */;
+			baseConfigurationReference = 380AE33919F83400B91B4C0C /* Pods-learn_japanese.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1245,7 +1233,7 @@
 		};
 		DFBA806B2C402FA200467A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6B92FD5843363B700BA41EA /* Pods-learn_japanese.release.xcconfig */;
+			baseConfigurationReference = 56E36C8B76BB20E7A05988F0 /* Pods-learn_japanese.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

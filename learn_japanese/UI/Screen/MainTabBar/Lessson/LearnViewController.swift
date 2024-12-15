@@ -9,7 +9,7 @@ import UIKit
 
 class LearnViewController: BaseViewControler {
     @IBOutlet weak var titleLabel: UILabel!
-    var lessonId: String?
+    var lessonId: Int?
     var lessonname: String?
     var learnViewModel: LearnViewModel?
     @IBOutlet weak var lessonsCollectionView: UICollectionView!
@@ -35,7 +35,7 @@ class LearnViewController: BaseViewControler {
     
     private func fetchData() {
         if let lessonId = self.lessonId {
-            learnViewModel?.fetchData(lessonId: lessonId)
+//            learnViewModel?.fetchData(lessonId: lessonId)
             self.view.layoutIfNeeded()
         }
     }

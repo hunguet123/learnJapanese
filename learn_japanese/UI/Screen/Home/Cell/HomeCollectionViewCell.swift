@@ -21,7 +21,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     var delegate: HomeCollectionViewDelegate?
     private var selectedItemAt: Int?
     
-    func bind(lessonOverviewModel: UnitOverviewModel?,cellForItemAt indexPath: IndexPath) {
+    func bind(lessonOverviewModel: LessonModel?,cellForItemAt indexPath: IndexPath) {
         self.selectedItemAt = indexPath.row
         if indexPath.row == 0 {
             progressStackView.isHidden = true
@@ -32,23 +32,23 @@ class HomeCollectionViewCell: UICollectionViewCell {
         lessonProgressView.backgroundColor = .clear
         lessonProgressView.frame = CGRect(x: 0, y: 0, width: 300, height: 400)
         lessonProgressView.center = self.lessonProgressView.center
-        lessonProgressView.totalDots = lessonOverviewModel?.totalNumberOfLessons ?? 0
-        lessonProgressView.completedDots = lessonOverviewModel?.numberOfLesssonsLearned ?? 0
+//        lessonProgressView.totalDots = lessonOverviewModel?.totalNumberOfLessons ?? 0
+//        lessonProgressView.completedDots = lessonOverviewModel?.numberOfLesssonsLearned ?? 0
         lessonProgressView.fixInView(self.lessonProgressView)
-        lessonNameLavel.text = lessonOverviewModel?.name
-        if lessonOverviewModel?.isLearned == true {
-            self.lessonLockedImage.isHidden = true
-            self.lessonProgressView.isHidden = false
-            childrenOfProgressStackView.forEach { view in
-                view.backgroundColor = AppColors.goldenPoppy
-            }
-        } else {
+        lessonNameLavel.text = lessonOverviewModel?.title
+//        if lessonOverviewModel?.isLearned == true {
+//            self.lessonLockedImage.isHidden = true
+//            self.lessonProgressView.isHidden = false
+//            childrenOfProgressStackView.forEach { view in
+//                view.backgroundColor = AppColors.goldenPoppy
+//            }
+//        } else {
             self.lessonLockedImage.isHidden = false
             self.lessonProgressView.isHidden = true
             childrenOfProgressStackView.forEach { view in
                 view.backgroundColor = AppColors.chineseSliver
             }
-        }
+//        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapLesson(_:)))
         self.lessonProgressView.addGestureRecognizer(tapGesture)

@@ -43,8 +43,8 @@ extension HomeViewController: HomeCollectionViewDelegate {
     func homeCollectionView(_ homeCollectionViewCell: HomeCollectionViewCell, didSelectAt: Int) {
         let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
         let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
-        tabBarController.lessonId = self.homeViewModel?.lessons[didSelectAt].id
-        tabBarController.lessonName = self.homeViewModel?.lessons[didSelectAt].name
+        tabBarController.lessonId = self.homeViewModel?.lessons[didSelectAt].lessonId
+        tabBarController.lessonName = self.homeViewModel?.lessons[didSelectAt].title
         self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
