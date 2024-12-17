@@ -28,6 +28,14 @@
 		DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */; };
 		DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */; };
 		DF35E48A2C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */; };
+		DF3875F82D1092D3005BBE05 /* UserProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3875F72D1092D3005BBE05 /* UserProgressManager.swift */; };
+		DF3875FA2D11BAEC005BBE05 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3875F92D11BAEC005BBE05 /* ActivityModel.swift */; };
+		DF3875FC2D11BC43005BBE05 /* LessonServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3875FB2D11BC43005BBE05 /* LessonServiceUtils.swift */; };
+		DF3875FE2D11BC6D005BBE05 /* ActivityServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3875FD2D11BC6D005BBE05 /* ActivityServiceUtils.swift */; };
+		DF3876002D11BE3C005BBE05 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3875FF2D11BE3B005BBE05 /* ExerciseModel.swift */; };
+		DF3876022D11BE7E005BBE05 /* ExcerciseServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876012D11BE7E005BBE05 /* ExcerciseServiceUtils.swift */; };
+		DF3876052D11C000005BBE05 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876042D11C000005BBE05 /* QuestionModel.swift */; };
+		DF3876072D11C034005BBE05 /* QuestionServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876062D11C034005BBE05 /* QuestionServiceUtils.swift */; };
 		DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */; };
 		DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */; };
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
@@ -191,6 +199,14 @@
 		DF1A5D5D2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionViewControllerExtension.swift; sourceTree = "<group>"; };
 		DF35E4872C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextQuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF35E4882C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTextQuestionCollectionViewCell.xib; sourceTree = "<group>"; };
+		DF3875F72D1092D3005BBE05 /* UserProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressManager.swift; sourceTree = "<group>"; };
+		DF3875F92D11BAEC005BBE05 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		DF3875FB2D11BC43005BBE05 /* LessonServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceUtils.swift; sourceTree = "<group>"; };
+		DF3875FD2D11BC6D005BBE05 /* ActivityServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityServiceUtils.swift; sourceTree = "<group>"; };
+		DF3875FF2D11BE3B005BBE05 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		DF3876012D11BE7E005BBE05 /* ExcerciseServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseServiceUtils.swift; sourceTree = "<group>"; };
+		DF3876042D11C000005BBE05 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		DF3876062D11C034005BBE05 /* QuestionServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionServiceUtils.swift; sourceTree = "<group>"; };
 		DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSortView.swift; sourceTree = "<group>"; };
 		DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelectionView.swift; sourceTree = "<group>"; };
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -360,10 +376,42 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		DF7B10562C738CB4002969E8 /* Models */ = {
+		DF3875F32D108B94005BBE05 /* Sqlite */ = {
 			isa = PBXGroup;
 			children = (
 				DFAD7A0D2D0B1D180085E331 /* LessonModel.swift */,
+				DF3875F92D11BAEC005BBE05 /* ActivityModel.swift */,
+				DF3875FF2D11BE3B005BBE05 /* ExerciseModel.swift */,
+				DF3876042D11C000005BBE05 /* QuestionModel.swift */,
+			);
+			path = Sqlite;
+			sourceTree = "<group>";
+		};
+		DF3875F42D108BAC005BBE05 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				DF7B10592C7CBF55002969E8 /* UserModel.swift */,
+				DF7B105B2C7CBFD6002969E8 /* Gender.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		DF3876032D11BE92005BBE05 /* Sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				DF3875FB2D11BC43005BBE05 /* LessonServiceUtils.swift */,
+				DF3875FD2D11BC6D005BBE05 /* ActivityServiceUtils.swift */,
+				DF3876012D11BE7E005BBE05 /* ExcerciseServiceUtils.swift */,
+				DF3876062D11C034005BBE05 /* QuestionServiceUtils.swift */,
+			);
+			path = Sqlite;
+			sourceTree = "<group>";
+		};
+		DF7B10562C738CB4002969E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF3875F42D108BAC005BBE05 /* Firebase */,
+				DF3875F32D108B94005BBE05 /* Sqlite */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -446,6 +494,7 @@
 				DF9E77EF2C55E51A0087E361 /* EmailPasswordSignInManager.swift */,
 				DF9E77F12C57CDFA0087E361 /* SignUpManager.swift */,
 				DF9E77F32C57D7710087E361 /* ForgotPasswordManager.swift */,
+				DF3875F72D1092D3005BBE05 /* UserProgressManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -594,8 +643,6 @@
 			children = (
 				DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */,
 				DFCD36422C62674E00F60870 /* SectionModel.swift */,
-				DF7B10592C7CBF55002969E8 /* UserModel.swift */,
-				DF7B105B2C7CBFD6002969E8 /* Gender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -628,6 +675,7 @@
 		DFBA80792C4032D000467A58 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DF3876032D11BE92005BBE05 /* Sqlite */,
 				DF9E77E32C5543F20087E361 /* Firebase */,
 				DF9A23D42C426F2400A73895 /* Constant.swift */,
 				DFFF30D72C51638100DADE4A /* Validation.swift */,
@@ -965,15 +1013,20 @@
 				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
+				DF3875F82D1092D3005BBE05 /* UserProgressManager.swift in Sources */,
 				DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */,
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
+				DF3876072D11C034005BBE05 /* QuestionServiceUtils.swift in Sources */,
+				DF3875FA2D11BAEC005BBE05 /* ActivityModel.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
+				DF3876052D11C000005BBE05 /* QuestionModel.swift in Sources */,
 				DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */,
+				DF3875FE2D11BC6D005BBE05 /* ActivityServiceUtils.swift in Sources */,
 				DF0B328D2C45720600C1BC77 /* SplashViewController.swift in Sources */,
 				DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */,
 				DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */,
@@ -983,6 +1036,7 @@
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
 				DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */,
+				DF3875FC2D11BC43005BBE05 /* LessonServiceUtils.swift in Sources */,
 				DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */,
 				DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
@@ -995,6 +1049,7 @@
 				DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
+				DF3876002D11BE3C005BBE05 /* ExerciseModel.swift in Sources */,
 				DF1A5D542C6500A800ADD61E /* LearnSectionViewController.swift in Sources */,
 				DF1A5D4F2C627E2800ADD61E /* LessonCollectionViewCell.swift in Sources */,
 				DF9A23E02C42729800A73895 /* UIBezierPathExtension.swift in Sources */,
@@ -1003,6 +1058,7 @@
 				DFAD7A0E2D0B1D190085E331 /* LessonModel.swift in Sources */,
 				DFFA31CF2C4FFA5500A2D518 /* TapableView.swift in Sources */,
 				DFDA87712CC7EF2700934E39 /* DrawableView.swift in Sources */,
+				DF3876022D11BE7E005BBE05 /* ExcerciseServiceUtils.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,

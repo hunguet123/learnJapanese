@@ -21,6 +21,6 @@ class HomeViewModel {
     }
     
     func fetchLesssons() {
-        lessons = LessonModel.fetchAllLessons()
+        lessons = LessonServiceUtils.fetchAllLessons()
     }
 }

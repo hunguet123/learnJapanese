@@ -36,6 +36,31 @@ class LevelSelectionViewController: BaseViewControler {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUi()
+        updateUserProgress()
+    }
+    
+    private func updateUserProgress() {
+        guard let userModel = UserManager.shared.getUser() else {
+            return
+        }
+        
+        guard let firstLessonModel = LessonServiceUtils.getLesson(by: LessonLevel.N5.rawValue).first else {
+            return
+        }
+        
+        guard let firstActivityModcel = ActivityServiceUtils.getActivity(by: firstLessonModel.lessonId).first else {
+            return
+        }
+        
+        guard let firstExerciseModel = ExerciseServiceUtils.getExercise(by: firstActivityModcel.activityId).first else {
+            return
+        }
+        
+        let questionsByExercise = QuestionServiceUtils.fetchAllQuestions(by: firstExerciseModel.exerciseId)
+        
+        UserProgressManager.shared.addExerciseProgress(userId: userModel.id, exerciseId: firstExerciseModel.exerciseId, totalAttempts: questionsByExercise.count, wrongAttempts: 0, completed: false) { firebaseResult in
+            print("------ firebaseResult: \(firebaseResult)")
+        }
     }
     
     private func setupUi() {

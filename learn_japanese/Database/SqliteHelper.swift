@@ -8,7 +8,6 @@ class SQLiteHelper {
     var db: Connection!
     
     private init() {
-        // Đường dẫn đến tệp SQLite
         guard let storeURL = Bundle.main.url(forResource: "quizDB", withExtension: "db") else {
             fatalError("Failed to locate quizDB.db in bundle.")
         }
