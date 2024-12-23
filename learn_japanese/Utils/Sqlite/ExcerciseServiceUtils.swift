@@ -8,7 +8,7 @@
 import SQLite
 
 class ExerciseServiceUtils {
-    static func getExercise(by activityId: Int) -> [ExerciseModel] {
+    static func getExercise(byActivityId activityId: Int) -> [ExerciseModel] {
         guard let db = SQLiteHelper.shared.db else {
             print("Database connection is nil")
             return []

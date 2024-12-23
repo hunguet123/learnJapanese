@@ -26,7 +26,7 @@ class LearnViewController: BaseViewControler {
     }
     
     private func setupUI() {
-        if let lessonname = self.lessonname, let lessonCount = self.learnViewModel?.sections?.count {
+        if let lessonname = self.lessonname, let lessonCount = self.learnViewModel?.exerciseDTOs.count {
             titleLabel.text = "\(lessonname) \(lessonCount) \(LocalizationText.lesson)"
         }
         lessonsCollectionView.delegate = self
@@ -35,7 +35,7 @@ class LearnViewController: BaseViewControler {
     
     private func fetchData() {
         if let lessonId = self.lessonId {
-//            learnViewModel?.fetchData(lessonId: lessonId)
+            learnViewModel?.fetchExercises(byLessonId: lessonId)
             self.view.layoutIfNeeded()
         }
     }

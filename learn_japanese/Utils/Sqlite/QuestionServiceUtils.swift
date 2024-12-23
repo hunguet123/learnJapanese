@@ -8,7 +8,7 @@
 import SQLite
 
 class QuestionServiceUtils {
-    static func fetchAllQuestions(by exerciseId: Int) -> [QuestionModel] {
+    static func fetchAllQuestions(byExcerciseId exerciseId: Int) -> [QuestionModel] {
         guard let db = SQLiteHelper.shared.db else {
             print("Database connection is nil")
             return []

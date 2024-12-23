@@ -8,20 +8,18 @@
 import Foundation
 
 class LearnViewModel {
-    var sections: [SectionModel]?
+    var exerciseDTOs: [ExerciseDTO] = []
     
-    func fetchData(lessonId: String) {
-        // TODO: fake fetch data from lessonId
-        self.sections = [
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .learned),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .canLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-            SectionModel(id: "1", name: "Hiragana", sectionSate: .cantLearn),
-        ]
+    func fetchExercises(byLessonId lessonId: Int) {
+        let activities = ActivityServiceUtils.getActivity(byLessonId: lessonId)
+        var excercises: [ExerciseModel] = []
+        
+        activities.forEach { activity in
+            excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activity.activityId))
+        }
+        
+        exerciseDTOs = excercises.enumerated().map { (index, exerciseModel) in
+            return ExerciseDTO(exerciseModel: exerciseModel, state: index == 0 ? .canLearn : .cantLearn)
+        }
     }
 }

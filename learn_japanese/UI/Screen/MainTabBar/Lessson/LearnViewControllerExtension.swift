@@ -12,14 +12,14 @@ extension LearnViewController: UICollectionViewDelegate,
                                UICollectionViewDataSource,
                                UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.learnViewModel?.sections?.count ?? 0
+        self.learnViewModel?.exerciseDTOs.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCollectionViewCell", for: indexPath) as? LessonCollectionViewCell {
-            if let section = self.learnViewModel?.sections?[indexPath.row] {
+            if let exerciseDTO = self.learnViewModel?.exerciseDTOs[indexPath.row] {
                 cell.delegate = self
-                cell.bind(section: section, indexPath: indexPath)
+                cell.bind(exerciseDTO: exerciseDTO, indexPath: indexPath)
             }
             return cell
         }
@@ -29,8 +29,8 @@ extension LearnViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width = collectionView.frame.width * 0.47
-        if let sectionsCount = self.learnViewModel?.sections?.count {
-            if indexPath.row > sectionsCount / 2 {
+        if let exercisesCount = self.learnViewModel?.exerciseDTOs.count {
+            if indexPath.row > exercisesCount / 2 {
                 width = collectionView.frame.width
             }
         }

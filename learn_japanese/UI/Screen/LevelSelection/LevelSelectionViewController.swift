@@ -12,7 +12,7 @@ enum JapaneseLevel {
     case basic
     case intermediate
     
-    var value: String {
+    var title: String {
         switch self {
         case .start:
             return LocalizationText.startJapanese
@@ -22,12 +22,23 @@ enum JapaneseLevel {
             return LocalizationText.intermediateJapanese
         }
     }
+    
+    var level: LessonLevel {
+        switch self {
+        case .start:
+            return .N5
+        case .basic:
+            return .N4
+        case .intermediate:
+            return .N3
+        }
+    }
 }
 
 class LevelSelectionViewController: BaseViewControler {
     @IBOutlet var levelButtons: [TapableView]!
     @IBOutlet weak var scrollView: UIScrollView!
-    var levelSelected : JapaneseLevel? {
+    var levelSelected : JapaneseLevel = .start {
         didSet {
             handleSelectLevel()
         }
@@ -44,22 +55,26 @@ class LevelSelectionViewController: BaseViewControler {
             return
         }
         
-        guard let firstLessonModel = LessonServiceUtils.getLesson(by: LessonLevel.N5.rawValue).first else {
+        guard let firstLessonModel = LessonServiceUtils.getLesson(byLevel: levelSelected.level.rawValue).first else {
             return
         }
         
-        guard let firstActivityModcel = ActivityServiceUtils.getActivity(by: firstLessonModel.lessonId).first else {
+        let activityModels = ActivityServiceUtils.getActivity(byLessonId: firstLessonModel.lessonId)
+        
+        var excercises: [ExerciseModel] = []
+        
+        activityModels.forEach { activityModel in
+            excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activityModel.activityId))
+        }
+        
+        guard let firstActivityModcel = activityModels.first else {return}
+        
+        guard let firstExerciseModel = ExerciseServiceUtils.getExercise(byActivityId: firstActivityModcel.activityId).first else {
             return
         }
         
-        guard let firstExerciseModel = ExerciseServiceUtils.getExercise(by: firstActivityModcel.activityId).first else {
-            return
-        }
-        
-        let questionsByExercise = QuestionServiceUtils.fetchAllQuestions(by: firstExerciseModel.exerciseId)
-        
-        UserProgressManager.shared.addExerciseProgress(userId: userModel.id, exerciseId: firstExerciseModel.exerciseId, totalAttempts: questionsByExercise.count, wrongAttempts: 0, completed: false) { firebaseResult in
-            print("------ firebaseResult: \(firebaseResult)")
+        UserProgressManager.shared.addLessonProgress(userId: userModel.id, lessonId: firstLessonModel.lessonId, totalExercises: excercises.count, isAccessible: true) { result in
+            print("------ firebase Result \(result)")
         }
     }
     
@@ -89,7 +104,6 @@ class LevelSelectionViewController: BaseViewControler {
             levelButtons[0].backgroundColor = AppColors.jasmine
             levelButtons[1].backgroundColor = AppColors.jasmine
             levelButtons[2].backgroundColor = AppColors.goldenPoppy
-        default: break
         }
     }
     
@@ -106,12 +120,10 @@ class LevelSelectionViewController: BaseViewControler {
     }
     
     @IBAction func didTapNext(_ sender: Any) {
-        if let levelSelected = levelSelected {
-            let homeViewModel = HomeViewModel(japaneseLevel: levelSelected)
-            let homeController = HomeViewController()
-            homeController.homeViewModel = homeViewModel
-            navigationController?.popAndPush(viewController: homeController, animated: true)
-        }
+        let homeViewModel = HomeViewModel(japaneseLevel: levelSelected)
+        let homeController = HomeViewController()
+        homeController.homeViewModel = homeViewModel
+        navigationController?.popAndPush(viewController: homeController, animated: true)
     }
     
 }

@@ -26,7 +26,7 @@ class HomeViewController: BaseViewControler {
     }
 
     private func setupUI() {
-        levelLabel.text = homeViewModel?.japaneseLevel.value
+        levelLabel.text = homeViewModel?.japaneseLevel.title
         lesssonsCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "HomeCollectionViewCell")
     }
     
@@ -48,7 +48,7 @@ class HomeViewController: BaseViewControler {
     @IBAction func didTapNavigateToLevelScreen(_ sender: UIButton) {
         let levelSelectionViewController = LevelSelectionViewController()
         navigationController?.pushViewController(levelSelectionViewController, animated: true)
-        levelSelectionViewController.levelSelected = homeViewModel?.japaneseLevel
+        levelSelectionViewController.levelSelected = homeViewModel?.japaneseLevel ?? .start
     }
     @IBAction func didTapNavigateToUserScreen(_ sender: Any) {
     }

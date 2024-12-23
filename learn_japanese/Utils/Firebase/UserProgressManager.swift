@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import FirebaseFirestore
 
 enum FirebaseResult {
@@ -17,118 +16,182 @@ enum FirebaseResult {
 class UserProgressManager {
     private let db = Firestore.firestore()
     private let collectionName = "userProgress"
-    
+    var userProgressModel: UserProgressModel?
+
     static let shared = UserProgressManager()
-    
-    func addExerciseProgress(
+
+    func addLessonProgress(
         userId: String,
-        exerciseId: Int,
-        totalAttempts: Int,
-        wrongAttempts: Int,
-        completed: Bool,
+        lessonId: Int,
+        totalExercises: Int,
+        isAccessible: Bool,
         completion: @escaping (FirebaseResult) -> Void
     ) {
-        let documentRef = db.collection("userProgress").document(userId)
+        let documentRef = Firestore.firestore().collection("userProgress").document(userId)
         
-        // Dữ liệu mới cho bài tập
-        let newProgressData: [String: Any] = [
-            "completed": completed,
-            "progress": completed ? 1.0 : 0.0,
-            "lastUpdated": FieldValue.serverTimestamp(),
-            "totalAttempts": totalAttempts,
-            "wrongAttempts": wrongAttempts
-        ]
-        
-        documentRef.getDocument { document, error in
+        documentRef.getDocument { documentSnapshot, error in
             if let error = error {
-                print("Error fetching document: \(error.localizedDescription)")
                 completion(.failure(error))
                 return
             }
             
-            if let document = document, document.exists {
-                // Document tồn tại
-                if let progress = document.data()?["progress"] as? [String: Any] {
-                    if progress["\(exerciseId)"] == nil {
-                        // Nếu exerciseId chưa tồn tại -> thêm mới
-                        let fieldPath = "progress.\(exerciseId)"
-                        documentRef.updateData([fieldPath: newProgressData]) { error in
-                            if let error = error {
-                                print("Error updating progress: \(error.localizedDescription)")
-                                completion(.failure(error))
-                            } else {
-                                print("Progress updated successfully")
-                                completion(.success)
-                            }
-                        }
-                    } else {
-                        // ExerciseId đã tồn tại
-                        print("Exercise \(exerciseId) already exists in progress")
-                        completion(.success)
-                    }
-                } else {
-                    print("Progress key is missing or has invalid format. Adding progress key.")
-                    let fieldPath = "progress.\(exerciseId)"
-                    documentRef.updateData([fieldPath: newProgressData]) { error in
-                        if let error = error {
-                            print("Error adding progress key: \(error.localizedDescription)")
-                            completion(.failure(error))
-                        } else {
-                            completion(.success)
-                        }
-                    }
-                }
-            } else {
-                // Document không tồn tại -> tạo mới
-                print("Document does not exist. Creating a new document.")
-                let initialData: [String: Any] = [
-                    "progress": [
-                        "exerciseId\(exerciseId)": newProgressData
+            guard let document = documentSnapshot, document.exists else {
+                let newProgress = UserProgressModel(
+                    lessons: [
+                        LessonProgressModel(
+                            lessonId: lessonId,
+                            totalExercises: totalExercises,
+                            completedExercises: 0,
+                            isAccessible: isAccessible
+                        )
                     ]
-                ]
-                documentRef.setData(initialData, merge: true) { error in
+                )
+                
+                let data = newProgress.toJson()
+                documentRef.setData(data) { [weak self] error in
                     if let error = error {
-                        print("Error creating document: \(error.localizedDescription)")
                         completion(.failure(error))
                     } else {
-                        print("Document created successfully with progress")
+                        self?.userProgressModel = newProgress
+                        completion(.success)
+                    }
+                }
+                return
+            }
+            
+            // Document exists, check if the lesson already exists
+            if let progressData = document.data(),
+               let existingProgress = UserProgressModel.fromJson(progressData) {
+                if existingProgress.lessons.contains(where: { $0.lessonId == lessonId }) {
+                    print("Lesson \(lessonId) already exists.")
+                    self.fetchUserProgress(userId: userId) { result in
+                        print("userProgress save: \(result)")
+                        completion(.success)                    }
+                    return
+                }
+                
+                var updatedProgress = existingProgress
+                updatedProgress.lessons.append(
+                    LessonProgressModel(
+                        lessonId: lessonId,
+                        totalExercises: totalExercises,
+                        completedExercises: 0,
+                        isAccessible: isAccessible
+                    )
+                )
+                
+                let data = updatedProgress.toJson()
+                documentRef.setData(data, merge: true) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
                         completion(.success)
                     }
                 }
             }
         }
     }
-
     
     func updateExerciseProgress(
         userId: String,
-        exerciseId: String,
-        totalAttempts: Int,
-        wrongAttempts: Int,
+        lessonId: Int,
+        exerciseId: Int,
+        score: Int,
+        maxScore: Int,
         completed: Bool,
         completion: @escaping (FirebaseResult) -> Void
     ) {
-        let documentRef = db.collection("userProgress").document(userId)
+        let documentRef = Firestore.firestore().collection("userProgress").document(userId)
         
-        // Dữ liệu cập nhật cho bài tập
-        let updatedProgressData: [String: Any] = [
-            "completed": completed,
-            "progress": completed ? 1.0 : 0.0,
-            "lastUpdated": FieldValue.serverTimestamp(),
-            "totalAttempts": totalAttempts,
-            "wrongAttempts": wrongAttempts
-        ]
-        
-        let fieldPath = "progress.\(exerciseId)"
-        
-        // Sử dụng `setData` với merge để cập nhật tiến độ
-        documentRef.setData([fieldPath: updatedProgressData], merge: true) { error in
+        documentRef.getDocument { documentSnapshot, error in
             if let error = error {
                 completion(.failure(error))
+                return
+            }
+            
+            guard let document = documentSnapshot, document.exists,
+                  let data = document.data(),
+                  var userProgress = UserProgressModel.fromJson(data) else {
+                completion(.failure(NSError(domain: "Firestore", code: 404, userInfo: [NSLocalizedDescriptionKey: "User progress not found."])))
+                return
+            }
+            
+            guard let lessonIndex = userProgress.lessons.firstIndex(where: { $0.lessonId == lessonId }) else {
+                completion(.failure(NSError(domain: "Firestore", code: 404, userInfo: [NSLocalizedDescriptionKey: "Lesson \(lessonId) not found."])))
+                return
+            }
+            
+            var lesson = userProgress.lessons[lessonIndex]
+            
+            if let exerciseIndex = lesson.exercises.firstIndex(where: { $0.exerciseId == exerciseId }) {
+                // Update existing exercise
+                var exercise = lesson.exercises[exerciseIndex]
+                exercise.attempts += 1
+                exercise.score.value = score
+                exercise.score.max = maxScore
+                lesson.exercises[exerciseIndex] = exercise
             } else {
+                // Add new exercise
+                let newExercise = ExerciseProgressModel(
+                    exerciseId: exerciseId,
+                    attempts: 1,
+                    score: ScoreModel(value: score, max: maxScore)
+                )
+                lesson.exercises.append(newExercise)
+            }
+            
+            if completed {
+                lesson.completedExercises += 1
+            }
+            
+            userProgress.lessons[lessonIndex] = lesson
+            
+            let updatedData = userProgress.toJson()
+            documentRef.setData(updatedData, merge: true) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success)
+                }
+            }
+        }
+    }
+    
+    private func fetchUserProgress(
+        userId: String,
+        completion: @escaping (FirebaseResult) -> Void
+    ) {
+        let documentRef = Firestore.firestore().collection("userProgress").document(userId)
+        
+        documentRef.getDocument { documentSnapshot, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let document = documentSnapshot, document.exists,
+                  let data = document.data() else {
+                let error = NSError(
+                    domain: "Firestore",
+                    code: 404,
+                    userInfo: [NSLocalizedDescriptionKey: "User progress not found."]
+                )
+                completion(.failure(error))
+                return
+            }
+            
+            if let userProgress = UserProgressModel.fromJson(data) {
+                // Gán giá trị vào `userProgressModel` nếu cần thiết
+                self.userProgressModel = userProgress
                 completion(.success)
+            } else {
+                let error = NSError(
+                    domain: "Parsing",
+                    code: 500,
+                    userInfo: [NSLocalizedDescriptionKey: "Failed to parse user progress data."]
+                )
+                completion(.failure(error))
             }
         }
     }
 }
-

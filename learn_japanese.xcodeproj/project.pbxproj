@@ -36,6 +36,12 @@
 		DF3876022D11BE7E005BBE05 /* ExcerciseServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876012D11BE7E005BBE05 /* ExcerciseServiceUtils.swift */; };
 		DF3876052D11C000005BBE05 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876042D11C000005BBE05 /* QuestionModel.swift */; };
 		DF3876072D11C034005BBE05 /* QuestionServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876062D11C034005BBE05 /* QuestionServiceUtils.swift */; };
+		DF38760C2D17FE56005BBE05 /* LessonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38760B2D17FE56005BBE05 /* LessonDTO.swift */; };
+		DF38760E2D180626005BBE05 /* UserProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38760D2D180626005BBE05 /* UserProgressModel.swift */; };
+		DF3876102D18118C005BBE05 /* LessonProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38760F2D18118C005BBE05 /* LessonProgressModel.swift */; };
+		DF3876122D1811AE005BBE05 /* ExerciseProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876112D1811AE005BBE05 /* ExerciseProgressModel.swift */; };
+		DF3876142D1811EC005BBE05 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876132D1811EC005BBE05 /* ScoreModel.swift */; };
+		DF3876162D19AB09005BBE05 /* ExerciseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3876152D19AB09005BBE05 /* ExerciseDTO.swift */; };
 		DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */; };
 		DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */; };
 		DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */; };
@@ -81,8 +87,6 @@
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
 		DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */; };
-		DFCD36412C6265E300F60870 /* UnitOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */; };
-		DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36422C62674E00F60870 /* SectionModel.swift */; };
 		DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */; };
 		DFDA87712CC7EF2700934E39 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA87702CC7EF2700934E39 /* DrawableView.swift */; };
 		DFDA881A2CC7F5FD00934E39 /* ZinniaCocoaTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDA880F2CC7F5B900934E39 /* ZinniaCocoaTouch.framework */; };
@@ -207,6 +211,12 @@
 		DF3876012D11BE7E005BBE05 /* ExcerciseServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseServiceUtils.swift; sourceTree = "<group>"; };
 		DF3876042D11C000005BBE05 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		DF3876062D11C034005BBE05 /* QuestionServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionServiceUtils.swift; sourceTree = "<group>"; };
+		DF38760B2D17FE56005BBE05 /* LessonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDTO.swift; sourceTree = "<group>"; };
+		DF38760D2D180626005BBE05 /* UserProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressModel.swift; sourceTree = "<group>"; };
+		DF38760F2D18118C005BBE05 /* LessonProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonProgressModel.swift; sourceTree = "<group>"; };
+		DF3876112D1811AE005BBE05 /* ExerciseProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressModel.swift; sourceTree = "<group>"; };
+		DF3876132D1811EC005BBE05 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
+		DF3876152D19AB09005BBE05 /* ExerciseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDTO.swift; sourceTree = "<group>"; };
 		DF3E5FFB2C6A4E1300249541 /* WordSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSortView.swift; sourceTree = "<group>"; };
 		DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelectionView.swift; sourceTree = "<group>"; };
 		DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -258,8 +268,6 @@
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitOverviewModel.swift; sourceTree = "<group>"; };
-		DFCD36422C62674E00F60870 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFDA87702CC7EF2700934E39 /* DrawableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
 		DFDA88062CC7F5B900934E39 /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = KanjiHandwriting/ZinniaCocoaTouch.xcodeproj; sourceTree = "<group>"; };
@@ -392,6 +400,10 @@
 			children = (
 				DF7B10592C7CBF55002969E8 /* UserModel.swift */,
 				DF7B105B2C7CBFD6002969E8 /* Gender.swift */,
+				DF38760D2D180626005BBE05 /* UserProgressModel.swift */,
+				DF38760F2D18118C005BBE05 /* LessonProgressModel.swift */,
+				DF3876112D1811AE005BBE05 /* ExerciseProgressModel.swift */,
+				DF3876132D1811EC005BBE05 /* ScoreModel.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -405,6 +417,15 @@
 				DF3876062D11C034005BBE05 /* QuestionServiceUtils.swift */,
 			);
 			path = Sqlite;
+			sourceTree = "<group>";
+		};
+		DF38760A2D17FDF3005BBE05 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				DF38760B2D17FE56005BBE05 /* LessonDTO.swift */,
+				DF3876152D19AB09005BBE05 /* ExerciseDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		DF7B10562C738CB4002969E8 /* Models */ = {
@@ -566,6 +587,7 @@
 		DFBA80412C402FA000467A58 /* learn_japanese */ = {
 			isa = PBXGroup;
 			children = (
+				DF38760A2D17FDF3005BBE05 /* DTOs */,
 				DF9E77EE2C55553E0087E361 /* learn_japanese.entitlements */,
 				DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */,
 				DF9A23DC2C42714A00A73895 /* Extension */,
@@ -573,7 +595,6 @@
 				DFBA80792C4032D000467A58 /* Utils */,
 				DFBA80782C4032AB00467A58 /* Network */,
 				DFBA80772C4032A200467A58 /* Database */,
-				DFBA80752C40323A00467A58 /* Models */,
 				DFBA80742C4030F800467A58 /* Resources */,
 				DFBA80722C402FDB00467A58 /* App */,
 				DFBA80502C402FA100467A58 /* Info.plist */,
@@ -636,15 +657,6 @@
 				DF9A23E52C4276F000A73895 /* AppLotties.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		DFBA80752C40323A00467A58 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DFCD36402C6265E300F60870 /* UnitOverviewModel.swift */,
-				DFCD36422C62674E00F60870 /* SectionModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DFBA80762C40326600467A58 /* Base */ = {
@@ -1009,6 +1021,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
+				DF38760C2D17FE56005BBE05 /* LessonDTO.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,
 				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
@@ -1022,6 +1035,7 @@
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */,
+				DF3876122D1811AE005BBE05 /* ExerciseProgressModel.swift in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
 				DF3876052D11C000005BBE05 /* QuestionModel.swift in Sources */,
@@ -1034,14 +1048,13 @@
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
+				DF3876162D19AB09005BBE05 /* ExerciseDTO.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
-				DFCD36432C62674E00F60870 /* SectionModel.swift in Sources */,
 				DF3875FC2D11BC43005BBE05 /* LessonServiceUtils.swift in Sources */,
 				DF9E77F42C57D7710087E361 /* ForgotPasswordManager.swift in Sources */,
 				DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */,
 				DF9E77F02C55E51A0087E361 /* EmailPasswordSignInManager.swift in Sources */,
 				DFBA80432C402FA000467A58 /* AppDelegate.swift in Sources */,
-				DFCD36412C6265E300F60870 /* UnitOverviewModel.swift in Sources */,
 				DF9E77F22C57CDFA0087E361 /* SignUpManager.swift in Sources */,
 				DFE59F002CD28E5B00011DFC /* ProfileViewController.swift in Sources */,
 				DF0B32932C4809B700C1BC77 /* GradientTextLabel.swift in Sources */,
@@ -1049,6 +1062,7 @@
 				DF3E60002C6BA63D00249541 /* ImageSelectionView.swift in Sources */,
 				DFBA80452C402FA000467A58 /* SceneDelegate.swift in Sources */,
 				DF0B32912C45892400C1BC77 /* UINavigationControllerExtension.swift in Sources */,
+				DF3876102D18118C005BBE05 /* LessonProgressModel.swift in Sources */,
 				DF3876002D11BE3C005BBE05 /* ExerciseModel.swift in Sources */,
 				DF1A5D542C6500A800ADD61E /* LearnSectionViewController.swift in Sources */,
 				DF1A5D4F2C627E2800ADD61E /* LessonCollectionViewCell.swift in Sources */,
@@ -1069,10 +1083,12 @@
 				DF3E5FFE2C6B976000249541 /* TextSelectionView.swift in Sources */,
 				DFDA88222CC7F87A00934E39 /* HandwritingViewModel.swift in Sources */,
 				DF9E77E52C5544240087E361 /* GoogleSignInManager.swift in Sources */,
+				DF3876142D1811EC005BBE05 /* ScoreModel.swift in Sources */,
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
 				DF8271942CAC3BE700E27690 /* DictionaryViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
 				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
+				DF38760E2D180626005BBE05 /* UserProgressModel.swift in Sources */,
 				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,
 				DF0B32972C48133000C1BC77 /* DefaultTabBarView.swift in Sources */,
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,

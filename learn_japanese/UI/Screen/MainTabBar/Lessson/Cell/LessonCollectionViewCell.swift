@@ -18,15 +18,15 @@ class LessonCollectionViewCell: UICollectionViewCell {
     private var indexPath: IndexPath?
     var delegate: LessonCollectionViewDelegate?
     
-    func bind(section: SectionModel, indexPath: IndexPath) {
-        self.nameLabel.text = section.name
+    func bind(exerciseDTO: ExerciseDTO, indexPath: IndexPath) {
+        self.nameLabel.text = exerciseDTO.exerciseModel.title
         self.indexPath = indexPath
         guard let contentUIView = self.contentView as? TapableView else {
             return
         }
         
         
-        switch section.sectionSate {
+        switch exerciseDTO.state {
         case .cantLearn:
             contentUIView.backgroundColor = AppColors.lightSliver
             contentUIView.isUserInteractionEnabled = false
@@ -39,14 +39,6 @@ class LessonCollectionViewCell: UICollectionViewCell {
             contentUIView.backgroundColor = AppColors.white
             contentUIView.isUserInteractionEnabled = true
             self.stateLearnedImage.isHidden = true
-        case .none:
-            break
-        }
-        
-        if section.sectionSate == .cantLearn {
-           
-        } else {
-            
         }
     }
     @IBAction func didTapLesson(_ sender: Any) {

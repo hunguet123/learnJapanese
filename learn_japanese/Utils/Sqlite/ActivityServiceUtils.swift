@@ -8,7 +8,7 @@
 import SQLite
 
 class ActivityServiceUtils {
-    static func getActivity(by lessonId: Int) -> [ActivityModel] {
+    static func getActivity(byLessonId lessonId: Int) -> [ActivityModel] {
         guard let db = SQLiteHelper.shared.db else {
             print("Database connection is nil")
             return []

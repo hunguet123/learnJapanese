@@ -12,13 +12,13 @@ extension HomeViewController: UICollectionViewDelegate,
                               UICollectionViewDataSource,
                               UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.homeViewModel?.lessons.count ?? 0
+        self.homeViewModel?.lessonDTOs.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell {
             cell.delegate = self
-            cell.bind(lessonOverviewModel: self.homeViewModel?.lessons[indexPath.row], cellForItemAt: indexPath)
+            cell.bind(lessonOverviewModel: self.homeViewModel?.lessonDTOs[indexPath.row], cellForItemAt: indexPath)
             return cell
         }
         
@@ -43,8 +43,12 @@ extension HomeViewController: HomeCollectionViewDelegate {
     func homeCollectionView(_ homeCollectionViewCell: HomeCollectionViewCell, didSelectAt: Int) {
         let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
         let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
-        tabBarController.lessonId = self.homeViewModel?.lessons[didSelectAt].lessonId
-        tabBarController.lessonName = self.homeViewModel?.lessons[didSelectAt].title
+        guard let lessonModel = self.homeViewModel?.lessonDTOs[didSelectAt].lesssonModel else {
+            return
+        }
+        
+        tabBarController.lessonId = lessonModel.lessonId
+        tabBarController.lessonName = lessonModel.title
         self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
