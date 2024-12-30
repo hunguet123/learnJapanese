@@ -587,9 +587,9 @@
 		DFBA80412C402FA000467A58 /* learn_japanese */ = {
 			isa = PBXGroup;
 			children = (
-				DF38760A2D17FDF3005BBE05 /* DTOs */,
 				DF9E77EE2C55553E0087E361 /* learn_japanese.entitlements */,
 				DF9E77EA2C554B730087E361 /* GoogleService-Info.plist */,
+				DF38760A2D17FDF3005BBE05 /* DTOs */,
 				DF9A23DC2C42714A00A73895 /* Extension */,
 				DF9A23D62C42708500A73895 /* UI */,
 				DFBA80792C4032D000467A58 /* Utils */,

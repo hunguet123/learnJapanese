@@ -11,9 +11,14 @@ class LearnSectionViewController: UIViewController {
     @IBOutlet weak var learningProgressView: UIProgressView!
     @IBOutlet weak var quizCollectionView: UICollectionView!
     
+    private let learnSectionViewModel: LearnSectionViewModel = LearnSectionViewModel()
+    
+    var exerciseId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
     }
     
     private func setUpView() {

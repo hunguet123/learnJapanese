@@ -48,7 +48,10 @@ extension LearnViewController: UICollectionViewDelegate,
 
 extension LearnViewController: LessonCollectionViewDelegate {
     func lessonCollectionViewCell(_ lessonCollectionViewCell: LessonCollectionViewCell, didSelectAt: Int) {
-//        self.learnViewModel?.sections?[didSelectAt].
-        self.navigationController?.pushViewController(LearnSectionViewController(), animated: true)
+        let learnSectionViewController = LearnSectionViewController()
+        if let exerciseId = self.learnViewModel?.exerciseDTOs[didSelectAt].exerciseModel.exerciseId {
+            learnSectionViewController.exerciseId = exerciseId
+            self.navigationController?.pushViewController(learnSectionViewController, animated: true)
+        }
     }
 }
