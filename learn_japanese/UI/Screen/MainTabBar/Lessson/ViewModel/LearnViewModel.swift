@@ -19,7 +19,8 @@ class LearnViewModel {
         }
         
         exerciseDTOs = excercises.enumerated().map { (index, exerciseModel) in
-            return ExerciseDTO(exerciseModel: exerciseModel, state: index == 0 ? .canLearn : .cantLearn)
+            return ExerciseDTO(exerciseModel: exerciseModel, state: .canLearn)
+//            return ExerciseDTO(exerciseModel: exerciseModel, state: index == 0 ? .canLearn : .cantLearn)
         }
     }
 }

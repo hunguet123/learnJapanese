@@ -28,12 +28,7 @@ extension LearnViewController: UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = collectionView.frame.width * 0.47
-        if let exercisesCount = self.learnViewModel?.exerciseDTOs.count {
-            if indexPath.row > exercisesCount / 2 {
-                width = collectionView.frame.width
-            }
-        }
+        var width = collectionView.frame.width
         return CGSize(width: width, height: 100)
     }
     

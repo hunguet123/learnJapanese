@@ -16,6 +16,7 @@ target 'learn_japanese' do
   pod 'SVProgressHUD'
   pod 'L10n-swift'
   pod 'SQLite.swift', '~> 0.15.3'
+  pod 'SVGKit'
 
   post_install do |installer|
    installer.pods_project.targets.each do |target|

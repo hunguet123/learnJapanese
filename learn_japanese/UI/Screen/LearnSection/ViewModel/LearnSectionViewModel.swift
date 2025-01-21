@@ -8,8 +8,9 @@
 import Foundation
 
 class LearnSectionViewModel {
+    var questions: [QuestionModel] = []
     func fetchAllQuestions(byExcerciseId excerciseId: Int){
-        let questions = QuestionServiceUtils.fetchAllQuestions(byExcerciseId: excerciseId)
+        questions = QuestionServiceUtils.fetchAllQuestions(byExcerciseId: excerciseId)
         
     }
 }

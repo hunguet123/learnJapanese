@@ -12,11 +12,14 @@ extension LearnSectionViewController: UICollectionViewDelegate,
                                       UICollectionViewDataSource,
                                       UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+       return learnSectionViewModel.questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageTextQuestionCollectionViewCell", for: indexPath) as? ImageTextQuestionCollectionViewCell {
+            let question = learnSectionViewModel.questions[indexPath.row]
+            cell.configure(with: question)
+            cell.delegate = self
             return cell
         }
         
@@ -26,7 +29,7 @@ extension LearnSectionViewController: UICollectionViewDelegate,
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.width
         let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
-        self.learningProgressView.progress = Float(currentPage + 1) / 10.0
+        self.learningProgressView.progress = Float(currentPage + 1) / Float(learnSectionViewModel.questions.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -35,6 +38,18 @@ extension LearnSectionViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension LearnSectionViewController: ImageTextQuestionDelegate {
+    func onSwipeRight(character: String) {
+        // TODO: thêm đã thuộc
+        nextQuestion()
+    }
+    
+    func onSwipeLeft(character: String) {
+        // TODO: thêm chưa thuộc
+        nextQuestion()
     }
 }
 

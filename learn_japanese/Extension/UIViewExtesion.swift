@@ -178,6 +178,12 @@ public extension UIView {
         let nib = UINib(nibName: self.nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil)[0] as! UIView
     }
+    
+    func removeAllSubviews() {
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
 }
 
 public extension UIView {

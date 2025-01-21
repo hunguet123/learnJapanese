@@ -86,6 +86,9 @@
 		DFBA805A2C402FA200467A58 /* learn_japaneseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80592C402FA200467A58 /* learn_japaneseTests.swift */; };
 		DFBA80642C402FA200467A58 /* learn_japaneseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */; };
 		DFBA80662C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */; };
+		DFC5232E2D36B0B200B3FA6B /* DictionaryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC5232D2D36B0B200B3FA6B /* DictionaryUtils.swift */; };
+		DFC523332D36B2B400B3FA6B /* QuestionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC523322D36B2B400B3FA6B /* QuestionConstants.swift */; };
+		DFC523352D36B62B00B3FA6B /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC523342D36B62B00B3FA6B /* SwipeView.swift */; };
 		DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */; };
 		DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */; };
 		DFDA87712CC7EF2700934E39 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA87702CC7EF2700934E39 /* DrawableView.swift */; };
@@ -267,6 +270,9 @@
 		DFBA805F2C402FA200467A58 /* learn_japaneseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learn_japaneseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBA80632C402FA200467A58 /* learn_japaneseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITests.swift; sourceTree = "<group>"; };
 		DFBA80652C402FA200467A58 /* learn_japaneseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learn_japaneseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFC5232D2D36B0B200B3FA6B /* DictionaryUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryUtils.swift; sourceTree = "<group>"; };
+		DFC523322D36B2B400B3FA6B /* QuestionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionConstants.swift; sourceTree = "<group>"; };
+		DFC523342D36B62B00B3FA6B /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFDA87702CC7EF2700934E39 /* DrawableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
@@ -489,6 +495,7 @@
 				DF3E5FFD2C6B976000249541 /* TextSelectionView.swift */,
 				DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */,
 				DFDA87702CC7EF2700934E39 /* DrawableView.swift */,
+				DFC523342D36B62B00B3FA6B /* SwipeView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -693,6 +700,8 @@
 				DFFF30D72C51638100DADE4A /* Validation.swift */,
 				DF64E25B2C986C630028BC1C /* FirebaseCollectionNameConstant.swift */,
 				DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */,
+				DFC5232D2D36B0B200B3FA6B /* DictionaryUtils.swift */,
+				DFC523322D36B2B400B3FA6B /* QuestionConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1031,10 +1040,12 @@
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DF3876072D11C034005BBE05 /* QuestionServiceUtils.swift in Sources */,
+				DFC523352D36B62B00B3FA6B /* SwipeView.swift in Sources */,
 				DF3875FA2D11BAEC005BBE05 /* ActivityModel.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,
 				DFFF30D82C51638100DADE4A /* Validation.swift in Sources */,
 				DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */,
+				DFC523332D36B2B400B3FA6B /* QuestionConstants.swift in Sources */,
 				DF3876122D1811AE005BBE05 /* ExerciseProgressModel.swift in Sources */,
 				DF9E77ED2C5553270087E361 /* FacebookSignInManager.swift in Sources */,
 				DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */,
@@ -1087,6 +1098,7 @@
 				DF9E77F92C57DE9A0087E361 /* ForgotPasswordViewController.swift in Sources */,
 				DF8271942CAC3BE700E27690 /* DictionaryViewController.swift in Sources */,
 				DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */,
+				DFC5232E2D36B0B200B3FA6B /* DictionaryUtils.swift in Sources */,
 				DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */,
 				DF38760E2D180626005BBE05 /* UserProgressModel.swift in Sources */,
 				DF1A5D582C65079300ADD61E /* LearnSectionViewModel.swift in Sources */,

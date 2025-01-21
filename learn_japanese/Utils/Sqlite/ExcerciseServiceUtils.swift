@@ -19,7 +19,7 @@ class ExerciseServiceUtils {
         do {
             // Khai báo bảng và cột
             let exerciseTable = Table("Exercise")
-            let exerciseId = Expression<Int>("excercise_id")
+            let exerciseId = Expression<Int>("exercise_id")
             let exerciseNumber = Expression<String>("exercise_number")
             let activityIdColumn = Expression<Int>("activity_id")
             let title = Expression<String?>("title")
@@ -28,7 +28,7 @@ class ExerciseServiceUtils {
             // Truy vấn với điều kiện lọc activity_id
             let query = exerciseTable
                 .filter(activityIdColumn == activityId)
-                .order(exerciseNumber.asc) // Sắp xếp theo exercise_number tăng dần
+                .order(exerciseId.asc) // Sắp xếp theo exercise_number tăng dần
             
             // Duyệt qua các hàng và tạo ExerciseModel
             for row in try db.prepare(query) {
