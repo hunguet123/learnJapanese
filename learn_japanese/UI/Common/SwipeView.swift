@@ -41,7 +41,7 @@ class SwipeView: UIView {
         label.text = "Đã thuộc"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .green
+        label.textColor = .red
         label.alpha = 0 // Ban đầu ẩn
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

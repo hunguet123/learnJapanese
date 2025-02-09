@@ -42,13 +42,15 @@ extension LearnSectionViewController: UICollectionViewDelegate,
 }
 
 extension LearnSectionViewController: ImageTextQuestionDelegate {
-    func onSwipeRight(character: String) {
+    func onSwipeRight(questionId: Int) {
         // TODO: thêm đã thuộc
+        learnSectionViewModel.score += 1
         nextQuestion()
     }
     
-    func onSwipeLeft(character: String) {
+    func onSwipeLeft(questionId: Int) {
         // TODO: thêm chưa thuộc
+        learnSectionViewModel.wrongQuestionIds.append(questionId)
         nextQuestion()
     }
 }

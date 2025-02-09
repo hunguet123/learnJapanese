@@ -73,7 +73,7 @@ class LevelSelectionViewController: BaseViewControler {
             return
         }
         
-        UserProgressManager.shared.addLessonProgress(userId: userModel.id, lessonId: firstLessonModel.lessonId, totalExercises: excercises.count, isAccessible: true) { result in
+        UserProgressManager.shared.addLessonProgress(lessonId: firstLessonModel.lessonId, totalExercises: excercises.count, isAccessible: true) { result in
             print("------ firebase Result \(result)")
         }
     }

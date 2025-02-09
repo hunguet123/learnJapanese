@@ -23,12 +23,12 @@ extension LearnViewController: UICollectionViewDelegate,
             }
             return cell
         }
-
+        
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = collectionView.frame.width
+        let width = collectionView.frame.width
         return CGSize(width: width, height: 100)
     }
     
@@ -44,8 +44,9 @@ extension LearnViewController: UICollectionViewDelegate,
 extension LearnViewController: LessonCollectionViewDelegate {
     func lessonCollectionViewCell(_ lessonCollectionViewCell: LessonCollectionViewCell, didSelectAt: Int) {
         let learnSectionViewController = LearnSectionViewController()
-        if let exerciseId = self.learnViewModel?.exerciseDTOs[didSelectAt].exerciseModel.exerciseId {
+        if let exerciseId = self.learnViewModel?.exerciseDTOs[didSelectAt].exerciseModel.exerciseId, let lessonId = self.lessonId {
             learnSectionViewController.exerciseId = exerciseId
+            learnSectionViewController.lessonId = lessonId
             self.navigationController?.pushViewController(learnSectionViewController, animated: true)
         }
     }

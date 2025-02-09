@@ -8,8 +8,8 @@
 import UIKit
 
 protocol ImageTextQuestionDelegate: AnyObject {
-    func onSwipeRight(character: String)
-    func onSwipeLeft(character: String)
+    func onSwipeRight(questionId: Int)
+    func onSwipeLeft(questionId: Int)
 }
 
 class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
@@ -36,11 +36,11 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     
                     swipeView.fixInView(content)
                     swipeView.onSwipeRight = { character in
-                        self.delegate?.onSwipeRight(character: character)
+                        self.delegate?.onSwipeRight(questionId: question.questionId)
                     }
                     
                     swipeView.onSwipeLeft = { character in
-                        self.delegate?.onSwipeLeft(character: character)
+                        self.delegate?.onSwipeLeft(questionId: question.questionId)
                     }
                 default:
                     break

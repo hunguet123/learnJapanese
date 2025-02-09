@@ -21,12 +21,15 @@ class UserProgressManager {
     static let shared = UserProgressManager()
 
     func addLessonProgress(
-        userId: String,
         lessonId: Int,
         totalExercises: Int,
         isAccessible: Bool,
         completion: @escaping (FirebaseResult) -> Void
     ) {
+        guard let userModel = UserManager.shared.getUser() else {
+            return
+        }
+        let userId = userModel.id
         let documentRef = Firestore.firestore().collection("userProgress").document(userId)
         
         documentRef.getDocument { documentSnapshot, error in
@@ -93,14 +96,18 @@ class UserProgressManager {
     }
     
     func updateExerciseProgress(
-        userId: String,
         lessonId: Int,
         exerciseId: Int,
         score: Int,
         maxScore: Int,
+        wrongQuestionIds: [Int],
         completed: Bool,
         completion: @escaping (FirebaseResult) -> Void
     ) {
+        guard let userModel = UserManager.shared.getUser() else {
+            return
+        }
+        let userId = userModel.id
         let documentRef = Firestore.firestore().collection("userProgress").document(userId)
         
         documentRef.getDocument { documentSnapshot, error in
@@ -129,13 +136,33 @@ class UserProgressManager {
                 exercise.attempts += 1
                 exercise.score.value = score
                 exercise.score.max = maxScore
+                var updatedWrongQuestions = exercise.wrongQuestions.map { wrongQuestion -> QuestionProgressModel in
+                    var updatedQuestion = wrongQuestion
+                    if wrongQuestionIds.contains(updatedQuestion.questionId) {
+                        updatedQuestion.questionStudyCount += 1
+                    }
+                    return updatedQuestion
+                }
+                
+                for questionId in wrongQuestionIds {
+                    if updatedWrongQuestions.contains(where: { $0.questionId == questionId }) {
+                        continue
+                    }
+                    updatedWrongQuestions.append(QuestionProgressModel(questionId: questionId, questionStudyCount: 1))
+                }
+                
+                exercise.wrongQuestions = updatedWrongQuestions
+                
                 lesson.exercises[exerciseIndex] = exercise
             } else {
                 // Add new exercise
                 let newExercise = ExerciseProgressModel(
                     exerciseId: exerciseId,
                     attempts: 1,
-                    score: ScoreModel(value: score, max: maxScore)
+                    score: ScoreModel(value: score, max: maxScore),
+                    wrongQuestions: wrongQuestionIds.map({ questionId in
+                        return QuestionProgressModel(questionId: questionId, questionStudyCount: 1)
+                    })
                 )
                 lesson.exercises.append(newExercise)
             }

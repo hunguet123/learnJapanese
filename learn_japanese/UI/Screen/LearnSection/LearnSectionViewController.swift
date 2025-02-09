@@ -14,6 +14,7 @@ class LearnSectionViewController: UIViewController {
     let learnSectionViewModel: LearnSectionViewModel = LearnSectionViewModel()
     
     var exerciseId: Int = 0
+    var lessonId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +26,17 @@ class LearnSectionViewController: UIViewController {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.quizCollectionView.register(UINib(nibName: "ImageTextQuestionCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ImageTextQuestionCollectionViewCell")
     }
-
+    
     @IBAction func didTapCloseLearnSection(_ sender: Any) {
         let confirmDialog = ConfirmDialog.loadView()
         confirmDialog.loadContent(type: .quitLearn)
         confirmDialog.delegate = self
         confirmDialog.show(in: self.view)
     }
-    @IBAction func didTapNextQuestion(_ sender: Any) {
-        nextQuestion()
-    }
-    
+    //    @IBAction func didTapNextQuestion(_ sender: Any) {
+    //        nextQuestion()
+    //    }
+    //
     func nextQuestion() {
         let pageWidth = quizCollectionView.frame.width
         let currentPage = Int((quizCollectionView.contentOffset.x + pageWidth / 2) / pageWidth)
@@ -45,6 +46,11 @@ class LearnSectionViewController: UIViewController {
         if nextPage < quizCollectionView.numberOfItems(inSection: 0) {
             let nextIndexPath = IndexPath(item: nextPage, section: 0)
             quizCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+        } else {
+            // Kết thúc bài học.
+            UserProgressManager.shared.updateExerciseProgress(lessonId: lessonId, exerciseId: exerciseId, score: learnSectionViewModel.score, maxScore: learnSectionViewModel.questions.count, wrongQuestionIds: learnSectionViewModel.wrongQuestionIds, completed: true) { firebaseResult in
+                print("------ firebase Result \(firebaseResult)")
+            }
         }
     }
 }

@@ -58,6 +58,7 @@
 		DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA652C4EA1F500C78640 /* SignInViewController.swift */; };
 		DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */; };
 		DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA692C4EA20400C78640 /* SignUpViewController.swift */; };
+		DF997C3D2D59048500980979 /* QuestionProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997C3C2D59048500980979 /* QuestionProgressModel.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -237,6 +238,7 @@
 		DF91DA662C4EA1F500C78640 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		DF91DA692C4EA20400C78640 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		DF997C3C2D59048500980979 /* QuestionProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProgressModel.swift; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				DF38760F2D18118C005BBE05 /* LessonProgressModel.swift */,
 				DF3876112D1811AE005BBE05 /* ExerciseProgressModel.swift */,
 				DF3876132D1811EC005BBE05 /* ScoreModel.swift */,
+				DF997C3C2D59048500980979 /* QuestionProgressModel.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				DF3875F82D1092D3005BBE05 /* UserProgressManager.swift in Sources */,
 				DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */,
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
+				DF997C3D2D59048500980979 /* QuestionProgressModel.swift in Sources */,
 				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DF3876072D11C034005BBE05 /* QuestionServiceUtils.swift in Sources */,
 				DFC523352D36B62B00B3FA6B /* SwipeView.swift in Sources */,
