@@ -59,6 +59,53 @@
 		DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */; };
 		DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA692C4EA20400C78640 /* SignUpViewController.swift */; };
 		DF997C3D2D59048500980979 /* QuestionProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997C3C2D59048500980979 /* QuestionProgressModel.swift */; };
+		DF997C3F2D5CF4FD00980979 /* AudioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */; };
+		DF997CCD2D5CF94500980979 /* に.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB42D5CF94500980979 /* に.mp3 */; };
+		DF997CCE2D5CF94500980979 /* け.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA72D5CF94500980979 /* け.mp3 */; };
+		DF997CCF2D5CF94500980979 /* ほ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CBC2D5CF94500980979 /* ほ.mp3 */; };
+		DF997CD02D5CF94500980979 /* つ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB02D5CF94500980979 /* つ.mp3 */; };
+		DF997CD12D5CF94500980979 /* し.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CAA2D5CF94500980979 /* し.mp3 */; };
+		DF997CD22D5CF94500980979 /* ん.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CCC2D5CF94500980979 /* ん.mp3 */; };
+		DF997CD32D5CF94500980979 /* い.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA02D5CF94500980979 /* い.mp3 */; };
+		DF997CD42D5CF94500980979 /* そ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CAD2D5CF94500980979 /* そ.mp3 */; };
+		DF997CD52D5CF94500980979 /* ふ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CBA2D5CF94500980979 /* ふ.mp3 */; };
+		DF997CD62D5CF94500980979 /* へ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CBB2D5CF94500980979 /* へ.mp3 */; };
+		DF997CD72D5CF94500980979 /* ま.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CBD2D5CF94500980979 /* ま.mp3 */; };
+		DF997CD82D5CF94500980979 /* や.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC22D5CF94500980979 /* や.mp3 */; };
+		DF997CD92D5CF94500980979 /* え.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA22D5CF94500980979 /* え.mp3 */; };
+		DF997CDA2D5CF94500980979 /* わ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CCA2D5CF94500980979 /* わ.mp3 */; };
+		DF997CDB2D5CF94500980979 /* く.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA62D5CF94500980979 /* く.mp3 */; };
+		DF997CDC2D5CF94500980979 /* て.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB12D5CF94500980979 /* て.mp3 */; };
+		DF997CDD2D5CF94500980979 /* み.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CBE2D5CF94500980979 /* み.mp3 */; };
+		DF997CDE2D5CF94500980979 /* り.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC62D5CF94500980979 /* り.mp3 */; };
+		DF997CDF2D5CF94500980979 /* せ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CAC2D5CF94500980979 /* せ.mp3 */; };
+		DF997CE02D5CF94500980979 /* す.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CAB2D5CF94500980979 /* す.mp3 */; };
+		DF997CE12D5CF94500980979 /* ゆ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC32D5CF94500980979 /* ゆ.mp3 */; };
+		DF997CE22D5CF94500980979 /* を.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CCB2D5CF94500980979 /* を.mp3 */; };
+		DF997CE32D5CF94500980979 /* ぬ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB52D5CF94500980979 /* ぬ.mp3 */; };
+		DF997CE42D5CF94500980979 /* こ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA82D5CF94500980979 /* こ.mp3 */; };
+		DF997CE52D5CF94500980979 /* れ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC82D5CF94500980979 /* れ.mp3 */; };
+		DF997CE62D5CF94500980979 /* な.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB32D5CF94500980979 /* な.mp3 */; };
+		DF997CE72D5CF94500980979 /* ち.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CAF2D5CF94500980979 /* ち.mp3 */; };
+		DF997CE82D5CF94500980979 /* た.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CAE2D5CF94500980979 /* た.mp3 */; };
+		DF997CE92D5CF94500980979 /* き.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA52D5CF94500980979 /* き.mp3 */; };
+		DF997CEA2D5CF94500980979 /* あ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997C9F2D5CF94500980979 /* あ.mp3 */; };
+		DF997CEB2D5CF94500980979 /* め.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC02D5CF94500980979 /* め.mp3 */; };
+		DF997CEC2D5CF94500980979 /* さ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA92D5CF94500980979 /* さ.mp3 */; };
+		DF997CED2D5CF94500980979 /* か.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA42D5CF94500980979 /* か.mp3 */; };
+		DF997CEE2D5CF94500980979 /* よ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC42D5CF94500980979 /* よ.mp3 */; };
+		DF997CEF2D5CF94500980979 /* ひ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB92D5CF94500980979 /* ひ.mp3 */; };
+		DF997CF02D5CF94500980979 /* の.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB72D5CF94500980979 /* の.mp3 */; };
+		DF997CF12D5CF94500980979 /* ら.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC52D5CF94500980979 /* ら.mp3 */; };
+		DF997CF22D5CF94500980979 /* お.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA32D5CF94500980979 /* お.mp3 */; };
+		DF997CF32D5CF94500980979 /* む.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CBF2D5CF94500980979 /* む.mp3 */; };
+		DF997CF42D5CF94500980979 /* も.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC12D5CF94500980979 /* も.mp3 */; };
+		DF997CF52D5CF94500980979 /* る.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC72D5CF94500980979 /* る.mp3 */; };
+		DF997CF62D5CF94500980979 /* ろ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CC92D5CF94500980979 /* ろ.mp3 */; };
+		DF997CF72D5CF94500980979 /* は.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB82D5CF94500980979 /* は.mp3 */; };
+		DF997CF82D5CF94500980979 /* う.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA12D5CF94500980979 /* う.mp3 */; };
+		DF997CF92D5CF94500980979 /* ね.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB62D5CF94500980979 /* ね.mp3 */; };
+		DF997CFA2D5CF94500980979 /* と.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB22D5CF94500980979 /* と.mp3 */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -239,6 +286,53 @@
 		DF91DA692C4EA20400C78640 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		DF997C3C2D59048500980979 /* QuestionProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProgressModel.swift; sourceTree = "<group>"; };
+		DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUtils.swift; sourceTree = "<group>"; };
+		DF997C9F2D5CF94500980979 /* あ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あ.mp3"; sourceTree = "<group>"; };
+		DF997CA02D5CF94500980979 /* い.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "い.mp3"; sourceTree = "<group>"; };
+		DF997CA12D5CF94500980979 /* う.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "う.mp3"; sourceTree = "<group>"; };
+		DF997CA22D5CF94500980979 /* え.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "え.mp3"; sourceTree = "<group>"; };
+		DF997CA32D5CF94500980979 /* お.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "お.mp3"; sourceTree = "<group>"; };
+		DF997CA42D5CF94500980979 /* か.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "か.mp3"; sourceTree = "<group>"; };
+		DF997CA52D5CF94500980979 /* き.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "き.mp3"; sourceTree = "<group>"; };
+		DF997CA62D5CF94500980979 /* く.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "く.mp3"; sourceTree = "<group>"; };
+		DF997CA72D5CF94500980979 /* け.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "け.mp3"; sourceTree = "<group>"; };
+		DF997CA82D5CF94500980979 /* こ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "こ.mp3"; sourceTree = "<group>"; };
+		DF997CA92D5CF94500980979 /* さ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "さ.mp3"; sourceTree = "<group>"; };
+		DF997CAA2D5CF94500980979 /* し.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "し.mp3"; sourceTree = "<group>"; };
+		DF997CAB2D5CF94500980979 /* す.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "す.mp3"; sourceTree = "<group>"; };
+		DF997CAC2D5CF94500980979 /* せ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "せ.mp3"; sourceTree = "<group>"; };
+		DF997CAD2D5CF94500980979 /* そ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "そ.mp3"; sourceTree = "<group>"; };
+		DF997CAE2D5CF94500980979 /* た.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "た.mp3"; sourceTree = "<group>"; };
+		DF997CAF2D5CF94500980979 /* ち.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ち.mp3"; sourceTree = "<group>"; };
+		DF997CB02D5CF94500980979 /* つ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "つ.mp3"; sourceTree = "<group>"; };
+		DF997CB12D5CF94500980979 /* て.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "て.mp3"; sourceTree = "<group>"; };
+		DF997CB22D5CF94500980979 /* と.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "と.mp3"; sourceTree = "<group>"; };
+		DF997CB32D5CF94500980979 /* な.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "な.mp3"; sourceTree = "<group>"; };
+		DF997CB42D5CF94500980979 /* に.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "に.mp3"; sourceTree = "<group>"; };
+		DF997CB52D5CF94500980979 /* ぬ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ぬ.mp3"; sourceTree = "<group>"; };
+		DF997CB62D5CF94500980979 /* ね.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ね.mp3"; sourceTree = "<group>"; };
+		DF997CB72D5CF94500980979 /* の.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "の.mp3"; sourceTree = "<group>"; };
+		DF997CB82D5CF94500980979 /* は.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "は.mp3"; sourceTree = "<group>"; };
+		DF997CB92D5CF94500980979 /* ひ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ひ.mp3"; sourceTree = "<group>"; };
+		DF997CBA2D5CF94500980979 /* ふ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ふ.mp3"; sourceTree = "<group>"; };
+		DF997CBB2D5CF94500980979 /* へ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "へ.mp3"; sourceTree = "<group>"; };
+		DF997CBC2D5CF94500980979 /* ほ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ほ.mp3"; sourceTree = "<group>"; };
+		DF997CBD2D5CF94500980979 /* ま.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ま.mp3"; sourceTree = "<group>"; };
+		DF997CBE2D5CF94500980979 /* み.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "み.mp3"; sourceTree = "<group>"; };
+		DF997CBF2D5CF94500980979 /* む.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "む.mp3"; sourceTree = "<group>"; };
+		DF997CC02D5CF94500980979 /* め.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "め.mp3"; sourceTree = "<group>"; };
+		DF997CC12D5CF94500980979 /* も.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "も.mp3"; sourceTree = "<group>"; };
+		DF997CC22D5CF94500980979 /* や.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "や.mp3"; sourceTree = "<group>"; };
+		DF997CC32D5CF94500980979 /* ゆ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ゆ.mp3"; sourceTree = "<group>"; };
+		DF997CC42D5CF94500980979 /* よ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "よ.mp3"; sourceTree = "<group>"; };
+		DF997CC52D5CF94500980979 /* ら.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ら.mp3"; sourceTree = "<group>"; };
+		DF997CC62D5CF94500980979 /* り.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "り.mp3"; sourceTree = "<group>"; };
+		DF997CC72D5CF94500980979 /* る.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "る.mp3"; sourceTree = "<group>"; };
+		DF997CC82D5CF94500980979 /* れ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "れ.mp3"; sourceTree = "<group>"; };
+		DF997CC92D5CF94500980979 /* ろ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ろ.mp3"; sourceTree = "<group>"; };
+		DF997CCA2D5CF94500980979 /* わ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "わ.mp3"; sourceTree = "<group>"; };
+		DF997CCB2D5CF94500980979 /* を.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "を.mp3"; sourceTree = "<group>"; };
+		DF997CCC2D5CF94500980979 /* ん.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ん.mp3"; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -474,6 +568,59 @@
 			path = ChildrenViewController;
 			sourceTree = "<group>";
 		};
+		DF997C9E2D5CF92D00980979 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DF997C9F2D5CF94500980979 /* あ.mp3 */,
+				DF997CA02D5CF94500980979 /* い.mp3 */,
+				DF997CA12D5CF94500980979 /* う.mp3 */,
+				DF997CA22D5CF94500980979 /* え.mp3 */,
+				DF997CA32D5CF94500980979 /* お.mp3 */,
+				DF997CA42D5CF94500980979 /* か.mp3 */,
+				DF997CA52D5CF94500980979 /* き.mp3 */,
+				DF997CA62D5CF94500980979 /* く.mp3 */,
+				DF997CA72D5CF94500980979 /* け.mp3 */,
+				DF997CA82D5CF94500980979 /* こ.mp3 */,
+				DF997CA92D5CF94500980979 /* さ.mp3 */,
+				DF997CAA2D5CF94500980979 /* し.mp3 */,
+				DF997CAB2D5CF94500980979 /* す.mp3 */,
+				DF997CAC2D5CF94500980979 /* せ.mp3 */,
+				DF997CAD2D5CF94500980979 /* そ.mp3 */,
+				DF997CAE2D5CF94500980979 /* た.mp3 */,
+				DF997CAF2D5CF94500980979 /* ち.mp3 */,
+				DF997CB02D5CF94500980979 /* つ.mp3 */,
+				DF997CB12D5CF94500980979 /* て.mp3 */,
+				DF997CB22D5CF94500980979 /* と.mp3 */,
+				DF997CB32D5CF94500980979 /* な.mp3 */,
+				DF997CB42D5CF94500980979 /* に.mp3 */,
+				DF997CB52D5CF94500980979 /* ぬ.mp3 */,
+				DF997CB62D5CF94500980979 /* ね.mp3 */,
+				DF997CB72D5CF94500980979 /* の.mp3 */,
+				DF997CB82D5CF94500980979 /* は.mp3 */,
+				DF997CB92D5CF94500980979 /* ひ.mp3 */,
+				DF997CBA2D5CF94500980979 /* ふ.mp3 */,
+				DF997CBB2D5CF94500980979 /* へ.mp3 */,
+				DF997CBC2D5CF94500980979 /* ほ.mp3 */,
+				DF997CBD2D5CF94500980979 /* ま.mp3 */,
+				DF997CBE2D5CF94500980979 /* み.mp3 */,
+				DF997CBF2D5CF94500980979 /* む.mp3 */,
+				DF997CC02D5CF94500980979 /* め.mp3 */,
+				DF997CC12D5CF94500980979 /* も.mp3 */,
+				DF997CC22D5CF94500980979 /* や.mp3 */,
+				DF997CC32D5CF94500980979 /* ゆ.mp3 */,
+				DF997CC42D5CF94500980979 /* よ.mp3 */,
+				DF997CC52D5CF94500980979 /* ら.mp3 */,
+				DF997CC62D5CF94500980979 /* り.mp3 */,
+				DF997CC72D5CF94500980979 /* る.mp3 */,
+				DF997CC82D5CF94500980979 /* れ.mp3 */,
+				DF997CC92D5CF94500980979 /* ろ.mp3 */,
+				DF997CCA2D5CF94500980979 /* わ.mp3 */,
+				DF997CCB2D5CF94500980979 /* を.mp3 */,
+				DF997CCC2D5CF94500980979 /* ん.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		DF9A23D62C42708500A73895 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +805,7 @@
 		DFBA80742C4030F800467A58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DF997C9E2D5CF92D00980979 /* Sounds */,
 				DFE59EF52CD2859000011DFC /* Data */,
 				DF91DA512C4D621D00C78640 /* Localizations */,
 				DFBA804B2C402FA100467A58 /* Assets.xcassets */,
@@ -705,6 +853,7 @@
 				DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */,
 				DFC5232D2D36B0B200B3FA6B /* DictionaryUtils.swift */,
 				DFC523322D36B2B400B3FA6B /* QuestionConstants.swift */,
+				DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -953,6 +1102,52 @@
 				DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */,
 				DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */,
 				DFBA804C2C402FA100467A58 /* Assets.xcassets in Resources */,
+				DF997CCD2D5CF94500980979 /* に.mp3 in Resources */,
+				DF997CCE2D5CF94500980979 /* け.mp3 in Resources */,
+				DF997CCF2D5CF94500980979 /* ほ.mp3 in Resources */,
+				DF997CD02D5CF94500980979 /* つ.mp3 in Resources */,
+				DF997CD12D5CF94500980979 /* し.mp3 in Resources */,
+				DF997CD22D5CF94500980979 /* ん.mp3 in Resources */,
+				DF997CD32D5CF94500980979 /* い.mp3 in Resources */,
+				DF997CD42D5CF94500980979 /* そ.mp3 in Resources */,
+				DF997CD52D5CF94500980979 /* ふ.mp3 in Resources */,
+				DF997CD62D5CF94500980979 /* へ.mp3 in Resources */,
+				DF997CD72D5CF94500980979 /* ま.mp3 in Resources */,
+				DF997CD82D5CF94500980979 /* や.mp3 in Resources */,
+				DF997CD92D5CF94500980979 /* え.mp3 in Resources */,
+				DF997CDA2D5CF94500980979 /* わ.mp3 in Resources */,
+				DF997CDB2D5CF94500980979 /* く.mp3 in Resources */,
+				DF997CDC2D5CF94500980979 /* て.mp3 in Resources */,
+				DF997CDD2D5CF94500980979 /* み.mp3 in Resources */,
+				DF997CDE2D5CF94500980979 /* り.mp3 in Resources */,
+				DF997CDF2D5CF94500980979 /* せ.mp3 in Resources */,
+				DF997CE02D5CF94500980979 /* す.mp3 in Resources */,
+				DF997CE12D5CF94500980979 /* ゆ.mp3 in Resources */,
+				DF997CE22D5CF94500980979 /* を.mp3 in Resources */,
+				DF997CE32D5CF94500980979 /* ぬ.mp3 in Resources */,
+				DF997CE42D5CF94500980979 /* こ.mp3 in Resources */,
+				DF997CE52D5CF94500980979 /* れ.mp3 in Resources */,
+				DF997CE62D5CF94500980979 /* な.mp3 in Resources */,
+				DF997CE72D5CF94500980979 /* ち.mp3 in Resources */,
+				DF997CE82D5CF94500980979 /* た.mp3 in Resources */,
+				DF997CE92D5CF94500980979 /* き.mp3 in Resources */,
+				DF997CEA2D5CF94500980979 /* あ.mp3 in Resources */,
+				DF997CEB2D5CF94500980979 /* め.mp3 in Resources */,
+				DF997CEC2D5CF94500980979 /* さ.mp3 in Resources */,
+				DF997CED2D5CF94500980979 /* か.mp3 in Resources */,
+				DF997CEE2D5CF94500980979 /* よ.mp3 in Resources */,
+				DF997CEF2D5CF94500980979 /* ひ.mp3 in Resources */,
+				DF997CF02D5CF94500980979 /* の.mp3 in Resources */,
+				DF997CF12D5CF94500980979 /* ら.mp3 in Resources */,
+				DF997CF22D5CF94500980979 /* お.mp3 in Resources */,
+				DF997CF32D5CF94500980979 /* む.mp3 in Resources */,
+				DF997CF42D5CF94500980979 /* も.mp3 in Resources */,
+				DF997CF52D5CF94500980979 /* る.mp3 in Resources */,
+				DF997CF62D5CF94500980979 /* ろ.mp3 in Resources */,
+				DF997CF72D5CF94500980979 /* は.mp3 in Resources */,
+				DF997CF82D5CF94500980979 /* う.mp3 in Resources */,
+				DF997CF92D5CF94500980979 /* ね.mp3 in Resources */,
+				DF997CFA2D5CF94500980979 /* と.mp3 in Resources */,
 				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
 				DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */,
 				DFA6E8EF2C611D4D00765A11 /* MainTabBar.storyboard in Resources */,
@@ -1090,6 +1285,7 @@
 				DF3876022D11BE7E005BBE05 /* ExcerciseServiceUtils.swift in Sources */,
 				DF9A23D52C426F2400A73895 /* Constant.swift in Sources */,
 				DF9E77E72C5546050087E361 /* UserManager.swift in Sources */,
+				DF997C3F2D5CF4FD00980979 /* AudioUtils.swift in Sources */,
 				DFFF30DC2C52A93E00DADE4A /* LevelSelectionViewController.swift in Sources */,
 				DFA6E8EC2C61184100765A11 /* LearnViewModel.swift in Sources */,
 				DFF809362C5E4B2E00F1EB2C /* HomeCollectionViewCell.swift in Sources */,

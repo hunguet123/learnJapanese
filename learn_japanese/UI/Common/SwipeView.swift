@@ -47,6 +47,14 @@ class SwipeView: UIView {
         return label
     }()
     
+    private let audioButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "speaker.wave.3"), for: .normal) // Hình ảnh nút audio
+        button.tintColor = .systemBlue
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,6 +75,7 @@ class SwipeView: UIView {
         addSubview(leftLabel)
         addSubview(rightLabel)
         addSubview(imageView)
+        addSubview(audioButton) // Thêm nút audio vào view
         
         // Layout labels
         NSLayoutConstraint.activate([
@@ -79,8 +88,17 @@ class SwipeView: UIView {
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6),
-            imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)
+            imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
+            
+            // Layout cho nút audio
+            audioButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            audioButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            audioButton.widthAnchor.constraint(equalToConstant: 40),
+            audioButton.heightAnchor.constraint(equalToConstant: 40)
         ])
+        
+        // Thêm hành động cho nút audio
+        audioButton.addTarget(self, action: #selector(audioButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - Setup Gestures
@@ -132,6 +150,12 @@ class SwipeView: UIView {
         }
     }
     
+    private func playAudio() {
+        if !AudioUtils.shared.isPlaying() {
+            AudioUtils.shared.playSound(filename: currentCharacter)
+        }
+    }
+    
     // MARK: - Reset Image Position
     private func resetImagePosition() {
         UIView.animate(withDuration: 0.3) {
@@ -140,5 +164,10 @@ class SwipeView: UIView {
             self.leftLabel.alpha = 0
             self.rightLabel.alpha = 0
         }
+    }
+    
+    // MARK: - Audio Button Action
+    @objc private func audioButtonTapped() {
+        playAudio()
     }
 }
