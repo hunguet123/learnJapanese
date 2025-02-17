@@ -11,6 +11,10 @@ class HomeViewController: BaseViewControler {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var lesssonsCollectionView: UICollectionView!
+    private var indicator: UIActivityIndicatorView = {
+         let activityIndicator = UIActivityIndicatorView(style: .large)
+         return activityIndicator
+     }()
     
     var homeViewModel: HomeViewModel?
     
@@ -26,12 +30,29 @@ class HomeViewController: BaseViewControler {
     }
 
     private func setupUI() {
+        self.indicator.fixInView(self.view)
+        indicator.isHidden = true
         levelLabel.text = homeViewModel?.japaneseLevel.title
         lesssonsCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "HomeCollectionViewCell")
     }
     
     private func fetchData() {
         self.homeViewModel?.fetchLesssons()
+        self.homeViewModel?.onChangeApiStatus = { [weak self] apiStatus in
+            switch apiStatus {
+            case .success:
+                self?.indicator.stopAnimating()
+                self?.indicator.isHidden = true
+            case .loading:
+                self?.indicator.startAnimating()
+                self?.indicator.isHidden = false
+            case .failure:
+                self?.indicator.stopAnimating()
+                self?.indicator.isHidden = true
+            default:
+                break
+            }
+        }
     }
     
     private func setUpGradientLayer() {

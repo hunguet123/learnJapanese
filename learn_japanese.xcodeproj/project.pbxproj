@@ -106,6 +106,7 @@
 		DF997CF82D5CF94500980979 /* う.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CA12D5CF94500980979 /* う.mp3 */; };
 		DF997CF92D5CF94500980979 /* ね.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB62D5CF94500980979 /* ね.mp3 */; };
 		DF997CFA2D5CF94500980979 /* と.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB22D5CF94500980979 /* と.mp3 */; };
+		DF997D002D63816E00980979 /* ApiStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997CFF2D63816E00980979 /* ApiStatus.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -333,6 +334,7 @@
 		DF997CCA2D5CF94500980979 /* わ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "わ.mp3"; sourceTree = "<group>"; };
 		DF997CCB2D5CF94500980979 /* を.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "を.mp3"; sourceTree = "<group>"; };
 		DF997CCC2D5CF94500980979 /* ん.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ん.mp3"; sourceTree = "<group>"; };
+		DF997CFF2D63816E00980979 /* ApiStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatus.swift; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -854,6 +856,7 @@
 				DFC5232D2D36B0B200B3FA6B /* DictionaryUtils.swift */,
 				DFC523322D36B2B400B3FA6B /* QuestionConstants.swift */,
 				DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */,
+				DF997CFF2D63816E00980979 /* ApiStatus.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1258,6 +1261,7 @@
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
+				DF997D002D63816E00980979 /* ApiStatus.swift in Sources */,
 				DF3876162D19AB09005BBE05 /* ExerciseDTO.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
 				DF3875FC2D11BC43005BBE05 /* LessonServiceUtils.swift in Sources */,

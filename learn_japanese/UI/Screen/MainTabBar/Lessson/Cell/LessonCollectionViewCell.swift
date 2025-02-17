@@ -25,16 +25,17 @@ class LessonCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        
         switch exerciseDTO.state {
         case .cantLearn:
             contentUIView.backgroundColor = AppColors.lightSliver
             contentUIView.isUserInteractionEnabled = false
+            self.stateLearnedImage.isHidden = false
             self.stateLearnedImage.image = AppImages.iconLock
         case .learned:
             contentUIView.backgroundColor = AppColors.white
             contentUIView.isUserInteractionEnabled = true
             self.stateLearnedImage.image = AppImages.iconCheckmarkCircle
+            self.stateLearnedImage.isHidden = false
         case .canLearn:
             contentUIView.backgroundColor = AppColors.white
             contentUIView.isUserInteractionEnabled = true

@@ -33,10 +33,7 @@ class LearnSectionViewController: UIViewController {
         confirmDialog.delegate = self
         confirmDialog.show(in: self.view)
     }
-    //    @IBAction func didTapNextQuestion(_ sender: Any) {
-    //        nextQuestion()
-    //    }
-    //
+
     func nextQuestion() {
         let pageWidth = quizCollectionView.frame.width
         let currentPage = Int((quizCollectionView.contentOffset.x + pageWidth / 2) / pageWidth)
@@ -50,6 +47,9 @@ class LearnSectionViewController: UIViewController {
             // Kết thúc bài học.
             UserProgressManager.shared.updateExerciseProgress(lessonId: lessonId, exerciseId: exerciseId, score: learnSectionViewModel.score, maxScore: learnSectionViewModel.questions.count, wrongQuestionIds: learnSectionViewModel.wrongQuestionIds, completed: true) { firebaseResult in
                 print("------ firebase Result \(firebaseResult)")
+                UserProgressManager.shared.fetchUserProgress { result in
+                    print("fetch userProgress: \(result)")
+                }
             }
         }
     }

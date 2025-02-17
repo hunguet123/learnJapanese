@@ -11,15 +11,27 @@ import FirebaseFirestore
 enum FirebaseResult {
     case success
     case failure(Error)
+
+    func isEqual(to other: FirebaseResult) -> Bool {
+        switch (self, other) {
+        case (.success, .success):
+            return true
+        case (.failure(let error1), .failure(let error2)):
+            return (error1 as NSError).domain == (error2 as NSError).domain &&
+                   error1.localizedDescription == error2.localizedDescription
+        default:
+            return false
+        }
+    }
 }
 
 class UserProgressManager {
     private let db = Firestore.firestore()
     private let collectionName = "userProgress"
     var userProgressModel: UserProgressModel?
-
+    
     static let shared = UserProgressManager()
-
+    
     func addLessonProgress(
         lessonId: Int,
         totalExercises: Int,
@@ -67,9 +79,10 @@ class UserProgressManager {
                let existingProgress = UserProgressModel.fromJson(progressData) {
                 if existingProgress.lessons.contains(where: { $0.lessonId == lessonId }) {
                     print("Lesson \(lessonId) already exists.")
-                    self.fetchUserProgress(userId: userId) { result in
+                    self.fetchUserProgress() { result in
                         print("userProgress save: \(result)")
-                        completion(.success)                    }
+                        completion(.success)
+                    }
                     return
                 }
                 
@@ -168,7 +181,7 @@ class UserProgressManager {
             }
             
             if completed {
-                lesson.completedExercises += 1
+                lesson.completedExercises = lesson.exercises.count
             }
             
             userProgress.lessons[lessonIndex] = lesson
@@ -184,10 +197,13 @@ class UserProgressManager {
         }
     }
     
-    private func fetchUserProgress(
-        userId: String,
+    func fetchUserProgress(
         completion: @escaping (FirebaseResult) -> Void
     ) {
+        guard let userModel = UserManager.shared.getUser() else {
+            return
+        }
+        let userId = userModel.id
         let documentRef = Firestore.firestore().collection("userProgress").document(userId)
         
         documentRef.getDocument { documentSnapshot, error in

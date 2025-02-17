@@ -15,12 +15,23 @@ class HomeViewModel {
     var delegate: HomeViewModelDelegate?
     var japaneseLevel: JapaneseLevel = .basic
     var lessonDTOs: [LessonDTO] = []
+    var onChangeApiStatus: ((ApiStatus) -> Void)?
     
     init(japaneseLevel: JapaneseLevel) {
         self.japaneseLevel = japaneseLevel
     }
     
     func fetchLesssons() {
+        self.onChangeApiStatus?(ApiStatus.loading)
+        UserProgressManager.shared.fetchUserProgress { result in
+            if (result.isEqual(to: .success)) {
+                self.onChangeApiStatus?(ApiStatus.success)
+            } else {
+                self.onChangeApiStatus?(ApiStatus.failure)
+            }
+            print("fetch userProgress: \(result)")
+        }
+        
         let lessons = LessonServiceUtils.getLesson(byLevel: japaneseLevel.level.rawValue)
         lessonDTOs = lessons.map({ lessonModel in
             let activities = ActivityServiceUtils.getActivity(byLessonId: lessonModel.lessonId)

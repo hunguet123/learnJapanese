@@ -16,12 +16,13 @@ class LearnViewController: BaseViewControler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchData()
+        self.lessonsCollectionView.reloadData()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
