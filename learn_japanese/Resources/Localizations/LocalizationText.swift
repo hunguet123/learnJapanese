@@ -46,4 +46,7 @@ class LocalizationText {
     static let almostDone = "almost_done".l10n()
     static let continueLearning = "continue_learning".l10n()
     static let finish = "finish".l10n()
+    static let correctAnswer = "correctAnswer".l10n()
+    static let wrongAnswer = "wrongAnswer".l10n()
+    static let tryAgain = "tryAgain".l10n()
 }

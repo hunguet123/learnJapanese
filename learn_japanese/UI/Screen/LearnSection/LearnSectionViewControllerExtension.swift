@@ -12,7 +12,7 @@ extension LearnSectionViewController: UICollectionViewDelegate,
                                       UICollectionViewDataSource,
                                       UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return learnSectionViewModel.questions.count
+        return learnSectionViewModel.questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -27,6 +27,9 @@ extension LearnSectionViewController: UICollectionViewDelegate,
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            return
+        }
         let pageWidth = scrollView.frame.width
         let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
         self.learningProgressView.progress = Float(currentPage + 1) / Float(learnSectionViewModel.questions.count)

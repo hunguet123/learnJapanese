@@ -27,6 +27,13 @@ class LearnSectionViewController: UIViewController {
         self.quizCollectionView.register(UINib(nibName: "ImageTextQuestionCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ImageTextQuestionCollectionViewCell")
     }
     
+    func resetProgress() {
+        learnSectionViewModel.resetAll()
+        learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
+        self.learningProgressView.setProgress(0, animated: false)
+        self.quizCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
+    }
+    
     @IBAction func didTapCloseLearnSection(_ sender: Any) {
         let confirmDialog = ConfirmDialog.loadView()
         confirmDialog.loadContent(type: .quitLearn)
@@ -47,9 +54,9 @@ class LearnSectionViewController: UIViewController {
             // Kết thúc bài học.
             UserProgressManager.shared.updateExerciseProgress(lessonId: lessonId, exerciseId: exerciseId, score: learnSectionViewModel.score, maxScore: learnSectionViewModel.questions.count, wrongQuestionIds: learnSectionViewModel.wrongQuestionIds, completed: true) { firebaseResult in
                 print("------ firebase Result \(firebaseResult)")
-                UserProgressManager.shared.fetchUserProgress { result in
-                    print("fetch userProgress: \(result)")
-                }
+                let learnResultViewController = LearnResultViewController()
+                learnResultViewController.learnResultViewModel = LearnResultViewModel(correctAnswer: self.learnSectionViewModel.score, wrongAnswer: self.learnSectionViewModel.wrongQuestionIds.count)
+                self.navigationController?.pushViewController(learnResultViewController, animated: true)
             }
         }
     }

@@ -42,3 +42,6 @@
 "almost_done" = "Just a little more to finish the lesson, if you quit now, the progress will not be saved huhu";
 "continue_learning" = "Continue Learning!";
 "finish" = "Finish";
+"correctAnswer" = "Correct answer";
+"wrongAnswer" = "Wrong answer";
+"tryAgain" = "Try again";

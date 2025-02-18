@@ -11,14 +11,14 @@ import FirebaseFirestore
 enum FirebaseResult {
     case success
     case failure(Error)
-
+    
     func isEqual(to other: FirebaseResult) -> Bool {
         switch (self, other) {
         case (.success, .success):
             return true
         case (.failure(let error1), .failure(let error2)):
             return (error1 as NSError).domain == (error2 as NSError).domain &&
-                   error1.localizedDescription == error2.localizedDescription
+            error1.localizedDescription == error2.localizedDescription
         default:
             return false
         }
@@ -101,7 +101,10 @@ class UserProgressManager {
                     if let error = error {
                         completion(.failure(error))
                     } else {
-                        completion(.success)
+                        self.fetchUserProgress() { result in
+                            print("userProgress save: \(result)")
+                            completion(.success)
+                        }
                     }
                 }
             }
@@ -191,7 +194,10 @@ class UserProgressManager {
                 if let error = error {
                     completion(.failure(error))
                 } else {
-                    completion(.success)
+                    self.fetchUserProgress() { result in
+                        print("userProgress save: \(result)")
+                        completion(.success)
+                    }
                 }
             }
         }

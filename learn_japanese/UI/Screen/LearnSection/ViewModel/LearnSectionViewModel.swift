@@ -13,6 +13,11 @@ class LearnSectionViewModel {
     var score: Int = 0
     func fetchAllQuestions(byExcerciseId excerciseId: Int){
         questions = QuestionServiceUtils.fetchAllQuestions(byExcerciseId: excerciseId)
-        
+    }
+    
+    func resetAll(){
+        wrongQuestionIds.removeAll()
+        questions.removeAll()
+        score = 0
     }
 }

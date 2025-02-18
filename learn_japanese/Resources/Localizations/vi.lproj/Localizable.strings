@@ -42,3 +42,6 @@
 "almost_done" = "Chỉ còn 1 chút nữa là xong bài học, nếu thoát bây giờ, tiến độ sẽ không được lưu lại đâu ạ huhu";
 "continue_learning" = "Học tiếp!";
 "finish" = "Kết thúc";
+"correctAnswer" = "Câu trả lời đúng";
+"wrongAnswer" = "Câu trả lời sai";
+"tryAgain" = "Thử lại";

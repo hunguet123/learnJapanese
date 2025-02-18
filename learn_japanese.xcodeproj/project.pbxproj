@@ -107,6 +107,9 @@
 		DF997CF92D5CF94500980979 /* ね.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB62D5CF94500980979 /* ね.mp3 */; };
 		DF997CFA2D5CF94500980979 /* と.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB22D5CF94500980979 /* と.mp3 */; };
 		DF997D002D63816E00980979 /* ApiStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997CFF2D63816E00980979 /* ApiStatus.swift */; };
+		DF997D042D64CD8500980979 /* LearnResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF997D032D64CD8500980979 /* LearnResultViewController.xib */; };
+		DF997D052D64CD8500980979 /* LearnResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997D022D64CD8500980979 /* LearnResultViewController.swift */; };
+		DF997D082D64D78900980979 /* LearnResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997D072D64D78900980979 /* LearnResultViewModel.swift */; };
 		DF9A23D52C426F2400A73895 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D42C426F2400A73895 /* Constant.swift */; };
 		DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23D82C42710A00A73895 /* BaseViewController.swift */; };
 		DF9A23DE2C42715E00A73895 /* UIViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */; };
@@ -335,6 +338,9 @@
 		DF997CCB2D5CF94500980979 /* を.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "を.mp3"; sourceTree = "<group>"; };
 		DF997CCC2D5CF94500980979 /* ん.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ん.mp3"; sourceTree = "<group>"; };
 		DF997CFF2D63816E00980979 /* ApiStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatus.swift; sourceTree = "<group>"; };
+		DF997D022D64CD8500980979 /* LearnResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnResultViewController.swift; sourceTree = "<group>"; };
+		DF997D032D64CD8500980979 /* LearnResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnResultViewController.xib; sourceTree = "<group>"; };
+		DF997D072D64D78900980979 /* LearnResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnResultViewModel.swift; sourceTree = "<group>"; };
 		DF9A23D42C426F2400A73895 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DF9A23D82C42710A00A73895 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DF9A23DD2C42715E00A73895 /* UIViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtesion.swift; sourceTree = "<group>"; };
@@ -623,6 +629,24 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		DF997D012D64CD1700980979 /* LearnResult */ = {
+			isa = PBXGroup;
+			children = (
+				DF997D062D64D76900980979 /* ViewModel */,
+				DF997D022D64CD8500980979 /* LearnResultViewController.swift */,
+				DF997D032D64CD8500980979 /* LearnResultViewController.xib */,
+			);
+			path = LearnResult;
+			sourceTree = "<group>";
+		};
+		DF997D062D64D76900980979 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF997D072D64D78900980979 /* LearnResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DF9A23D62C42708500A73895 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +817,7 @@
 		DFBA80732C40304D00467A58 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DF997D012D64CD1700980979 /* LearnResult */,
 				DFDA88232CC9427E00934E39 /* Drawing */,
 				DF1A5D512C65007D00ADD61E /* LearnSection */,
 				DFA6E8ED2C611D2500765A11 /* MainTabBar */,
@@ -1151,6 +1176,7 @@
 				DF997CF82D5CF94500980979 /* う.mp3 in Resources */,
 				DF997CF92D5CF94500980979 /* ね.mp3 in Resources */,
 				DF997CFA2D5CF94500980979 /* と.mp3 in Resources */,
+				DF997D042D64CD8500980979 /* LearnResultViewController.xib in Resources */,
 				DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */,
 				DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */,
 				DFA6E8EF2C611D4D00765A11 /* MainTabBar.storyboard in Resources */,
@@ -1237,6 +1263,7 @@
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
 				DF3875F82D1092D3005BBE05 /* UserProgressManager.swift in Sources */,
+				DF997D082D64D78900980979 /* LearnResultViewModel.swift in Sources */,
 				DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */,
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF997C3D2D59048500980979 /* QuestionProgressModel.swift in Sources */,
@@ -1258,6 +1285,7 @@
 				DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */,
 				DF1A5D5E2C651F6200ADD61E /* LearnSectionViewControllerExtension.swift in Sources */,
 				DF9A23E62C4276F000A73895 /* AppLotties.swift in Sources */,
+				DF997D052D64CD8500980979 /* LearnResultViewController.swift in Sources */,
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
