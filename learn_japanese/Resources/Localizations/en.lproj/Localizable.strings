@@ -45,3 +45,8 @@
 "correctAnswer" = "Correct answer";
 "wrongAnswer" = "Wrong answer";
 "tryAgain" = "Try again";
+"tryAgain" = "Try again";
+"needImprovement" = "Need improvement";
+"fair" = "Fair";
+"good" = "Good";
+"excellent" = "Excellent! Good job!";

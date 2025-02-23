@@ -16,6 +16,8 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var content: UIView!
     
     var delegate: ImageTextQuestionDelegate?
+    private var question: QuestionModel?
+    private var audioName: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +27,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
         content.removeAllSubviews()
         //TODO: remove when change db
         if let options = question.options {
+            self.question = question
             if let options = DictionaryUtils.jsonStringToDictionary(jsonString: options) {
                 let questionType = options["questionType"] as? String
                 switch questionType {
@@ -32,6 +35,8 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     let swipeView = SwipeView()
                     if let character = options["character"] as? String {
                         swipeView.currentCharacter = character
+                        swipeView.audioName = character
+                        self.audioName = character
                     }
                     
                     swipeView.fixInView(content)
@@ -45,6 +50,14 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                 default:
                     break
                 }
+            }
+        }
+    }
+    
+    public func playAudio() {
+        if !AudioUtils.shared.isPlaying() {
+            if let audioName = self.audioName {
+                AudioUtils.shared.playSound(filename: audioName)
             }
         }
     }

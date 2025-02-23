@@ -45,3 +45,8 @@
 "correctAnswer" = "Câu trả lời đúng";
 "wrongAnswer" = "Câu trả lời sai";
 "tryAgain" = "Thử lại";
+"tryAgain" = "Thử lại";
+"needImprovement" = "Cần cải thiện";
+"fair" = "Tạm ổn";
+"good" = "Tốt";
+"excellent" = "Xuất sắc! Good job!";

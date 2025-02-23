@@ -8,8 +8,11 @@ class SwipeView: UIView {
         }
     }
     
+    var audioName: String = ""
+    
     var onSwipeLeft: ((String) -> Void)? // Callback khi vuốt trái
     var onSwipeRight: ((String) -> Void)? // Callback khi vuốt phải
+    
     
     private var originalCenter: CGPoint = .zero
     
@@ -152,7 +155,7 @@ class SwipeView: UIView {
     
     private func playAudio() {
         if !AudioUtils.shared.isPlaying() {
-            AudioUtils.shared.playSound(filename: currentCharacter)
+            AudioUtils.shared.playSound(filename: audioName)
         }
     }
     
