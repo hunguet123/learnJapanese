@@ -47,6 +47,21 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     swipeView.onSwipeLeft = { character in
                         self.delegate?.onSwipeLeft(questionId: question.questionId)
                     }
+                case QuestionConstants.textSelection:
+                    // TODO: sua lai text
+                    let textSelection = TextSelectionView()
+                    textSelection.fixInView(content)
+                    if let questionText = options["questionText"] as? String {
+                        textSelection.addQuestionText(text: questionText)
+                    }
+                    
+                    if let options = options["options"] as? [[String: Any]] {
+                        options.forEach { option in
+                            if let text = option["text"] as? String {
+                                textSelection.addOption(title: text)
+                            }
+                        }
+                    }
                 default:
                     break
                 }

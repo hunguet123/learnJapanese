@@ -1,7 +1,13 @@
 import UIKit
 
 class TextSelectionView: UIView {
-    
+    private let questionLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.textColor = .label
+        label.numberOfLines = 0
+        return label
+    }()
     private let stackView = UIStackView()
     private var selectedOption: UIView?
     
@@ -24,24 +30,34 @@ class TextSelectionView: UIView {
         
         // Add stack view to the main view
         addSubview(stackView)
+        addSubview(questionLabel)
         
         // Set up stack view constraints
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        questionLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            questionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
         
-        // Add options to stack view
-        addOption(title: "犬（いぬ）")
-        addOption(title: "猫（ねこ）")
-        addOption(title: "熊（くま）")
-        addOption(title: "鳥（とり）")
+//        questionLabel.text = "Đây là chữ gì"
+//        // Add options to stack view
+//        addOption(title: "犬（いぬ）")
+//        addOption(title: "猫（ねこ）")
+//        addOption(title: "熊（くま）")
+//        addOption(title: "鳥（とり）")
     }
     
-    private func addOption(title: String, isSelected: Bool = false) {
+    func addQuestionText(text: String) {
+        self.questionLabel.text = text
+    }
+    
+    func addOption(title: String, isSelected: Bool = false) {
         let optionView = UIView()
         optionView.backgroundColor = isSelected ? .white : UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1)
         optionView.layer.cornerRadius = 8
