@@ -7,15 +7,16 @@
 
 import UIKit
 
-protocol ImageTextQuestionDelegate: AnyObject {
+protocol ImageTextQuestionCollectionViewCellDelegate: AnyObject {
     func onSwipeRight(questionId: Int)
     func onSwipeLeft(questionId: Int)
+    func didTapNextQuestion(isCorrect: Bool, questionId: Int)
 }
 
 class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var content: UIView!
     
-    var delegate: ImageTextQuestionDelegate?
+    var delegate: ImageTextQuestionCollectionViewCellDelegate?
     private var question: QuestionModel?
     private var audioName: String?
     
@@ -26,14 +27,14 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
     public func configure(with question: QuestionModel) {
         content.removeAllSubviews()
         //TODO: remove when change db
-        if let options = question.options {
+        if let questionContentString = question.questionContent {
             self.question = question
-            if let options = DictionaryUtils.jsonStringToDictionary(jsonString: options) {
-                let questionType = options["questionType"] as? String
+            if let questionContent = DictionaryUtils.jsonStringToDictionary(jsonString: questionContentString) {
+                let questionType = questionContent["questionType"] as? String
                 switch questionType {
                 case QuestionConstants.characterRecognition:
                     let swipeView = SwipeView()
-                    if let character = options["character"] as? String {
+                    if let character = questionContent["character"] as? String {
                         swipeView.currentCharacter = character
                         swipeView.audioName = character
                         self.audioName = character
@@ -48,17 +49,23 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                         self.delegate?.onSwipeLeft(questionId: question.questionId)
                     }
                 case QuestionConstants.textSelection:
-                    // TODO: sua lai text
+                    audioName = nil
                     let textSelection = TextSelectionView()
                     textSelection.fixInView(content)
-                    if let questionText = options["questionText"] as? String {
+                    if let questionText = questionContent["questionText"] as? String {
                         textSelection.addQuestionText(text: questionText)
                     }
                     
-                    if let options = options["options"] as? [[String: Any]] {
-                        options.forEach { option in
-                            if let text = option["text"] as? String {
+                    if let options = questionContent["options"] as? [[String: Any]] {
+                        for index in 0..<options.count {
+                            if let text = options[index]["text"] as? String {
+                                textSelection.addAudioItem(audioName: options[index]["audio"] as? String ?? "")
                                 textSelection.addOption(title: text)
+                            }
+                        }
+                        textSelection.didTapNextQuestion = { questionIndex in
+                            if let isCorrect = options[questionIndex]["isCorrect"] as? Bool {
+                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect, questionId: question.questionId)
                             }
                         }
                     }

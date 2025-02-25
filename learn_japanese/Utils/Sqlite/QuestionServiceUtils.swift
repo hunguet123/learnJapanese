@@ -22,7 +22,7 @@ class QuestionServiceUtils {
             let questionId = Expression<Int>("question_id")
             let exerciseIdColumn = Expression<Int>("exercise_id")
             let questionText = Expression<String?>("question_text")
-            let options = Expression<String?>("options")
+            let questionContent = Expression<String?>("question_content")
             let correctAnswer = Expression<String?>("correct_answer")
             let image = Expression<String?>("image")
             let audio = Expression<String?>("audio")
@@ -39,7 +39,7 @@ class QuestionServiceUtils {
                     questionId: row[questionId],
                     exerciseId: row[exerciseIdColumn],
                     questionText: row[questionText],
-                    options: row[options],
+                    questionContent: row[questionContent],
                     correctAnswer: row[correctAnswer],
                     image: row[image],
                     audio: row[audio],

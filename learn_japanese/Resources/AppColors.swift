@@ -36,4 +36,6 @@ class AppColors {
     static let chineseSliver = UIColor(named: "colors/chineseSliver")
     /// FF56D0
     static let lightDeepPink = UIColor(named: "colors/lightDeepPink")
+    /// 959595
+    static let spanishGray = UIColor(named: "colors/spanishGray")
 }
