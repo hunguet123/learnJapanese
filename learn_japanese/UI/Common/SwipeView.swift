@@ -30,7 +30,7 @@ class SwipeView: UIView {
     
     private let leftLabel: UILabel = {
         let label = UILabel()
-        label.text = "Chưa thuộc"
+        label.text = LocalizationText.notYetLearned
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .red
@@ -41,7 +41,7 @@ class SwipeView: UIView {
     
     private let rightLabel: UILabel = {
         let label = UILabel()
-        label.text = "Đã thuộc"
+        label.text = LocalizationText.learned
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .red
@@ -83,7 +83,7 @@ class SwipeView: UIView {
         // Layout labels
         NSLayoutConstraint.activate([
             leftLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            leftLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -100),
+            leftLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -50),
             
             rightLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             rightLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 100),

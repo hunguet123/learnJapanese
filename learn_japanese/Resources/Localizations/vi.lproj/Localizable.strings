@@ -50,3 +50,10 @@
 "fair" = "Tạm ổn";
 "good" = "Tốt";
 "excellent" = "Xuất sắc! Good job!";
+"correctAnswerMessage" = "Bạn đã trả lời đúng câu hỏi này!";
+"correctAnswerPrefix" = "Đáp án đúng là:";
+"incorrect" = "Wrong!";
+"correct" = "Correct!";
+"continue" = "Tiếp tục";
+"notYetLearned" = "Chưa thuộc";
+"learned" = "Đã thuộc";

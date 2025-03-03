@@ -40,7 +40,7 @@ class LearnSectionViewController: UIViewController {
         confirmDialog.delegate = self
         confirmDialog.show(in: self.view)
     }
-
+    
     func nextQuestion() {
         let pageWidth = quizCollectionView.frame.width
         let currentPage = Int((quizCollectionView.contentOffset.x + pageWidth / 2) / pageWidth)
@@ -59,5 +59,19 @@ class LearnSectionViewController: UIViewController {
                 self.navigationController?.pushViewController(learnResultViewController, animated: true)
             }
         }
+    }
+    
+    func showAnswerModal(isCorrect: Bool, correctAnswer: String, completion: @escaping (() -> Void)) {
+        let explanation = isCorrect
+        ? LocalizationText.correctAnswerMessage
+        : "\(LocalizationText.correctAnswerPrefix) \(correctAnswer)"
+        
+        let modalVC = AnswerModalViewController(
+            isCorrect: isCorrect,
+            explanation: explanation,
+            completionHandler: completion
+        )
+        
+        present(modalVC, animated: true, completion: nil)
     }
 }

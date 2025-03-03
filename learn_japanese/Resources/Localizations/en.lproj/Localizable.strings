@@ -50,3 +50,10 @@
 "fair" = "Fair";
 "good" = "Good";
 "excellent" = "Excellent! Good job!";
+"correctAnswerMessage" = "You have answered this question correctly!";
+"correctAnswerPrefix" = "The correct answer is:";
+"incorrect" = "Wrong!";
+"correct" = "Correct!";
+"continue" = "Continue";
+"notYetLearned" = "Not yet learned";
+"learned" = "Learned";

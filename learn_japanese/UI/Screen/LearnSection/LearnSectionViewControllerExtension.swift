@@ -52,13 +52,15 @@ extension LearnSectionViewController: UICollectionViewDelegate,
 }
 
 extension LearnSectionViewController: ImageTextQuestionCollectionViewCellDelegate {
-    func didTapNextQuestion(isCorrect: Bool, questionId: Int) {
-        if isCorrect {
-            learnSectionViewModel.score += 1
-        } else {
-            learnSectionViewModel.wrongQuestionIds.append(questionId)
-        }
-        nextQuestion()
+    func didTapNextQuestion(isCorrect: Bool, questionId: Int, correctAnswer: String) {
+        showAnswerModal(isCorrect: isCorrect, correctAnswer: correctAnswer, completion: { [weak self] in
+            if isCorrect {
+                self?.learnSectionViewModel.score += 1
+            } else {
+                self?.learnSectionViewModel.wrongQuestionIds.append(questionId)
+            }
+            self?.nextQuestion()
+        })
     }
     
     func onSwipeRight(questionId: Int) {

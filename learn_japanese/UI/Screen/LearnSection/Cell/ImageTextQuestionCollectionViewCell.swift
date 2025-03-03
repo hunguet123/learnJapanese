@@ -10,7 +10,7 @@ import UIKit
 protocol ImageTextQuestionCollectionViewCellDelegate: AnyObject {
     func onSwipeRight(questionId: Int)
     func onSwipeLeft(questionId: Int)
-    func didTapNextQuestion(isCorrect: Bool, questionId: Int)
+    func didTapNextQuestion(isCorrect: Bool, questionId: Int, correctAnswer: String)
 }
 
 class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
@@ -57,15 +57,20 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     }
                     
                     if let options = questionContent["options"] as? [[String: Any]] {
+                        var correctAnswer: String = ""
                         for index in 0..<options.count {
                             if let text = options[index]["text"] as? String {
+                                if let isCorrect = options[index]["isCorrect"] as? Bool, isCorrect == true {
+                                    correctAnswer = text
+                                }
                                 textSelection.addAudioItem(audioName: options[index]["audio"] as? String ?? "")
                                 textSelection.addOption(title: text)
                             }
                         }
+                        
                         textSelection.didTapNextQuestion = { questionIndex in
                             if let isCorrect = options[questionIndex]["isCorrect"] as? Bool {
-                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect, questionId: question.questionId)
+                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect, questionId: question.questionId, correctAnswer: correctAnswer)
                             }
                         }
                     }

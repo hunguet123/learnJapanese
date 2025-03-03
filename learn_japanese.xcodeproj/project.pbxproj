@@ -149,6 +149,7 @@
 		DFDA88202CC7F69800934E39 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = DFDA881F2CC7F69800934E39 /* Bridging-Header.h */; };
 		DFDA88222CC7F87A00934E39 /* HandwritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */; };
 		DFE59F002CD28E5B00011DFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */; };
+		DFF555FF2D75E6B5007A4035 /* AnswerModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */; };
 		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
 		DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */; };
 		DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */; };
@@ -384,6 +385,7 @@
 		DFDA881F2CC7F69800934E39 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingViewModel.swift; sourceTree = "<group>"; };
 		DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModalViewController.swift; sourceTree = "<group>"; };
 		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -672,6 +674,7 @@
 				DF3E5FFF2C6BA63D00249541 /* ImageSelectionView.swift */,
 				DFDA87702CC7EF2700934E39 /* DrawableView.swift */,
 				DFC523342D36B62B00B3FA6B /* SwipeView.swift */,
+				DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1288,6 +1291,7 @@
 				DF997D052D64CD8500980979 /* LearnResultViewController.swift in Sources */,
 				DF1A5D5A2C650CEC00ADD61E /* ConfirmDialog.swift in Sources */,
 				DF0B329B2C4D47E900C1BC77 /* TitleTextField.swift in Sources */,
+				DFF555FF2D75E6B5007A4035 /* AnswerModalViewController.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
 				DF997D002D63816E00980979 /* ApiStatus.swift in Sources */,
 				DF3876162D19AB09005BBE05 /* ExerciseDTO.swift in Sources */,

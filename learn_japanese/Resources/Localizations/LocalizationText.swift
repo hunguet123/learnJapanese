@@ -53,4 +53,11 @@ class LocalizationText {
     static let fair = "fair".l10n()
     static let good = "good".l10n()
     static let excellent = "excellent".l10n()
+    static let correctAnswerMessage = "correctAnswerMessage".l10n()
+    static let correctAnswerPrefix = "correctAnswerPrefix".l10n()
+    static let incorrect = "incorrect".l10n()
+    static let correct = "correct".l10n()
+    static let continueMessage = "continue".l10n()
+    static let notYetLearned = "notYetLearned".l10n()
+    static let learned = "learned".l10n()
 }
