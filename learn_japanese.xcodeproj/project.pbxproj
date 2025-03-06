@@ -150,6 +150,7 @@
 		DFDA88222CC7F87A00934E39 /* HandwritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */; };
 		DFE59F002CD28E5B00011DFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */; };
 		DFF555FF2D75E6B5007A4035 /* AnswerModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */; };
+		DFF556052D789F6C007A4035 /* JapaneseReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF556042D789F6C007A4035 /* JapaneseReadingView.swift */; };
 		DFF8092C2C5E34D800F1EB2C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */; };
 		DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */; };
 		DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */; };
@@ -386,6 +387,7 @@
 		DFDA88212CC7F87900934E39 /* HandwritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingViewModel.swift; sourceTree = "<group>"; };
 		DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModalViewController.swift; sourceTree = "<group>"; };
+		DFF556042D789F6C007A4035 /* JapaneseReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseReadingView.swift; sourceTree = "<group>"; };
 		DFF8092A2C5E34D800F1EB2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DFF8092B2C5E34D800F1EB2C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DFF8092E2C5E3D7C00F1EB2C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 				DFDA87702CC7EF2700934E39 /* DrawableView.swift */,
 				DFC523342D36B62B00B3FA6B /* SwipeView.swift */,
 				DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */,
+				DFF556042D789F6C007A4035 /* JapaneseReadingView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1265,6 +1268,7 @@
 				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,
+				DFF556052D789F6C007A4035 /* JapaneseReadingView.swift in Sources */,
 				DF3875F82D1092D3005BBE05 /* UserProgressManager.swift in Sources */,
 				DF997D082D64D78900980979 /* LearnResultViewModel.swift in Sources */,
 				DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */,

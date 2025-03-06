@@ -67,5 +67,13 @@
 	<array>
 		<string>fbauth2</string>
 	</array>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Cần quyền truy cập microphone để ghi âm giọng nói</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Cần quyền nhận dạng giọng nói để kiểm tra phát âm của bạn</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+    </array>
 </dict>
 </plist>

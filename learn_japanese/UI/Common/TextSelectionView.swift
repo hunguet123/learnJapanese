@@ -4,7 +4,7 @@ class TextSelectionView: UIView {
     private let questionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .medium)
-        label.textColor = .label
+        label.textColor = .black
         label.numberOfLines = 0
         return label
     }()
@@ -48,6 +48,7 @@ class TextSelectionView: UIView {
     }
     
     private func setupUI() {
+        self.backgroundColor = .white
         // Configure stack view
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -97,6 +98,7 @@ class TextSelectionView: UIView {
         optionView.layer.borderColor = isSelected ? UIColor.systemPink.cgColor : UIColor.clear.cgColor
         
         let label = UILabel()
+        label.textColor = .black
         label.text = title
         label.font = UIFont.systemFont(ofSize: 20)
         

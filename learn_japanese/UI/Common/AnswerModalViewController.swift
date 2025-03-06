@@ -39,6 +39,7 @@ class AnswerModalViewController: UIViewController {
     
     private let explanationLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
         label.numberOfLines = 0

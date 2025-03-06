@@ -75,6 +75,7 @@ class SwipeView: UIView {
     
     // MARK: - Setup UI
     private func setupUI() {
+        self.backgroundColor = .white
         addSubview(leftLabel)
         addSubview(rightLabel)
         addSubview(imageView)

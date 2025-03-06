@@ -75,7 +75,33 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                         }
                     }
                 default:
+                    audioName = nil
                     break
+                }
+            } else {
+                let readingView = JapaneseReadingView()
+                readingView.fixInView(content)
+                let content = ReadingContent(
+                    text: "私は日本語を勉強しています。",
+                    translation: "Tôi đang học tiếng Nhật.",
+                    imageName: "study_japanese",
+                    audioFileName: "あ"
+                )
+                readingView.content = content
+                readingView.onReadingResult = { correct in
+                    if correct {
+                        print("Đọc đúng!")
+                    } else {
+                        print("Đọc sai!")
+                    }
+                }
+
+                readingView.onError = { error in
+                    print("Lỗi: \(error.localizedDescription)")
+                }
+
+                readingView.onRecordingStateChanged = { isRecording in
+                    print("Trạng thái ghi âm: \(isRecording)")
                 }
             }
         }
