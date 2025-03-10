@@ -4,17 +4,58 @@ import Speech
 import Network
 
 // MARK: - Models
-public struct ReadingContent {
-    let text: String
-    let translation: String
-    let imageName: String
-    let audioFileName: String
+public struct ReadingModel: Codable {
+    var questionType: String
+    var questionText: String
+    var audio: String
+    var image: String
+    var correctAnswer: String
+    var translation: String
     
-    public init(text: String, translation: String, imageName: String, audioFileName: String) {
-        self.text = text
+    // Hàm khởi tạo từ JSON
+    static func fromJson(_ jsonString: String) -> ReadingModel? {
+        guard let jsonData = jsonString.data(using: .utf8) else {
+            return nil
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            let model = try decoder.decode(ReadingModel.self, from: jsonData)
+            return model
+        } catch {
+            print("Lỗi giải mã JSON: \(error)")
+            return nil
+        }
+    }
+    
+    // Hàm chuyển đổi sang JSON
+    func toJson() -> String? {
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let jsonData = try encoder.encode(self)
+            return String(data: jsonData, encoding: .utf8)
+        } catch {
+            print("Lỗi mã hóa JSON: \(error)")
+            return nil
+        }
+    }
+    
+    // Hàm khởi tạo mặc định
+    init(
+        questionType: String = "reading",
+        questionText: String,
+        audio: String,
+        image: String,
+        correctAnswer: String,
+        translation: String
+    ) {
+        self.questionType = questionType
+        self.questionText = questionText
+        self.audio = audio
+        self.image = image
+        self.correctAnswer = correctAnswer
         self.translation = translation
-        self.imageName = imageName
-        self.audioFileName = audioFileName
     }
 }
 
@@ -29,7 +70,7 @@ public class JapaneseReadingView: UIView {
     public var onPlaybackFinished: (() -> Void)?
     
     // MARK: - Public Properties
-    public var content: ReadingContent? {
+    public var content: ReadingModel? {
         didSet {
             loadContent()
         }
@@ -207,7 +248,7 @@ public class JapaneseReadingView: UIView {
             contentStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             contentStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
-            imageView.heightAnchor.constraint(equalToConstant: 200),
+            imageView.heightAnchor.constraint(equalToConstant: 50),
             imageView.widthAnchor.constraint(equalTo: contentStack.widthAnchor),
             
             controlStack.heightAnchor.constraint(equalToConstant: 60)
@@ -276,8 +317,8 @@ public class JapaneseReadingView: UIView {
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.imageView.image = UIImage(named: content.imageName)
-            self.textLabel.text = content.text
+            self.imageView.image = UIImage(named: content.image)
+            self.textLabel.text = content.questionText
             self.translationLabel.text = content.translation
         }
     }
@@ -314,7 +355,7 @@ public class JapaneseReadingView: UIView {
     
     // MARK: - Audio Playback
     private func playAudio() {
-        if let audioFileName = content?.audioFileName {
+        if let audioFileName = content?.audio {
             AudioUtils.shared.playSound(filename: audioFileName)
         }
     }
@@ -335,7 +376,6 @@ public class JapaneseReadingView: UIView {
         guard let audioEngine = audioEngine,
               let speechRecognizer = speechRecognizer,
               speechRecognizer.isAvailable else {
-            print("❌ Speech recognizer không khả dụng, chuyển sang chế độ ngoại tuyến")
             startOfflineRecording()
             return
         }
@@ -368,18 +408,12 @@ public class JapaneseReadingView: UIView {
             recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
                 guard let self = self else { return }
                 
-                // Đảm bảo hàm vẫn được gọi bằng cách in ra log
-                print("🎙️ Recognition callback được gọi")
-                
-                // Xử lý kết quả nhận dạng
                 if let result = result {
                     let recognizedText = result.bestTranscription.formattedString
                     
                     // Cập nhật UI với kết quả tạm thời
                     if !recognizedText.isEmpty {
                         self.lastRecognizedText = recognizedText
-                        print("🔤 Đã nhận dạng: \(recognizedText)")
-                        
                         DispatchQueue.main.async {
                             self.statusLabel.text = "Đang nghe: \(recognizedText)"
                             self.statusLabel.textColor = .systemBlue
@@ -391,23 +425,15 @@ public class JapaneseReadingView: UIView {
                     if result.isFinal {
                         // Sử dụng kết quả cuối hoặc kết quả tạm thời cuối cùng
                         let finalText = recognizedText.isEmpty ? self.lastRecognizedText : recognizedText
-                        print("✅ Kết quả cuối cùng: \(finalText)")
-                        
                         if !finalText.isEmpty {
-                            print("👉 Gọi compareResult")
                             self.compareResult(finalText)
                         }
-                        
-                        // Dừng ghi âm sau khi có kết quả cuối cùng
-                        print("⏹️ Dừng ghi âm vì đã hoàn thành")
                         self.stopRecording()
                     }
                 }
                 
                 // Xử lý lỗi
                 if let error = error {
-                    print("❌ Lỗi nhận dạng: \(error.localizedDescription)")
-                    
                     if let error = error as NSError?, error.domain == "kAFAssistantErrorDomain" {
                         if error.code == 203 {
                             // Xử lý lỗi "No speech detected"
@@ -419,11 +445,9 @@ public class JapaneseReadingView: UIView {
                             
                             // Nếu có kết quả tạm thời, sử dụng nó
                             if !self.lastRecognizedText.isEmpty {
-                                print("👉 Sử dụng kết quả tạm thời do không phát hiện được giọng nói")
                                 self.compareResult(self.lastRecognizedText)
                             }
                         } else if error.code == 216 {
-                            print("⚠️ Lỗi 216, chuyển sang chế độ ngoại tuyến")
                             self.startOfflineRecording()
                         }
                     } else {
@@ -563,7 +587,7 @@ public class JapaneseReadingView: UIView {
     private func compareResult(_ recognizedText: String) {
         guard let content = content else { return }
         
-        let similarity = calculateSimilarity(between: recognizedText, and: content.text)
+        let similarity = calculateSimilarity(between: recognizedText, and: content.correctAnswer)
         onReadingResult?(similarity >= similarityThreshold)
     }
     
