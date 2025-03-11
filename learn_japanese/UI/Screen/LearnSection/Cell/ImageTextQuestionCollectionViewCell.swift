@@ -87,11 +87,11 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     }
 
                     readingView.onError = { error in
-                        print("Lỗi: \(error.localizedDescription)")
+                        
                     }
 
                     readingView.onRecordingStateChanged = { isRecording in
-                        print("Trạng thái ghi âm: \(isRecording)")
+//                        print("Trạng thái ghi âm: \(isRecording)")
                     }
                 default:
                     audioName = nil

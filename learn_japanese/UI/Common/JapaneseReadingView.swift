@@ -170,6 +170,11 @@ public class JapaneseReadingView: UIView {
         button.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
         button.tintColor = .systemBlue
         button.addTarget(self, action: #selector(speakerTapped), for: .touchUpInside)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1).isActive = true
+        
         return button
     }()
     
@@ -179,6 +184,9 @@ public class JapaneseReadingView: UIView {
         button.setImage(UIImage(systemName: "stop.circle.fill"), for: .selected)
         button.tintColor = .systemGreen
         button.addTarget(self, action: #selector(microTapped), for: .touchUpInside)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1).isActive = true
         return button
     }()
     
@@ -187,6 +195,9 @@ public class JapaneseReadingView: UIView {
         button.setImage(UIImage(systemName: "forward.fill"), for: .normal)
         button.tintColor = .systemGray
         button.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1).isActive = true
         return button
     }()
     
@@ -362,11 +373,10 @@ public class JapaneseReadingView: UIView {
     
     // MARK: - Speech Recognition
     private func startRecording() {
-        // Log để debug
-        print("⏱️ Bắt đầu ghi âm...")
-        
-        // Reset previous session
         stopRecording()
+        if AudioUtils.shared.isPlaying() {
+            AudioUtils.shared.stopSound()
+        }
         
         // Reset biến lưu kết quả tạm thời
         lastRecognizedText = ""
@@ -403,28 +413,36 @@ public class JapaneseReadingView: UIView {
             
             // Lấy input node
             let inputNode = audioEngine.inputNode
+            // Cài đặt tap trên input node với buffer size nhỏ hơn
+            let recordingFormat = inputNode.outputFormat(forBus: 0)
+            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+                self.recognitionRequest?.append(buffer)
+            }
             
-            // Chuẩn bị recognition task với hàm xử lý kết quả mạnh mẽ hơn
+            // Bắt đầu audio engine
+            audioEngine.prepare()
+            try audioEngine.start()
+            
+            // Chuẩn bị recognition task
             recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
                 guard let self = self else { return }
-                
                 if let result = result {
-                    let recognizedText = result.bestTranscription.formattedString
+                    let segments = result.bestTranscription.segments
+                    let recognizedText = segments.map { $0.substring }.joined(separator: " ")
                     
                     // Cập nhật UI với kết quả tạm thời
                     if !recognizedText.isEmpty {
                         self.lastRecognizedText = recognizedText
                         DispatchQueue.main.async {
-                            self.statusLabel.text = "Đang nghe: \(recognizedText)"
+                            self.statusLabel.text = "Đang nghe: \(self.lastRecognizedText)"
                             self.statusLabel.textColor = .systemBlue
                             self.statusLabel.isHidden = false
                         }
                     }
                     
-                    // Nếu là kết quả cuối cùng và có văn bản
+                    // Nếu là kết quả cuối cùng
                     if result.isFinal {
-                        // Sử dụng kết quả cuối hoặc kết quả tạm thời cuối cùng
-                        let finalText = recognizedText.isEmpty ? self.lastRecognizedText : recognizedText
+                        let finalText = self.lastRecognizedText
                         if !finalText.isEmpty {
                             self.compareResult(finalText)
                         }
@@ -434,39 +452,9 @@ public class JapaneseReadingView: UIView {
                 
                 // Xử lý lỗi
                 if let error = error {
-                    if let error = error as NSError?, error.domain == "kAFAssistantErrorDomain" {
-                        if error.code == 203 {
-                            // Xử lý lỗi "No speech detected"
-                            DispatchQueue.main.async {
-                                self.statusLabel.text = "Không phát hiện giọng nói. Vui lòng nói to hơn."
-                                self.statusLabel.textColor = .systemOrange
-                                self.statusLabel.isHidden = false
-                            }
-                            
-                            // Nếu có kết quả tạm thời, sử dụng nó
-                            if !self.lastRecognizedText.isEmpty {
-                                self.compareResult(self.lastRecognizedText)
-                            }
-                        } else if error.code == 216 {
-                            self.startOfflineRecording()
-                        }
-                    } else {
-                        self.onError?(error)
-                    }
-                    
-                    self.stopRecording()
+                    self.handleRecognitionError(error)
                 }
             }
-            
-            // Cài đặt tap trên input node với buffer size lớn hơn
-            let recordingFormat = inputNode.outputFormat(forBus: 0)
-            inputNode.installTap(onBus: 0, bufferSize: 4096, format: recordingFormat) { buffer, _ in
-                self.recognitionRequest?.append(buffer)
-            }
-            
-            // Bắt đầu audio engine
-            audioEngine.prepare()
-            try audioEngine.start()
             
             // Cập nhật trạng thái
             isRecording = true
@@ -475,27 +463,40 @@ public class JapaneseReadingView: UIView {
             statusLabel.textColor = .systemBlue
             statusLabel.isHidden = false
             
-            // Thêm timeout tự động để tránh treo
+            // Thêm timeout tự động
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
                 guard let self = self else { return }
-                
                 if self.isRecording {
-                    print("⏱️ Timeout tự động sau 10 giây")
-                    
-                    // Nếu có kết quả tạm thời, sử dụng nó
+                    self.stopRecording()
                     if !self.lastRecognizedText.isEmpty {
-                        print("👉 Sử dụng kết quả tạm thời do timeout")
                         self.compareResult(self.lastRecognizedText)
                     }
-                    
-                    self.stopRecording()
                 }
             }
             
         } catch {
-            print("❌ Lỗi khi chuẩn bị ghi âm: \(error.localizedDescription)")
             onError?(error)
             startOfflineRecording()
+        }
+    }
+    
+    private func handleRecognitionError(_ error: Error) {
+        if !self.lastRecognizedText.isEmpty {
+            self.compareResult(self.lastRecognizedText)
+        }
+        
+        if let error = error as NSError?, error.domain == "kAFAssistantErrorDomain" {
+            if error.code == 203 {
+                DispatchQueue.main.async {
+                    self.statusLabel.text = "Không phát hiện giọng nói. Vui lòng nói to hơn."
+                    self.statusLabel.textColor = .systemOrange
+                    self.statusLabel.isHidden = false
+                }
+            } else if error.code == 216 {
+                self.startOfflineRecording()
+            }
+        } else {
+            self.onError?(error)
         }
     }
     
@@ -547,41 +548,45 @@ public class JapaneseReadingView: UIView {
     }
     
     private func stopRecording() {
-        print("⏹️ Dừng và dọn dẹp ghi âm")
-        
-        // Dừng và reset tất cả các thành phần ghi âm
+        // Kiểm tra nếu audioEngine đang chạy
         if let audioEngine = audioEngine, audioEngine.isRunning {
             audioEngine.stop()
             audioEngine.inputNode.removeTap(onBus: 0)
         }
         
         // Đảm bảo kết thúc request và task
-        recognitionRequest?.endAudio()
-        recognitionTask?.cancel()
-        recognitionTask?.finish()
+        self.recognitionRequest?.endAudio()
+        self.recognitionTask?.cancel()
+        self.recognitionTask?.finish()
         
         // Reset các biến một cách rõ ràng
-        audioEngine = nil
-        recognitionRequest = nil
-        recognitionTask = nil
+        self.audioEngine = nil
+        self.recognitionRequest = nil
+        self.recognitionTask = nil
         
         // Cập nhật trạng thái
-        isRecording = false
-        microButton.isSelected = false
+        self.isRecording = false
+        self.microButton.isSelected = false
         
-        // Reset audio session với tùy chọn notifyOthersOnDeactivation
+        deactiveAudioSession()
+        
+        // Ẩn thông báo chế độ ngoại tuyến
+        if !self.offlineRecognitionActive && self.isNetworkAvailable {
+            self.statusLabel.isHidden = true
+        }
+    }
+    
+    private func deactiveAudioSession() {
+        if AudioUtils.shared.isPlaying() {
+            return
+        }
+        
         do {
             try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
         } catch {
             print("❌ Lỗi khi reset audio session: \(error.localizedDescription)")
         }
-        
-        // Ẩn thông báo chế độ ngoại tuyến
-        if !offlineRecognitionActive && isNetworkAvailable {
-            statusLabel.isHidden = true
-        }
     }
-    
     
     // MARK: - Result Handling
     private func compareResult(_ recognizedText: String) {
