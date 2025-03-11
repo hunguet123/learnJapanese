@@ -89,10 +89,6 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     readingView.onError = { error in
                         
                     }
-
-                    readingView.onRecordingStateChanged = { isRecording in
-//                        print("Trạng thái ghi âm: \(isRecording)")
-                    }
                 default:
                     audioName = nil
                     break

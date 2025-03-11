@@ -64,9 +64,6 @@ public class JapaneseReadingView: UIView {
     // MARK: - Callbacks
     public var onReadingResult: ((Bool) -> Void)?
     public var onError: ((Error) -> Void)?
-    public var onSkipRequest: (() -> Void)?
-    public var onRecordingStateChanged: ((Bool) -> Void)?
-    public var onPlaybackStarted: (() -> Void)?
     public var onPlaybackFinished: (() -> Void)?
     
     // MARK: - Public Properties
@@ -80,7 +77,6 @@ public class JapaneseReadingView: UIView {
         didSet {
             microButton.isSelected = isRecording
             microButton.tintColor = isRecording ? .systemRed : .systemGreen
-            onRecordingStateChanged?(isRecording)
         }
     }
     
@@ -113,7 +109,6 @@ public class JapaneseReadingView: UIView {
     private var audioPlayer: AVAudioPlayer?
     private var similarityThreshold: Double = 0.8
     private var networkMonitor = NWPathMonitor()
-    private var isNetworkAvailable = true
     private var offlineRecognitionActive = false
     private var lastRecognizedText: String = ""
     
@@ -151,7 +146,7 @@ public class JapaneseReadingView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .secondaryLabel
+        label.textColor = AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -172,9 +167,6 @@ public class JapaneseReadingView: UIView {
         button.addTarget(self, action: #selector(speakerTapped), for: .touchUpInside)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1).isActive = true
-        
         return button
     }()
     
@@ -186,21 +178,9 @@ public class JapaneseReadingView: UIView {
         button.addTarget(self, action: #selector(microTapped), for: .touchUpInside)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1).isActive = true
         return button
     }()
-    
-    private lazy var skipButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "forward.fill"), for: .normal)
-        button.tintColor = .systemGray
-        button.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
-        button.contentVerticalAlignment = .fill
-        button.contentHorizontalAlignment = .fill
-        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1).isActive = true
-        return button
-    }()
-    
+        
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
@@ -218,7 +198,6 @@ public class JapaneseReadingView: UIView {
         setupUI()
         setupConstraints()
         setupSpeechRecognition()
-        startNetworkMonitoring()
     }
     
     required init?(coder: NSCoder) {
@@ -226,7 +205,6 @@ public class JapaneseReadingView: UIView {
         setupUI()
         setupConstraints()
         setupSpeechRecognition()
-        startNetworkMonitoring()
     }
     
     deinit {
@@ -246,10 +224,9 @@ public class JapaneseReadingView: UIView {
         contentStack.addArrangedSubview(translationLabel)
         contentStack.addArrangedSubview(statusLabel)
         contentStack.addArrangedSubview(controlStack)
-        
+    
         controlStack.addArrangedSubview(speakerButton)
         controlStack.addArrangedSubview(microButton)
-        controlStack.addArrangedSubview(skipButton)
     }
     
     private func setupConstraints() {
@@ -259,32 +236,14 @@ public class JapaneseReadingView: UIView {
             contentStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             contentStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
-            imageView.heightAnchor.constraint(equalToConstant: 50),
+            imageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6),
             imageView.widthAnchor.constraint(equalTo: contentStack.widthAnchor),
             
-            controlStack.heightAnchor.constraint(equalToConstant: 60)
+            controlStack.heightAnchor.constraint(equalToConstant: 60),
+            speakerButton.heightAnchor.constraint(equalTo: controlStack.heightAnchor),
+            speakerButton.widthAnchor.constraint(equalTo: speakerButton.heightAnchor),
+//            controlStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6),
         ])
-    }
-    
-    // MARK: - Network Monitoring
-    private func startNetworkMonitoring() {
-        networkMonitor.pathUpdateHandler = { [weak self] path in
-            DispatchQueue.main.async {
-                self?.isNetworkAvailable = path.status == .satisfied
-                self?.updateNetworkStatus()
-            }
-        }
-        networkMonitor.start(queue: DispatchQueue.global(qos: .background))
-    }
-    
-    private func updateNetworkStatus() {
-        if !isNetworkAvailable {
-            statusLabel.text = "Không có kết nối mạng - Chế độ ngoại tuyến"
-            statusLabel.textColor = .systemOrange
-            statusLabel.isHidden = false
-        } else {
-            statusLabel.isHidden = true
-        }
     }
     
     // MARK: - Speech Recognition Setup
@@ -347,15 +306,6 @@ public class JapaneseReadingView: UIView {
         }
     }
     
-    @objc private func skipTapped() {
-        onSkipRequest?()
-    }
-    
-    // MARK: - Public Methods
-    public func skipCurrent() {
-        onSkipRequest?()
-    }
-    
     public func setSimilarityThreshold(_ threshold: Double) {
         similarityThreshold = max(0.0, min(1.0, threshold))
     }
@@ -386,7 +336,6 @@ public class JapaneseReadingView: UIView {
         guard let audioEngine = audioEngine,
               let speechRecognizer = speechRecognizer,
               speechRecognizer.isAvailable else {
-            startOfflineRecording()
             return
         }
         
@@ -476,7 +425,6 @@ public class JapaneseReadingView: UIView {
             
         } catch {
             onError?(error)
-            startOfflineRecording()
         }
     }
     
@@ -492,58 +440,9 @@ public class JapaneseReadingView: UIView {
                     self.statusLabel.textColor = .systemOrange
                     self.statusLabel.isHidden = false
                 }
-            } else if error.code == 216 {
-                self.startOfflineRecording()
             }
         } else {
             self.onError?(error)
-        }
-    }
-    
-    
-    // Chế độ ghi âm ngoại tuyến (không sử dụng nhận dạng giọng nói)
-    private func startOfflineRecording() {
-        audioEngine = AVAudioEngine()
-        guard let audioEngine = audioEngine else { return }
-        
-        do {
-            // Thiết lập audio session
-            try AVAudioSession.sharedInstance().setCategory(.record, mode: .measurement)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            
-            // Lấy input node
-            let inputNode = audioEngine.inputNode
-            
-            // Cài đặt tap trên input node (chỉ để ghi âm, không nhận dạng)
-            let recordingFormat = inputNode.outputFormat(forBus: 0)
-            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { _, _ in
-                // Không làm gì cả, chỉ để ghi âm
-            }
-            
-            // Bắt đầu audio engine
-            audioEngine.prepare()
-            try audioEngine.start()
-            
-            // Cập nhật trạng thái
-            isRecording = true
-            
-            // Hiển thị thông báo
-            statusLabel.text = "Chế độ ngoại tuyến - Không có nhận dạng giọng nói"
-            statusLabel.textColor = .systemOrange
-            statusLabel.isHidden = false
-            
-            // Tự động dừng sau 5 giây
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-                guard let self = self, self.isRecording else { return }
-                self.stopRecording()
-                
-                // Giả lập kết quả (luôn đúng trong chế độ ngoại tuyến)
-                self.onReadingResult?(true)
-            }
-            
-        } catch {
-            onError?(error)
-            stopRecording()
         }
     }
     
@@ -569,18 +468,12 @@ public class JapaneseReadingView: UIView {
         self.microButton.isSelected = false
         
         deactiveAudioSession()
-        
-        // Ẩn thông báo chế độ ngoại tuyến
-        if !self.offlineRecognitionActive && self.isNetworkAvailable {
-            self.statusLabel.isHidden = true
-        }
     }
     
     private func deactiveAudioSession() {
         if AudioUtils.shared.isPlaying() {
             return
         }
-        
         do {
             try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
         } catch {
