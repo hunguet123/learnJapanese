@@ -10,8 +10,9 @@ import Foundation
 struct QuestionConstants {
     static let characterRecognition = "character_recognition"
     static let textSelection = "text_selection"
-    static let multipleChoice = "multiple_choice"
-    static let trueFalse = "true_false"
-    static let fillInTheBlank = "fill_in_the_blank"
+//    static let multipleChoice = "multiple_choice"
+//    static let trueFalse = "true_false"
+//    static let fillInTheBlank = "fill_in_the_blank"
     static let reading = "reading"
+    static let matching = "matching"
 }

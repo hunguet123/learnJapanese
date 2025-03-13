@@ -89,6 +89,11 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     readingView.onError = { error in
                         
                     }
+                case QuestionConstants.matching:
+                    let wordSortView = WordSortView()
+                    let matchingModel = MatchingModel.fromJson(questionContentString)
+                    wordSortView.matchingModel = matchingModel
+                    wordSortView.fixInView(content)
                 default:
                     audioName = nil
                     break
