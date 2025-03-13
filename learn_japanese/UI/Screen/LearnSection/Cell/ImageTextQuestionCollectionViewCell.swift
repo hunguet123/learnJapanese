@@ -83,7 +83,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     readingView.onReadingResult = { isCorrect in
                         self.delegate?.didTapNextQuestion(isCorrect: isCorrect,
                                                           questionId: question.questionId,
-                                                          correctAnswer: content?.correctAnswer ?? "")
+                                                          correctAnswer: content?.questionText ?? "")
                     }
 
                     readingView.onError = { error in

@@ -487,6 +487,7 @@ public class JapaneseReadingView: UIView {
         
         let similarity = calculateSimilarity(between: recognizedText, and: content.correctAnswer)
         onReadingResult?(similarity >= similarityThreshold)
+        statusLabel.isHidden = true
     }
     
     private func calculateSimilarity(between str1: String, and str2: String) -> Double {

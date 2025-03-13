@@ -8,7 +8,19 @@
 import UIKit
 
 class AnswerModalViewController: UIViewController {
-     var completionHandler: (() -> Void)?
+    // Thêm nút Try Again
+    private let tryAgainButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(LocalizationText.tryAgain, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 12
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    var completionHandler: (() -> Void)?
     // MARK: - UI Components
     private let containerView: UIView = {
         let view = UIView()
@@ -78,8 +90,10 @@ class AnswerModalViewController: UIViewController {
         containerView.addSubview(resultLabel)
         containerView.addSubview(explanationLabel)
         containerView.addSubview(continueButton)
+        containerView.addSubview(tryAgainButton)
         
         continueButton.addTarget(self, action: #selector(dismissModal), for: .touchUpInside)
+        tryAgainButton.addTarget(self, action: #selector(handleTryAgain), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -99,17 +113,17 @@ class AnswerModalViewController: UIViewController {
             explanationLabel.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 10),
             explanationLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             explanationLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            explanationLabel.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: -20),
             
-            continueButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -30),
             continueButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             continueButton.widthAnchor.constraint(equalToConstant: 200),
-            continueButton.heightAnchor.constraint(equalToConstant: 50)
+            continueButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            tryAgainButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            tryAgainButton.widthAnchor.constraint(equalToConstant: 200),
+            tryAgainButton.heightAnchor.constraint(equalToConstant: 50),
+            continueButton.bottomAnchor.constraint(equalTo: tryAgainButton.topAnchor, constant: -10)
         ])
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.completionHandler?()
     }
     
     private func configureModal() {
@@ -131,8 +145,14 @@ class AnswerModalViewController: UIViewController {
     }
     
     @objc private func dismissModal() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.completionHandler?()
+        }
     }
+    
+    @objc private func handleTryAgain() {
+            dismiss(animated: true)
+        }
     
     // MARK: - Convenience Initializer
     convenience init(isCorrect: Bool, explanation: String, completionHandler: (() -> Void)? = nil) {
