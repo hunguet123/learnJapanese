@@ -26,6 +26,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
     
     public func configure(with question: QuestionModel) {
         content.removeAllSubviews()
+        audioName = nil
         //TODO: remove when change db
         if let questionContentString = question.questionContent {
             self.question = question
@@ -70,7 +71,8 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                         
                         textSelection.didTapNextQuestion = { questionIndex in
                             if let isCorrect = options[questionIndex]["isCorrect"] as? Bool {
-                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect, questionId: question.questionId, correctAnswer: correctAnswer)
+                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect, questionId: question.questionId,
+                                                                  correctAnswer: correctAnswer)
                             }
                         }
                     }
@@ -85,15 +87,21 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                                                           questionId: question.questionId,
                                                           correctAnswer: content?.questionText ?? "")
                     }
-
+                    
                     readingView.onError = { error in
                         
                     }
                 case QuestionConstants.matching:
                     let wordSortView = WordSortView()
                     let matchingModel = MatchingModel.fromJson(questionContentString)
+                    audioName = matchingModel?.audio ?? nil
                     wordSortView.matchingModel = matchingModel
                     wordSortView.fixInView(content)
+                    wordSortView.onConfirmTapped = { isCorrect in
+                        self.delegate?.didTapNextQuestion(isCorrect: isCorrect,
+                                                          questionId: question.questionId,
+                                                          correctAnswer:  matchingModel?.correctAnswer ?? "")
+                    }
                 default:
                     audioName = nil
                     break

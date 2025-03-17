@@ -39,7 +39,7 @@ class WordSortView: UIView {
     var matchingModel: MatchingModel? {
         didSet {
             if let matchingModel = matchingModel {
-                furiganaItems = matchingModel.furigana
+                furiganaWords = matchingModel.furigana
                 maxSelectableItems = matchingModel.furigana.count
                 questionText = matchingModel.questionText
                 translation = matchingModel.translation
@@ -49,40 +49,70 @@ class WordSortView: UIView {
         }
     }
     
-    private var furiganaItems: [String] = []
-    private var selectedItems: [String] = []
+    private var furiganaWords: [String] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     private var maxSelectableItems: Int = 0
     private var questionText: String = ""
     private var translation: String = ""
     private var audioUrl: String = ""
     
-    var selectableCollectionView: UICollectionView!
-    var selectedCollectionView: UICollectionView!
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dragDelegate = self
+        collectionView.dropDelegate = self
+        collectionView.dragInteractionEnabled = true
+        collectionView.register(WordCell.self, forCellWithReuseIdentifier: "WordCell")
+        return collectionView
+    }()
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 10
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        imageView.layer.shadowOpacity = 0.1
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let questionLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = .darkText
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let translationLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 18)
         label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = .darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let latinCharactersLabel: UILabel = {
+    private let latinhCharactersLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textAlignment = .center
+        label.textColor = .systemBlue
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -90,6 +120,9 @@ class WordSortView: UIView {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
         button.tintColor = .systemBlue
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
         button.addTarget(self, action: #selector(audioButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -99,9 +132,25 @@ class WordSortView: UIView {
         button.setTitle("Confirm", for: .normal)
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 12
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    private let instructionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Nhấn và giữ các item để sắp xếp câu trả lời"
+        label.font = .systemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.textColor = .systemBlue
+        label.numberOfLines = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var onConfirmTapped: ((Bool) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -114,210 +163,169 @@ class WordSortView: UIView {
     }
     
     func setupUI() {
-        let selectableLayout = UICollectionViewFlowLayout()
-        selectableLayout.scrollDirection = .vertical
-        selectableLayout.minimumLineSpacing = 30
-        selectableLayout.minimumInteritemSpacing = 30
-        selectableLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        
-        // Setup selectableCollectionView
-        selectableCollectionView = UICollectionView(frame: .zero, collectionViewLayout: selectableLayout)
-        selectableCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        selectableCollectionView.delegate = self
-        selectableCollectionView.dataSource = self
-        selectableCollectionView.backgroundColor = .clear
-        selectableCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        addSubview(selectableCollectionView)
+        addSubview(collectionView)
         addSubview(imageView)
         addSubview(questionLabel)
         addSubview(translationLabel)
-        addSubview(latinCharactersLabel)
+        addSubview(latinhCharactersLabel)
         addSubview(audioButton)
         addSubview(confirmButton)
+        addSubview(instructionLabel)
         
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        questionLabel.translatesAutoresizingMaskIntoConstraints = false
-        translationLabel.translatesAutoresizingMaskIntoConstraints = false
-        latinCharactersLabel.translatesAutoresizingMaskIntoConstraints = false
-        audioButton.translatesAutoresizingMaskIntoConstraints = false
-        confirmButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Setup layout cho selectedCollectionView
         let selectedLayout = UICollectionViewFlowLayout()
         selectedLayout.scrollDirection = .vertical
         selectedLayout.minimumLineSpacing = 30
         selectedLayout.minimumInteritemSpacing = 30
         selectedLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         
-        // Setup selectedCollectionView
-        selectedCollectionView = UICollectionView(frame: .zero, collectionViewLayout: selectedLayout)
-        selectedCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        selectedCollectionView.delegate = self
-        selectedCollectionView.dataSource = self
-        selectedCollectionView.backgroundColor = .clear
-        selectedCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        addSubview(selectedCollectionView)
-        
         NSLayoutConstraint.activate([
-            selectableCollectionView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            selectableCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            selectableCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            selectableCollectionView.heightAnchor.constraint(equalToConstant: 60),
+            // Câu hỏi ở đầu tiên
+            questionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
-            selectedCollectionView.topAnchor.constraint(equalTo: selectableCollectionView.bottomAnchor, constant: 16),
-            selectedCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            selectedCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            selectedCollectionView.heightAnchor.constraint(equalToConstant: 60),
+            // Hình ảnh
+            imageView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 30),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 200),
+            imageView.heightAnchor.constraint(equalToConstant: 200),
             
-            imageView.topAnchor.constraint(equalTo: selectedCollectionView.bottomAnchor, constant: 16),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 100),
+            // Nút âm thanh ở góc phải trên của image
+            audioButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -10),
+            audioButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            audioButton.widthAnchor.constraint(equalToConstant: 50),
+            audioButton.heightAnchor.constraint(equalToConstant: 50),
             
-            questionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
-            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            // Bản dịch ngay dưới image
+            translationLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
+            translationLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            translationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            translationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
-            translationLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 8),
-            translationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            translationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            // Chữ Latin dưới bản dịch
+            latinhCharactersLabel.topAnchor.constraint(equalTo: translationLabel.bottomAnchor, constant: 16),
+            latinhCharactersLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            audioButton.topAnchor.constraint(equalTo: translationLabel.bottomAnchor, constant: 16),
-            audioButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            audioButton.widthAnchor.constraint(equalToConstant: 40),
-            audioButton.heightAnchor.constraint(equalToConstant: 40),
+            // Hướng dẫn ngay dưới chữ Latin
+            instructionLabel.topAnchor.constraint(equalTo: latinhCharactersLabel.bottomAnchor, constant: 16),
+            instructionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            instructionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
-            confirmButton.topAnchor.constraint(equalTo: audioButton.bottomAnchor, constant: 16),
-            confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            confirmButton.heightAnchor.constraint(equalToConstant: 44)
+            // Collection view có thể chọn
+            collectionView.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 20),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            collectionView.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Nút xác nhận ở dưới cùng
+            confirmButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),
+            confirmButton.topAnchor.constraint(greaterThanOrEqualTo: collectionView.bottomAnchor, constant: 20),
+            confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            confirmButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        
+        layer.backgroundColor = UIColor.white.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.1
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 4
     }
     
     private func updateUI() {
         imageView.image = UIImage(named: matchingModel?.image ?? "")
         questionLabel.text = questionText
         translationLabel.text = translation
-        selectableCollectionView.reloadData()
-        selectedCollectionView.reloadData()
-        AudioUtils.shared.playSound(filename: audioUrl)
+        
+        if let latinArray = matchingModel?.latin {
+            latinhCharactersLabel.text = latinArray.joined(separator: " ")
+        } else {
+            latinhCharactersLabel.text = ""
+        }
+        collectionView.reloadData()
     }
     
     @objc private func audioButtonTapped() {
         AudioUtils.shared.playSound(filename: audioUrl)
     }
+    
+    @objc private func confirmButtonTapped() {
+        onConfirmTapped?(matchingModel?.correctAnswer == furiganaWords.joined())
+    }
+    
+    private func performBatchUpdates(updates: () -> Void) {
+        collectionView.performBatchUpdates(updates)
+    }
 }
 
 extension WordSortView: UICollectionViewDelegate,
                         UICollectionViewDataSource,
-                        UICollectionViewDelegateFlowLayout {
+                        UICollectionViewDelegateFlowLayout,
+                        UICollectionViewDragDelegate,
+                        UICollectionViewDropDelegate{
+    // MARK: - UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == selectableCollectionView ? furiganaItems.count : selectedItems.count
+        return furiganaWords.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as? WordCell {
+            cell.label.text = furiganaWords[indexPath.row]
+            return cell
+        }
         
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.text = collectionView == selectableCollectionView ? furiganaItems[indexPath.row] : selectedItems[indexPath.row]
-        label.backgroundColor = .lightGray
-        label.layer.cornerRadius = 5
-        label.layer.masksToBounds = true
-        cell.contentView.addSubview(label)
-        
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
-            label.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
-            label.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: -10),
-            label.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 10)
-        ])
-        
-        return cell
+        return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == selectableCollectionView, selectedItems.count < maxSelectableItems {
-            let selectedItem = furiganaItems.remove(at: indexPath.row)
-            selectedItems.append(selectedItem)
+    // MARK: - UICollectionViewDragDelegate
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let word = furiganaWords[indexPath.item]
+        let itemProvider = NSItemProvider(object: word as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = word
+        return [dragItem]
+    }
+    
+    // MARK: - UICollectionViewDropDelegate
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
+        
+        coordinator.items.forEach { dropItem in
+            guard let sourceIndexPath = dropItem.sourceIndexPath,
+                  let word = dropItem.dragItem.localObject as? String else { return }
             
-            let indexPathToInsert = IndexPath(item: selectedItems.count - 1, section: 0)
+            // Xóa từ ở vị trí cũ
+            furiganaWords.remove(at: sourceIndexPath.item)
+            // Chèn từ vào vị trí mới
+            furiganaWords.insert(word, at: destinationIndexPath.item)
             
-            if let cell = collectionView.cellForItem(at: indexPath) {
-                let startFrame = collectionView.convert(cell.frame, to: self)
-                let endFrame = CGRect(x: selectedCollectionView.frame.minX + 20,
-                                      y: selectedCollectionView.frame.minY + 20,
-                                      width: cell.frame.width,
-                                      height: cell.frame.height)
-                
-                let snapshot = cell.snapshotView(afterScreenUpdates: false)!
-                snapshot.frame = startFrame
-                addSubview(snapshot)
-                
-                UIView.animate(withDuration: 0.3, animations: {
-                    snapshot.frame = endFrame
-                }, completion: { _ in
-                    snapshot.removeFromSuperview()
-                    self.selectableCollectionView.performBatchUpdates({
-                        self.selectableCollectionView.deleteItems(at: [indexPath])
-                        self.selectedCollectionView.insertItems(at: [indexPathToInsert])
-                    }, completion: { _ in
-                        self.selectableCollectionView.collectionViewLayout.invalidateLayout()
-                        self.selectedCollectionView.collectionViewLayout.invalidateLayout()
-                    })
-                })
-            }
-            
-        } else if collectionView == selectedCollectionView {
-            let deselectedItem = selectedItems.remove(at: indexPath.row)
-            furiganaItems.append(deselectedItem)
-            
-            let indexPathToInsert = IndexPath(item: furiganaItems.count - 1, section: 0)
-            
-            if let cell = collectionView.cellForItem(at: indexPath) {
-                let startFrame = collectionView.convert(cell.frame, to: self)
-                let endFrame = CGRect(x: selectableCollectionView.frame.minX + 20, y: selectableCollectionView.frame.minY + 20, width: cell.frame.width, height: cell.frame.height)
-                
-                let snapshot = cell.snapshotView(afterScreenUpdates: false)!
-                snapshot.frame = startFrame
-                addSubview(snapshot)
-                
-                UIView.animate(withDuration: 0.3, animations: {
-                    snapshot.frame = endFrame
-                }, completion: { _ in
-                    snapshot.removeFromSuperview()
-                    self.selectableCollectionView.performBatchUpdates({
-                        self.selectableCollectionView.insertItems(at: [indexPathToInsert])
-                        self.selectedCollectionView.deleteItems(at: [indexPath])
-                    }, completion: { _ in
-                        self.selectableCollectionView.collectionViewLayout.invalidateLayout()
-                        self.selectedCollectionView.collectionViewLayout.invalidateLayout()
-                    })
-                })
-            }
+            // Cập nhật collection view
+            collectionView.performBatchUpdates({
+                collectionView.deleteItems(at: [sourceIndexPath])
+                collectionView.insertItems(at: [destinationIndexPath])
+            })
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let text = collectionView == selectableCollectionView ? furiganaItems[indexPath.row] : selectedItems[indexPath.row]
-        
-        // Create a label to calculate size
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.text = text
-        label.sizeToFit()
-        
-        // Add padding and spacing
-        let padding: CGFloat = 20
-        let height: CGFloat = 44  // or use a dynamic height if needed
-        
-        return CGSize(width: label.frame.width + padding, height: height)
+    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+        return true
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        if session.localDragSession != nil {
+            return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+        }
+        return UICollectionViewDropProposal(operation: .cancel)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let previewParameters = UIDragPreviewParameters()
+        previewParameters.backgroundColor = .white
+        return previewParameters
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
