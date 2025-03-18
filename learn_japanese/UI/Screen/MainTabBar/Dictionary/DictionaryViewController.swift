@@ -40,4 +40,6 @@ class DictionaryViewController: BaseViewControler {
         print("Tab \(index + 1) selected")
         
     }
+    
+    
 }

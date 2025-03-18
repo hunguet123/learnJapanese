@@ -825,7 +825,7 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
-		DFA6E8E52C6117FB00765A11 /* Lessson */ = {
+		DFA6E8E52C6117FB00765A11 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
 				DFCD36442C62752D00F60870 /* Cell */,
@@ -833,7 +833,7 @@
 				DFA6E8E62C61182100765A11 /* LearnViewController.swift */,
 				DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */,
 			);
-			path = Lessson;
+			path = Learn;
 			sourceTree = "<group>";
 		};
 		DFA6E8EA2C61183100765A11 /* ViewModel */ = {
@@ -849,7 +849,7 @@
 			children = (
 				DFE59EFE2CD28DB400011DFC /* Profile */,
 				DF8271922CAC3B6D00E27690 /* Dictionary */,
-				DFA6E8E52C6117FB00765A11 /* Lessson */,
+				DFA6E8E52C6117FB00765A11 /* Learn */,
 				DFA6E8EE2C611D4D00765A11 /* MainTabBar.storyboard */,
 				DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */,
 			);

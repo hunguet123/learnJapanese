@@ -40,7 +40,10 @@ class LearnViewController: BaseViewControler {
             self.view.layoutIfNeeded()
         }
     }
-
+    @IBAction func didTapPopViewController(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func didTapProfile(_ sender: Any) {
         // TODO: didTapProfile
     }
