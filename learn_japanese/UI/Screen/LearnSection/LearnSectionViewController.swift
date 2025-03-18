@@ -22,6 +22,11 @@ class LearnSectionViewController: UIViewController {
         learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        AudioUtils.shared.stopSound()
+    }
+    
     private func setUpView() {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.quizCollectionView.register(UINib(nibName: "ImageTextQuestionCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ImageTextQuestionCollectionViewCell")

@@ -57,6 +57,12 @@
 		DF785DCF2D87A10900FC709D /* nsakana.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DC22D87A10900FC709D /* nsakana.mp3 */; };
 		DF785DD02D87A10900FC709D /* ntsukue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DC52D87A10900FC709D /* ntsukue.mp3 */; };
 		DF785DD12D87A10900FC709D /* nnihongo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DC12D87A10900FC709D /* nnihongo.mp3 */; };
+		DF785DE02D89CF4700FC709D /* 0006_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDA2D89CF4700FC709D /* 0006_1.mp3 */; };
+		DF785DE12D89CF4700FC709D /* 0006_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDC2D89CF4700FC709D /* 0006_3.mp3 */; };
+		DF785DE22D89CF4700FC709D /* 0006_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDE2D89CF4700FC709D /* 0006_5.mp3 */; };
+		DF785DE32D89CF4700FC709D /* 0006_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDD2D89CF4700FC709D /* 0006_4.mp3 */; };
+		DF785DE42D89CF4700FC709D /* 0006_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDF2D89CF4700FC709D /* 0006_6.mp3 */; };
+		DF785DE52D89CF4700FC709D /* 0006_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDB2D89CF4700FC709D /* 0006_2.mp3 */; };
 		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
 		DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105B2C7CBFD6002969E8 /* Gender.swift */; };
 		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
@@ -316,6 +322,12 @@
 		DF785DC52D87A10900FC709D /* ntsukue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ntsukue.mp3; sourceTree = "<group>"; };
 		DF785DC62D87A10900FC709D /* nyasai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nyasai.mp3; sourceTree = "<group>"; };
 		DF785DC72D87A10900FC709D /* nyoru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nyoru.mp3; sourceTree = "<group>"; };
+		DF785DDA2D89CF4700FC709D /* 0006_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_1.mp3; sourceTree = "<group>"; };
+		DF785DDB2D89CF4700FC709D /* 0006_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_2.mp3; sourceTree = "<group>"; };
+		DF785DDC2D89CF4700FC709D /* 0006_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_3.mp3; sourceTree = "<group>"; };
+		DF785DDD2D89CF4700FC709D /* 0006_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_4.mp3; sourceTree = "<group>"; };
+		DF785DDE2D89CF4700FC709D /* 0006_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_5.mp3; sourceTree = "<group>"; };
+		DF785DDF2D89CF4700FC709D /* 0006_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_6.mp3; sourceTree = "<group>"; };
 		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DF7B105B2C7CBFD6002969E8 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -645,6 +657,12 @@
 		DF997C9E2D5CF92D00980979 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				DF785DDA2D89CF4700FC709D /* 0006_1.mp3 */,
+				DF785DDB2D89CF4700FC709D /* 0006_2.mp3 */,
+				DF785DDC2D89CF4700FC709D /* 0006_3.mp3 */,
+				DF785DDD2D89CF4700FC709D /* 0006_4.mp3 */,
+				DF785DDE2D89CF4700FC709D /* 0006_5.mp3 */,
+				DF785DDF2D89CF4700FC709D /* 0006_6.mp3 */,
 				DF997C9F2D5CF94500980979 /* あ.mp3 */,
 				DF997CA02D5CF94500980979 /* い.mp3 */,
 				DF997CA12D5CF94500980979 /* う.mp3 */,
@@ -1251,6 +1269,12 @@
 				DF997CE42D5CF94500980979 /* こ.mp3 in Resources */,
 				DF997CE52D5CF94500980979 /* れ.mp3 in Resources */,
 				DF997CE62D5CF94500980979 /* な.mp3 in Resources */,
+				DF785DE02D89CF4700FC709D /* 0006_1.mp3 in Resources */,
+				DF785DE12D89CF4700FC709D /* 0006_3.mp3 in Resources */,
+				DF785DE22D89CF4700FC709D /* 0006_5.mp3 in Resources */,
+				DF785DE32D89CF4700FC709D /* 0006_4.mp3 in Resources */,
+				DF785DE42D89CF4700FC709D /* 0006_6.mp3 in Resources */,
+				DF785DE52D89CF4700FC709D /* 0006_2.mp3 in Resources */,
 				DF997CE72D5CF94500980979 /* ち.mp3 in Resources */,
 				DF997CE82D5CF94500980979 /* た.mp3 in Resources */,
 				DF997CE92D5CF94500980979 /* き.mp3 in Resources */,

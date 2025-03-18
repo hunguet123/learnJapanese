@@ -50,11 +50,23 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                         self.delegate?.onSwipeLeft(questionId: question.questionId)
                     }
                 case QuestionConstants.textSelection:
-                    audioName = nil
                     let textSelection = TextSelectionView()
                     textSelection.fixInView(content)
                     if let questionText = questionContent["questionText"] as? String {
                         textSelection.addQuestionText(text: questionText)
+                    }
+                    
+                    if let image = questionContent["imageName"] as? String {
+                        textSelection.addQuestionImage(image: UIImage(named: image))
+                    }
+                    
+                    if let audio = questionContent["audio"] as? String {
+                        audioName = audio
+                        textSelection.addQuestionAudio(questionAudio: audio)
+                    }
+                    
+                    if let note = questionContent["note"] as? String {
+                        textSelection.addNote(note: note)
                     }
                     
                     if let options = questionContent["options"] as? [[String: Any]] {
@@ -111,10 +123,8 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
     }
     
     public func playAudio() {
-        if !AudioUtils.shared.isPlaying() {
-            if let audioName = self.audioName {
-                AudioUtils.shared.playSound(filename: audioName)
-            }
+        if let audioName = self.audioName {
+            AudioUtils.shared.playSound(filename: audioName)
         }
     }
 }
