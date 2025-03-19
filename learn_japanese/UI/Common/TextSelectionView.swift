@@ -25,6 +25,7 @@ class TextSelectionView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
+        button.isHidden = true
         button.addTarget(self, action: #selector(audioButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -270,7 +271,9 @@ class TextSelectionView: UIView {
     }
     
     private func playAudio(audioName: String) {
-        if !AudioUtils.shared.isPlaying() {
+        if AudioUtils.shared.isPlaying() {
+            AudioUtils.shared.stopSound()
+        } else {
             AudioUtils.shared.playSound(filename: audioName)
         }
     }

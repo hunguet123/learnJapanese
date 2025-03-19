@@ -20,10 +20,13 @@ class HomeViewController: BaseViewControler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         setupUI()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchData()
+    }
     
     override func viewDidLayoutSubviews() {
         setUpGradientLayer()
@@ -31,16 +34,16 @@ class HomeViewController: BaseViewControler {
 
     private func setupUI() {
         self.indicator.fixInView(self.view)
-        indicator.isHidden = true
+        indicator.isHidden = false
         levelLabel.text = homeViewModel?.japaneseLevel.title
         lesssonsCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "HomeCollectionViewCell")
     }
     
     private func fetchData() {
-        self.homeViewModel?.fetchLesssons()
         self.homeViewModel?.onChangeApiStatus = { [weak self] apiStatus in
             switch apiStatus {
             case .success:
+                self?.lesssonsCollectionView.reloadData()
                 self?.indicator.stopAnimating()
                 self?.indicator.isHidden = true
             case .loading:
@@ -53,6 +56,7 @@ class HomeViewController: BaseViewControler {
                 break
             }
         }
+        self.homeViewModel?.fetchLesssons()
     }
     
     private func setUpGradientLayer() {

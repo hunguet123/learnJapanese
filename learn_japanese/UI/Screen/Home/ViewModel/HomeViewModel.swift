@@ -23,29 +23,28 @@ class HomeViewModel {
     
     func fetchLesssons() {
         self.onChangeApiStatus?(ApiStatus.loading)
-        UserProgressManager.shared.fetchUserProgress { result in
+        UserProgressManager.shared.fetchUserProgress { [weak self] result in
             if (result.isEqual(to: .success)) {
-                self.onChangeApiStatus?(ApiStatus.success)
+                let lessons = LessonServiceUtils.getLesson(byLevel: self?.japaneseLevel.level.rawValue ?? "")
+                self?.lessonDTOs = lessons.map({ lessonModel in
+                    let activities = ActivityServiceUtils.getActivity(byLessonId: lessonModel.lessonId)
+                    var excercises = []
+                    
+                    activities.forEach { activity in
+                        excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activity.activityId))
+                    }
+                    
+                    let lessonProgressModel = UserProgressManager.shared.userProgressModel?.lessons.first(where: { lessonProgressModel in
+                        lessonProgressModel.lessonId == lessonModel.lessonId
+                    })
+                                
+                    return LessonDTO(lesssonModel: lessonModel, totalExercises: excercises.count, completedExercises: lessonProgressModel?.completedExercises ?? 0, isAccessible: lessonProgressModel?.isAccessible ?? false)
+                })
+                self?.onChangeApiStatus?(ApiStatus.success)
             } else {
-                self.onChangeApiStatus?(ApiStatus.failure)
+                self?.onChangeApiStatus?(ApiStatus.failure)
             }
             print("fetch userProgress: \(result)")
         }
-        
-        let lessons = LessonServiceUtils.getLesson(byLevel: japaneseLevel.level.rawValue)
-        lessonDTOs = lessons.map({ lessonModel in
-            let activities = ActivityServiceUtils.getActivity(byLessonId: lessonModel.lessonId)
-            var excercises = []
-            
-            activities.forEach { activity in
-                excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activity.activityId))
-            }
-            
-            let lessonProgressModel = UserProgressManager.shared.userProgressModel?.lessons.first(where: { lessonProgressModel in
-                lessonProgressModel.lessonId == lessonModel.lessonId
-            })
-                        
-            return LessonDTO(lesssonModel: lessonModel, totalExercises: excercises.count, completedExercises: lessonProgressModel?.completedExercises ?? 0, isAccessible: lessonProgressModel?.isAccessible ?? false)
-        })
     }
 }
