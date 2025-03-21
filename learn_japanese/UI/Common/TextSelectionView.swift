@@ -150,8 +150,8 @@ class TextSelectionView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            audioButton.topAnchor.constraint(equalTo: questionImageView.topAnchor, constant: 10),
-            audioButton.trailingAnchor.constraint(equalTo: questionImageView.trailingAnchor, constant: -10),
+            audioButton.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            audioButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             audioButton.heightAnchor.constraint(equalToConstant: 50),
             audioButton.widthAnchor.constraint(equalTo: audioButton.heightAnchor),
         ])

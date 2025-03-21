@@ -226,7 +226,7 @@
                                         <state key="normal">
                                             <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large" renderingMode="hierarchical-single" variableValue="1">
                                                 <hierarchicalColors>
-                                                    <color systemColor="labelColor"/>
+                                                    <color name="colors/darkCharcoal"/>
                                                     <color systemColor="secondaryLabelColor"/>
                                                     <color systemColor="tertiaryLabelColor"/>
                                                 </hierarchicalColors>
@@ -446,12 +446,12 @@
         <namedColor name="colors/backgroundColor">
             <color red="0.98000001907348633" green="0.9649999737739563" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="colors/darkCharcoal">
+            <color red="0.18400000035762787" green="0.18400000035762787" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="colors/shockingPink">
             <color red="0.99599999189376831" green="0.0" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -141,7 +141,7 @@ class WordSortView: UIView {
     
     private let instructionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Nhấn và giữ các item để sắp xếp câu trả lời"
+        label.text = "Nhấn và giữ các nút để sắp xếp câu trả lời"
         label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
         label.textColor = .systemBlue
@@ -191,8 +191,8 @@ class WordSortView: UIView {
             imageView.heightAnchor.constraint(equalToConstant: 200),
             
             // Nút âm thanh ở góc phải trên của image
-            audioButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -10),
-            audioButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            audioButton.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            audioButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             audioButton.widthAnchor.constraint(equalToConstant: 50),
             audioButton.heightAnchor.constraint(equalToConstant: 50),
             
@@ -213,8 +213,9 @@ class WordSortView: UIView {
             
             // Collection view có thể chọn
             collectionView.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 20),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            collectionView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(greaterThanOrEqualTo: trailingAnchor, constant: -16),
+            collectionView.centerXAnchor.constraint(equalTo: centerXAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 50),
             
             // Nút xác nhận ở dưới cùng

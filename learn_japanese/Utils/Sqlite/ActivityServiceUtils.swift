@@ -21,7 +21,7 @@ class ActivityServiceUtils {
             let activityTable = Table("Activity")
             let activityId = Expression<Int>("activity_id")
             let activityNumber = Expression<Int>("activity_number")
-            let detail = Expression<String?>("detail")
+            let detail = Expression<String?>("description")
             let lessonIdColumn = Expression<Int>("lesson_id")
             
             // Truy vấn với điều kiện lọc lesson_id
