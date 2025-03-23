@@ -7,15 +7,19 @@
 
 struct ExerciseModel {
     let exerciseId: Int
-    let exerciseNumber: String
-    let activityId: Int
+    let exerciseNumber: Double
+    let lessonId: Int
     let title: String?
     let description: String?
     
-    init(exerciseId: Int, exerciseNumber: String, activityId: Int, title: String?, description: String?) {
+    init(exerciseId: Int,
+         exerciseNumber: Double,
+         lessonId: Int,
+         title: String?,
+         description: String?) {
         self.exerciseId = exerciseId
         self.exerciseNumber = exerciseNumber
-        self.activityId = activityId
+        self.lessonId = lessonId
         self.title = title
         self.description = description
     }

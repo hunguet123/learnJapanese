@@ -8,7 +8,7 @@
 import SQLite
 
 class ExerciseServiceUtils {
-    static func getExercise(byActivityId activityId: Int) -> [ExerciseModel] {
+    static func getExercise(byLessonId lessonId: Int) -> [ExerciseModel] {
         guard let db = SQLiteHelper.shared.db else {
             print("Database connection is nil")
             return []
@@ -20,14 +20,13 @@ class ExerciseServiceUtils {
             // Khai báo bảng và cột
             let exerciseTable = Table("Exercise")
             let exerciseId = Expression<Int>("exercise_id")
-            let exerciseNumber = Expression<String>("exercise_number")
-            let activityIdColumn = Expression<Int>("activity_id")
+            let exerciseNumber = Expression<Double>("exercise_number")
+            let lessonIdColumn = Expression<Int>("lesson_id")
             let title = Expression<String?>("title")
             let description = Expression<String?>("description")
             
-            // Truy vấn với điều kiện lọc activity_id
             let query = exerciseTable
-                .filter(activityIdColumn == activityId)
+                .filter(lessonIdColumn == lessonId)
                 .order(exerciseId.asc) // Sắp xếp theo exercise_number tăng dần
             
             // Duyệt qua các hàng và tạo ExerciseModel
@@ -35,7 +34,7 @@ class ExerciseServiceUtils {
                 let exercise = ExerciseModel(
                     exerciseId: row[exerciseId],
                     exerciseNumber: row[exerciseNumber],
-                    activityId: row[activityIdColumn],
+                    lessonId: row[lessonIdColumn],
                     title: row[title],
                     description: row[description]
                 )

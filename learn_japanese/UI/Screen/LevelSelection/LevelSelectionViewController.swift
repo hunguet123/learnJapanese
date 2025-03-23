@@ -59,19 +59,7 @@ class LevelSelectionViewController: BaseViewControler {
             return
         }
         
-        let activityModels = ActivityServiceUtils.getActivity(byLessonId: firstLessonModel.lessonId)
-        
-        var excercises: [ExerciseModel] = []
-        
-        activityModels.forEach { activityModel in
-            excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activityModel.activityId))
-        }
-        
-        guard let firstActivityModcel = activityModels.first else {return}
-        
-        guard let firstExerciseModel = ExerciseServiceUtils.getExercise(byActivityId: firstActivityModcel.activityId).first else {
-            return
-        }
+        let excercises: [ExerciseModel] = ExerciseServiceUtils.getExercise(byLessonId: firstLessonModel.lessonId)
         
         UserProgressManager.shared.addLessonProgress(lessonId: firstLessonModel.lessonId, totalExercises: excercises.count, isAccessible: true) { result in
             print("------ firebase Result \(result)")

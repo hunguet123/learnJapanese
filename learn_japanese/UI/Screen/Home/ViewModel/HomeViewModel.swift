@@ -27,12 +27,7 @@ class HomeViewModel {
             if (result.isEqual(to: .success)) {
                 let lessons = LessonServiceUtils.getLesson(byLevel: self?.japaneseLevel.level.rawValue ?? "")
                 self?.lessonDTOs = lessons.map({ lessonModel in
-                    let activities = ActivityServiceUtils.getActivity(byLessonId: lessonModel.lessonId)
-                    var excercises = []
-                    
-                    activities.forEach { activity in
-                        excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activity.activityId))
-                    }
+                    var excercises = ExerciseServiceUtils.getExercise(byLessonId: lessonModel.lessonId)
                     
                     let lessonProgressModel = UserProgressManager.shared.userProgressModel?.lessons.first(where: { lessonProgressModel in
                         lessonProgressModel.lessonId == lessonModel.lessonId
@@ -61,13 +56,7 @@ class HomeViewModel {
         let lastLesson = lessons[lastLessonProgressModelIndex + 1]
         
         if (lastLessonProgressModel?.completedExercises == lastLessonProgressModel?.totalExercises && UserProgressManager.shared.userProgressModel?.lessons.count ?? 0 < lessons.count) {
-            let activityModels = ActivityServiceUtils.getActivity(byLessonId: lastLesson.lessonId)
-            
-            var excercises: [ExerciseModel] = []
-            
-            activityModels.forEach { activityModel in
-                excercises.append(contentsOf: ExerciseServiceUtils.getExercise(byActivityId: activityModel.activityId))
-            }
+            let excercises: [ExerciseModel] = ExerciseServiceUtils.getExercise(byLessonId: lastLesson.lessonId)
             
             UserProgressManager.shared.addLessonProgress(lessonId: lastLesson.lessonId, totalExercises: excercises.count, isAccessible: true) { firebaseResult in
                 if (firebaseResult.isEqual(to: .success)) {
