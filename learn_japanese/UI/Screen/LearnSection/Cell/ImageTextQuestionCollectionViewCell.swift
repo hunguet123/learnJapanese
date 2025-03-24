@@ -114,6 +114,18 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                                                           questionId: question.questionId,
                                                           correctAnswer:  matchingModel?.correctAnswer ?? "")
                     }
+                case QuestionConstants.wordMathing:
+                    let wordMatchingQuestion = WordMatchingQuestion.fromJson(questionContentString)
+                    let wordMatchingView = WordMatchingView()
+                    wordMatchingView.wordPairs = wordMatchingQuestion?.wordPairs ?? []
+                    wordMatchingView.textQuestion = wordMatchingQuestion?.questionText ?? ""
+                    wordMatchingView.onDidTapContinueButton = { [weak self] in
+                        self?.delegate?.didTapNextQuestion(isCorrect: true,
+                                                          questionId: question.questionId,
+                                                          correctAnswer:  ""
+                        )
+                    }
+                    wordMatchingView.fixInView(content)
                 default:
                     audioName = nil
                     break

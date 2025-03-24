@@ -38,4 +38,25 @@ class AppColors {
     static let lightDeepPink = UIColor(named: "colors/lightDeepPink")
     /// 959595
     static let spanishGray = UIColor(named: "colors/spanishGray")
+    
+    // Background colors
+    static let viewBackground = UIColor.white
+    static let buttonBackground = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
+    static let continueButtonDisabled = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+    static let continueButtonEnabled = UIColor(red: 0.2, green: 0.5, blue: 1.0, alpha: 1.0)
+    static let selectedButtonBackground = UIColor(red: 0.4, green: 0.6, blue: 1.0, alpha: 1.0)
+    static let correctMatchBackground = UIColor(red: 0.4, green: 0.8, blue: 0.4, alpha: 1.0)
+    
+    // Text colors
+    static let titleText = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+    static let buttonTextSelected = UIColor.white
+    static let continueButtonTextDisabled = UIColor.gray
+    static let continueButtonTextEnabled = UIColor.white
+    
+    // Border colors
+    static let errorBorder = UIColor.red
+    
+    // Shadow colors
+    static let buttonShadow = UIColor.black.withAlphaComponent(0.1)
+    static let continueButtonShadow = UIColor.black.withAlphaComponent(0.2)
 }
