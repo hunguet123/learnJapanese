@@ -10,8 +10,8 @@ import UIKit
 class AppColors {
     ///FAF6D1
     static let backgroundColor = UIColor(named: "colors/backgroundColor")
-    ///9747FF
-    static let lavenderIndigo = UIColor(named: "colors/lavenderIndigo")
+
+    static let buttonEnable = UIColor(red: 0.2, green: 0.5, blue: 1.0, alpha: 1.0)
     ///D45CD7
     static let orchid = UIColor(named: "colors/orchid")
     ///F88EC1

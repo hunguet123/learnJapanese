@@ -20,7 +20,7 @@ class DefaultButton: TapableView {
     }
     
     private func commonInit() {
-        self.backgroundColor = AppColors.lavenderIndigo
+        self.backgroundColor = AppColors.buttonEnable
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }

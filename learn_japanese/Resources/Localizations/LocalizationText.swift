@@ -60,4 +60,5 @@ class LocalizationText {
     static let continueMessage = "continue".l10n()
     static let notYetLearned = "notYetLearned".l10n()
     static let learned = "learned".l10n()
+    static let confirm = "confirm".l10n()
 }

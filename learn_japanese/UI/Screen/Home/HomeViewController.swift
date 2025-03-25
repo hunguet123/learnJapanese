@@ -63,7 +63,7 @@ class HomeViewController: BaseViewControler {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
-            AppColors.lavenderIndigo?.cgColor ?? UIColor.clear.cgColor,
+            AppColors.buttonEnable.cgColor,
             AppColors.lightDeepPink?.cgColor ?? UIColor.clear.cgColor,
         ]
         

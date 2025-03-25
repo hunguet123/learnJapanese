@@ -76,14 +76,15 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                                 if let isCorrect = options[index]["isCorrect"] as? Bool, isCorrect == true {
                                     correctAnswer = text
                                 }
-                                textSelection.addAudioItem(audioName: options[index]["audio"] as? String ?? "")
-                                textSelection.addOption(title: text)
+                                textSelection.addOption(title: text,
+                                                        audioName: options[index]["audio"] as? String ?? "")
                             }
                         }
                         
                         textSelection.didTapNextQuestion = { questionIndex in
                             if let isCorrect = options[questionIndex]["isCorrect"] as? Bool {
-                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect, questionId: question.questionId,
+                                self.delegate?.didTapNextQuestion(isCorrect: isCorrect,
+                                                                  questionId: question.questionId,
                                                                   correctAnswer: correctAnswer)
                             }
                         }
@@ -126,10 +127,64 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                         )
                     }
                     wordMatchingView.fixInView(content)
+                case QuestionConstants.imageSelection:
+                    let imageSelectionView = ImageSelectionView()
+                    if let textQuestion = questionContent["questionText"] as? String {
+                        imageSelectionView.textQuestion = textQuestion
+                    }
+                    
+                    if let options = (questionContent["options"] as? [[String: Any]])?.shuffled() {
+                        var correctAnswer: String = ""
+                        for index in 0..<options.count {
+                            if let imageName = options[index]["image"] as? String,
+                               let isCorrect = options[index]["isCorrect"] as? Bool {
+                                if isCorrect {
+                                    correctAnswer = "Hình số \(index + 1)"
+                                }
+                                imageSelectionView.addOption(imageName: imageName, isSelected: isCorrect)
+                            }
+                        }
+                        
+                        imageSelectionView.onTapContinueButton = { [weak self] selectedIndex in
+                            guard let selectedIndex = selectedIndex else {
+                                return
+                            }
+                            if let isCorrect = options[selectedIndex]["isCorrect"] as? Bool {
+                                self?.delegate?.didTapNextQuestion(isCorrect: isCorrect,
+                                                                   questionId: question.questionId,
+                                                                   correctAnswer: correctAnswer)
+                            }
+                        }
+                    }
+                        
+                    if let note = questionContent["note"] as? String {
+                        imageSelectionView.addNote(text: note)
+                    }
+                    
+                    if let audioName = questionContent["audio"] as? String {
+                        self.audioName = audioName
+                        imageSelectionView.addAudio(audioName: audioName)
+                    }
+                    
+                    if let translation = questionContent["translation"] as? String {
+                        imageSelectionView.addTranslation(text: translation)
+                    }
+                    
+                    imageSelectionView.fixInView(content)
                 default:
                     audioName = nil
                     break
                 }
+            } else {
+                // TODO: remove fake button
+                let button = UIButton()
+                button.setTitle("Đang phát triển", for: .normal)
+                button.backgroundColor = .systemGray
+                button.addAction(UIAction { [weak self] _ in
+                    self?.didTapNexButton(questionId: question.questionId)
+                }, for: .touchUpInside)
+                button.fixInView(content)
+                
             }
         }
     }
@@ -138,5 +193,12 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
         if let audioName = self.audioName {
             AudioUtils.shared.playSound(filename: audioName)
         }
+    }
+    
+    // TODO: remove fake button
+    @objc private func didTapNexButton(questionId: Int) {
+        self.delegate?.didTapNextQuestion(isCorrect: true,
+                                           questionId: questionId,
+                                           correctAnswer: "")
     }
 }

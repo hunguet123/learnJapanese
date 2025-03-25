@@ -77,10 +77,10 @@ class DefaultTabBarView: UIView {
         buttons.forEach { button in
             button.setBackgroundColor(AppColors.lightSliver ?? .clear, for: .normal)
             button.setTextAttributes([.font: UIFont.systemFont(ofSize: 14, weight: .bold),
-                                      .foregroundColor: AppColors.lavenderIndigo?.withAlphaComponent(0.6) ?? .clear,
+                                      .foregroundColor: AppColors.buttonEnable.withAlphaComponent(0.6),
             ], for: .normal)
         }// Unselected color
-        buttons[index].setBackgroundColor(AppColors.lavenderIndigo ?? .clear, for: .selected)
+        buttons[index].setBackgroundColor(AppColors.buttonEnable, for: .selected)
         buttons[index].setTextAttributes([.font: UIFont.systemFont(ofSize: 14, weight: .bold),
                                           .foregroundColor: AppColors.white,
         ], for: .normal)

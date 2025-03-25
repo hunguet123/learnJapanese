@@ -28,7 +28,7 @@ class LoginViewController: BaseViewControler{
         titleHeader.setGradientColors([
             AppColors.pastelMagenta?.withAlphaComponent(0.8),
             AppColors.orchid,
-            AppColors.lavenderIndigo,
+            AppColors.buttonEnable,
         ])
         
         tabBarView.delegate = self

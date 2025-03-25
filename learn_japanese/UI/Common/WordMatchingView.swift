@@ -221,8 +221,6 @@ class WordMatchingView: UIView {
                 let bothInRightColumn = rightColumnButtons.contains(firstButton) && rightColumnButtons.contains(sender)
                 
                 if bothInLeftColumn || bothInRightColumn {
-                    // Hiển thị thông báo lỗi
-                    //                    showSameColumnError(for: [firstButton, sender])
                     return
                 }
             }

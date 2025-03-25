@@ -14,7 +14,7 @@ class TextSelectionView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false // Bắt buộc để thay đổi constraint
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -47,8 +47,8 @@ class TextSelectionView: UIView {
     private var selectedOption: UIView? {
         didSet {
             nextButton.isEnabled = true
-            nextButton.backgroundColor = AppColors.lavenderIndigo
-            nextButton.layer.borderColor = AppColors.lavenderIndigo?.cgColor
+            nextButton.backgroundColor = AppColors.buttonEnable
+            nextButton.layer.borderColor = AppColors.buttonEnable.cgColor
             if let selectedOption = selectedOption {
                 selectedIndex = stackView.arrangedSubviews.firstIndex(of: selectedOption) ?? 0
             }
@@ -56,14 +56,21 @@ class TextSelectionView: UIView {
     }
     private let nextButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizationText.next, for: .normal)
-        button.backgroundColor = AppColors.spanishGray
-        button.layer.cornerRadius = 12
-        button.layer.borderWidth = 1
-        button.layer.borderColor = AppColors.spanishGray?.cgColor
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.setTitle(LocalizationText.continueMessage, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        button.backgroundColor = AppColors.continueButtonDisabled
+        button.setTitleColor(.gray, for: .disabled)
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 25
         button.isEnabled = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        // Thêm shadow effect
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowRadius = 4
+        button.layer.shadowOpacity = 0.2
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -187,11 +194,11 @@ class TextSelectionView: UIView {
         self.questionAudio = questionAudio
     }
     
-    func addAudioItem(audioName: String) {
+    func addOption(title: String,
+                   isSelected: Bool = false,
+                   audioName: String
+    ) {
         audioItems.append(audioName)
-    }
-    
-    func addOption(title: String, isSelected: Bool = false) {
         let optionView = UIView()
         optionView.backgroundColor = isSelected ? .white : UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1)
         optionView.layer.cornerRadius = 12
@@ -208,7 +215,7 @@ class TextSelectionView: UIView {
         button.tintColor = .systemOrange
         button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
-        button.isHidden = self.questionImageView.image != nil
+        button.isHidden = self.questionImageView.image != nil || audioName.isEmpty
         
         let optionStack = UIStackView(arrangedSubviews: [label, button])
         optionStack.axis = .horizontal

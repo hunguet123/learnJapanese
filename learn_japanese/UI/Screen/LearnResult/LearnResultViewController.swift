@@ -63,7 +63,7 @@ class LearnResultViewController: UIViewController {
         gradientLayer.frame = self.view.bounds
         
         gradientLayer.colors = [
-            AppColors.lavenderIndigo?.cgColor ?? UIColor.white.cgColor,
+            AppColors.buttonEnable.cgColor,
             AppColors.lightDeepPink?.cgColor ?? UIColor.white.cgColor,
         ]
         

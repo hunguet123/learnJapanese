@@ -51,6 +51,12 @@
 		DF66B2052D91A78D002BCA0B /* neigo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B1FD2D91A78D002BCA0B /* neigo.mp3 */; };
 		DF66B2092D91AC16002BCA0B /* nbetonamugo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B2082D91AC16002BCA0B /* nbetonamugo.mp3 */; };
 		DF66B20B2D91B218002BCA0B /* WordMatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66B20A2D91B218002BCA0B /* WordMatchingView.swift */; };
+		DF66B21E2D92F201002BCA0B /* kyooshi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B21C2D92F201002BCA0B /* kyooshi.mp3 */; };
+		DF66B21F2D92F201002BCA0B /* koomuin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B21B2D92F201002BCA0B /* koomuin.mp3 */; };
+		DF66B2202D92F201002BCA0B /* enjinia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B2182D92F201002BCA0B /* enjinia.mp3 */; };
+		DF66B2212D92F201002BCA0B /* gakusee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B2192D92F201002BCA0B /* gakusee.mp3 */; };
+		DF66B2222D92F201002BCA0B /* kaishain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B21A2D92F201002BCA0B /* kaishain.mp3 */; };
+		DF66B2232D92F201002BCA0B /* shufu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF66B21D2D92F201002BCA0B /* shufu.mp3 */; };
 		DF785DBD2D872D1B00FC709D /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF785DBB2D872D1B00FC709D /* WordCell.swift */; };
 		DF785DC82D87A10900FC709D /* ntamago.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DC32D87A10900FC709D /* ntamago.mp3 */; };
 		DF785DC92D87A10900FC709D /* nyoru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DC72D87A10900FC709D /* nyoru.mp3 */; };
@@ -396,6 +402,12 @@
 		DF66B1FE2D91A78D002BCA0B /* nkankokugo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nkankokugo.mp3; sourceTree = "<group>"; };
 		DF66B2082D91AC16002BCA0B /* nbetonamugo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nbetonamugo.mp3; sourceTree = "<group>"; };
 		DF66B20A2D91B218002BCA0B /* WordMatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordMatchingView.swift; sourceTree = "<group>"; };
+		DF66B2182D92F201002BCA0B /* enjinia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enjinia.mp3; sourceTree = "<group>"; };
+		DF66B2192D92F201002BCA0B /* gakusee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gakusee.mp3; sourceTree = "<group>"; };
+		DF66B21A2D92F201002BCA0B /* kaishain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kaishain.mp3; sourceTree = "<group>"; };
+		DF66B21B2D92F201002BCA0B /* koomuin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = koomuin.mp3; sourceTree = "<group>"; };
+		DF66B21C2D92F201002BCA0B /* kyooshi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kyooshi.mp3; sourceTree = "<group>"; };
+		DF66B21D2D92F201002BCA0B /* shufu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shufu.mp3; sourceTree = "<group>"; };
 		DF785DBB2D872D1B00FC709D /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		DF785DBE2D87A10900FC709D /* nasa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nasa.mp3; sourceTree = "<group>"; };
 		DF785DBF2D87A10900FC709D /* nfujisan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nfujisan.mp3; sourceTree = "<group>"; };
@@ -973,6 +985,12 @@
 				DF66B1FD2D91A78D002BCA0B /* neigo.mp3 */,
 				DF66B1FE2D91A78D002BCA0B /* nkankokugo.mp3 */,
 				DF66B2082D91AC16002BCA0B /* nbetonamugo.mp3 */,
+				DF66B2182D92F201002BCA0B /* enjinia.mp3 */,
+				DF66B2192D92F201002BCA0B /* gakusee.mp3 */,
+				DF66B21A2D92F201002BCA0B /* kaishain.mp3 */,
+				DF66B21B2D92F201002BCA0B /* koomuin.mp3 */,
+				DF66B21C2D92F201002BCA0B /* kyooshi.mp3 */,
+				DF66B21D2D92F201002BCA0B /* shufu.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1537,6 +1555,12 @@
 				DF66B2032D91A78D002BCA0B /* narabiago.mp3 in Resources */,
 				DF66B2042D91A78D002BCA0B /* ndoitsugo.mp3 in Resources */,
 				DF66B2052D91A78D002BCA0B /* neigo.mp3 in Resources */,
+				DF66B21E2D92F201002BCA0B /* kyooshi.mp3 in Resources */,
+				DF66B21F2D92F201002BCA0B /* koomuin.mp3 in Resources */,
+				DF66B2202D92F201002BCA0B /* enjinia.mp3 in Resources */,
+				DF66B2212D92F201002BCA0B /* gakusee.mp3 in Resources */,
+				DF66B2222D92F201002BCA0B /* kaishain.mp3 in Resources */,
+				DF66B2232D92F201002BCA0B /* shufu.mp3 in Resources */,
 				DF8E82C22D8C593A008E82D3 /* タ.mp3 in Resources */,
 				DF8E82C32D8C593A008E82D3 /* ト.mp3 in Resources */,
 				DF8E82C42D8C593A008E82D3 /* ウ.mp3 in Resources */,

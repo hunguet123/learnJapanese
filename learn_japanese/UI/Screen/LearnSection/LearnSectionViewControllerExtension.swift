@@ -18,8 +18,8 @@ extension LearnSectionViewController: UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageTextQuestionCollectionViewCell", for: indexPath) as? ImageTextQuestionCollectionViewCell {
             let question = learnSectionViewModel.questions[indexPath.row]
-            cell.configure(with: question)
             cell.delegate = self
+            cell.configure(with: question)
             return cell
         }
         

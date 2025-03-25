@@ -129,12 +129,21 @@ class WordSortView: UIView {
     
     private let confirmButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Confirm", for: .normal)
-        button.backgroundColor = .systemBlue
+        button.setTitle(LocalizationText.confirm, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        button.backgroundColor = AppColors.buttonEnable
+        button.setTitleColor(.gray, for: .disabled)
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 12
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        button.layer.cornerRadius = 25
+        button.isEnabled = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        // Thêm shadow effect
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowRadius = 4
+        button.layer.shadowOpacity = 0.2
         button.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
         return button
     }()
