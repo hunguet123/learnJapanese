@@ -40,7 +40,6 @@ class TextSelectionView: UIView {
     }()
     
     private var questionImageHeightConstraint: NSLayoutConstraint?
-    private var noteLabelHeightConstraint: NSLayoutConstraint?
     
     private let stackView = UIStackView()
     private var selectedIndex = 0
@@ -118,8 +117,8 @@ class TextSelectionView: UIView {
         NSLayoutConstraint.activate([
             // Question Label
             questionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 55),
+            questionLabel.trailingAnchor.constraint(equalTo: audioButton.leadingAnchor, constant: -5),
             
             // Question Image View
             questionImageView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 10),
@@ -137,10 +136,6 @@ class TextSelectionView: UIView {
             noteLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             noteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
         ])
-        
-        // Tạo constraint chiều cao cho Note Label và lưu trữ nó
-        noteLabelHeightConstraint = noteLabel.heightAnchor.constraint(equalToConstant: 0)
-        noteLabelHeightConstraint?.isActive = true
         
         NSLayoutConstraint.activate([
             // Stack View
@@ -167,7 +162,6 @@ class TextSelectionView: UIView {
     
     func addNote(note: String?) {
         self.noteLabel.text = note
-        self.noteLabelHeightConstraint?.constant = note == nil ? 0 : 30
     }
     
     func addQuestionText(text: String) {
@@ -256,7 +250,7 @@ class TextSelectionView: UIView {
         
         // Update tapped option view
         tappedView.layer.borderWidth = 2
-        tappedView.layer.borderColor = UIColor.systemPink.cgColor
+        tappedView.layer.borderColor = UIColor.systemBlue.cgColor
         tappedView.backgroundColor = .white
         
         // Set the new selected option

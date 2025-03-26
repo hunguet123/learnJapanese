@@ -69,7 +69,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                         textSelection.addNote(note: note)
                     }
                     
-                    if let options = questionContent["options"] as? [[String: Any]] {
+                    if let options = (questionContent["options"] as? [[String: Any]])?.shuffled() {
                         var correctAnswer: String = ""
                         for index in 0..<options.count {
                             if let text = options[index]["text"] as? String {
@@ -98,7 +98,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     readingView.onReadingResult = { isCorrect in
                         self.delegate?.didTapNextQuestion(isCorrect: isCorrect,
                                                           questionId: question.questionId,
-                                                          correctAnswer: content?.questionText ?? "")
+                                                          correctAnswer: "")
                     }
                     
                     readingView.onError = { error in

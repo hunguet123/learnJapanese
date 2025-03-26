@@ -8,7 +8,7 @@ public struct ReadingModel: Codable {
     var questionType: String
     var questionText: String
     var audio: String
-    var image: String
+    var image: String? // Thay đổi thành optional
     var correctAnswer: String
     var translation: String
     
@@ -46,7 +46,7 @@ public struct ReadingModel: Codable {
         questionType: String = "reading",
         questionText: String,
         audio: String,
-        image: String,
+        image: String? = nil, // Thêm giá trị mặc định là nil
         correctAnswer: String,
         translation: String
     ) {
@@ -107,7 +107,7 @@ public class JapaneseReadingView: UIView {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private var audioPlayer: AVAudioPlayer?
-    private var similarityThreshold: Double = 0.8
+    private var similarityThreshold: Double = 0.7
     private var networkMonitor = NWPathMonitor()
     private var offlineRecognitionActive = false
     private var lastRecognizedText: String = ""
@@ -180,7 +180,7 @@ public class JapaneseReadingView: UIView {
         button.contentHorizontalAlignment = .fill
         return button
     }()
-        
+    
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
@@ -224,7 +224,7 @@ public class JapaneseReadingView: UIView {
         contentStack.addArrangedSubview(translationLabel)
         contentStack.addArrangedSubview(statusLabel)
         contentStack.addArrangedSubview(controlStack)
-    
+        
         controlStack.addArrangedSubview(speakerButton)
         controlStack.addArrangedSubview(microButton)
     }
@@ -242,7 +242,7 @@ public class JapaneseReadingView: UIView {
             controlStack.heightAnchor.constraint(equalToConstant: 60),
             speakerButton.heightAnchor.constraint(equalTo: controlStack.heightAnchor),
             speakerButton.widthAnchor.constraint(equalTo: speakerButton.heightAnchor),
-//            controlStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6),
+            //            controlStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6),
         ])
     }
     
@@ -287,7 +287,7 @@ public class JapaneseReadingView: UIView {
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.imageView.image = UIImage(named: content.image)
+            self.imageView.image = UIImage(named: content.image ?? "")
             self.textLabel.text = content.questionText
             self.translationLabel.text = content.translation
         }
@@ -331,44 +331,52 @@ public class JapaneseReadingView: UIView {
         // Reset biến lưu kết quả tạm thời
         lastRecognizedText = ""
         
-        // Khởi tạo lại audio engine
         audioEngine = AVAudioEngine()
+        
         guard let audioEngine = audioEngine,
               let speechRecognizer = speechRecognizer,
               speechRecognizer.isAvailable else {
+            let error = NSError(domain: "JapaneseReadingView",
+                                code: 1,
+                                userInfo: [NSLocalizedDescriptionKey: "Speech recognizer không khả dụng"])
+            onError?(error)
             return
         }
         
         do {
-            // Thiết lập audio session với cấu hình đầy đủ
-            try AVAudioSession.sharedInstance().setCategory(.record, mode: .measurement, options: .duckOthers)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            // Thiết lập audio session
+            try AVAudioSession.sharedInstance().setCategory(.record,
+                                                            mode: .measurement,
+                                                            options: .duckOthers)
+            try AVAudioSession.sharedInstance().setActive(true,
+                                                          options: .notifyOthersOnDeactivation)
             
-            // Chuẩn bị recognition request
+            // Cấu hình recognition request
             recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
             guard let recognitionRequest = recognitionRequest else {
                 throw NSError(domain: "JapaneseReadingView",
                               code: 3,
-                              userInfo: [NSLocalizedDescriptionKey: "Không thể tạo yêu cầu nhận dạng"])
+                              userInfo: [NSLocalizedDescriptionKey: "Không thể tạo recognition request"])
             }
             
-            // Thiết lập tùy chọn cho recognition request
             recognitionRequest.shouldReportPartialResults = true
             
-            // Kiểm tra xem thiết bị có hỗ trợ nhận dạng ngoại tuyến không
+            // Cấu hình cho nhận dạng offline và hiragana
             if #available(iOS 13, *) {
                 recognitionRequest.requiresOnDeviceRecognition = true
+                recognitionRequest.taskHint = .search
             }
             
-            // Lấy input node
+            // Thiết lập audio input
             let inputNode = audioEngine.inputNode
-            // Cài đặt tap trên input node với buffer size nhỏ hơn
             let recordingFormat = inputNode.outputFormat(forBus: 0)
-            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            inputNode.installTap(onBus: 0,
+                                 bufferSize: 1024,
+                                 format: recordingFormat) { buffer, _ in
                 self.recognitionRequest?.append(buffer)
             }
             
-            // Bắt đầu audio engine
+            // Khởi động audio engine
             audioEngine.prepare()
             try audioEngine.start()
             
@@ -389,7 +397,7 @@ public class JapaneseReadingView: UIView {
                         }
                     }
                     
-                    // Nếu là kết quả cuối cùng
+                    // Xử lý kết quả cuối cùng
                     if result.isFinal {
                         let finalText = self.lastRecognizedText
                         if !finalText.isEmpty {
@@ -399,29 +407,28 @@ public class JapaneseReadingView: UIView {
                     }
                 }
                 
-                // Xử lý lỗi
                 if let error = error {
                     self.handleRecognitionError(error)
                 }
             }
             
-            // Cập nhật trạng thái
+            // Cập nhật UI
             isRecording = true
             microButton.isSelected = true
             statusLabel.text = "Đang nghe..."
             statusLabel.textColor = .systemBlue
             statusLabel.isHidden = false
             
-            // Thêm timeout tự động
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
-                guard let self = self else { return }
-                if self.isRecording {
-                    self.stopRecording()
-                    if !self.lastRecognizedText.isEmpty {
-                        self.compareResult(self.lastRecognizedText)
-                    }
-                }
-            }
+            // Thêm timeout tự động (10 giây)
+            //            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            //                guard let self = self else { return }
+            //                if self.isRecording {
+            //                    self.stopRecording()
+            //                    if !self.lastRecognizedText.isEmpty {
+            //                        self.compareResult(self.lastRecognizedText)
+            //                    }
+            //                }
+            //            }
             
         } catch {
             onError?(error)
@@ -447,26 +454,29 @@ public class JapaneseReadingView: UIView {
     }
     
     private func stopRecording() {
-        // Kiểm tra nếu audioEngine đang chạy
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        
+        // Dừng và dọn dẹp audio engine
         if let audioEngine = audioEngine, audioEngine.isRunning {
             audioEngine.stop()
             audioEngine.inputNode.removeTap(onBus: 0)
         }
         
-        // Đảm bảo kết thúc request và task
-        self.recognitionRequest?.endAudio()
-        self.recognitionTask?.cancel()
-        self.recognitionTask?.finish()
+        // Hủy và dọn dẹp recognition task
+        recognitionRequest?.endAudio()
+        recognitionTask?.cancel()
+        recognitionTask?.finish()
         
-        // Reset các biến một cách rõ ràng
-        self.audioEngine = nil
-        self.recognitionRequest = nil
-        self.recognitionTask = nil
+        // Reset các biến
+        audioEngine = nil
+        recognitionRequest = nil
+        recognitionTask = nil
         
-        // Cập nhật trạng thái
-        self.isRecording = false
-        self.microButton.isSelected = false
+        // Cập nhật UI
+        isRecording = false
+        microButton.isSelected = false
         
+        // Deactivate audio session nếu không đang phát audio
         deactiveAudioSession()
     }
     
@@ -484,54 +494,74 @@ public class JapaneseReadingView: UIView {
     // MARK: - Result Handling
     private func compareResult(_ recognizedText: String) {
         guard let content = content else { return }
+        let normalizedRecognized = normalizeJapaneseText(recognizedText)
+        let normalizedCorrect = normalizeJapaneseText(content.correctAnswer)
         
-        let similarity = calculateSimilarity(between: recognizedText, and: content.correctAnswer)
-        onReadingResult?(similarity >= similarityThreshold)
-        statusLabel.isHidden = true
+        let similarity = calculateSimilarity(between: normalizedRecognized, and: normalizedCorrect)
+        let isCorrect = similarity >= similarityThreshold
+        
+        onReadingResult?(isCorrect)
+        
+        DispatchQueue.main.async {
+            self.statusLabel.isHidden = true
+        }
+    }
+    
+    private func normalizeJapaneseText(_ text: String) -> String {
+        let japanesePunctuation = CharacterSet(charactersIn: "、。！？「」『』【】・（）〜ー…")
+        
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let components = trimmed.components(separatedBy: japanesePunctuation)
+        let cleanedText = components.joined()
+        
+        let hiragana = cleanedText.applyingTransform(.hiraganaToKatakana, reverse: true) ?? cleanedText
+        
+        return hiragana
     }
     
     private func calculateSimilarity(between str1: String, and str2: String) -> Double {
-        // Implement text similarity algorithm - Levenshtein distance
-        let distance = levenshteinDistance(str1.lowercased(), str2.lowercased())
-        let maxLength = max(str1.count, str2.count)
+        if str1 == str2 {
+            return 1.0
+        }
         
-        // Normalize to get similarity (0 to 1)
-        return 1.0 - Double(distance) / Double(maxLength)
+        if str1.isEmpty || str2.isEmpty {
+            return 0.0
+        }
+        
+        let distance = levenshteinDistance(str1, str2)
+        let maxLength = Double(max(str1.count, str2.count))
+        
+        return round((1.0 - Double(distance) / maxLength) * 100) / 100
     }
     
     private func levenshteinDistance(_ s1: String, _ s2: String) -> Int {
-        // Xử lý các trường hợp đặc biệt
-        if s1.isEmpty { return s2.count }
-        if s2.isEmpty { return s1.count }
-        if s1 == s2 { return 0 }
+        let arr1 = Array(s1)
+        let arr2 = Array(s2)
         
-        // Sử dụng chuỗi ngắn hơn làm cột để giảm không gian bộ nhớ
-        let (shorter, longer) = s1.count <= s2.count ? (Array(s1), Array(s2)) : (Array(s2), Array(s1))
-        let m = shorter.count
-        let n = longer.count
+        var matrix = Array(repeating: Array(repeating: 0, count: arr2.count + 1), count: arr1.count + 1)
         
-        // Chỉ cần lưu trữ hai hàng của ma trận thay vì toàn bộ ma trận
-        var prevRow = Array(0...m)
-        var currRow = Array(repeating: 0, count: m + 1)
-        
-        for i in 1...n {
-            currRow[0] = i
-            
-            for j in 1...m {
-                let cost = longer[i-1] == shorter[j-1] ? 0 : 1
-                currRow[j] = min(
-                    prevRow[j] + 1,        // Xóa
-                    currRow[j-1] + 1,      // Chèn
-                    prevRow[j-1] + cost    // Thay thế hoặc giữ nguyên
-                )
-            }
-            
-            // Hoán đổi hàng cho lần lặp tiếp theo
-            (prevRow, currRow) = (currRow, prevRow)
+        for i in 0...arr1.count {
+            matrix[i][0] = i
+        }
+        for j in 0...arr2.count {
+            matrix[0][j] = j
         }
         
-        // Kết quả cuối cùng nằm trong prevRow vì đã hoán đổi ở lần lặp cuối
-        return prevRow[m]
+        for i in 1...arr1.count {
+            for j in 1...arr2.count {
+                if arr1[i-1] == arr2[j-1] {
+                    matrix[i][j] = matrix[i-1][j-1]
+                } else {
+                    matrix[i][j] = min(
+                        matrix[i-1][j] + 1,
+                        matrix[i][j-1] + 1,
+                        matrix[i-1][j-1] + 1
+                    )
+                }
+            }
+        }
+        
+        return matrix[arr1.count][arr2.count]
     }
 }
 
