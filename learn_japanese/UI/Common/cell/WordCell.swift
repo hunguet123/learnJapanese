@@ -1,3 +1,5 @@
+import UIKit
+
 class WordCell: UICollectionViewCell {
     let label: UILabel = {
         let label = UILabel()

@@ -412,24 +412,11 @@ public class JapaneseReadingView: UIView {
                 }
             }
             
-            // Cập nhật UI
             isRecording = true
             microButton.isSelected = true
             statusLabel.text = "Đang nghe..."
             statusLabel.textColor = .systemBlue
             statusLabel.isHidden = false
-            
-            // Thêm timeout tự động (10 giây)
-            //            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
-            //                guard let self = self else { return }
-            //                if self.isRecording {
-            //                    self.stopRecording()
-            //                    if !self.lastRecognizedText.isEmpty {
-            //                        self.compareResult(self.lastRecognizedText)
-            //                    }
-            //                }
-            //            }
-            
         } catch {
             onError?(error)
         }

@@ -177,14 +177,15 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                 }
             } else {
                 // TODO: remove fake button
-                let button = UIButton()
-                button.setTitle("Đang phát triển", for: .normal)
-                button.backgroundColor = .systemGray
-                button.addAction(UIAction { [weak self] _ in
-                    self?.didTapNexButton(questionId: question.questionId)
-                }, for: .touchUpInside)
-                button.fixInView(content)
-                
+//                let button = UIButton()
+//                button.setTitle("Đang phát triển", for: .normal)
+//                button.backgroundColor = .systemGray
+//                button.addAction(UIAction { [weak self] _ in
+//                    self?.didTapNexButton(questionId: question.questionId)
+//                }, for: .touchUpInside)
+//                button.fixInView(content)
+                let writingView = JapaneseCharacterWritingView()
+                writingView.fixInView(content)
             }
         }
     }
