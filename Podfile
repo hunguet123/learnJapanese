@@ -13,10 +13,10 @@ target 'learn_japanese' do
   pod 'SQLite.swift', '0.15.3'
   
   # Firebase pods - sử dụng phiên bản mới hơn và cấu trúc đơn giản
-  pod 'Firebase/Database'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Storage'
+  pod 'Firebase/Database', '10.29.0'
+  pod 'Firebase/Auth', '10.29.0'
+  pod 'Firebase/Firestore', '10.29.0'
+  pod 'Firebase/Storage', '10.29.0'
   # pod 'Firebase/Analytics' # Thêm nếu bạn cần Analytics
   # pod 'Firebase/Messaging' # Thêm nếu bạn cần Cloud Messaging (FCM)
   # ... thêm các dịch vụ Firebase khác nếu cần
@@ -27,7 +27,7 @@ target 'learn_japanese' do
   pod 'GoogleSignIn'
   
   # GoogleMLKit
-  pod 'GoogleMLKit/DigitalInkRecognition'
+  pod 'GoogleMLKit/DigitalInkRecognition', '4.0.0'
   
   post_install do |installer|
     installer.pods_project.targets.each do |target|

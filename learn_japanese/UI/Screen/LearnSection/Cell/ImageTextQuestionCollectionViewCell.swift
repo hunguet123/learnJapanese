@@ -5,6 +5,8 @@
 //  Created by Hưng Hà Quang on 11/8/24.
 //
 
+import MLKitDigitalInkRecognition
+
 import UIKit
 
 protocol ImageTextQuestionCollectionViewCellDelegate: AnyObject {
@@ -171,21 +173,32 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     }
                     
                     imageSelectionView.fixInView(content)
+                case QuestionConstants.writing:
+                    let writingView = JapaneseCharacterWritingView()
+                    if let writingQuestionModel = WritingQuestionModel.fromJson(questionContentString) {
+                        self.audioName = writingQuestionModel.audio
+                        writingView.setData(writingQuestion: writingQuestionModel)
+                        writingView.onCheckResult = { [weak self] isCorrect, candidates, expectedCharacter in
+                            self?.delegate?.didTapNextQuestion(isCorrect: isCorrect,
+                                                               questionId: question.questionId,
+                                                               correctAnswer: writingQuestionModel.correctAnswer)
+                        }
+                        writingView.fixInView(content)
+                    }
                 default:
                     audioName = nil
                     break
                 }
             } else {
                 // TODO: remove fake button
-//                let button = UIButton()
-//                button.setTitle("Đang phát triển", for: .normal)
-//                button.backgroundColor = .systemGray
-//                button.addAction(UIAction { [weak self] _ in
-//                    self?.didTapNexButton(questionId: question.questionId)
-//                }, for: .touchUpInside)
-//                button.fixInView(content)
-                let writingView = JapaneseCharacterWritingView()
-                writingView.fixInView(content)
+                let button = UIButton()
+                button.setTitle("Đang phát triển", for: .normal)
+                button.backgroundColor = .systemGray
+                button.addAction(UIAction { [weak self] _ in
+                    self?.didTapNexButton(questionId: question.questionId)
+                }, for: .touchUpInside)
+                button.fixInView(content)
+
             }
         }
     }

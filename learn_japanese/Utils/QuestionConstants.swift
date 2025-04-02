@@ -14,4 +14,5 @@ struct QuestionConstants {
     static let matching = "matching"
     static let wordMathing = "word_matching"
     static let imageSelection = "image_selection"
+    static let writing = "writing"
 }
