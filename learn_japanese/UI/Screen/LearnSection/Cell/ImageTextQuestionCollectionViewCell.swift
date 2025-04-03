@@ -175,7 +175,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     
                     imageSelectionView.fixInView(content)
                 case QuestionConstants.writing:
-                    writingView = JapaneseCharacterWritingView()
+                    self.writingView = JapaneseCharacterWritingView()
                     if let writingQuestionModel = WritingQuestionModel.fromJson(questionContentString) {
                         self.audioName = writingQuestionModel.audio
                         writingView?.setData(writingQuestion: writingQuestionModel)
@@ -191,6 +191,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     break
                 }
             } else {
+                audioName = nil
                 // TODO: remove fake button
                 let button = UIButton()
                 button.setTitle("Đang phát triển", for: .normal)

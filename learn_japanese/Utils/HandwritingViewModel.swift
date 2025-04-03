@@ -7,18 +7,32 @@
 
 import Foundation
 
+struct WritingModel: Equatable {
+    var character: String = ""
+    var score: Double = 0.0
+    
+    init(character: String, score: Double) {
+        self.character = character
+        self.score = score
+    }
+    
+    init() {
+        
+    }
+}
+
 class HandwritingViewModel {
     
     var resultUpdated: (() -> Void)?
     
-    private var characters = [String]() {
+    private var writingModels = [WritingModel]() {
         didSet {
             resultUpdated?()
         }
     }
     
-    var results: [String] {
-        return characters
+    var results: [WritingModel] {
+        return writingModels
     }
     
     private var allStrokes = [[NSValue]]()
@@ -42,19 +56,19 @@ class HandwritingViewModel {
     func clear() {
         allStrokes.removeAll()
         processedStrokeCount = 0
-        characters = [String]()
+        writingModels = [WritingModel]()
         recognizer?.clear()
     }
     
     func resultCount() -> Int {
-        return characters.count
+        return writingModels.count
     }
     
-    func result(atIndex: Int) -> String {
-        if (atIndex >= characters.count) {
-            return ""
+    func result(atIndex: Int) -> WritingModel {
+        if (atIndex >= writingModels.count) {
+            return WritingModel()
         }
-        return characters[atIndex]
+        return writingModels[atIndex]
     }
     
     private func recognize() {
@@ -65,7 +79,7 @@ class HandwritingViewModel {
         }
 
         if results != nil {
-            characters = results!.map { $0.value }
+            writingModels = results!.map { WritingModel(character: $0.value, score: Double(truncating: $0.score)) }
         }
     }
 }

@@ -258,7 +258,7 @@ class JapaneseCharacterWritingView: UIView {
     
     // MARK: - Actions
     @objc private func checkButtonTapped() {
-        let isCorrect = viewModel.result(atIndex: 0) == self.currentCharacter
+        let isCorrect = viewModel.result(atIndex: 0).character == self.currentCharacter
         self.onCheckResult?(isCorrect)
         //        guard let recognizer = recognizer else { return }
         //
