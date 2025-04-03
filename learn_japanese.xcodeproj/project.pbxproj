@@ -100,6 +100,8 @@
 		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
 		DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10602C7CC119002969E8 /* DateExtensions.swift */; };
 		DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */; };
+		DF81C3CE2D9EE29C00B460FB /* ZinniaCocoaTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF81C3C52D9EE28E00B460FB /* ZinniaCocoaTouch.framework */; };
+		DF81C3CF2D9EE2BC00B460FB /* ZinniaCocoaTouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF81C3C52D9EE28E00B460FB /* ZinniaCocoaTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DF8271942CAC3BE700E27690 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */; };
 		DF8E82BF2D8C593A008E82D3 /* リ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF8E82B82D8C593A008E82D3 /* リ.mp3 */; };
 		DF8E82C02D8C593A008E82D3 /* コ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF8E829A2D8C593A008E82D3 /* コ.mp3 */; };
@@ -153,6 +155,8 @@
 		DF91DA682C4EA1F500C78640 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA652C4EA1F500C78640 /* SignInViewController.swift */; };
 		DF91DA6B2C4EA20400C78640 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */; };
 		DF91DA6C2C4EA20400C78640 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA692C4EA20400C78640 /* SignUpViewController.swift */; };
+		DF9920D42D9E12DD00B4CC05 /* HandwritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9920D32D9E12DD00B4CC05 /* HandwritingViewModel.swift */; };
+		DF9920D62D9E15D100B4CC05 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = DF9920D52D9E15D100B4CC05 /* Bridging-Header.h */; };
 		DF997C3D2D59048500980979 /* QuestionProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997C3C2D59048500980979 /* QuestionProgressModel.swift */; };
 		DF997C3F2D5CF4FD00980979 /* AudioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */; };
 		DF997CCD2D5CF94500980979 /* に.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF997CB42D5CF94500980979 /* に.mp3 */; };
@@ -348,14 +352,49 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DFBA80562C402FA200467A58 /* PBXContainerItemProxy */ = {
+		DF81C3BD2D9EE28E00B460FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DFBA80372C402FA000467A58 /* Project object */;
+			containerPortal = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = DFBA803E2C402FA000467A58;
-			remoteInfo = learn_japanese;
+			remoteGlobalIDString = B72741D31AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouch;
 		};
-		DFBA80602C402FA200467A58 /* PBXContainerItemProxy */ = {
+		DF81C3C42D9EE28E00B460FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B72741D41AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouch;
+		};
+		DF81C3C62D9EE28E00B460FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B72741DF1AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouchTests;
+		};
+		DF81C3C82D9EE28E00B460FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B725FBD01B05BD76002AAB18;
+			remoteInfo = ZinniaCocoa;
+		};
+		DF81C3CA2D9EE28E00B460FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B725FBDA1B05BD76002AAB18;
+			remoteInfo = ZinniaCocoaTests;
+		};
+		DF81C3CC2D9EE28E00B460FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A94D6551F8E17E000234437;
+			remoteInfo = ZinniaCocoaWatch;
+		};
+		DFBA80562C402FA200467A58 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DFBA80372C402FA000467A58 /* Project object */;
 			proxyType = 1;
@@ -364,12 +403,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DF247ACF2D9ED43800ED4733 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF81C3CF2D9EE2BC00B460FB /* ZinniaCocoaTouch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		28003AE0F42626834435D767 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
 		3E1E0344839F33859B94BB12 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B28FC63887622C9A91802A /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
 		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		DF05B1562D9EB4A0005D08E7 /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
 		DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF0B328A2C45720600C1BC77 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DF0B328E2C457CE100C1BC77 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -460,6 +514,8 @@
 		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		DF7B10602C7CC119002969E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = Zinnia/ZinniaCocoaTouch.xcodeproj; sourceTree = "<group>"; };
+		DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = /Users/hunghaquang/UET/IOS/learn_japanese/Zinnia/ZinniaCocoaTouch.xcodeproj; sourceTree = "<absolute>"; };
 		DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		DF8E82912D8C593A008E82D3 /* ア.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ア.mp3"; sourceTree = "<group>"; };
 		DF8E82922D8C593A008E82D3 /* イ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "イ.mp3"; sourceTree = "<group>"; };
@@ -513,6 +569,8 @@
 		DF91DA662C4EA1F500C78640 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		DF91DA692C4EA20400C78640 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DF91DA6A2C4EA20400C78640 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		DF9920D32D9E12DD00B4CC05 /* HandwritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingViewModel.swift; sourceTree = "<group>"; };
+		DF9920D52D9E15D100B4CC05 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		DF997C3C2D59048500980979 /* QuestionProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProgressModel.swift; sourceTree = "<group>"; };
 		DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUtils.swift; sourceTree = "<group>"; };
 		DF997C9F2D5CF94500980979 /* あ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あ.mp3"; sourceTree = "<group>"; };
@@ -725,6 +783,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF81C3CE2D9EE29C00B460FB /* ZinniaCocoaTouch.framework in Frameworks */,
 				92022BF23490E5F3ABE70557 /* Pods_learn_japanese.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +808,7 @@
 		4697AC2322CBEAF4CE8739D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF05B1562D9EB4A0005D08E7 /* CoreAudioTypes.framework */,
 				3E1E0344839F33859B94BB12 /* Pods_learn_japanese.framework */,
 			);
 			name = Frameworks;
@@ -792,6 +852,14 @@
 				DF1A5D572C65079300ADD61E /* LearnSectionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF2BAABE2D9E01F4009A7612 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DF9920D52D9E15D100B4CC05 /* Bridging-Header.h */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		DF35E4862C68F2E20019D9C9 /* Cell */ = {
@@ -861,6 +929,18 @@
 				DF3875F32D108B94005BBE05 /* Sqlite */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DF81C3BB2D9EE28E00B460FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF81C3C52D9EE28E00B460FB /* ZinniaCocoaTouch.framework */,
+				DF81C3C72D9EE28E00B460FB /* ZinniaCocoaTouchTests.xctest */,
+				DF81C3C92D9EE28E00B460FB /* ZinniaCocoa.framework */,
+				DF81C3CB2D9EE28E00B460FB /* ZinniaCocoaTests.xctest */,
+				DF81C3CD2D9EE28E00B460FB /* ZinniaCocoaWatch.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		DF8271922CAC3B6D00E27690 /* Dictionary */ = {
@@ -1215,12 +1295,15 @@
 		DFBA80362C402FA000467A58 = {
 			isa = PBXGroup;
 			children = (
+				DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */,
+				DF2BAABE2D9E01F4009A7612 /* SupportingFiles */,
 				DFBA80412C402FA000467A58 /* learn_japanese */,
 				DFBA80582C402FA200467A58 /* learn_japaneseTests */,
 				DFBA80622C402FA200467A58 /* learn_japaneseUITests */,
 				DFBA80402C402FA000467A58 /* Products */,
 				C9629DCF324ACD8085EFB02E /* Pods */,
 				4697AC2322CBEAF4CE8739D2 /* Frameworks */,
+				DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1348,6 +1431,7 @@
 				DFC523322D36B2B400B3FA6B /* QuestionConstants.swift */,
 				DF997C3E2D5CF4FD00980979 /* AudioUtils.swift */,
 				DF997CFF2D63816E00980979 /* ApiStatus.swift */,
+				DF9920D32D9E12DD00B4CC05 /* HandwritingViewModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1479,10 +1563,12 @@
 				DFBA803D2C402FA000467A58 /* Resources */,
 				B5DB0ECA8E179B88BF5EDEF8 /* [CP] Embed Pods Frameworks */,
 				B21D1E09E49AB7A514798F63 /* [CP] Copy Pods Resources */,
+				DF247ACF2D9ED43800ED4733 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DF81C3BE2D9EE28E00B460FB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DFE59EF52CD2859000011DFC /* Data */,
@@ -1521,7 +1607,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DFBA80612C402FA200467A58 /* PBXTargetDependency */,
 			);
 			name = learn_japaneseUITests;
 			productName = learn_japaneseUITests;
@@ -1540,7 +1625,7 @@
 				TargetAttributes = {
 					DFBA803E2C402FA000467A58 = {
 						CreatedOnToolsVersion = 15.4;
-						LastSwiftMigration = 1600;
+						LastSwiftMigration = 1620;
 					};
 					DFBA80542C402FA200467A58 = {
 						CreatedOnToolsVersion = 15.4;
@@ -1564,6 +1649,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DFBA80402C402FA000467A58 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DF81C3BB2D9EE28E00B460FB /* Products */;
+					ProjectRef = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DFBA803E2C402FA000467A58 /* learn_japanese */,
@@ -1572,6 +1663,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DF81C3C52D9EE28E00B460FB /* ZinniaCocoaTouch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoaTouch.framework;
+			remoteRef = DF81C3C42D9EE28E00B460FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DF81C3C72D9EE28E00B460FB /* ZinniaCocoaTouchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZinniaCocoaTouchTests.xctest;
+			remoteRef = DF81C3C62D9EE28E00B460FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DF81C3C92D9EE28E00B460FB /* ZinniaCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoa.framework;
+			remoteRef = DF81C3C82D9EE28E00B460FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DF81C3CB2D9EE28E00B460FB /* ZinniaCocoaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZinniaCocoaTests.xctest;
+			remoteRef = DF81C3CA2D9EE28E00B460FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DF81C3CD2D9EE28E00B460FB /* ZinniaCocoaWatch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoaWatch.framework;
+			remoteRef = DF81C3CC2D9EE28E00B460FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DFBA803D2C402FA000467A58 /* Resources */ = {
@@ -1945,6 +2074,7 @@
 				DFF555FF2D75E6B5007A4035 /* AnswerModalViewController.swift in Sources */,
 				DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */,
 				DF997D002D63816E00980979 /* ApiStatus.swift in Sources */,
+				DF9920D42D9E12DD00B4CC05 /* HandwritingViewModel.swift in Sources */,
 				DF3876162D19AB09005BBE05 /* ExerciseDTO.swift in Sources */,
 				DFF809312C5E4AE500F1EB2C /* HomeViewControllerExtension.swift in Sources */,
 				DFFC61612D9AD47800FFC01B /* JapaneseCharacterWritingView.swift in Sources */,
@@ -1994,6 +2124,7 @@
 				DF0B32952C480FB500C1BC77 /* DefaultButton.swift in Sources */,
 				DFAD7A0C2D09F91A0085E331 /* SqliteHelper.swift in Sources */,
 				DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */,
+				DF9920D62D9E15D100B4CC05 /* Bridging-Header.h in Sources */,
 				DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2018,15 +2149,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DF81C3BE2D9EE28E00B460FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZinniaCocoaTouch;
+			targetProxy = DF81C3BD2D9EE28E00B460FB /* PBXContainerItemProxy */;
+		};
 		DFBA80572C402FA200467A58 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFBA803E2C402FA000467A58 /* learn_japanese */;
 			targetProxy = DFBA80562C402FA200467A58 /* PBXContainerItemProxy */;
-		};
-		DFBA80612C402FA200467A58 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFBA803E2C402FA000467A58 /* learn_japanese */;
-			targetProxy = DFBA80602C402FA200467A58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2101,6 +2232,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -2157,6 +2289,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2173,6 +2306,48 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2J99UR45ND;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKLoginKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FacebookCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FacebookLogin\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAppCheckInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuthInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreExtension\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseDatabase\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseSharedSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseStorage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilitiesComponents\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/L10n-swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RecaptchaInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLite.swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/MLKitCommon/Frameworks\"",
+					"\"${PODS_ROOT}/MLKitDigitalInkRecognition/Frameworks\"",
+					"\"${PODS_ROOT}/MLKitMDD/Frameworks\"",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = learn_japanese/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Learn Japanese";
@@ -2190,7 +2365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2209,6 +2384,50 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2J99UR45ND;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKLoginKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FacebookCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FacebookLogin\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAppCheckInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuthInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreExtension\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseDatabase\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseSharedSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseStorage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilitiesComponents\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/L10n-swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RecaptchaInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLite.swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/MLKitCommon/Frameworks\"",
+					"\"${PODS_ROOT}/MLKitDigitalInkRecognition/Frameworks\"",
+					"\"${PODS_ROOT}/MLKitMDD/Frameworks\"",
+					"$(BUILT_PRODUCTS_DIR)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = learn_japanese/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Learn Japanese";
@@ -2226,7 +2445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

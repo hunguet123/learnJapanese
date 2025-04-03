@@ -38,11 +38,11 @@ struct WritingQuestionModel: Codable {
     }
 }
 
-class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
+class JapaneseCharacterWritingView: UIView {
     // MARK: - Properties
     
     // Closure callback cho kết quả kiểm tra
-    var onCheckResult: ((Bool, [DigitalInkRecognitionCandidate], String) -> Void)?
+    var onCheckResult: ((Bool) -> Void)?
     
     private let questionLabel: UILabel = {
         let label = UILabel()
@@ -85,11 +85,16 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
         return button
     }()
     
-    private lazy var writingArea: DrawingView = {
+    private lazy var drawableView: DrawingView = {
         let view = DrawingView()
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    private lazy var viewModel: HandwritingViewModel = {
+        let vm = HandwritingViewModel(canvas: drawableView)
+        return vm
     }()
     
     private let checkButton: UIButton = {
@@ -122,7 +127,7 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
         return button
     }()
     
-    private var recognizer: DigitalInkRecognizer?
+    //    private var recognizer: DigitalInkRecognizer?
     private var currentCharacter: String = ""
     private var audioUrl: String = ""
     private var player: AVPlayer?
@@ -140,10 +145,6 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
         setupRecognizer()
     }
     
-    func didDraw(stroke: [NSValue]) {
-        
-    }
-    
     // MARK: - Setup
     private func setupView() {
         backgroundColor = .white
@@ -158,7 +159,7 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
         addSubview(questionLabel)
         addSubview(audioButton)
         addSubview(replayVideoButton)
-        addSubview(writingArea)
+        addSubview(drawableView)
         addSubview(checkButton)
         addSubview(clearButton)
         addSubview(undoButton)
@@ -185,25 +186,25 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
             replayVideoButton.heightAnchor.constraint(equalToConstant: 44),
             
             // Writing Area - Đặt bên dưới videoContainerView
-            writingArea.topAnchor.constraint(equalTo: videoContainerView.bottomAnchor, constant: 20),
-            writingArea.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            writingArea.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            writingArea.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
+            drawableView.topAnchor.constraint(equalTo: videoContainerView.bottomAnchor, constant: 20),
+            drawableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            drawableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            drawableView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
             
             // Undo Button
-            undoButton.topAnchor.constraint(equalTo: writingArea.bottomAnchor, constant: 20),
+            undoButton.topAnchor.constraint(equalTo: drawableView.bottomAnchor, constant: 20),
             undoButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             undoButton.widthAnchor.constraint(equalToConstant: 44),
             undoButton.heightAnchor.constraint(equalToConstant: 44),
             
             // Check Button
-            checkButton.topAnchor.constraint(equalTo: writingArea.bottomAnchor, constant: 20),
+            checkButton.topAnchor.constraint(equalTo: drawableView.bottomAnchor, constant: 20),
             checkButton.leadingAnchor.constraint(equalTo: undoButton.trailingAnchor, constant: 12),
             checkButton.trailingAnchor.constraint(equalTo: clearButton.leadingAnchor, constant: -12),
             checkButton.heightAnchor.constraint(equalToConstant: 44),
             
             // Clear Button
-            clearButton.topAnchor.constraint(equalTo: writingArea.bottomAnchor, constant: 20),
+            clearButton.topAnchor.constraint(equalTo: drawableView.bottomAnchor, constant: 20),
             clearButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             clearButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
             clearButton.heightAnchor.constraint(equalToConstant: 44),
@@ -222,16 +223,17 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
     }
     
     private func setupRecognizer() {
-        let identifier = DigitalInkRecognitionModelIdentifier(forLanguageTag: "ja")!
-        let model = DigitalInkRecognitionModel(modelIdentifier: identifier)
-        let conditions = ModelDownloadConditions(allowsCellularAccess: true,
-                                                 allowsBackgroundDownloading: true)
-        
-        ModelManager.modelManager().download(model, conditions: conditions)
-        
-        // Tạo recognizer thông qua factory method
-        let options = DigitalInkRecognizerOptions(model: model)
-        self.recognizer = DigitalInkRecognizer.digitalInkRecognizer(options: options)
+        drawableView.delegate = self
+        //        let identifier = DigitalInkRecognitionModelIdentifier(forLanguageTag: "ja")!
+        //        let model = DigitalInkRecognitionModel(modelIdentifier: identifier)
+        //        let conditions = ModelDownloadConditions(allowsCellularAccess: true,
+        //                                                 allowsBackgroundDownloading: true)
+        //
+        //        ModelManager.modelManager().download(model, conditions: conditions)
+        //
+        //        // Tạo recognizer thông qua factory method
+        //        let options = DigitalInkRecognizerOptions(model: model)
+        //        self.recognizer = DigitalInkRecognizer.digitalInkRecognizer(options: options)
     }
     
     // MARK: - Public Methods
@@ -243,33 +245,39 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
         if let videoURL = Bundle.main.url(forResource: writingQuestion.animation, withExtension: "mp4") {
             player = AVPlayer(url: videoURL)
             videoPlayerLayer.player = player
-            player?.play()
         }
         
         // Xóa vùng vẽ
-        writingArea.clear()
+        drawableView.clear()
+    }
+    
+    public func playAnimation() {
+        player?.seek(to: .zero)
+        player?.play()
     }
     
     // MARK: - Actions
     @objc private func checkButtonTapped() {
-        guard let recognizer = recognizer else { return }
+        let isCorrect = viewModel.result(atIndex: 0) == self.currentCharacter
+        self.onCheckResult?(isCorrect)
+        //        guard let recognizer = recognizer else { return }
+        //
+        //        let ink = Ink(strokes: drawableView.getStrokes())
         
-        let ink = Ink(strokes: writingArea.getStrokes())
-    
-        recognizer.recognize(ink: ink) { [weak self] result, error in
-            guard let self = self, let result = result, error == nil else { return }
-            
-            // Lấy các kết quả nhận dạng hàng đầu
-            let candidates = result.candidates.prefix(3)
-            
-            // Kiểm tra xem kết quả có chứa ký tự hiện tại không
-            let isCorrect = candidates.first?.text == self.currentCharacter
-            
-            DispatchQueue.main.async {
-                // Gọi callback thay vì hiển thị kết quả trực tiếp
-                self.onCheckResult?(isCorrect, Array(candidates), self.currentCharacter)
-            }
-        }
+        //        recognizer.recognize(ink: ink) { [weak self] result, error in
+        //            guard let self = self, let result = result, error == nil else { return }
+        //
+        //            // Lấy các kết quả nhận dạng hàng đầu
+        //            let candidates = result.candidates.prefix(3)
+        //
+        //            // Kiểm tra xem kết quả có chứa ký tự hiện tại không
+        //            let isCorrect = candidates.first?.text == self.currentCharacter
+        //
+        //            DispatchQueue.main.async {
+        //                // Gọi callback thay vì hiển thị kết quả trực tiếp
+        //                self.onCheckResult?(isCorrect, Array(candidates), self.currentCharacter)
+        //            }
+        //        }
     }
     
     @objc private func audioButtonTapped() {
@@ -277,11 +285,17 @@ class JapaneseCharacterWritingView: UIView, DrawableViewDelegate {
     }
     
     @objc private func clearButtonTapped() {
-        writingArea.clear()
+        drawableView.clear()
+        viewModel.clear()
     }
     
     @objc private func undoButtonTapped() {
-        writingArea.undo()
+        drawableView.undo()
+        viewModel.clear()
+        let strokes = drawableView.strokes.map { $0 as! [NSValue] }
+        if strokes.count > 0 {
+            viewModel.add(strokes)
+        }
     }
     
     @objc private func replayVideoTapped() {
@@ -300,5 +314,11 @@ extension UIView {
         } else {
             return nil
         }
+    }
+}
+
+extension JapaneseCharacterWritingView: DrawableViewDelegate {
+    func didDraw(stroke: [NSValue]) {
+        viewModel.add(stroke)
     }
 }

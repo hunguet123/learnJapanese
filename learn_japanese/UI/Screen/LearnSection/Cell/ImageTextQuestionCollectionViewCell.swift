@@ -20,6 +20,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
     
     var delegate: ImageTextQuestionCollectionViewCellDelegate?
     private var question: QuestionModel?
+    private var writingView: JapaneseCharacterWritingView?
     private var audioName: String?
     
     override func awakeFromNib() {
@@ -174,16 +175,16 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     
                     imageSelectionView.fixInView(content)
                 case QuestionConstants.writing:
-                    let writingView = JapaneseCharacterWritingView()
+                    writingView = JapaneseCharacterWritingView()
                     if let writingQuestionModel = WritingQuestionModel.fromJson(questionContentString) {
                         self.audioName = writingQuestionModel.audio
-                        writingView.setData(writingQuestion: writingQuestionModel)
-                        writingView.onCheckResult = { [weak self] isCorrect, candidates, expectedCharacter in
+                        writingView?.setData(writingQuestion: writingQuestionModel)
+                        writingView?.onCheckResult = { [weak self] isCorrect in
                             self?.delegate?.didTapNextQuestion(isCorrect: isCorrect,
                                                                questionId: question.questionId,
                                                                correctAnswer: writingQuestionModel.correctAnswer)
                         }
-                        writingView.fixInView(content)
+                        writingView?.fixInView(content)
                     }
                 default:
                     audioName = nil
@@ -207,6 +208,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
         if let audioName = self.audioName {
             AudioUtils.shared.playSound(filename: audioName)
         }
+        writingView?.playAnimation()
     }
     
     // TODO: remove fake button

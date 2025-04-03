@@ -103,7 +103,7 @@ class TrainerImpl: public Trainer {
     if (!fn) {
       return false;
     }
-      x_.push_back(std::make_pair(y, fn));
+    x_.push_back(std::make_pair(y, fn));
     return true;
   }
 
