@@ -401,6 +401,41 @@
 			remoteGlobalIDString = DFBA803E2C402FA000467A58;
 			remoteInfo = learn_japanese;
 		};
+		DFFA07D22DA0D2A800409C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B72741D41AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouch;
+		};
+		DFFA07D42DA0D2A800409C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B72741DF1AA5643900914B7C;
+			remoteInfo = ZinniaCocoaTouchTests;
+		};
+		DFFA07D62DA0D2A800409C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B725FBD01B05BD76002AAB18;
+			remoteInfo = ZinniaCocoa;
+		};
+		DFFA07D82DA0D2A800409C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B725FBDA1B05BD76002AAB18;
+			remoteInfo = ZinniaCocoaTests;
+		};
+		DFFA07DA2DA0D2A800409C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A94D6551F8E17E000234437;
+			remoteInfo = ZinniaCocoaWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1541,6 +1576,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DFFA07CB2DA0D2A800409C55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFFA07D32DA0D2A800409C55 /* ZinniaCocoaTouch.framework */,
+				DFFA07D52DA0D2A800409C55 /* ZinniaCocoaTouchTests.xctest */,
+				DFFA07D72DA0D2A800409C55 /* ZinniaCocoa.framework */,
+				DFFA07D92DA0D2A800409C55 /* ZinniaCocoaTests.xctest */,
+				DFFA07DB2DA0D2A800409C55 /* ZinniaCocoaWatch.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DFFF30D92C52A8A600DADE4A /* LevelSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1654,6 +1701,10 @@
 					ProductGroup = DF81C3BB2D9EE28E00B460FB /* Products */;
 					ProjectRef = DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */;
 				},
+				{
+					ProductGroup = DFFA07CB2DA0D2A800409C55 /* Products */;
+					ProjectRef = DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1698,6 +1749,41 @@
 			fileType = wrapper.framework;
 			path = ZinniaCocoaWatch.framework;
 			remoteRef = DF81C3CC2D9EE28E00B460FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFFA07D32DA0D2A800409C55 /* ZinniaCocoaTouch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoaTouch.framework;
+			remoteRef = DFFA07D22DA0D2A800409C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFFA07D52DA0D2A800409C55 /* ZinniaCocoaTouchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZinniaCocoaTouchTests.xctest;
+			remoteRef = DFFA07D42DA0D2A800409C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFFA07D72DA0D2A800409C55 /* ZinniaCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoa.framework;
+			remoteRef = DFFA07D62DA0D2A800409C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFFA07D92DA0D2A800409C55 /* ZinniaCocoaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZinniaCocoaTests.xctest;
+			remoteRef = DFFA07D82DA0D2A800409C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DFFA07DB2DA0D2A800409C55 /* ZinniaCocoaWatch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZinniaCocoaWatch.framework;
+			remoteRef = DFFA07DA2DA0D2A800409C55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
