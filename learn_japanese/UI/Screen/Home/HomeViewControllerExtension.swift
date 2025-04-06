@@ -47,6 +47,8 @@ extension HomeViewController: HomeCollectionViewDelegate {
             return
         }
         
+        self.indexCurrentLessonModel = didSelectAt
+        
         tabBarController.lessonId = lessonModel.lessonId
         tabBarController.lessonName = lessonModel.title
         self.navigationController?.pushViewController(tabBarController, animated: true)

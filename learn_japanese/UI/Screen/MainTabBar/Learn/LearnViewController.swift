@@ -12,6 +12,7 @@ class LearnViewController: BaseViewControler {
     var lessonId: Int?
     var lessonname: String?
     var learnViewModel: LearnViewModel?
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var lessonsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -26,6 +27,10 @@ class LearnViewController: BaseViewControler {
         if let lessonname = self.lessonname, let lessonCount = self.learnViewModel?.exerciseDTOs.count {
             titleLabel.text = "\(lessonname) \(lessonCount) \(LocalizationText.lesson)"
         }
+        guard let userModel = UserManager.shared.getUser() else {
+            return
+        }
+        userImageView.image = UIImage(named: userModel.avatarName)
     }
     
     private func setupUI() {
@@ -44,6 +49,8 @@ class LearnViewController: BaseViewControler {
     }
     
     @IBAction func didTapProfile(_ sender: Any) {
-        // TODO: didTapProfile
+        if let tabBarController = self.tabBarController {
+            tabBarController.selectedIndex = 2
+        }
     }
 }

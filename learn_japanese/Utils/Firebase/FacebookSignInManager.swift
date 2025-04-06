@@ -59,10 +59,14 @@ class FacebookSignInManager {
                         return
                     }
                 }
-                                
-                UserManager.shared.saveUserByFirebaseAuth()
-                if let self = self {
-                    self.delegate?.facebookSignInManagerDidSignInSuccessfully(self)
+                
+                UserManager.shared.fetchUserData { isSuccess in
+                    if isSuccess {
+                        UserManager.shared.saveUserByFirebaseAuth()
+                        if let self = self {
+                            self.delegate?.facebookSignInManagerDidSignInSuccessfully(self)
+                        }
+                    }
                 }
             })
 

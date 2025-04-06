@@ -17,6 +17,7 @@ class HomeViewController: BaseViewControler {
      }()
     
     var homeViewModel: HomeViewModel?
+    internal var indexCurrentLessonModel: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,11 @@ class HomeViewController: BaseViewControler {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchData()
+        guard let avatarName = UserManager.shared.getUser()?.avatarName else {
+            return
+        }
+        
+        userImage.image = UIImage(named: avatarName)
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,5 +82,15 @@ class HomeViewController: BaseViewControler {
         levelSelectionViewController.levelSelected = homeViewModel?.japaneseLevel ?? .start
     }
     @IBAction func didTapNavigateToUserScreen(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
+        guard let lessonModel = self.homeViewModel?.lessonDTOs[self.indexCurrentLessonModel].lesssonModel else {
+            return
+        }
+        
+        tabBarController.lessonId = lessonModel.lessonId
+        tabBarController.lessonName = lessonModel.title
+        tabBarController.selectedIndex = 2
+        self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }

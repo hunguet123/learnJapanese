@@ -51,10 +51,6 @@ class LevelSelectionViewController: BaseViewControler {
     }
     
     private func updateUserProgress() {
-        guard let userModel = UserManager.shared.getUser() else {
-            return
-        }
-        
         guard let firstLessonModel = LessonServiceUtils.getLesson(byLevel: levelSelected.level.rawValue).first else {
             return
         }

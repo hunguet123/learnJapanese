@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settings.cacheSettings = PersistentCacheSettings(sizeBytes: 100 * 1024 * 1024 as NSNumber)
         let db = Firestore.firestore()
         db.settings = settings
+        UserManager.shared.fetchUserData { isSuccess in
+            
+        }
     }
     
     // MARK: UISceneSession Lifecycle

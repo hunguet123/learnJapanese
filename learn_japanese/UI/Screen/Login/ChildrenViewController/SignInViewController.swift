@@ -55,7 +55,9 @@ class SignInViewController: BaseViewControler {
         SVProgressHUD.show()
         EmailPasswordSignInManager.shared.delegate = self
         if let email = emailAddressTextField.getText(), let password = passwordTextField.getText() {
-            EmailPasswordSignInManager.shared.signIn(email, password, withPresenting: self)
+            Task {
+                await EmailPasswordSignInManager.shared.signIn(email, password, withPresenting: self)
+            }
         }
     }
     

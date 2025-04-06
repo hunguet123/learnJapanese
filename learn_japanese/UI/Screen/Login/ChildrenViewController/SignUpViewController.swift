@@ -85,7 +85,9 @@ class SignUpViewController: BaseViewControler {
             let password = passwordTextField.getText() ?? ""
             let email = emailAddressTextField.getText() ?? ""
             SignUpManager.shared.delegate = self
-            SignUpManager.shared.signUp(email, password, withPresenting: self)
+            Task {
+                await SignUpManager.shared.signUp(email, password, withPresenting: self)
+            }
         }
     }
 }

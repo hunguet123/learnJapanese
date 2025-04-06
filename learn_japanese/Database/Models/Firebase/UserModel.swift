@@ -15,17 +15,17 @@ class UserModel {
     var dateOfBirth: Date
     var phoneNumber: String
     var gender: Gender
-    var avtURL: String
+    var avatarName: String
     var completedLessonIds: [String] = []
 
     init(id: String, fullName: String, nickname: String,
-         dateOfBirth: Date, phoneNumber: String, gender: Gender, avtURL: String) {
+         dateOfBirth: Date, phoneNumber: String, gender: Gender, avatarName: String) {
         self.id = id
         self.fullName = fullName
         self.nickname = nickname
         self.dateOfBirth = dateOfBirth
         self.phoneNumber = phoneNumber
         self.gender = gender
-        self.avtURL = avtURL
+        self.avatarName = avatarName
     }
 }

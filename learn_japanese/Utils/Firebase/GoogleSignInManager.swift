@@ -63,12 +63,14 @@ class GoogleSignInManager {
                         return
                     }
                 }
-                
-                UserManager.shared.saveUserByFirebaseAuth()
-                if let self = self {
-                    self.delegate?.googleSignInManagerDidSignInSuccessfully(self)
+                UserManager.shared.fetchUserData { isSuccess in
+                    if isSuccess {
+                        UserManager.shared.saveUserByFirebaseAuth()
+                        if let self = self {
+                            self.delegate?.googleSignInManagerDidSignInSuccessfully(self)
+                        }
+                    }
                 }
-
             }
         }
     }

@@ -273,7 +273,6 @@
 		DFCD363F2C62634B00F60870 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */; };
 		DFCD36482C6275A000F60870 /* LearnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */; };
 		DFE59F002CD28E5B00011DFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */; };
-		DFE5E4882D9C558400B8D73F /* あ.json in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4872D9C558400B8D73F /* あ.json */; };
 		DFE5E48A2D9CBEB100B8D73F /* あ.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4892D9CBEB100B8D73F /* あ.mp4 */; };
 		DFE5E4B92D9CC18A00B8D73F /* か.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4912D9CC18A00B8D73F /* か.mp4 */; };
 		DFE5E4BA2D9CC18A00B8D73F /* け.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4942D9CC18A00B8D73F /* け.mp4 */; };
@@ -319,6 +318,7 @@
 		DFE5E4E32D9CC18A00B8D73F /* せ.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4992D9CC18A00B8D73F /* せ.mp4 */; };
 		DFE5E4E42D9CC18A00B8D73F /* な.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4A02D9CC18A00B8D73F /* な.mp4 */; };
 		DFE5E4E52D9CC18A00B8D73F /* み.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE5E4AB2D9CC18A00B8D73F /* み.mp4 */; };
+		DFECB3D52DA2527A0005F707 /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECB3D42DA2527A0005F707 /* AvatarPickerViewController.swift */; };
 		DFF555FF2D75E6B5007A4035 /* AnswerModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */; };
 		DFF556052D789F6C007A4035 /* JapaneseReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF556042D789F6C007A4035 /* JapaneseReadingView.swift */; };
 		DFF5561E2D7F554B007A4035 /* tokyo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFF556182D7F554B007A4035 /* tokyo.mp3 */; };
@@ -727,7 +727,6 @@
 		DFCD363E2C62634B00F60870 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DFCD36472C6275A000F60870 /* LearnViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFE59EFF2CD28E5B00011DFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		DFE5E4872D9C558400B8D73F /* あ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "あ.json"; sourceTree = "<group>"; };
 		DFE5E4892D9CBEB100B8D73F /* あ.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "あ.mp4"; sourceTree = "<group>"; };
 		DFE5E48D2D9CC18A00B8D73F /* い.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "い.mp4"; sourceTree = "<group>"; };
 		DFE5E48E2D9CC18A00B8D73F /* う.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "う.mp4"; sourceTree = "<group>"; };
@@ -773,6 +772,7 @@
 		DFE5E4B62D9CC18A00B8D73F /* わ.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "わ.mp4"; sourceTree = "<group>"; };
 		DFE5E4B72D9CC18A00B8D73F /* を.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "を.mp4"; sourceTree = "<group>"; };
 		DFE5E4B82D9CC18A00B8D73F /* ん.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ん.mp4"; sourceTree = "<group>"; };
+		DFECB3D42DA2527A0005F707 /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		DFF555FE2D75E6B5007A4035 /* AnswerModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModalViewController.swift; sourceTree = "<group>"; };
 		DFF556042D789F6C007A4035 /* JapaneseReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseReadingView.swift; sourceTree = "<group>"; };
 		DFF5560E2D7F554B007A4035 /* asa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asa.mp3; sourceTree = "<group>"; };
@@ -1247,6 +1247,7 @@
 				DF66B20A2D91B218002BCA0B /* WordMatchingView.swift */,
 				DFFC61602D9AD47800FFC01B /* JapaneseCharacterWritingView.swift */,
 				DFA6D4C42D9C46DC006E687C /* DrawingView.swift */,
+				DFECB3D42DA2527A0005F707 /* AvatarPickerViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1290,7 +1291,6 @@
 		DFA6D4C62D9C4966006E687C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				DFE5E4872D9C558400B8D73F /* あ.json */,
 				DF9A23E92C4287C900A73895 /* lauch.json */,
 			);
 			path = Lottie;
@@ -1932,7 +1932,6 @@
 				DF66B2582D944D18002BCA0B /* 022_2.mp3 in Resources */,
 				DF66B2592D944D18002BCA0B /* 022_4.mp3 in Resources */,
 				DF8E82C92D8C593A008E82D3 /* チ.mp3 in Resources */,
-				DFE5E4882D9C558400B8D73F /* あ.json in Resources */,
 				DF8E82CA2D8C593A008E82D3 /* ユ.mp3 in Resources */,
 				DF8E82CB2D8C593A008E82D3 /* ル.mp3 in Resources */,
 				DF8E82CC2D8C593A008E82D3 /* ロ.mp3 in Resources */,
@@ -2129,6 +2128,7 @@
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
 				DF38760C2D17FE56005BBE05 /* LessonDTO.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,
+				DFECB3D52DA2527A0005F707 /* AvatarPickerViewController.swift in Sources */,
 				DFA6E8E92C61182100765A11 /* LearnViewController.swift in Sources */,
 				DFF8092D2C5E34D800F1EB2C /* HomeViewController.swift in Sources */,
 				DFF8092F2C5E3D7C00F1EB2C /* HomeViewModel.swift in Sources */,

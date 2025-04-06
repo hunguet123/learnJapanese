@@ -32,9 +32,12 @@ class EmailPasswordSignInManager {
                 return
             }
             
-            print("Login successfully!")
-            UserManager.shared.saveUserByFirebaseAuth()
-            self.delegate?.emailPasswordSignInManagerDidSignInSuccessfully(self)
+            UserManager.shared.fetchUserData { isSuccess in
+                if isSuccess {
+                    UserManager.shared.saveUserByFirebaseAuth()
+                    self.delegate?.emailPasswordSignInManagerDidSignInSuccessfully(self)
+                }
+            }
         }
     }
 }
