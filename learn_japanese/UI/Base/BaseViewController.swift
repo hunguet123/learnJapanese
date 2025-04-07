@@ -66,7 +66,7 @@ open class BaseViewControler: UIViewController {
         view.addGestureRecognizer(tapHiddenKeyboard)
     }
     
-    @objc private func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     

@@ -58,32 +58,26 @@ class UserManager {
             
             let userFirebase = self.firebaseAuth.currentUser
             let avatarName = data["avatarName"] as? String ?? Constants.avatarNameDefault
+            let nickName = data["nickname"] as? String ?? userModel?.nickname ?? ""
             
             self.userModel = UserModel(
                 id: userId,
-                fullName: userFirebase?.displayName ?? "",
-                nickname: userFirebase?.email ?? "",
-                dateOfBirth: Date(),
-                phoneNumber: userFirebase?.phoneNumber ?? "084",
-                gender: Gender.others,
+                nickname: nickName,
+                email: userFirebase?.email ?? "",
                 avatarName: avatarName
             )
             
             completion(true)
         }
     }
-
+    
     // Hàm tạo document mới
     func createNewUserDocument(userId: String, completion: @escaping (_ isSuccess: Bool) -> Void) {
         let userFirebase = firebaseAuth.currentUser
         
         let newUserData: [String: Any] = [
             "id": userId,
-            "fullName": userFirebase?.displayName ?? "",
-            "nickname": userFirebase?.email ?? "",
-            "dateOfBirth": Date(),
-            "phoneNumber": userFirebase?.phoneNumber ?? "084",
-            "gender": Gender.others.rawValue,
+            "nickname": userModel?.nickname ?? "",
             "avatarName": Constants.avatarNameDefault
         ]
         
@@ -97,18 +91,15 @@ class UserManager {
             // Sau khi tạo document mới, gán dữ liệu vào userModel
             self.userModel = UserModel(
                 id: userId,
-                fullName: userFirebase?.displayName ?? "",
-                nickname: userFirebase?.email ?? "",
-                dateOfBirth: Date(),
-                phoneNumber: userFirebase?.phoneNumber ?? "084",
-                gender: Gender.others,
+                nickname: self.userModel?.nickname ?? "",
+                email: userFirebase?.email ?? "",
                 avatarName: Constants.avatarNameDefault
             )
             
             completion(true)
         }
     }
-
+    
     
     func getUser() -> UserModel? {
         return self.userModel
@@ -118,18 +109,17 @@ class UserManager {
         self.userModel?.avatarName = avatarName
     }
     
+    func setNickName(nickName: String) {
+        self.userModel?.nickname = nickName
+    }
+    
     func saveUserByFirebaseAuth() {
-        let user = self.getUser()
-        let birthDayFormat = user?.dateOfBirth.formatDate()
         let userData: [String: Any] = [
-            "fullName": user?.fullName ?? "",
-            "nickname": user?.nickname ?? "",
-            "dateOfBirth": birthDayFormat ?? "",
-            "phoneNumber": user?.phoneNumber ?? "",
-            "gender": user?.gender.rawValue ?? "",
-            "avatarName": user?.avatarName ?? Constants.avatarNameDefault
+            "id": userModel?.id ?? "",
+            "nickname": userModel?.nickname ?? "",
+            "avatarName": userModel?.avatarName ?? Constants.avatarNameDefault
         ]
-        if let userId = user?.id {
+        if let userId = userModel?.id {
             let usersRef = self.database.collection(Constants.usersCollectionName).document(userId)
             usersRef.getDocument { docSnapshot, err in
                 if let err = err {
@@ -156,7 +146,7 @@ class UserManager {
             }
         }
     }
-
+    
     func getUserId() -> String? {
         return firebaseAuth.currentUser?.uid
     }

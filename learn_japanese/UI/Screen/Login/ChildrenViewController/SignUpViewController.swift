@@ -84,9 +84,13 @@ class SignUpViewController: BaseViewControler {
             SVProgressHUD.show()
             let password = passwordTextField.getText() ?? ""
             let email = emailAddressTextField.getText() ?? ""
+            let userName = userNameTextField.getText() ?? ""
             SignUpManager.shared.delegate = self
             Task {
-                await SignUpManager.shared.signUp(email, password, withPresenting: self)
+                SignUpManager.shared.signUp(email,
+                                            password,
+                                            userName,
+                                            withPresenting: self)
             }
         }
     }
@@ -108,8 +112,6 @@ extension SignUpViewController: TitleTextFieldDelegate {
             emailAddressTextField.textFieldBecomFirstResponder()
         } else if (textField.tag == SignUpTextFieldTag.emailAddress.rawValue) {
             passwordTextField.textFieldBecomFirstResponder()
-        } else if (textField.tag == SignUpTextFieldTag.password.rawValue) {
-            passwordTextField.textFieldResignFirstResponder()
         }
         return true
     }

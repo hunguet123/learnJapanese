@@ -96,7 +96,6 @@
 		DF785DE42D89CF4700FC709D /* 0006_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDF2D89CF4700FC709D /* 0006_6.mp3 */; };
 		DF785DE52D89CF4700FC709D /* 0006_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF785DDB2D89CF4700FC709D /* 0006_2.mp3 */; };
 		DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10592C7CBF55002969E8 /* UserModel.swift */; };
-		DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105B2C7CBFD6002969E8 /* Gender.swift */; };
 		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
 		DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10602C7CC119002969E8 /* DateExtensions.swift */; };
 		DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */; };
@@ -545,7 +544,6 @@
 		DF785DDE2D89CF4700FC709D /* 0006_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_5.mp3; sourceTree = "<group>"; };
 		DF785DDF2D89CF4700FC709D /* 0006_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0006_6.mp3; sourceTree = "<group>"; };
 		DF7B10592C7CBF55002969E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		DF7B105B2C7CBFD6002969E8 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		DF7B10602C7CC119002969E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
@@ -920,7 +918,6 @@
 			isa = PBXGroup;
 			children = (
 				DF7B10592C7CBF55002969E8 /* UserModel.swift */,
-				DF7B105B2C7CBFD6002969E8 /* Gender.swift */,
 				DF38760D2D180626005BBE05 /* UserProgressModel.swift */,
 				DF38760F2D18118C005BBE05 /* LessonProgressModel.swift */,
 				DF3876112D1811AE005BBE05 /* ExerciseProgressModel.swift */,
@@ -2138,7 +2135,6 @@
 				DF64E25C2C986C630028BC1C /* FirebaseCollectionNameConstant.swift in Sources */,
 				DF35E4892C68F6480019D9C9 /* ImageTextQuestionCollectionViewCell.swift in Sources */,
 				DF997C3D2D59048500980979 /* QuestionProgressModel.swift in Sources */,
-				DF7B105C2C7CBFD6002969E8 /* Gender.swift in Sources */,
 				DF3876072D11C034005BBE05 /* QuestionServiceUtils.swift in Sources */,
 				DFC523352D36B62B00B3FA6B /* SwipeView.swift in Sources */,
 				DFF809382C5FC61400F1EB2C /* LessonProgressView.swift in Sources */,

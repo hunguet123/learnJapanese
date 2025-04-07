@@ -61,4 +61,8 @@ class LocalizationText {
     static let notYetLearned = "notYetLearned".l10n()
     static let learned = "learned".l10n()
     static let confirm = "confirm".l10n()
+    static let saveProfileChanges = "saveProfileChanges".l10n()
+    static let logout = "logout".l10n()
+    static let cancel = "cancel".l10n()
+    static let doYouWantLogout = "doYouWantLogout".l10n()
 }

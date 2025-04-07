@@ -58,3 +58,7 @@
 "notYetLearned" = "Chưa thuộc";
 "learned" = "Đã thuộc";
 "confirm" = "Xác nhận";
+"saveProfileChanges" = "Lưu thay đổi";
+"logout" = "Đăng xuất";
+"cancel" = "Huỷ";
+"doYouWantLogout" = "Bạn có chắc chắn muốn đăng xuất?";

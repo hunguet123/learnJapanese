@@ -20,6 +20,7 @@ class SignUpManager {
     
     func signUp(_ email: String ,
                 _ password: String,
+                _ userName: String,
                 withPresenting viewController: UIViewController
     ) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
@@ -38,6 +39,7 @@ class SignUpManager {
             
             UserManager.shared.fetchUserData { isSuccess in
                 if isSuccess {
+                    UserManager.shared.setNickName(nickName: userName)
                     UserManager.shared.saveUserByFirebaseAuth()
                     self.delegate?.signUpManagerDidSignUpSuccessfully(self)
                 }
