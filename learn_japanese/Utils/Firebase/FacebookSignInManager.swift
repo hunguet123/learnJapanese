@@ -21,57 +21,72 @@ class FacebookSignInManager {
 
     func signIn(withPresenting viewController: UIViewController) {
         let loginManager = LoginManager()
+        
+        // Đảm bảo clear token trước đó
+        loginManager.logOut()
+        
         loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { [weak self] (result, error) in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             
-            if let error = error {
-                print("Failed to login: \(error.localizedDescription)")
-                self.delegate?.facebookSignInManagerDidSignInFail(self)
-                return
+            // Xử lý các trường hợp khi quay lại từ Facebook
+            if let token = AccessToken.current {
+                // Đã có token, tiến hành xác thực
+                self.handleFacebookLoginSuccess(token: token, viewController: viewController)
+            } else if let error = error {
+                // Xử lý lỗi
+                print("Facebook Login Error: \(error.localizedDescription)")
+                self.handleLoginFailure(in: viewController)
+            } else {
+                // Trường hợp khác
+                print("Facebook Login: Unexpected state")
+                self.handleLoginFailure(in: viewController)
             }
-            
-            if result?.isCancelled == true {
-                print("cancelled login facebook")
-                self.delegate?.facebookSignInManagerDidSignInFail(self)
-                return
-            }
-
-            guard let accessToken = AccessToken.current else {
-                print("Failed to get access token")
-                self.delegate?.facebookSignInManagerDidSignInFail(self)
-                return
-            }
-
-            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-
-            // Perform login by calling Firebase APIs
-            Auth.auth().signIn(with: credential, completion: { [weak self] (user, error) in
-                if let error = error {
-                    print("Login error: \(error.localizedDescription)")
-                    let alertController = UIAlertController(title: LocalizationText.loginError, message: error.localizedDescription, preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okayAction)
-                    viewController.present(alertController, animated: true, completion: nil)
-                    if let self = self {
-                        self.delegate?.facebookSignInManagerDidSignInFail(self)
-                        return
-                    }
-                }
-                
-                UserManager.shared.fetchUserData { isSuccess in
-                    if isSuccess {
-                        UserManager.shared.saveUserByFirebaseAuth()
-                        if let self = self {
-                            self.delegate?.facebookSignInManagerDidSignInSuccessfully(self)
-                        }
-                    }
-                }
-            })
-
         }
     }
-
+    
+    private func handleFacebookLoginSuccess(token: AccessToken, viewController: UIViewController) {
+        // Thực hiện đăng nhập Firebase
+        let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+        
+        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Firebase Login Error: \(error.localizedDescription)")
+                self.handleLoginFailure(in: viewController)
+                return
+            }
+            
+            // Fetch và lưu thông tin người dùng
+            self.fetchAndSaveUserData(viewController: viewController)
+        }
+    }
+    
+    private func fetchAndSaveUserData(viewController: UIViewController) {
+        UserManager.shared.fetchUserData { [weak self] isSuccess in
+            guard let self = self else { return }
+            
+            if isSuccess {
+                UserManager.shared.saveUserByFirebaseAuth()
+                self.delegate?.facebookSignInManagerDidSignInSuccessfully(self)
+            } else {
+                self.handleLoginFailure(in: viewController)
+            }
+        }
+    }
+    
+    private func handleLoginFailure(in viewController: UIViewController) {
+        // Hiển thị thông báo lỗi
+        let alertController = UIAlertController(
+            title: "Đăng Nhập Thất Bại",
+            message: "Không thể đăng nhập bằng Facebook. Vui lòng thử lại.",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        viewController.present(alertController, animated: true, completion: nil)
+        
+        // Gọi delegate fail
+        self.delegate?.facebookSignInManagerDidSignInFail(self)
+    }
 }
 
