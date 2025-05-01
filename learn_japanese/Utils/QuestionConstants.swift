@@ -8,11 +8,11 @@
 import Foundation
 
 struct QuestionConstants {
-    static let characterRecognition = "character_recognition"
-    static let textSelection = "text_selection"
+    static let flashCard = "flashCard"
+    static let textSelection = "textSelection"
     static let reading = "reading"
-    static let matching = "matching"
-    static let wordMathing = "word_matching"
-    static let imageSelection = "image_selection"
+    static let rearrangedWord = "rearrangedWord"
+    static let matchedWordPair = "matchedWordPair"
+    static let imageSelection = "imageSelection"
     static let writing = "writing"
 }

@@ -117,6 +117,7 @@ class UserProgressManager {
         score: Int,
         maxScore: Int,
         wrongQuestionIds: [Int],
+        learnedQuestionIds: [Int],
         completed: Bool,
         completion: @escaping (FirebaseResult) -> Void
     ) {
@@ -152,22 +153,42 @@ class UserProgressManager {
                 exercise.attempts += 1
                 exercise.score.value = score
                 exercise.score.max = maxScore
+                
+                // Cập nhật wrongQuestions với updatedAt và tăng questionStudyCount
                 var updatedWrongQuestions = exercise.wrongQuestions.map { wrongQuestion -> QuestionProgressModel in
                     var updatedQuestion = wrongQuestion
                     if wrongQuestionIds.contains(updatedQuestion.questionId) {
                         updatedQuestion.questionStudyCount += 1
+                        updatedQuestion.updatedAt = Date() // cập nhật thời gian
                     }
                     return updatedQuestion
                 }
                 
+                // Thêm các wrongQuestion mới nếu chưa có
                 for questionId in wrongQuestionIds {
-                    if updatedWrongQuestions.contains(where: { $0.questionId == questionId }) {
-                        continue
+                    if !updatedWrongQuestions.contains(where: { $0.questionId == questionId }) {
+                        updatedWrongQuestions.append(QuestionProgressModel(questionId: questionId, questionStudyCount: 1, updatedAt: Date()))
                     }
-                    updatedWrongQuestions.append(QuestionProgressModel(questionId: questionId, questionStudyCount: 1))
+                }
+                exercise.wrongQuestions = updatedWrongQuestions
+                
+                // Cập nhật learnedQuestions với updatedAt và tăng questionStudyCount tương tự
+                var updatedLearnedQuestions = exercise.learnedQuestions.map { learnedQuestion -> QuestionProgressModel in
+                    var updatedQuestion = learnedQuestion
+                    if learnedQuestionIds.contains(updatedQuestion.questionId) {
+                        updatedQuestion.questionStudyCount += 1
+                        updatedQuestion.updatedAt = Date()
+                    }
+                    return updatedQuestion
                 }
                 
-                exercise.wrongQuestions = updatedWrongQuestions
+                // Thêm các learnedQuestion mới nếu chưa có
+                for questionId in learnedQuestionIds {
+                    if !updatedLearnedQuestions.contains(where: { $0.questionId == questionId }) {
+                        updatedLearnedQuestions.append(QuestionProgressModel(questionId: questionId, questionStudyCount: 1, updatedAt: Date()))
+                    }
+                }
+                exercise.learnedQuestions = updatedLearnedQuestions
                 
                 lesson.exercises[exerciseIndex] = exercise
             } else {
@@ -177,7 +198,10 @@ class UserProgressManager {
                     attempts: 1,
                     score: ScoreModel(value: score, max: maxScore),
                     wrongQuestions: wrongQuestionIds.map({ questionId in
-                        return QuestionProgressModel(questionId: questionId, questionStudyCount: 1)
+                        return QuestionProgressModel(questionId: questionId, questionStudyCount: 1, updatedAt: Date())
+                    }),
+                    learnedQuestions: learnedQuestionIds.map({ questionId in
+                        return QuestionProgressModel(questionId: questionId, questionStudyCount: 1, updatedAt: Date())
                     })
                 )
                 lesson.exercises.append(newExercise)
@@ -202,6 +226,7 @@ class UserProgressManager {
             }
         }
     }
+
     
     func fetchUserProgress(
         completion: @escaping (FirebaseResult) -> Void

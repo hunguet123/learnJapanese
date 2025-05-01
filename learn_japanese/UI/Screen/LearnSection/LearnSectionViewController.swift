@@ -58,7 +58,7 @@ class LearnSectionViewController: UIViewController {
             quizCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
         } else {
             // Kết thúc bài học.
-            UserProgressManager.shared.updateExerciseProgress(lessonId: lessonId, exerciseId: exerciseId, score: learnSectionViewModel.score, maxScore: learnSectionViewModel.questions.count, wrongQuestionIds: learnSectionViewModel.wrongQuestionIds, completed: true) { firebaseResult in
+            UserProgressManager.shared.updateExerciseProgress(lessonId: lessonId, exerciseId: exerciseId, score: learnSectionViewModel.score, maxScore: learnSectionViewModel.questions.count, wrongQuestionIds: learnSectionViewModel.wrongQuestionIds, learnedQuestionIds: learnSectionViewModel.questions.map{$0.questionId}, completed: true) { firebaseResult in
                 print("------ firebase Result \(firebaseResult)")
                 let learnResultViewController = LearnResultViewController()
                 learnResultViewController.learnResultViewModel = LearnResultViewModel(correctAnswer: self.learnSectionViewModel.score, wrongAnswer: self.learnSectionViewModel.wrongQuestionIds.count)

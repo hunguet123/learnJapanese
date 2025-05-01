@@ -36,7 +36,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
             if let questionContent = DictionaryUtils.jsonStringToDictionary(jsonString: questionContentString) {
                 let questionType = questionContent["questionType"] as? String
                 switch questionType {
-                case QuestionConstants.characterRecognition:
+                case QuestionConstants.flashCard:
                     let swipeView = SwipeView()
                     if let character = questionContent["character"] as? String {
                         swipeView.currentCharacter = character
@@ -107,7 +107,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                     readingView.onError = { error in
                         
                     }
-                case QuestionConstants.matching:
+                case QuestionConstants.rearrangedWord:
                     let wordSortView = WordSortView()
                     let matchingModel = MatchingModel.fromJson(questionContentString)
                     audioName = matchingModel?.audio ?? nil
@@ -118,7 +118,7 @@ class ImageTextQuestionCollectionViewCell: UICollectionViewCell {
                                                           questionId: question.questionId,
                                                           correctAnswer:  matchingModel?.correctAnswer ?? "")
                     }
-                case QuestionConstants.wordMathing:
+                case QuestionConstants.matchedWordPair:
                     let wordMatchingQuestion = WordMatchingQuestion.fromJson(questionContentString)
                     let wordMatchingView = WordMatchingView()
                     wordMatchingView.wordPairs = wordMatchingQuestion?.wordPairs ?? []

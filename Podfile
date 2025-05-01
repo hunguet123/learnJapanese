@@ -7,29 +7,17 @@ target 'learn_japanese' do
   use_frameworks!
   
   # UI/Utility pods
-  pod 'SwiftLint', '0.58.2'
   pod 'lottie-ios', '4.5.1'
   pod 'SVProgressHUD', '2.3.1'
   pod 'L10n-swift', '5.10.3'
   pod 'SQLite.swift', '0.15.3'
-#  pod 'gRPC-Core', '~> 1.62.0'
   
-  # Firebase pods - sử dụng phiên bản mới hơn và cấu trúc đơn giản
-#  pod 'Firebase/Database', '10.29.0'
   pod 'Firebase/Auth', '10.29.0'
   pod 'Firebase/Firestore', '10.29.0'
-#  pod 'Firebase/Storage', '10.29.0'
-  # pod 'Firebase/Analytics' # Thêm nếu bạn cần Analytics
-  # pod 'Firebase/Messaging' # Thêm nếu bạn cần Cloud Messaging (FCM)
-  # ... thêm các dịch vụ Firebase khác nếu cần
   
   # Đăng nhập bên thứ ba
   pod 'FacebookLogin'
-  # pod 'FacebookCore' # Thử bỏ dòng này, vì FacebookLogin thường đã bao gồm nó
   pod 'GoogleSignIn'
-  
-  # GoogleMLKit
-#  pod 'GoogleMLKit/DigitalInkRecognition', '4.0.0'
   
   post_install do |installer|
     installer.pods_project.targets.each do |target|
