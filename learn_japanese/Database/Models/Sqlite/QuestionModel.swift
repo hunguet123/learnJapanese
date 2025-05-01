@@ -8,10 +8,5 @@
 struct QuestionModel {
     let questionId: Int
     let exerciseId: Int
-    let questionText: String?
     let questionContent: String?
-    let correctAnswer: String?
-    let image: String?
-    let audio: String?
-    let questionType: String?
 }

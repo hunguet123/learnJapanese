@@ -21,12 +21,7 @@ class QuestionServiceUtils {
             let questionTable = Table("Question")
             let questionId = Expression<Int>("question_id")
             let exerciseIdColumn = Expression<Int>("exercise_id")
-            let questionText = Expression<String?>("question_text")
             let questionContent = Expression<String?>("question_content")
-            let correctAnswer = Expression<String?>("correct_answer")
-            let image = Expression<String?>("image")
-            let audio = Expression<String?>("audio")
-            let questionType = Expression<String?>("question_type")
             
             // Truy vấn với điều kiện lọc exercise_id
             let query = questionTable
@@ -38,12 +33,7 @@ class QuestionServiceUtils {
                 let question = QuestionModel(
                     questionId: row[questionId],
                     exerciseId: row[exerciseIdColumn],
-                    questionText: row[questionText],
                     questionContent: row[questionContent],
-                    correctAnswer: row[correctAnswer],
-                    image: row[image],
-                    audio: row[audio],
-                    questionType: row[questionType]
                 )
                 questions.append(question)
             }
