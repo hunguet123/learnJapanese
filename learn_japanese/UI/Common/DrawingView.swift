@@ -5,7 +5,7 @@
 //  Created by Hưng Hà Quang on 1/4/25.
 //
 import UIKit
-import MLKitDigitalInkRecognition
+//import MLKitDigitalInkRecognition
 
 protocol DrawableViewDelegate: AnyObject {
     func didDraw(stroke: [NSValue])
@@ -152,17 +152,17 @@ class DrawingView: UIView {
     }
     
     // Chuyển đổi các nét vẽ thành định dạng Stroke cho MLKit
-    func getStrokes() -> [Stroke] {
-        return strokes.map { strokePoints in
-            let points = strokePoints.compactMap { ($0 as? NSValue)?.cgPointValue }
-            
-            // Chuyển đổi CGPoint thành StrokePoint
-            let strokePoints = points.enumerated().map { index, point in
-                // Sử dụng index làm timestamp giả lập nếu không có timestamp thực
-                return StrokePoint(x: Float(point.x), y: Float(point.y), t: index)
-            }
-            
-            return Stroke(points: strokePoints)
-        }
-    }
+//    func getStrokes() -> [Stroke] {
+//        return strokes.map { strokePoints in
+//            let points = strokePoints.compactMap { ($0 as? NSValue)?.cgPointValue }
+//            
+//            // Chuyển đổi CGPoint thành StrokePoint
+//            let strokePoints = points.enumerated().map { index, point in
+//                // Sử dụng index làm timestamp giả lập nếu không có timestamp thực
+//                return StrokePoint(x: Float(point.x), y: Float(point.y), t: index)
+//            }
+//            
+//            return Stroke(points: strokePoints)
+//        }
+//    }
 }

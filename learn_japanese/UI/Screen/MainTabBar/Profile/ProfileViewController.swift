@@ -27,6 +27,7 @@ class ProfileViewController: BaseViewControler {
     
     // MARK: - Private Methods
     private func setupView() {
+        title = LocalizationText.profile
         // Styling avatar
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
         avatarImageView.layer.masksToBounds = true

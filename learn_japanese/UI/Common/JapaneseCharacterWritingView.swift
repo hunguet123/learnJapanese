@@ -320,5 +320,6 @@ extension UIView {
 extension JapaneseCharacterWritingView: DrawableViewDelegate {
     func didDraw(stroke: [NSValue]) {
         viewModel.add(stroke)
+        print("---- stroke: \(stroke)")
     }
 }

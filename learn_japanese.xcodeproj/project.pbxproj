@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96C4FE2A20CF89E5E869B34A /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FC7EF1A3345090E1AC2E16 /* Pods_learn_japanese.framework */; };
+		817581A4FD96D1A6C6188FBF /* Pods_learn_japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E258CAE94B726EF7C2951063 /* Pods_learn_japanese.framework */; };
 		DF020F8F2C4563BD00DA5483 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */; };
 		DF020F902C4563BD00DA5483 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */; };
 		DF0B32872C456CC300C1BC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0B32862C456CC300C1BC77 /* LaunchScreen.storyboard */; };
@@ -99,6 +99,7 @@
 		DF7B105F2C7CC08F002969E8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */; };
 		DF7B10612C7CC119002969E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10602C7CC119002969E8 /* DateExtensions.swift */; };
 		DF7B10632C7CC1D0002969E8 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */; };
+		DF7EF3832DBA797F00F93E27 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7EF3822DBA797F00F93E27 /* ReviewViewController.swift */; };
 		DF81C3CE2D9EE29C00B460FB /* ZinniaCocoaTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF81C3C52D9EE28E00B460FB /* ZinniaCocoaTouch.framework */; };
 		DF81C3CF2D9EE2BC00B460FB /* ZinniaCocoaTouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF81C3C52D9EE28E00B460FB /* ZinniaCocoaTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DF8271942CAC3BE700E27690 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */; };
@@ -452,9 +453,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0205A5CC2ED25BC7335765F9 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
-		33B44B36320F920DF739C36C /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
-		92FC7EF1A3345090E1AC2E16 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C9A777FF276922A406A401 /* Pods-learn_japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.debug.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		904E5FE6269AE38E25BB5125 /* Pods-learn_japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_japanese.release.xcconfig"; path = "Target Support Files/Pods-learn_japanese/Pods-learn_japanese.release.xcconfig"; sourceTree = "<group>"; };
 		DF020F8D2C4563BD00DA5483 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF020F8E2C4563BD00DA5483 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DF05B1562D9EB4A0005D08E7 /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
@@ -547,6 +547,7 @@
 		DF7B105E2C7CC08F002969E8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		DF7B10602C7CC119002969E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		DF7B10622C7CC1D0002969E8 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		DF7EF3822DBA797F00F93E27 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		DF81C3A82D9EE1DB00B460FB /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = Zinnia/ZinniaCocoaTouch.xcodeproj; sourceTree = "<group>"; };
 		DF81C3BA2D9EE28E00B460FB /* ZinniaCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZinniaCocoaTouch.xcodeproj; path = /Users/hunghaquang/UET/IOS/learn_japanese/Zinnia/ZinniaCocoaTouch.xcodeproj; sourceTree = "<absolute>"; };
 		DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
@@ -801,6 +802,7 @@
 		DFFF30D72C51638100DADE4A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		DFFF30DA2C52A93E00DADE4A /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 		DFFF30DB2C52A93E00DADE4A /* LevelSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelSelectionViewController.xib; sourceTree = "<group>"; };
+		E258CAE94B726EF7C2951063 /* Pods_learn_japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learn_japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -817,7 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF81C3CE2D9EE29C00B460FB /* ZinniaCocoaTouch.framework in Frameworks */,
-				96C4FE2A20CF89E5E869B34A /* Pods_learn_japanese.framework in Frameworks */,
+				817581A4FD96D1A6C6188FBF /* Pods_learn_japanese.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,7 +844,7 @@
 			isa = PBXGroup;
 			children = (
 				DF05B1562D9EB4A0005D08E7 /* CoreAudioTypes.framework */,
-				92FC7EF1A3345090E1AC2E16 /* Pods_learn_japanese.framework */,
+				E258CAE94B726EF7C2951063 /* Pods_learn_japanese.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -850,8 +852,8 @@
 		C9629DCF324ACD8085EFB02E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33B44B36320F920DF739C36C /* Pods-learn_japanese.debug.xcconfig */,
-				0205A5CC2ED25BC7335765F9 /* Pods-learn_japanese.release.xcconfig */,
+				58C9A777FF276922A406A401 /* Pods-learn_japanese.debug.xcconfig */,
+				904E5FE6269AE38E25BB5125 /* Pods-learn_japanese.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -961,6 +963,14 @@
 				DF3875F32D108B94005BBE05 /* Sqlite */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DF7EF3812DBA795C00F93E27 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				DF7EF3822DBA797F00F93E27 /* ReviewViewController.swift */,
+			);
+			path = Review;
 			sourceTree = "<group>";
 		};
 		DF81C3BB2D9EE28E00B460FB /* Products */ = {
@@ -1315,6 +1325,7 @@
 		DFA6E8ED2C611D2500765A11 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				DF7EF3812DBA795C00F93E27 /* Review */,
 				DFE59EFE2CD28DB400011DFC /* Profile */,
 				DF8271922CAC3B6D00E27690 /* Dictionary */,
 				DFA6E8E52C6117FB00765A11 /* Learn */,
@@ -1601,13 +1612,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFBA80692C402FA200467A58 /* Build configuration list for PBXNativeTarget "learn_japanese" */;
 			buildPhases = (
-				8C2070F7F8061CA6BB31EA64 /* [CP] Check Pods Manifest.lock */,
+				FAD9A5F511A4F4DCB1FB3AC2 /* [CP] Check Pods Manifest.lock */,
 				DFBA803B2C402FA000467A58 /* Sources */,
 				DFBA803C2C402FA000467A58 /* Frameworks */,
 				DFBA803D2C402FA000467A58 /* Resources */,
 				DF247ACF2D9ED43800ED4733 /* Embed Frameworks */,
-				8FAA83D4F44546384398C3B9 /* [CP] Embed Pods Frameworks */,
-				5B4B9613FA4C02ED846B5492 /* [CP] Copy Pods Resources */,
+				7E09C2F89893C3F3F3407D7F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2059,28 +2069,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5B4B9613FA4C02ED846B5492 /* [CP] Copy Pods Resources */ = {
+		7E09C2F89893C3F3F3407D7F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8C2070F7F8061CA6BB31EA64 /* [CP] Check Pods Manifest.lock */ = {
+		FAD9A5F511A4F4DCB1FB3AC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2100,27 +2110,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FAA83D4F44546384398C3B9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-learn_japanese/Pods-learn_japanese-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2216,6 +2205,7 @@
 				DF3E5FFC2C6A4E1300249541 /* WordSortView.swift in Sources */,
 				DF9920D62D9E15D100B4CC05 /* Bridging-Header.h in Sources */,
 				DF7B105A2C7CBF55002969E8 /* UserModel.swift in Sources */,
+				DF7EF3832DBA797F00F93E27 /* ReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2386,7 +2376,7 @@
 		};
 		DFBA806A2C402FA200467A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33B44B36320F920DF739C36C /* Pods-learn_japanese.debug.xcconfig */;
+			baseConfigurationReference = 58C9A777FF276922A406A401 /* Pods-learn_japanese.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2395,7 +2385,7 @@
 				CODE_SIGN_ENTITLEMENTS = learn_japanese/learn_japanese.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2J99UR45ND;
+				DEVELOPMENT_TEAM = P634K2UB3K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth\"",
@@ -2441,6 +2431,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = learn_japanese/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Learn Japanese";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cần quyền truy cập microphone để ghi âm giọng nói";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Cần quyền nhận dạng giọng nói để kiểm tra phát âm của bạn";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2452,7 +2444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.yopaz.flutterbase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/Bridging-Header.h";
@@ -2464,7 +2456,7 @@
 		};
 		DFBA806B2C402FA200467A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0205A5CC2ED25BC7335765F9 /* Pods-learn_japanese.release.xcconfig */;
+			baseConfigurationReference = 904E5FE6269AE38E25BB5125 /* Pods-learn_japanese.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2473,7 +2465,7 @@
 				CODE_SIGN_ENTITLEMENTS = learn_japanese/learn_japanese.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2J99UR45ND;
+				DEVELOPMENT_TEAM = P634K2UB3K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth\"",
@@ -2521,6 +2513,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = learn_japanese/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Learn Japanese";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cần quyền truy cập microphone để ghi âm giọng nói";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Cần quyền nhận dạng giọng nói để kiểm tra phát âm của bạn";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2532,7 +2526,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hunguet21.learnJapanese;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.yopaz.flutterbase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/Bridging-Header.h";

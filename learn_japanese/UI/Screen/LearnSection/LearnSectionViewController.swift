@@ -28,6 +28,7 @@ class LearnSectionViewController: UIViewController {
     }
     
     private func setUpView() {
+        title = LocalizationText.learn
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.quizCollectionView.register(UINib(nibName: "ImageTextQuestionCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ImageTextQuestionCollectionViewCell")
     }

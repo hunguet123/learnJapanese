@@ -14,16 +14,20 @@
 			</array>
 		</dict>
 	</array>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<string>TRUE</string>
 	<key>FacebookAppID</key>
 	<string>1032234961648672</string>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<string>TRUE</string>
 	<key>FacebookClientToken</key>
 	<string>9ae9e1c95b9b8c2410e4dfc53a957045</string>
 	<key>FacebookDisplayName</key>
 	<string>Hello Japanese</string>
-	<key>FacebookAutoLogAppEventsEnabled</key>
-	<string>TRUE</string>
-	<key>FacebookAdvertiserIDCollectionEnabled</key>
-	<string>TRUE</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -63,17 +67,9 @@
 			</array>
 		</dict>
 	</dict>
-	<key>LSApplicationQueriesSchemes</key>
+	<key>UIBackgroundModes</key>
 	<array>
-		<string>fbauth2</string>
+		<string>audio</string>
 	</array>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Cần quyền truy cập microphone để ghi âm giọng nói</string>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>Cần quyền nhận dạng giọng nói để kiểm tra phát âm của bạn</string>
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>audio</string>
-    </array>
 </dict>
 </plist>

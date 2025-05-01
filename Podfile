@@ -12,13 +12,13 @@ target 'learn_japanese' do
   pod 'SVProgressHUD', '2.3.1'
   pod 'L10n-swift', '5.10.3'
   pod 'SQLite.swift', '0.15.3'
-  pod 'gRPC-Core', '~> 1.62.0'
+#  pod 'gRPC-Core', '~> 1.62.0'
   
   # Firebase pods - sử dụng phiên bản mới hơn và cấu trúc đơn giản
-  pod 'Firebase/Database', '10.29.0'
+#  pod 'Firebase/Database', '10.29.0'
   pod 'Firebase/Auth', '10.29.0'
   pod 'Firebase/Firestore', '10.29.0'
-  pod 'Firebase/Storage', '10.29.0'
+#  pod 'Firebase/Storage', '10.29.0'
   # pod 'Firebase/Analytics' # Thêm nếu bạn cần Analytics
   # pod 'Firebase/Messaging' # Thêm nếu bạn cần Cloud Messaging (FCM)
   # ... thêm các dịch vụ Firebase khác nếu cần
@@ -29,19 +29,19 @@ target 'learn_japanese' do
   pod 'GoogleSignIn'
   
   # GoogleMLKit
-  pod 'GoogleMLKit/DigitalInkRecognition', '4.0.0'
+#  pod 'GoogleMLKit/DigitalInkRecognition', '4.0.0'
   
   post_install do |installer|
     installer.pods_project.targets.each do |target|
       # Xử lý đặc biệt cho BoringSSL-GRPC
-      #      if target.name == 'BoringSSL-GRPC'
-      #        target.build_configurations.each do |config|
-      #          # Loại bỏ flag -G không được hỗ trợ
-      #          config.build_settings['OTHER_CFLAGS'] = '$(inherited) -fno-objc-arc -DBORINGSSL_PREFIX=GRPC'
-      #          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) OPENSSL_NO_ASM=1'
-      #        end
-      #      end
-      #
+            if target.name == 'BoringSSL-GRPC'
+              target.build_configurations.each do |config|
+                # Loại bỏ flag -G không được hỗ trợ
+                config.build_settings['OTHER_CFLAGS'] = '$(inherited) -fno-objc-arc -DBORINGSSL_PREFIX=GRPC'
+                config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) OPENSSL_NO_ASM=1'
+              end
+            end
+      
       if target.name == 'BoringSSL-GRPC'
         target.source_build_phase.files.each do |file|
           if file.settings && file.settings['COMPILER_FLAGS']

@@ -207,7 +207,7 @@ class UserProgressManager {
         completion: @escaping (FirebaseResult) -> Void
     ) {
         guard let userModel = UserManager.shared.getUser() else {
-            UserManager.shared.signOut()
+//            UserManager.shared.signOut()
             return
         }
         let userId = userModel.id
