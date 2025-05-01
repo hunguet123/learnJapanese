@@ -5,7 +5,7 @@
 //  Created by Hưng Hà Quang on 11/8/24.
 //
 
-import MLKitDigitalInkRecognition
+//import MLKitDigitalInkRecognition
 
 import UIKit
 

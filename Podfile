@@ -12,6 +12,7 @@ target 'learn_japanese' do
   pod 'SVProgressHUD', '2.3.1'
   pod 'L10n-swift', '5.10.3'
   pod 'SQLite.swift', '0.15.3'
+  pod 'gRPC-Core', '~> 1.62.0'
   
   # Firebase pods - sử dụng phiên bản mới hơn và cấu trúc đơn giản
   pod 'Firebase/Database', '10.29.0'

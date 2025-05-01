@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 import Lottie
-import MLKitDigitalInkRecognition
+//import MLKitDigitalInkRecognition
 
 
 struct WritingQuestionModel: Codable {
