@@ -8,7 +8,7 @@
 import SQLite
 
 class ExerciseServiceUtils {
-    static func getExercise(byLessonId lessonId: Int) -> [ExerciseModel] {
+    static func getExercises(byLessonId lessonId: Int) -> [ExerciseModel] {
         guard let db = SQLiteHelper.shared.db else {
             print("Database connection is nil")
             return []
@@ -46,5 +46,36 @@ class ExerciseServiceUtils {
         
         return exercises
     }
+    
+    static func getExercise(byExerciseId id: Int) -> ExerciseModel? {
+            guard let db = SQLiteHelper.shared.db else {
+                print("Database connection is nil")
+                return nil
+            }
+            
+            do {
+                let exerciseTable = Table("Exercise")
+                let exerciseId = Expression<Int>("exercise_id")
+                let exerciseNumber = Expression<Double>("exercise_number")
+                let lessonIdColumn = Expression<Int>("lesson_id")
+                let title = Expression<String?>("title")
+                let description = Expression<String?>("description")
+                let query = exerciseTable.filter(exerciseId == id)
+                
+                if let row = try db.pluck(query) {
+                    let exercise = ExerciseModel(
+                        exerciseId: row[exerciseId],
+                        exerciseNumber: row[exerciseNumber],
+                        lessonId: row[lessonIdColumn],
+                        title: row[title],
+                        description: row[description]
+                    )
+                    return exercise
+                }
+            } catch {
+                print("Error fetching exercise by id: \(error)")
+            }
+            
+            return nil
+        }
 }
-

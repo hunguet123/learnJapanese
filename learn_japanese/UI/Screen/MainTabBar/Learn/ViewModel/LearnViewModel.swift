@@ -11,7 +11,7 @@ class LearnViewModel {
     var exerciseDTOs: [ExerciseDTO] = []
     
     func fetchExercises(byLessonId lessonId: Int) {
-        let excercises: [ExerciseModel] = ExerciseServiceUtils.getExercise(byLessonId: lessonId)
+        let excercises: [ExerciseModel] = ExerciseServiceUtils.getExercises(byLessonId: lessonId)
         
         let lessonProgressModel = UserProgressManager.shared.userProgressModel?.lessons.first(where: { lessonProgressModel in
             return lessonProgressModel.lessonId == lessonId

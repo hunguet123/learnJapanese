@@ -6,11 +6,16 @@
 //
 
 import UIKit
+enum LearnType {
+    case Study
+    case Review
+}
 
 class LearnSectionViewController: UIViewController {
     @IBOutlet weak var learningProgressView: UIProgressView!
     @IBOutlet weak var quizCollectionView: UICollectionView!
-    
+    var learnType: LearnType = .Study
+    var questionProgressModels: [QuestionProgressModel] = []
     let learnSectionViewModel: LearnSectionViewModel = LearnSectionViewModel()
     
     var exerciseId: Int = 0
@@ -19,7 +24,12 @@ class LearnSectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
+        switch learnType {
+        case .Study:
+            learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
+        case .Review:
+            learnSectionViewModel.fetchAllReviewQuesions(questionProgressModels: questionProgressModels)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -35,7 +45,12 @@ class LearnSectionViewController: UIViewController {
     
     func resetProgress() {
         learnSectionViewModel.resetAll()
-        learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
+        switch learnType {
+        case .Study:
+            learnSectionViewModel.fetchAllQuestions(byExcerciseId: exerciseId)
+        case .Review:
+            learnSectionViewModel.fetchAllReviewQuesions(questionProgressModels: questionProgressModels)
+        }
         self.learningProgressView.setProgress(0, animated: false)
         self.quizCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
     }

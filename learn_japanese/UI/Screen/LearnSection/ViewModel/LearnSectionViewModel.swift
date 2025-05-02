@@ -12,7 +12,13 @@ class LearnSectionViewModel {
     var questions: [QuestionModel] = []
     var score: Int = 0
     func fetchAllQuestions(byExcerciseId excerciseId: Int){
+        resetAll()
         questions = QuestionServiceUtils.fetchAllQuestions(byExcerciseId: excerciseId)
+    }
+    
+    func fetchAllReviewQuesions(questionProgressModels: [QuestionProgressModel]){
+        resetAll()
+        questions = QuestionServiceUtils.fetchAllQuestions(questionProgressModels.map{ $0.questionId })
     }
     
     func resetAll(){

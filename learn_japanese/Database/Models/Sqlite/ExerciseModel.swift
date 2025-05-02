@@ -9,7 +9,7 @@ struct ExerciseModel {
     let exerciseId: Int
     let exerciseNumber: Double
     let lessonId: Int
-    let title: String?
+    var title: String?
     let description: String?
     
     init(exerciseId: Int,

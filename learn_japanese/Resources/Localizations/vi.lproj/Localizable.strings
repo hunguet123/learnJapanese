@@ -62,4 +62,6 @@
 "logout" = "Đăng xuất";
 "cancel" = "Huỷ";
 "doYouWantLogout" = "Bạn có chắc chắn muốn đăng xuất?";
-
+"recommendReview" = "Gợi ý ôn tập";
+"reviewSuggestionMessage" = "Dựa trên tiến độ học tập của bạn, đây là những bài tập cần ôn tập";
+"accuracyRate" = "Độ chính xác";

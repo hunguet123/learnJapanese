@@ -149,6 +149,7 @@
 		DF8E82EA2D8C593A008E82D3 /* セ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF8E829E2D8C593A008E82D3 /* セ.mp3 */; };
 		DF8E82EB2D8C593A008E82D3 /* ナ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF8E82A52D8C593A008E82D3 /* ナ.mp3 */; };
 		DF8E82EC2D8C593A008E82D3 /* ワ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF8E82BC2D8C593A008E82D3 /* ワ.mp3 */; };
+		DF9073542DC46DBD00EAEC74 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9073532DC46DBD00EAEC74 /* ReviewViewModel.swift */; };
 		DF91DA572C4D631300C78640 /* LocalizationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91DA562C4D631300C78640 /* LocalizationText.swift */; };
 		DF91DA622C4D64D700C78640 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA602C4D64D700C78640 /* Localizable.strings */; };
 		DF91DA672C4EA1F500C78640 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF91DA662C4EA1F500C78640 /* SignInViewController.xib */; };
@@ -597,6 +598,7 @@
 		DF8E82BC2D8C593A008E82D3 /* ワ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ワ.mp3"; sourceTree = "<group>"; };
 		DF8E82BD2D8C593A008E82D3 /* ヲ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ヲ.mp3"; sourceTree = "<group>"; };
 		DF8E82BE2D8C593A008E82D3 /* ン.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ン.mp3"; sourceTree = "<group>"; };
+		DF9073532DC46DBD00EAEC74 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		DF91DA562C4D631300C78640 /* LocalizationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationText.swift; sourceTree = "<group>"; };
 		DF91DA612C4D64D700C78640 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF91DA652C4EA1F500C78640 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -806,6 +808,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		DF90734E2DC4623400EAEC74 /* Cell */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DFE59EF52CD2859000011DFC /* Data */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Data;
@@ -968,6 +975,8 @@
 		DF7EF3812DBA795C00F93E27 /* Review */ = {
 			isa = PBXGroup;
 			children = (
+				DF9073552DC470BA00EAEC74 /* ViewModel */,
+				DF90734E2DC4623400EAEC74 /* Cell */,
 				DF7EF3822DBA797F00F93E27 /* ReviewViewController.swift */,
 			);
 			path = Review;
@@ -991,6 +1000,14 @@
 				DF8271932CAC3BE700E27690 /* DictionaryViewController.swift */,
 			);
 			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		DF9073552DC470BA00EAEC74 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF9073532DC46DBD00EAEC74 /* ReviewViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DF91DA512C4D621D00C78640 /* Localizations */ = {
@@ -1625,6 +1642,7 @@
 				DF81C3BE2D9EE28E00B460FB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				DF90734E2DC4623400EAEC74 /* Cell */,
 				DFE59EF52CD2859000011DFC /* Data */,
 			);
 			name = learn_japanese;
@@ -2119,6 +2137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9073542DC46DBD00EAEC74 /* ReviewViewModel.swift in Sources */,
 				DF9A23D92C42710A00A73895 /* BaseViewController.swift in Sources */,
 				DF38760C2D17FE56005BBE05 /* LessonDTO.swift in Sources */,
 				DF9A23E22C4276CB00A73895 /* AppColors.swift in Sources */,

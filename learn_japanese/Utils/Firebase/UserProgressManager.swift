@@ -154,17 +154,28 @@ class UserProgressManager {
                 exercise.score.value = score
                 exercise.score.max = maxScore
                 
-                // Cập nhật wrongQuestions với updatedAt và tăng questionStudyCount
-                var updatedWrongQuestions = exercise.wrongQuestions.map { wrongQuestion -> QuestionProgressModel in
-                    var updatedQuestion = wrongQuestion
-                    if wrongQuestionIds.contains(updatedQuestion.questionId) {
-                        updatedQuestion.questionStudyCount += 1
-                        updatedQuestion.updatedAt = Date() // cập nhật thời gian
+                // Cập nhật wrongQuestions
+                var updatedWrongQuestions: [QuestionProgressModel] = []
+                
+                // Xử lý các câu hỏi cũ
+                for var wrongQuestion in exercise.wrongQuestions {
+                    if wrongQuestionIds.contains(wrongQuestion.questionId) {
+                        // Nếu vẫn còn trong danh sách mới, tăng studyCount và cập nhật updatedAt
+                        wrongQuestion.questionStudyCount += 1
+                        updatedWrongQuestions.append(wrongQuestion)
+                    } else {
+                        // Nếu không còn trong danh sách mới, giảm studyCount 1
+                        wrongQuestion.questionStudyCount -= 1
+                        wrongQuestion.updatedAt = Date()
+                        if wrongQuestion.questionStudyCount > 0 {
+                            // Nếu còn studyCount thì giữ lại
+                            updatedWrongQuestions.append(wrongQuestion)
+                        }
+                        // Nếu studyCount == 0 thì bỏ luôn (xóa)
                     }
-                    return updatedQuestion
                 }
                 
-                // Thêm các wrongQuestion mới nếu chưa có
+                // Thêm các wrongQuestion mới nếu chưa có trong danh sách cũ
                 for questionId in wrongQuestionIds {
                     if !updatedWrongQuestions.contains(where: { $0.questionId == questionId }) {
                         updatedWrongQuestions.append(QuestionProgressModel(questionId: questionId, questionStudyCount: 1, updatedAt: Date()))
@@ -226,13 +237,12 @@ class UserProgressManager {
             }
         }
     }
-
     
     func fetchUserProgress(
         completion: @escaping (FirebaseResult) -> Void
     ) {
         guard let userModel = UserManager.shared.getUser() else {
-//            UserManager.shared.signOut()
+            //            UserManager.shared.signOut()
             return
         }
         let userId = userModel.id
@@ -268,5 +278,97 @@ class UserProgressManager {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func getExercisesToReview(daysThreshold: Int = 1) -> [(lessonId: Int, exerciseId: Int, accuracy: Double)] {
+        guard let userProgress = userProgressModel else {
+            return []
+        }
+        
+        let now = Date()
+        let calendar = Calendar.current
+        var exercisesToReview: [(lessonId: Int, exerciseId: Int, accuracy: Double)] = []
+        
+        for lesson in userProgress.lessons {
+            for exercise in lesson.exercises {
+                
+                // Kiểm tra trong wrongQuestions có câu hỏi cần ôn tập không
+                let wrongNeedsReview = exercise.wrongQuestions.contains { questionProgress in
+                    if let updatedAt = questionProgress.updatedAt {
+                        if let diff = calendar.dateComponents([.day], from: updatedAt, to: now).day {
+                            return diff >= daysThreshold
+                        }
+                    }
+                    return false
+                }
+                
+                // Nếu không có câu hỏi trong wrongQuestions cần ôn tập thì kiểm tra learnedQuestions
+                let learnedNeedsReview = !wrongNeedsReview && exercise.learnedQuestions.contains { questionProgress in
+                    if let updatedAt = questionProgress.updatedAt {
+                        if let diff = calendar.dateComponents([.day], from: updatedAt, to: now).day {
+                            return diff >= daysThreshold
+                        }
+                    }
+                    return false
+                }
+                
+                if wrongNeedsReview || learnedNeedsReview {
+                    exercisesToReview.append((
+                        lessonId: lesson.lessonId,
+                        exerciseId: exercise.exerciseId,
+                        accuracy: Double(exercise.score.value) / Double(exercise.score.max)
+                    ))
+                }
+            }
+        }
+        
+        return exercisesToReview
+    }
+
+    func getQuestionsToReviewCombined(
+        lessonId: Int,
+        exerciseId: Int,
+        daysThreshold: Int = 1
+    ) -> [QuestionProgressModel] {
+        guard let userProgress = userProgressModel else {
+            return []
+        }
+        
+        let now = Date()
+        let calendar = Calendar.current
+        
+        guard let lesson = userProgress.lessons.first(where: { $0.lessonId == lessonId }),
+              let exercise = lesson.exercises.first(where: { $0.exerciseId == exerciseId }) else {
+            return []
+        }
+        
+        // Lọc câu hỏi trong wrongQuestions thoả điều kiện ôn tập
+        let wrongQuestionsToReview = exercise.wrongQuestions.filter { questionProgress in
+            if let updatedAt = questionProgress.updatedAt,
+               let diff = calendar.dateComponents([.day], from: updatedAt, to: now).day {
+                return diff >= daysThreshold
+            }
+            return false
+        }
+        
+        // Tạo set questionId của wrongQuestions để tránh trùng lặp
+        let wrongQuestionIds = Set(wrongQuestionsToReview.map { $0.questionId })
+        
+        // Lọc câu hỏi trong learnedQuestions thoả điều kiện ôn tập và không trùng với wrongQuestions
+        let learnedQuestionsToReview = exercise.learnedQuestions.filter { questionProgress in
+            if wrongQuestionIds.contains(questionProgress.questionId) {
+                return false
+            }
+            if let updatedAt = questionProgress.updatedAt,
+               let diff = calendar.dateComponents([.day], from: updatedAt, to: now).day {
+                return diff >= daysThreshold
+            }
+            return false
+        }
+        
+        // Kết hợp 2 tập câu hỏi
+        let combinedQuestions = wrongQuestionsToReview + learnedQuestionsToReview
+        
+        return combinedQuestions
     }
 }

@@ -51,11 +51,11 @@ class LevelSelectionViewController: BaseViewControler {
     }
     
     private func updateUserProgress() {
-        guard let firstLessonModel = LessonServiceUtils.getLesson(byLevel: levelSelected.level.rawValue).first else {
+        guard let firstLessonModel = LessonServiceUtils.getLessons(byLevel: levelSelected.level.rawValue).first else {
             return
         }
         
-        let excercises: [ExerciseModel] = ExerciseServiceUtils.getExercise(byLessonId: firstLessonModel.lessonId)
+        let excercises: [ExerciseModel] = ExerciseServiceUtils.getExercises(byLessonId: firstLessonModel.lessonId)
         
         UserProgressManager.shared.addLessonProgress(lessonId: firstLessonModel.lessonId, totalExercises: excercises.count, isAccessible: true) { result in
             print("------ firebase Result \(result)")

@@ -65,4 +65,7 @@ class LocalizationText {
     static let logout = "logout".l10n()
     static let cancel = "cancel".l10n()
     static let doYouWantLogout = "doYouWantLogout".l10n()
+    static let recommendReview = "recommendReview".l10n()
+    static let reviewSuggestionMessage = "reviewSuggestionMessage".l10n()
+    static let accuracyRate = "accuracyRate".l10n()
 }

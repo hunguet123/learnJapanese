@@ -16,9 +16,11 @@ enum ExerciseState {
 struct ExerciseDTO {
     var exerciseModel: ExerciseModel
     var state: ExerciseState
+    var accuracy: Double?
     
-    init(exerciseModel: ExerciseModel, state: ExerciseState) {
+    init(exerciseModel: ExerciseModel, state: ExerciseState, accuracy: Double? = nil) {
         self.exerciseModel = exerciseModel
         self.state = state
+        self.accuracy = accuracy
     }
 }

@@ -43,4 +43,42 @@ class QuestionServiceUtils {
         
         return questions
     }
+    
+    static func fetchAllQuestions(_ questionIds: [Int]) -> [QuestionModel] {
+        guard let db = SQLiteHelper.shared.db else {
+            print("Database connection is nil")
+            return []
+        }
+        
+        guard !questionIds.isEmpty else {
+            return []
+        }
+        
+        var questions: [QuestionModel] = []
+        
+        do {
+            let questionTable = Table("Question")
+            let questionId = Expression<Int>("question_id")
+            let exerciseIdColumn = Expression<Int>("exercise_id")
+            let questionContent = Expression<String?>("question_content")
+            
+            // Tạo điều kiện lọc question_id trong danh sách questionIds
+            let query = questionTable
+                .filter(questionIds.contains(questionId))
+                .order(questionId.asc)
+            
+            for row in try db.prepare(query) {
+                let question = QuestionModel(
+                    questionId: row[questionId],
+                    exerciseId: row[exerciseIdColumn],
+                    questionContent: row[questionContent]
+                )
+                questions.append(question)
+            }
+        } catch {
+            print("Error fetching questions by IDs: \(error)")
+        }
+        
+        return questions
+    }
 }
