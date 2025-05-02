@@ -30,6 +30,7 @@ class ImageSelectionView: UIView {
     private let questionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
