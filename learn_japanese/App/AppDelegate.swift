@@ -9,16 +9,21 @@ import UIKit
 import L10n_swift
 import FirebaseCore
 import FirebaseFirestoreInternal
-import FBSDKCoreKit
-import FBSDKLoginKit
+import FacebookCore
+//import FBSDKCoreKit
+//import FBSDKLoginKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         self.config()
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
+        
         return true
     }
     

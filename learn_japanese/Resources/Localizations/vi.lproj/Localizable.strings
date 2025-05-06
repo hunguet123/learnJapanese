@@ -7,7 +7,7 @@
  */
 "login" = "Đăng nhập";
 "signUp" = "Đăng ký";
-"userName" = "Tên đăng nhập";
+"userName" = "Tên tài khoản";
 "emailAddress" = "Email";
 "password" = "Mật khẩu";
 "forgotPassword" = "Quên mật khẩu?";

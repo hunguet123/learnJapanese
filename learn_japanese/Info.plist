@@ -21,12 +21,15 @@
 	<key>FacebookAutoLogAppEventsEnabled</key>
 	<string>TRUE</string>
 	<key>FacebookClientToken</key>
-	<string>9ae9e1c95b9b8c2410e4dfc53a957045</string>
+	<string>dce2c0c781ffa914f8dba35d263d416c</string>
 	<key>FacebookDisplayName</key>
 	<string>Hello Japanese</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
 		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
