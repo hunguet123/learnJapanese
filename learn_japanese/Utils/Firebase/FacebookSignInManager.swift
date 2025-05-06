@@ -53,7 +53,7 @@ class FacebookSignInManager {
             
             if let error = error {
                 print("Firebase Login Error: \(error.localizedDescription)")
-                self.handleLoginFailure(in: viewController)
+                self.handleLoginFailure(in: viewController, message: error.localizedDescription)
                 return
             }
             
@@ -75,11 +75,11 @@ class FacebookSignInManager {
         }
     }
     
-    private func handleLoginFailure(in viewController: UIViewController) {
+    private func handleLoginFailure(in viewController: UIViewController, message: String? = nil) {
         // Hiển thị thông báo lỗi
         let alertController = UIAlertController(
             title: "Đăng Nhập Thất Bại",
-            message: "Không thể đăng nhập bằng Facebook. Vui lòng thử lại.",
+            message: message ?? "Không thể đăng nhập bằng Facebook. Vui lòng thử lại.",
             preferredStyle: .alert
         )
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))

@@ -10,8 +10,6 @@ import L10n_swift
 import FirebaseCore
 import FirebaseFirestoreInternal
 import FacebookCore
-//import FBSDKCoreKit
-//import FBSDKLoginKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
