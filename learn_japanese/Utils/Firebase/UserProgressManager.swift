@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import Alamofire
 
 enum FirebaseResult {
     case success
@@ -63,6 +64,17 @@ class UserProgressManager {
                 )
                 
                 let data = newProgress.toJson()
+                
+                if !self.isConnectedToInternet() {
+                    documentRef.setData(data)
+                    print("Đang offline: Dữ liệu đã được lưu vào cache và sẽ đồng bộ khi có mạng")
+                    self.fetchUserProgress { result in
+                        print("userProgress save: \(result)")
+                        completion(.success)
+                    }
+                    return
+                }
+                
                 documentRef.setData(data) { [weak self] error in
                     if let error = error {
                         completion(.failure(error))
@@ -97,6 +109,19 @@ class UserProgressManager {
                 )
                 
                 let data = updatedProgress.toJson()
+                
+                if !self.isConnectedToInternet() {
+                    documentRef.setData(data, merge: true)
+                    
+                    // Gọi completion thành công ngay lập tức mà không đợi callback
+                    print("Đang offline: Dữ liệu đã được lưu vào cache và sẽ đồng bộ khi có mạng")
+                    self.fetchUserProgress { result in
+                        print("userProgress save: \(result)")
+                        completion(.success)
+                    }
+                    return
+                }
+                
                 documentRef.setData(data, merge: true) { error in
                     if let error = error {
                         completion(.failure(error))
@@ -225,11 +250,24 @@ class UserProgressManager {
             userProgress.lessons[lessonIndex] = lesson
             
             let updatedData = userProgress.toJson()
+            
+            if !self.isConnectedToInternet() {
+                documentRef.setData(updatedData, merge: true)
+                
+                // Gọi completion thành công ngay lập tức mà không đợi callback
+                print("Đang offline: Dữ liệu đã được lưu vào cache và sẽ đồng bộ khi có mạng")
+                self.fetchUserProgress { result in
+                    print("userProgress save: \(result)")
+                    completion(.success)
+                }
+                return
+            }
+    
             documentRef.setData(updatedData, merge: true) { error in
                 if let error = error {
                     completion(.failure(error))
                 } else {
-                    self.fetchUserProgress() { result in
+                    self.fetchUserProgress { result in
                         print("userProgress save: \(result)")
                         completion(.success)
                     }
@@ -370,5 +408,9 @@ class UserProgressManager {
         let combinedQuestions = wrongQuestionsToReview + learnedQuestionsToReview
         
         return combinedQuestions
+    }
+    
+   private func isConnectedToInternet() -> Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
     }
 }

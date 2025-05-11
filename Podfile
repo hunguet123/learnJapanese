@@ -19,6 +19,8 @@ target 'learn_japanese' do
   pod 'FacebookLogin'
   pod 'GoogleSignIn'
   
+  pod 'Alamofire'
+  
   post_install do |installer|
     installer.pods_project.targets.each do |target|
       # Xử lý đặc biệt cho BoringSSL-GRPC

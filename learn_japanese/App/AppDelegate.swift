@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Use persistent disk cache, with 100 MB cache size
         settings.cacheSettings = PersistentCacheSettings(sizeBytes: 100 * 1024 * 1024 as NSNumber)
+        settings.isPersistenceEnabled = true
         let db = Firestore.firestore()
         db.settings = settings
         UserManager.shared.fetchUserData { isSuccess in
