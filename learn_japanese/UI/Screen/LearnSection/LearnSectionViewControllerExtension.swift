@@ -53,14 +53,32 @@ extension LearnSectionViewController: UICollectionViewDelegate,
 
 extension LearnSectionViewController: ImageTextQuestionCollectionViewCellDelegate {
     func didTapNextQuestion(isCorrect: Bool, questionId: Int, correctAnswer: String) {
-        showAnswerModal(isCorrect: isCorrect, correctAnswer: correctAnswer, completion: { [weak self] in
-            if isCorrect {
-                self?.learnSectionViewModel.score += 1
-            } else {
-                self?.learnSectionViewModel.wrongQuestionIds.append(questionId)
+        let hasWrongBefore = learnSectionViewModel.wrongQuestionIds.contains(questionId)
+        let hasCorrectBefore = learnSectionViewModel.correctQuestionIds.contains(questionId)
+        
+        if !isCorrect {
+            // Nếu lần đầu trả lời sai thì thêm vào danh sách sai
+            if !hasWrongBefore {
+                learnSectionViewModel.wrongQuestionIds.append(questionId)
             }
+            // Nếu trước đó trả lời đúng rồi thì cần xóa khỏi danh sách đúng và trừ điểm
+            if hasCorrectBefore {
+                if let index = learnSectionViewModel.correctQuestionIds.firstIndex(of: questionId) {
+                    learnSectionViewModel.correctQuestionIds.remove(at: index)
+                    learnSectionViewModel.score -= 1
+                }
+            }
+        } else {
+            // Nếu trả lời đúng lần đầu (chưa từng sai và chưa từng đúng) thì cộng điểm và thêm vào danh sách đúng
+            if !hasWrongBefore && !hasCorrectBefore {
+                learnSectionViewModel.score += 1
+                learnSectionViewModel.correctQuestionIds.append(questionId)
+            }
+        }
+        
+        showAnswerModal(isCorrect: isCorrect, correctAnswer: correctAnswer) { [weak self] in
             self?.nextQuestion()
-        })
+        }
     }
     
     func onSwipeRight(questionId: Int) {
