@@ -120,8 +120,9 @@ class LevelSelectionViewController: BaseViewControler {
         let homeViewModel = HomeViewModel(japaneseLevel: levelSelected)
         let homeController = HomeViewController()
         homeController.homeViewModel = homeViewModel
-        UserProgressManager.shared.updateCurrentLevel(japaneseLevel: levelSelected)
-        navigationController?.popAndPush(viewController: homeController, animated: true)
+        UserProgressManager.shared.fetchUserProgress { _ in
+            UserProgressManager.shared.updateCurrentLevel(japaneseLevel: self.levelSelected)
+            self.navigationController?.popAndPush(viewController: homeController, animated: true)
+        }
     }
-    
 }

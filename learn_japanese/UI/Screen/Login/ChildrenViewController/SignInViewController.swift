@@ -79,6 +79,26 @@ class SignInViewController: BaseViewControler {
     
     @IBAction func didTapLoginWithApple(_ sender: Any) {
     }
+    
+    private func handleSignInSuccessfully() {
+        UserManager.shared.fetchUserData { result in
+            UserProgressManager.shared.fetchUserProgress { _ in
+                if let currentLevelFromUserProgress = UserProgressManager.shared.userProgressModel?.currentLevel {
+                    let levelSelected = JapaneseLevel.from(string: currentLevelFromUserProgress)
+                    
+                    let homeViewModel = HomeViewModel(japaneseLevel: levelSelected)
+                    let homeController = HomeViewController()
+                    homeController.homeViewModel = homeViewModel
+                    UserProgressManager.shared.updateCurrentLevel(japaneseLevel: levelSelected)
+                    self.navigationController?.popAndPush(viewController: homeController, animated: true)
+                    
+                    return
+                }
+                
+                self.navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+            }
+        }
+    }
 }
 
 extension SignInViewController: TitleTextFieldDelegate {
@@ -103,7 +123,8 @@ extension SignInViewController: GoogleSignInManagerDelegate {
     
     func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager) {
         SVProgressHUD.dismiss()
-        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+//        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+        handleSignInSuccessfully()
     }
 }
 
@@ -114,7 +135,8 @@ extension SignInViewController: FacebookSignInDelegate {
     
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
         SVProgressHUD.dismiss()
-        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+//        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+        handleSignInSuccessfully()
     }
 }
 
@@ -125,6 +147,7 @@ extension SignInViewController: EmailPasswordSignInDelegate {
     
     func emailPasswordSignInManagerDidSignInSuccessfully(_ emailPasswordSignInManager: EmailPasswordSignInManager) {
         SVProgressHUD.dismiss()
-        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+//        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+        handleSignInSuccessfully()
     }
 }

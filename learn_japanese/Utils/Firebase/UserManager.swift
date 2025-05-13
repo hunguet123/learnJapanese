@@ -152,6 +152,7 @@ class UserManager {
     
     func signOut() -> Bool {
         do {
+            UserProgressManager.shared.resetProgress()
             try firebaseAuth.signOut()
             return true
         } catch let signOutError as NSError {

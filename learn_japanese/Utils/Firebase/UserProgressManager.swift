@@ -104,7 +104,7 @@ class UserProgressManager {
                 let data = newProgress.toJson()
                 
                 if !self.isConnectedToInternet() {
-                    documentRef.setData(data)
+                    documentRef.setData(data, merge: true)
                     print("Đang offline: Dữ liệu đã được lưu vào cache và sẽ đồng bộ khi có mạng")
                     self.fetchUserProgress { result in
                         print("userProgress save: \(result)")
@@ -113,7 +113,7 @@ class UserProgressManager {
                     return
                 }
                 
-                documentRef.setData(data) { [weak self] error in
+                documentRef.setData(data, merge: true) { [weak self] error in
                     if let error = error {
                         completion(.failure(error))
                     } else {
@@ -450,5 +450,9 @@ class UserProgressManager {
     
     private func isConnectedToInternet() -> Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
+    }
+    
+    public func resetProgress() {
+        self.userProgressModel = nil
     }
 }

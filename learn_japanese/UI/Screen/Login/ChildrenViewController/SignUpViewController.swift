@@ -50,9 +50,9 @@ class SignUpViewController: BaseViewControler {
     
     private func updateRequirementPassword(password: String) {
         if Validation.hasMinimumLength(password) {
-            passwordRequiredImage[0].image = AppImages.iconCheckmarkCircle
+            passwordRequiredImage[2].image = AppImages.iconCheckmarkCircle
         } else {
-            passwordRequiredImage[0].image = AppImages.iconUnCheckMarkCircle
+            passwordRequiredImage[2].image = AppImages.iconUnCheckMarkCircle
         }
         
         if Validation.hasUppercaseCharacter(password) {
@@ -62,9 +62,9 @@ class SignUpViewController: BaseViewControler {
         }
         
         if Validation.hasSpecialCharacter(password) {
-            passwordRequiredImage[2].image = AppImages.iconCheckmarkCircle
+            passwordRequiredImage[0].image = AppImages.iconCheckmarkCircle
         } else {
-            passwordRequiredImage[2].image = AppImages.iconUnCheckMarkCircle
+            passwordRequiredImage[0].image = AppImages.iconUnCheckMarkCircle
         }
     }
     
