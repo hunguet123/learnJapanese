@@ -17,15 +17,36 @@ class SplashViewController: BaseViewControler {
         animationView.loopMode = .playOnce
         animationView.animationSpeed = 0.5
         animationView.contentMode = .scaleAspectFill
-        animationView.play { [weak self] _ in
-            guard let self = self else {
+        UserManager.shared.fetchUserData { isSuccess in
+            if !isSuccess {
+                self.navigationController?.popAndPush(viewController: LoginViewController(), animated: true)
                 return
             }
             
-            if UserManager.shared.isLoginBefore() {
-                navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
-            } else {
-                navigationController?.popAndPush(viewController: LoginViewController(), animated: true)
+            UserProgressManager.shared.fetchUserProgress { result in
+                self.animationView.play { [weak self] _ in
+                    guard let self = self else {
+                        return
+                    }
+                    
+                    if UserManager.shared.isLoginBefore() {
+                        if let currentLevelFromUserProgress = UserProgressManager.shared.userProgressModel?.currentLevel {
+                            let levelSelected = JapaneseLevel.from(string: currentLevelFromUserProgress)
+                            
+                            let homeViewModel = HomeViewModel(japaneseLevel: levelSelected)
+                            let homeController = HomeViewController()
+                            homeController.homeViewModel = homeViewModel
+                            UserProgressManager.shared.updateCurrentLevel(japaneseLevel: levelSelected)
+                            navigationController?.popAndPush(viewController: homeController, animated: true)
+                            
+                            return
+                        }
+                        
+                        navigationController?.popAndPush(viewController: LevelSelectionViewController(), animated: true)
+                    } else {
+                        navigationController?.popAndPush(viewController: LoginViewController(), animated: true)
+                    }
+                }
             }
         }
     }

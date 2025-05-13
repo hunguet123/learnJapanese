@@ -33,6 +33,44 @@ class UserProgressManager {
     
     static let shared = UserProgressManager()
     
+    func updateCurrentLevel(japaneseLevel: JapaneseLevel) {
+        guard let userModel = UserManager.shared.getUser() else {
+            return
+        }
+        let userId = userModel.id
+        let documentRef = Firestore.firestore().collection("userProgress").document(userId)
+        
+        if var progress = userProgressModel {
+            progress.currentLevel = japaneseLevel.level.rawValue
+            userProgressModel = progress
+        } else {
+            // Nếu chưa có, khởi tạo mới
+            let progress = UserProgressModel(lessons: [], currentLevel: japaneseLevel.level.rawValue)
+            userProgressModel = progress
+        }
+        
+        if let progress = userProgressModel {
+            let data = progress.toJson()
+            
+            if !self.isConnectedToInternet() {
+                documentRef.setData(data, merge: true)
+                print("Đang offline: Dữ liệu đã được lưu vào cache và sẽ đồng bộ khi có mạng")
+                self.fetchUserProgress { result in
+                    print("userProgress save: \(result)")
+                }
+                return
+            }
+            
+            documentRef.setData(data, merge: true) { error in
+                if let error = error {
+                    print("Lỗi khi cập nhật currentLevel: \(error.localizedDescription)")
+                } else {
+                    print("Cập nhật currentLevel thành công!")
+                }
+            }
+        }
+    }
+    
     func addLessonProgress(
         lessonId: Int,
         totalExercises: Int,
@@ -262,7 +300,7 @@ class UserProgressManager {
                 }
                 return
             }
-    
+            
             documentRef.setData(updatedData, merge: true) { error in
                 if let error = error {
                     completion(.failure(error))
@@ -362,7 +400,7 @@ class UserProgressManager {
         
         return exercisesToReview
     }
-
+    
     func getQuestionsToReviewCombined(
         lessonId: Int,
         exerciseId: Int,
@@ -410,7 +448,7 @@ class UserProgressManager {
         return combinedQuestions
     }
     
-   private func isConnectedToInternet() -> Bool {
+    private func isConnectedToInternet() -> Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
     }
 }

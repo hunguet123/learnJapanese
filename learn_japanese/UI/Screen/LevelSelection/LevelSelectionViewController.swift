@@ -33,6 +33,19 @@ enum JapaneseLevel {
             return .N3
         }
     }
+    
+    static func from(string: String) -> JapaneseLevel {
+        switch string {
+        case "N5":
+            return .start
+        case "N4":
+            return .basic
+        case "N3":
+            return .intermediate
+        default:
+            return .start
+        }
+    }
 }
 
 class LevelSelectionViewController: BaseViewControler {
@@ -107,6 +120,7 @@ class LevelSelectionViewController: BaseViewControler {
         let homeViewModel = HomeViewModel(japaneseLevel: levelSelected)
         let homeController = HomeViewController()
         homeController.homeViewModel = homeViewModel
+        UserProgressManager.shared.updateCurrentLevel(japaneseLevel: levelSelected)
         navigationController?.popAndPush(viewController: homeController, animated: true)
     }
     
