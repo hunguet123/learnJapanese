@@ -44,6 +44,7 @@ class SignUpViewController: BaseViewControler {
         passwordTextField.setHintText(LocalizationText.password)
         passwordTextField.setContentType(.password)
         passwordTextField.setReturnKeyType(.done)
+        passwordTextField.setSecureText(true)
         passwordTextField.setTag(SignUpTextFieldTag.password.rawValue)
         passwordTextField.delegate = self
     }

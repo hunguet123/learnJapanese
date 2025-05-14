@@ -28,8 +28,6 @@ class TitleTextField: UIView {
         textField.layer.masksToBounds = true
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.leftViewMode = .always
-        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-        textField.rightViewMode = .always
         textField.backgroundColor = AppColors.white
         textField.textColor = AppColors.black
         textField.layer.borderColor = AppColors.goldenPoppy?.cgColor
@@ -38,6 +36,24 @@ class TitleTextField: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
+    
+    // Container view cho nút toggle
+    private let rightViewContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var togglePasswordButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.tintColor = AppColors.darkLiver
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isHidden = true
+        return button
+    }()
+    
+    private var isPasswordField: Bool = false
     
     init(title: String) {
         super.init(frame: .zero)
@@ -88,7 +104,14 @@ class TitleTextField: UIView {
     }
     
     func setSecureText(_ isSecureTextEntry: Bool) {
+        isPasswordField = isSecureTextEntry
         textField.isSecureTextEntry = isSecureTextEntry
+        togglePasswordButton.isHidden = !isSecureTextEntry
+        
+        if isSecureTextEntry {
+            // Mặc định hiển thị biểu tượng eye.slash khi mật khẩu bị ẩn
+            togglePasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        }
     }
     
     func setTag(_ tagTextField: Int) {
@@ -106,18 +129,63 @@ class TitleTextField: UIView {
     private func setupUI() {
         addSubview(titleLabel)
         addSubview(textField)
+        addSubview(rightViewContainer)
+        rightViewContainer.addSubview(togglePasswordButton)
+        
         backgroundColor = AppColors.backgroundColor
         textField.delegate = self
+        
+        // Thêm action cho nút toggle
+        togglePasswordButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            
             textField.heightAnchor.constraint(equalToConstant: 39),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor),
             textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            textField.bottomAnchor.constraint(equalTo: bottomAnchor)
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            // Container cho nút toggle
+            rightViewContainer.trailingAnchor.constraint(equalTo: textField.trailingAnchor),
+            rightViewContainer.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
+            rightViewContainer.widthAnchor.constraint(equalToConstant: 40),
+            rightViewContainer.heightAnchor.constraint(equalTo: textField.heightAnchor),
+            
+            // Nút toggle trong container
+            togglePasswordButton.centerXAnchor.constraint(equalTo: rightViewContainer.centerXAnchor),
+            togglePasswordButton.centerYAnchor.constraint(equalTo: rightViewContainer.centerYAnchor),
+            togglePasswordButton.widthAnchor.constraint(equalToConstant: 30),
+            togglePasswordButton.heightAnchor.constraint(equalToConstant: 30)
         ])
+        
+        // Thiết lập padding bên phải cho textField
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: textField.frame.height))
+        textField.rightViewMode = .always
+    }
+    
+    @objc private func togglePasswordVisibility() {
+        // Đảo ngược trạng thái hiện tại của isSecureTextEntry
+        textField.isSecureTextEntry.toggle()
+        
+        // Cập nhật icon dựa trên trạng thái hiện tại
+        if textField.isSecureTextEntry {
+            // Nếu mật khẩu đang bị ẩn (isSecureTextEntry = true), hiển thị biểu tượng "eye.slash"
+            togglePasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            // Nếu mật khẩu đang hiển thị (isSecureTextEntry = false), hiển thị biểu tượng "eye"
+            togglePasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
+        
+        // Giữ vị trí con trỏ sau khi chuyển đổi
+        if let existingText = textField.text, !existingText.isEmpty {
+            let currentText = textField.text
+            textField.text = nil
+            textField.text = currentText
+        }
     }
 }
 
